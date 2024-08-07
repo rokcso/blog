@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Rokcso&#39;s Blog</title>
+    <link>https://rokcso.com/blog/</link>
+    <description>Recent content in Blog on Rokcso&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2024, Rokcso.</copyright>
+    <lastBuildDate>Mon, 27 May 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://rokcso.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dofollow &amp; nofollow</title>
+      <link>https://rokcso.com/p/dofollow-and-nofollow/</link>
+      <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://rokcso.com/p/dofollow-and-nofollow/</guid>
+      <description>什么是 dofollow 和 nofollow 链接？ dofollow 和 nofollow 是两个 HTML 属性，用于指示搜索引擎爬虫如何处理网页上面 link 的链接。&#xA;dofollow 意味着搜索引擎会跟随这个链接，并且当前页面会传递一定的权重给被链接的页面，即增加被链接页面在搜索引擎中的权重，增加权重的多少根据当前页面在搜索引擎中的权重不同而不同。&#xA;也就是说如果网站 A 使用 dofollow 链接了网站 B 的链接，网站 B 在搜索引擎中的权重会得到提升，提升的多少由网站 A 在搜索引擎中的权重决定，即网站 A 在搜索引擎中权重越大，网站 B 得到的权重提升也越大。&#xA;nofollow 是由 Google 引入的属性，目的是帮助网站管理员减少网站的垃圾链接，当页面中的一个链接被标记为 nofollow 时，搜索引擎爬虫将不会跟随这个链接去发现新的内容、建立新的索引，同时也也不会从当前页面传递任何权重到被链接页面。搜索引擎的爬虫甚至不会进一步爬取 nofollow 链接。&#xA;一般网站的广告链接、用户评论内容中的链接会使用 nofollow 属性来标记。&#xA;HTML 中 标签默认的属性是 dofollow，如果要标记为 nofollow 可以如下编写：&#xA;&amp;lt;a href=&amp;#34;https://rokcso.com&amp;#34; rel=&amp;#34;nofollow&amp;#34;&amp;gt;Rokcso&amp;#39;s Landing Page&amp;lt;/a&amp;gt; 如何正确应用 dofollow 和 nofollow 链接？ 上面提到的权重本质上就是 PageRank（也被称为 PR 值），是搜索引擎排名的重要指标之一。PR 值只能通过 dofollow 链接传递，不能通过 nofollow 链接传递。&#xA;并且 PR 值的分配是根据页面上搜索链接来平均分配的，不论这个链接是否允许 follow，比如当前页面的 PR 值为 10，页面中有 10 个链接（5 个 dofollow 和 5 个 nofollow），那么每个 dofollow 链接将分别获得 1 PR 值传递，而不是 2；该页面的 10 PR 值被平均分给了该页面中的所有 10 个链接，只是其中标记为 nofollow 的链接不会获得对应的 PR 值传递。</description>
+    </item>
+    <item>
+      <title>语义化版本控制规范 2.0.0</title>
+      <link>https://rokcso.com/p/semantic-version/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://rokcso.com/p/semantic-version/</guid>
+      <description>版本号格式：主版本号.次版本号.修订号&#xA;版本号递增规则：&#xA;主版本号：当有不向下兼容的功能发布时 次版本号：当有可向下兼容的功能发布时 修订号：当有可向下兼通的问题修正发布时 注意：构建号与版本号不同，不受此规范约束。&#xA;规范重点摘要 标准的版本号必须使用 X.Y.Z 格式（对应 major.minor.patch），且 X、Y、Z 为非负整数，数字前方禁止补零（如 01 是不被允许的），禁止留白。范例：1.3.2、3.0.0 等等 新版本号标记的内容发布后，禁止再使用该版本号发布任何内容，往后任何内容变更都必须新起一个版本号 开发初始阶段（非稳定版），主版本号设定为零 每当主版本号递增时，次版本号和修订号必须归零；每当次版本号递增时，修订号必须归零 先行版本号（非稳定版）标注在正式版本号之后，使用「-」连接，先行版本号由 ASCII 字母、数字 [0-9A-Za-z] 以及分隔符英文句点「.」组成，数字前方禁止补零，禁止留白。范例：1.0.0-alpha、1.0.0-beta.1、1.0.0-0.2.1、1.0.0-x.7.a.13 等等 版本编译信息标注在（正式或先行）版本号之后，使用「+」连接，版本编译信息标识符由 ASCII 字母、数字 [0-9A-Za-z] 以及分隔符英文句点「.」组成，禁止留白。范例：1.0.0+001、1.0.0-beta.1+sha.34f8h4 等等 版本优先级 排序时仅考虑主版本号、次版本号、修订号、先行版本号进行比较，版本编译信息不影响版本优先级 注意：避免使用难以明确优先级的先行版本号。先行版本一般可使用 alpha &amp;lt; beta &amp;lt; rc 标识。&#xA;其他提示 初始开发版本建议为 0.1.0 当软件要被用于生产环境时就可以发布 1.0.0 v2.3.1 不是一个语义化版本号，v 只是 version 的缩写，是版本号的标签 检查语义化版本号正确性的正则表达式： ^(?P&amp;lt;major&amp;gt;0|[1-9]\d*)\.(?P&amp;lt;minor&amp;gt;0|[1-9]\d*)\.(?P&amp;lt;patch&amp;gt;0|[1-9]\d*)(?:-(?P&amp;lt;prerelease&amp;gt;(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P&amp;lt;buildmetadata&amp;gt;[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$ Link: https://regex101.com/r/Ly7O1x/3/&#xA;参考 语义化版本控制规范 2.0.0 </description>
+    </item>
+  </channel>
+</rss>

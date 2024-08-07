@@ -2,25 +2,74 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Rokcso&#39;s Blog</title>
-    <link>https://rokcso.com/blog/</link>
+    <link>http://localhost:1313/blog/</link>
     <description>Recent content in Blog on Rokcso&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2024, Rokcso.</copyright>
-    <lastBuildDate>Mon, 27 May 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://rokcso.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 Cryptomator 加密云同步文件</title>
+      <link>http://localhost:1313/p/cryptomator/</link>
+      <pubDate>Fri, 14 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/p/cryptomator/</guid>
+      <description>Cryptomator 是一个开源的数据加密程序，主要用于将云同步的数据进行加密以保护数据安全，当然不进行云同步的数据也可以使用其进行加密。&#xA;云同步或者云数据存储服务提供的数据加密通常只是对本地到云端的传输过程进行加密，已经传输到云服务的数据本质上是可以被有权限的用户随意访问的。&#xA;Cryptomator 可以创建一个文件夹然后对该文件夹进行加密，该文件夹可以看作一个加密仓库，对于有保密需求的文件可以放入该文件夹后将该文件夹上传至云服务。&#xA;安装 Crytomator 以及 FUSE-T Crytomator 针对 macOS 系统提供了 Intel 芯片和 M 芯片版本的程序，而不同芯片版本的程序都还需要安装不同的文件系统框架。Crytomator 会基于文件系统框架来进行一系列自定义文件系统操作，以实现文件加密。&#xA;而对于 Intel 芯片，需要使用 macFUSE 框架，M 芯片则使用 FUSE-T 框架。&#xA;我的设备是 M 芯片，后文基于该条件演示。&#xA;推荐使用 Homebrew 安装 FUSE-T，安装命令：&#xA;brew install macos-fuse-t/homebrew-cask/fuse-t 安装好文件系统框架后下载、安装 Crytomator，打开 Crytomator 选择「添加」-「新保险库」。&#xA;随后根据提示输入保险库名称、存储位置（可以选择云同步服务的本地同步文件夹）、设置密码（生成恢复密钥）。&#xA;至此这个加密保险库就已经创建完成，然后可以使用刚刚设置的密码来打开密码库。此时可能会报错：&#xA;根据提示，我们需要在「保险库选项」-「挂载」中修改卷类型，如果是 M 芯片需要修改为 FUSE-T 类型（并且需要安装 FUSE-T 文件系统框架）。&#xA;然后重启 Crytomator 后重新尝试解锁保险库，即可解锁成功。&#xA;解锁成功后进入 Finder 即可看到挂载成功的保险库（效果类似于插入了一个 U 盘），所有放入该保险库的文件都会被加密。</description>
+    </item>
+    <item>
+      <title>我的 macOS 初始化配置方案 &amp; 软件分享</title>
+      <link>http://localhost:1313/p/macos-setup/</link>
+      <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/p/macos-setup/</guid>
+      <description>系统偏好设置 触控板 开启「轻点来点按」 系统偏好设置 → 触控板 → 光标与点按 → 轻点来点按 开启「使用触控板进行拖移」 系统偏好设置 → 辅助功能 → 指针控制 → 触控板选项 → 使用触控板进行拖移 关闭「轻扫切换页面」 系统偏好设置 → 触控板 → 更多手势 → 轻扫切换页面 软件安装 &amp;amp; 配置 ClashX Pro 安装包在阿里云盘&#xA;Homebrew Link: https://brew.sh/&#xA;搜索 Homebrew 支持的包：https://formulae.brew.sh/&#xA;Raycast Link: https://www.raycast.com/&#xA;Install:&#xA;brew install --cask raycast Raycast 扩展程序：&#xA;Brew Color Picker Feishu Document Creator QR Code Generator Random Data Generator 坚果云 Link: https://www.jianguoyun.com/&#xA;Install:&#xA;brew install --cask nutstore KeePassXC Link: https://keepassxc.</description>
+    </item>
+    <item>
+      <title>macOS 彻底阻止 FigmaAgent.app 被添加到登录项</title>
+      <link>http://localhost:1313/p/figmaagent-auto-login/</link>
+      <pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/p/figmaagent-auto-login/</guid>
+      <description>我的 macOS 版本：Sonoma 14.5&#xA;在使用 Figma macOS 客户端时，总有一个 FigmaAgent.app 被自动添加到登录项，即使在「系统设置 - 通用 - 登录项」中手动删除该项目，再次打开 Figma 依然会自动添加，这很烦人。😡&#xA;解决方案 打开「活动监视器」，找到 FigmaAgent，选中后点击「停止（退出）」后选择「强制退出」。 访问「系统设置 - 通用 - 登录项」，删除 FigmaAgent.app。 打开「访达」，进入 ~/Library/Application Support/Figma 文件夹，删除 FigmaAgent.app。 打开「访达」，进入 /Applications/Figma.app/Contents/Library 文件夹，删除 FigmaAgent.app。 完成！✅</description>
+    </item>
     <item>
       <title>dofollow &amp; nofollow</title>
-      <link>https://rokcso.com/p/dofollow-and-nofollow/</link>
+      <link>http://localhost:1313/p/dofollow-and-nofollow/</link>
       <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://rokcso.com/p/dofollow-and-nofollow/</guid>
+      <guid>http://localhost:1313/p/dofollow-and-nofollow/</guid>
       <description>什么是 dofollow 和 nofollow 链接？ dofollow 和 nofollow 是两个 HTML 属性，用于指示搜索引擎爬虫如何处理网页上面 link 的链接。&#xA;dofollow 意味着搜索引擎会跟随这个链接，并且当前页面会传递一定的权重给被链接的页面，即增加被链接页面在搜索引擎中的权重，增加权重的多少根据当前页面在搜索引擎中的权重不同而不同。&#xA;也就是说如果网站 A 使用 dofollow 链接了网站 B 的链接，网站 B 在搜索引擎中的权重会得到提升，提升的多少由网站 A 在搜索引擎中的权重决定，即网站 A 在搜索引擎中权重越大，网站 B 得到的权重提升也越大。&#xA;nofollow 是由 Google 引入的属性，目的是帮助网站管理员减少网站的垃圾链接，当页面中的一个链接被标记为 nofollow 时，搜索引擎爬虫将不会跟随这个链接去发现新的内容、建立新的索引，同时也也不会从当前页面传递任何权重到被链接页面。搜索引擎的爬虫甚至不会进一步爬取 nofollow 链接。&#xA;一般网站的广告链接、用户评论内容中的链接会使用 nofollow 属性来标记。&#xA;HTML 中 标签默认的属性是 dofollow，如果要标记为 nofollow 可以如下编写：&#xA;&amp;lt;a href=&amp;#34;https://rokcso.com&amp;#34; rel=&amp;#34;nofollow&amp;#34;&amp;gt;Rokcso&amp;#39;s Landing Page&amp;lt;/a&amp;gt; 如何正确应用 dofollow 和 nofollow 链接？ 上面提到的权重本质上就是 PageRank（也被称为 PR 值），是搜索引擎排名的重要指标之一。PR 值只能通过 dofollow 链接传递，不能通过 nofollow 链接传递。&#xA;并且 PR 值的分配是根据页面上搜索链接来平均分配的，不论这个链接是否允许 follow，比如当前页面的 PR 值为 10，页面中有 10 个链接（5 个 dofollow 和 5 个 nofollow），那么每个 dofollow 链接将分别获得 1 PR 值传递，而不是 2；该页面的 10 PR 值被平均分给了该页面中的所有 10 个链接，只是其中标记为 nofollow 的链接不会获得对应的 PR 值传递。</description>
     </item>
     <item>
+      <title>Mac 删除系统自带的 ABC 输入法</title>
+      <link>http://localhost:1313/p/macos-remove-abc/</link>
+      <pubDate>Tue, 21 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/p/macos-remove-abc/</guid>
+      <description>以下操作均在 macOS Sonoma 14.3 上进行，不确定其他 macOS 系统是否适用。 但看网上文章即使是其他 macOS 系统大多也都成功了。&#xA;原理：要删除 macOS 自带的 ABC 输入法，本质上就是要删除对应的配置。&#xA;macOS 的配置文件基本都是以 .plist 为后缀的文件，而输入法相关的配置都存储在 com.apple.HIToolbox.plist 这个系统配置文件中，该配置文件主要负责存储与用户界面相关的配置，比如：输入设备、键盘布局、鼠标设置、触控板手势等等。&#xA;💡 提示：打开/修改 .plist 文件需要使用 Xcode 或者 PlistEdit Pro 软件。&#xA;⚠️ 注意：通常不建议普通用户随意修改系统 .plist 文件，这可能会影响系统的稳定性和安全性。&#xA;关闭/开启 SIP 在修改系统配置文件之前，需要先关闭系统完整性保护（SIP），SIP 的主要目的是保护系统文件和目录，防止它们被未经授权的修改，这种保护措施甚至对 Root 用户也有效。&#xA;⚠️ 注意：SIP 默认开启，如需关闭 SIP 以修改一些系统配置文件，也非常建议完成修改之后重启 SIP。&#xA;如何确定是否已经关闭/开启 SIP？&#xA;打开终端，输入 csrutil status 命令，回车执行该命令，终端将显示一条消息来提示 SIP 状态，比如：System Integrity Protection status: enabled 。&#xA;关闭/开启 SIP 的详细步骤：&#xA;重启 Mac，重启过程中持续按住 Command + R ，进入恢复模式 进入恢复模式后，打开终端（路径：顶部菜单栏 - 实用工具 - 终端） 输入 csrutil disable 命令，回车执行该命令 完成步骤 3 后，如果一切正常，终端将显示一条消息来提示 SIP 已经禁用，并提示重启 Mac，根据提示操作即可。</description>
+    </item>
+    <item>
+      <title>NuPhy Air75 V2 使用指南</title>
+      <link>http://localhost:1313/p/nuphy-air75-v2-use-guide/</link>
+      <pubDate>Sun, 19 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/p/nuphy-air75-v2-use-guide/</guid>
+      <description>使用手册 在线版本：NuPhy Air75 V2 Quick Guide&#xA;PDF 文件：&#xA;NuPhy_Air75_V2_Quick_Guide.pdf&#xA;常见问题 😅 设备连接/切换 关于无限连接切换设备、蓝牙匹配、2.4G 连接等操作，使用 FN 键加**::数字键::** 1~4，而不是 FN 键加 F1～F4。&#xA;键盘自动休眠模式 开启键盘自动休眠模式后，若键盘连续 6 分钟没有任何操作，将进入休眠模式（键盘背光关闭）。&#xA;注：自动休眠时间默认 6 分钟，暂时不清楚如何自定义这个自动休眠时间。&#xA;使用快捷键 FN + ] 开关键盘自动休眠模式，按下 FN + ] 后，如果键盘右上角 RGB 灯条闪烁 3 次红灯，意味着关闭自动休眠模式，如果闪烁 3 次绿灯，意味着开启自动休眠模式。&#xA;更新固件 准备 安装 QMK Toolbox 前往 GitHub QMK Toolbox 仓库 下载对应操作系统的软件。&#xA;macOS 可以使用 Homebrew 进行安装：&#xA;brew install qmk-toolbox ⚠️ 注意：QMK Toolbox 似乎还没有专门为 M 芯片（ARM 架构）的 Mac 提供适配。&#xA;我的 M1 Mac 使用 Homebrew 安装的 QMK Toolbox 在后续 Flash 固件时会提示 The operation couldn’t be completed.</description>
+    </item>
+    <item>
+      <title>利用 URL Scheme 快速打开 Craft Daily Note</title>
+      <link>http://localhost:1313/p/craft-url-scheme/</link>
+      <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/p/craft-url-scheme/</guid>
+      <description>在 Craft Help Center 可以查看 Craft 支持的所有 URL Scheme 方案。本文只分享其中「Access to Daily Notes」相关的内容。&#xA;Access to Daily Notes&#xA;Yesterday - craftdocs://openByQuery?query=yesterday&amp;amp;spaceId= Today - craftdocs://openByQuery?query=today&amp;amp;spaceId= Tomorrow - craftdocs://openByQuery?query=tomorrow&amp;amp;spaceId= 以上是 Craft 提供的支持快速打开 Craft Daily Note 的 URL Scheme，3 个 URL Scheme 的区别仅仅在于打开的 Daily Note 是昨天、今天还是明天。&#xA;配置 URL Scheme 参数 所有 URL Scheme 都需要提供一个 spaceId 参数，这个参数可以在 Craft 中任意一篇文档的 Deeplink 中获得。关于 Craft Deeplink 的介绍可以在 Craft Help Center 查看。&#xA;获取 Deeplink 路径/方法：&#xA;打卡任意一篇文档 点击「Share」 点击「Export as」 点击「Advanced」 点击「Copy Deeplink」 将复制到的 Deeplink 粘贴到某个文本编辑器，可以看到如下内容，其中 spaceId= 后面的内容就是我们需要的 spaceId 参数。</description>
+    </item>
+    <item>
+      <title>使用 JavaScript 配置 Umami Track Event</title>
+      <link>http://localhost:1313/p/umami-track-event/</link>
+      <pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/p/umami-track-event/</guid>
+      <description>当前（2023-08-09）我的 umami 部署版本为 Version 1.40.0，官方已经发布版本为 Version 2.4.1。&#xA;Umami Version 1.40 及以上版本支持 Tarck Event，即事件跟踪，简单的说就是可以跟踪用户在网页上面的事件操作，比如点击按钮。&#xA;在 官方文档 中提供了两种简单配置方案，根据当前（2023-08-09）文档显示可以通过给按钮添加数据属性或者使用 JavaScript 监听按钮的点击事件然后执行 umami.track() 方法上报事件数据。&#xA;调试方法：&#xA;按照官方文档提供的方案进行配置后，访问网页，打开 Chrome 开发者工具中的 Network，然后点击已经配置了 Track Event 的按钮，关注是否有新的名为 collect 的请求被发起，如果有，则关注 Request Payload 中传入的参数是否符合预期。&#xA;问题：&#xA;两种方案在我实践之后均无法成功上报数据，使用 JavaScript 方案时 Chrome 开发者工具 Console 中报错 umami.track is not a function，可能是由于我部署的 umami 版本不支持上述方案，&#xA;解决方案：&#xA;在不升级我部署的 umami 版本的基础上，我最终发现可以通过 JavaScript 监听按钮的点击事件然后执行 umami() 方法上报事件数据。&#xA;比如：&#xA;document.getElementById(&amp;#34;btn-copy&amp;#34;).onclick = () =&amp;gt; umami(&amp;#34;clickCopyBtn&amp;#34;); 除了使用 JavaScript 方案外，umami Version 1.40.0 应该还支持通过给按钮添加 Class 来配置 Track Event，类的命名格式要求为：</description>
+    </item>
+    <item>
       <title>语义化版本控制规范 2.0.0</title>
-      <link>https://rokcso.com/p/semantic-version/</link>
+      <link>http://localhost:1313/p/semantic-version/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://rokcso.com/p/semantic-version/</guid>
+      <guid>http://localhost:1313/p/semantic-version/</guid>
       <description>版本号格式：主版本号.次版本号.修订号&#xA;版本号递增规则：&#xA;主版本号：当有不向下兼容的功能发布时 次版本号：当有可向下兼容的功能发布时 修订号：当有可向下兼通的问题修正发布时 注意：构建号与版本号不同，不受此规范约束。&#xA;规范重点摘要 标准的版本号必须使用 X.Y.Z 格式（对应 major.minor.patch），且 X、Y、Z 为非负整数，数字前方禁止补零（如 01 是不被允许的），禁止留白。范例：1.3.2、3.0.0 等等 新版本号标记的内容发布后，禁止再使用该版本号发布任何内容，往后任何内容变更都必须新起一个版本号 开发初始阶段（非稳定版），主版本号设定为零 每当主版本号递增时，次版本号和修订号必须归零；每当次版本号递增时，修订号必须归零 先行版本号（非稳定版）标注在正式版本号之后，使用「-」连接，先行版本号由 ASCII 字母、数字 [0-9A-Za-z] 以及分隔符英文句点「.」组成，数字前方禁止补零，禁止留白。范例：1.0.0-alpha、1.0.0-beta.1、1.0.0-0.2.1、1.0.0-x.7.a.13 等等 版本编译信息标注在（正式或先行）版本号之后，使用「+」连接，版本编译信息标识符由 ASCII 字母、数字 [0-9A-Za-z] 以及分隔符英文句点「.」组成，禁止留白。范例：1.0.0+001、1.0.0-beta.1+sha.34f8h4 等等 版本优先级 排序时仅考虑主版本号、次版本号、修订号、先行版本号进行比较，版本编译信息不影响版本优先级 注意：避免使用难以明确优先级的先行版本号。先行版本一般可使用 alpha &amp;lt; beta &amp;lt; rc 标识。&#xA;其他提示 初始开发版本建议为 0.1.0 当软件要被用于生产环境时就可以发布 1.0.0 v2.3.1 不是一个语义化版本号，v 只是 version 的缩写，是版本号的标签 检查语义化版本号正确性的正则表达式： ^(?P&amp;lt;major&amp;gt;0|[1-9]\d*)\.(?P&amp;lt;minor&amp;gt;0|[1-9]\d*)\.(?P&amp;lt;patch&amp;gt;0|[1-9]\d*)(?:-(?P&amp;lt;prerelease&amp;gt;(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P&amp;lt;buildmetadata&amp;gt;[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$ Link: https://regex101.com/r/Ly7O1x/3/&#xA;参考 语义化版本控制规范 2.0.0 </description>
     </item>
   </channel>

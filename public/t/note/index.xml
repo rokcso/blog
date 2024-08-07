@@ -2,18 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Note on Rokcso&#39;s Blog</title>
-    <link>https://rokcso.com/t/note/</link>
+    <link>http://localhost:1313/t/note/</link>
     <description>Recent content in Note on Rokcso&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2024, Rokcso.</copyright>
-    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://rokcso.com/t/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/t/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用 JavaScript 配置 Umami Track Event</title>
+      <link>http://localhost:1313/p/umami-track-event/</link>
+      <pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/p/umami-track-event/</guid>
+      <description>当前（2023-08-09）我的 umami 部署版本为 Version 1.40.0，官方已经发布版本为 Version 2.4.1。&#xA;Umami Version 1.40 及以上版本支持 Tarck Event，即事件跟踪，简单的说就是可以跟踪用户在网页上面的事件操作，比如点击按钮。&#xA;在 官方文档 中提供了两种简单配置方案，根据当前（2023-08-09）文档显示可以通过给按钮添加数据属性或者使用 JavaScript 监听按钮的点击事件然后执行 umami.track() 方法上报事件数据。&#xA;调试方法：&#xA;按照官方文档提供的方案进行配置后，访问网页，打开 Chrome 开发者工具中的 Network，然后点击已经配置了 Track Event 的按钮，关注是否有新的名为 collect 的请求被发起，如果有，则关注 Request Payload 中传入的参数是否符合预期。&#xA;问题：&#xA;两种方案在我实践之后均无法成功上报数据，使用 JavaScript 方案时 Chrome 开发者工具 Console 中报错 umami.track is not a function，可能是由于我部署的 umami 版本不支持上述方案，&#xA;解决方案：&#xA;在不升级我部署的 umami 版本的基础上，我最终发现可以通过 JavaScript 监听按钮的点击事件然后执行 umami() 方法上报事件数据。&#xA;比如：&#xA;document.getElementById(&amp;#34;btn-copy&amp;#34;).onclick = () =&amp;gt; umami(&amp;#34;clickCopyBtn&amp;#34;); 除了使用 JavaScript 方案外，umami Version 1.40.0 应该还支持通过给按钮添加 Class 来配置 Track Event，类的命名格式要求为：</description>
+    </item>
     <item>
       <title>语义化版本控制规范 2.0.0</title>
-      <link>https://rokcso.com/p/semantic-version/</link>
+      <link>http://localhost:1313/p/semantic-version/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://rokcso.com/p/semantic-version/</guid>
+      <guid>http://localhost:1313/p/semantic-version/</guid>
       <description>版本号格式：主版本号.次版本号.修订号&#xA;版本号递增规则：&#xA;主版本号：当有不向下兼容的功能发布时 次版本号：当有可向下兼容的功能发布时 修订号：当有可向下兼通的问题修正发布时 注意：构建号与版本号不同，不受此规范约束。&#xA;规范重点摘要 标准的版本号必须使用 X.Y.Z 格式（对应 major.minor.patch），且 X、Y、Z 为非负整数，数字前方禁止补零（如 01 是不被允许的），禁止留白。范例：1.3.2、3.0.0 等等 新版本号标记的内容发布后，禁止再使用该版本号发布任何内容，往后任何内容变更都必须新起一个版本号 开发初始阶段（非稳定版），主版本号设定为零 每当主版本号递增时，次版本号和修订号必须归零；每当次版本号递增时，修订号必须归零 先行版本号（非稳定版）标注在正式版本号之后，使用「-」连接，先行版本号由 ASCII 字母、数字 [0-9A-Za-z] 以及分隔符英文句点「.」组成，数字前方禁止补零，禁止留白。范例：1.0.0-alpha、1.0.0-beta.1、1.0.0-0.2.1、1.0.0-x.7.a.13 等等 版本编译信息标注在（正式或先行）版本号之后，使用「+」连接，版本编译信息标识符由 ASCII 字母、数字 [0-9A-Za-z] 以及分隔符英文句点「.」组成，禁止留白。范例：1.0.0+001、1.0.0-beta.1+sha.34f8h4 等等 版本优先级 排序时仅考虑主版本号、次版本号、修订号、先行版本号进行比较，版本编译信息不影响版本优先级 注意：避免使用难以明确优先级的先行版本号。先行版本一般可使用 alpha &amp;lt; beta &amp;lt; rc 标识。&#xA;其他提示 初始开发版本建议为 0.1.0 当软件要被用于生产环境时就可以发布 1.0.0 v2.3.1 不是一个语义化版本号，v 只是 version 的缩写，是版本号的标签 检查语义化版本号正确性的正则表达式： ^(?P&amp;lt;major&amp;gt;0|[1-9]\d*)\.(?P&amp;lt;minor&amp;gt;0|[1-9]\d*)\.(?P&amp;lt;patch&amp;gt;0|[1-9]\d*)(?:-(?P&amp;lt;prerelease&amp;gt;(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P&amp;lt;buildmetadata&amp;gt;[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$ Link: https://regex101.com/r/Ly7O1x/3/&#xA;参考 语义化版本控制规范 2.0.0 </description>
     </item>
   </channel>

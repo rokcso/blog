@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>使用 JavaScript 配置 Umami Track Event | Rokcso&#39;s Blog</title>
+<meta name="title" content="使用 JavaScript 配置 Umami Track Event" />
+<meta name="description" content="使用纯 JavaScript 方式实现 Umami Track Event 上报事件数据。" />
+<meta name="keywords" content="note," />
+
+
+<meta property="og:url" content="http://localhost:1313/p/umami-track-event/">
+  <meta property="og:site_name" content="Rokcso&#39;s Blog">
+  <meta property="og:title" content="使用 JavaScript 配置 Umami Track Event">
+  <meta property="og:description" content="使用纯 JavaScript 方式实现 Umami Track Event 上报事件数据。">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2023-08-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-08-09T00:00:00+00:00">
+    <meta property="article:tag" content="Note">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="使用 JavaScript 配置 Umami Track Event">
+  <meta name="twitter:description" content="使用纯 JavaScript 方式实现 Umami Track Event 上报事件数据。">
+
+
+
+
+  <meta itemprop="name" content="使用 JavaScript 配置 Umami Track Event">
+  <meta itemprop="description" content="使用纯 JavaScript 方式实现 Umami Track Event 上报事件数据。">
+  <meta itemprop="datePublished" content="2023-08-09T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2023-08-09T00:00:00+00:00">
+  <meta itemprop="wordCount" content="79">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Note">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  i {
+    font-style: normal;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  footer span {
+    font-size: small;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+  ul li p {
+    margin: 0;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h1>Rokcso&#39;s Blog</h1>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/now/">Now</a>
+
+<a href="/projects/">Projtects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>使用 JavaScript 配置 Umami Track Event</h1>
+<p>
+  <i>
+    <time datetime='2023-08-09' pubdate>
+      09 Aug, 2023
+    </time>
+  </i>
+</p>
+
+<content>
+  <p>当前（2023-08-09）我的 umami 部署版本为 Version 1.40.0，官方已经发布版本为 Version 2.4.1。</p>
+<p>Umami Version 1.40 及以上版本支持 Tarck Event，即事件跟踪，简单的说就是可以跟踪用户在网页上面的事件操作，比如点击按钮。</p>
+<p>在 <a href="https://umami.is/docs/track-events">官方文档</a> 中提供了两种简单配置方案，根据当前（2023-08-09）文档显示可以通过给按钮添加数据属性或者使用 JavaScript 监听按钮的点击事件然后执行 <code>umami.track()</code> 方法上报事件数据。</p>
+<p><strong>调试方法：</strong></p>
+<p>按照官方文档提供的方案进行配置后，访问网页，打开 Chrome 开发者工具中的 Network，然后点击已经配置了 Track Event 的按钮，关注是否有新的名为 <code>collect</code> 的请求被发起，如果有，则关注 Request Payload 中传入的参数是否符合预期。<img src="./img01.png" alt="img01"></p>
+<p><strong>问题：</strong></p>
+<p>两种方案在我实践之后均无法成功上报数据，使用 JavaScript 方案时 Chrome 开发者工具 Console 中报错 <code>umami.track is not a function</code>，可能是由于我部署的 umami 版本不支持上述方案，</p>
+<p><strong>解决方案：</strong></p>
+<p>在不升级我部署的 umami 版本的基础上，我最终发现可以通过 JavaScript 监听按钮的点击事件然后执行 <code>umami()</code> 方法上报事件数据。</p>
+<p>比如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;btn-copy&#34;</span>).<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> () =&gt; <span style="color:#a6e22e">umami</span>(<span style="color:#e6db74">&#34;clickCopyBtn&#34;</span>);
+</span></span></code></pre></div><p>除了使用 JavaScript 方案外，umami Version 1.40.0 应该还支持通过给按钮添加 Class 来配置 Track Event，类的命名格式要求为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>umami--&lt;<span style="color:#f92672">event</span>&gt;--&lt;<span style="color:#f92672">event-name</span>&gt;
+</span></span></code></pre></div><p>比如：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn-copy&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;umami--click--clickCopyBtn&#34;</span>&gt;Copy&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span></code></pre></div><p>注：该方法（添加 Class）未经校验。</p>
+
+</content>
+<p>
+  
+  <a href="http://localhost:1313/t/note/">#Note</a>
+  
+</p>
+
+  </main>
+  <footer><span
+  >Subscribe via <a href="/index.xml">RSS</a> or just
+  <a href="mailto:rokcsox@gmail.com">say hello</a>.</span
+>
+<br /><br />
+Made with
+<a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

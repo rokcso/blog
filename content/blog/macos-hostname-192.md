@@ -1,7 +1,7 @@
 +++
 title = "修复 macOS 终端主机名显示 192"
 description = "修复 macOS 终端中主机名始终显示 192 的异常。"
-slug = "macos-terminal-hostname-192"
+slug = "macos-hostname-192"
 tags = [
     "macos",
     "skill"

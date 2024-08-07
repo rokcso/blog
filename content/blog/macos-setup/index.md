@@ -4,7 +4,10 @@ date: "2024-06-07"
 draft: false
 slug: "macos-setup"
 summary: ""
-tags: ["skill"]
+tags: [
+   "skill",
+   "macOS"
+]
 description: ""
 toc: true
 readTime: true

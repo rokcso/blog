@@ -2,7 +2,10 @@
 title = "macOS 彻底阻止 FigmaAgent.app 被添加到登录项"
 description = "如何让 macOS 下的 FigmaAgent.app 不再频繁自动添加到登录项中。"
 slug = "figmaagent-auto-login"
-tags = ["skill"]
+tags = [
+    "skill",
+    "macOS"
+]
 date = "2024-06-03"
 draft = false
 +++

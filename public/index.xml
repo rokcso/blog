@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2024, Rokcso.</copyright>
-    <lastBuildDate>Fri, 14 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Aug 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>修复 macOS 终端主机名显示 192</title>
+      <link>http://localhost:1313/p/macos-terminal-hostname-192/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/p/macos-terminal-hostname-192/</guid>
+      <description>通常 macOS 终端（Terminal）App 中显示的主机名（HostName）应该是当前设备设定的用户名。&#xA;但是有时打开终端时会发现主机名变成了 192，这主要是由于当前使用的 DNS 服务因为某些原因变成了默认的 192.168.1.1 或 192.168.0.1，我通常在启动了代理服务之后会出现。&#xA;解决方案一&#xA;设备：Mac mini M2&#xA;macOS: Sonama 14.6&#xA;这种情况首先可以尝试修改 DNS 设置，打开「系统偏好设置 -&amp;gt; 网络（或 Wi-Fi） -&amp;gt; 详细信息 -&amp;gt; DNS」。&#xA;如果这里的 DNS 服务器为上面提到的默认 IP 地址，那么直接删除，然后添加新的 DNS 服务器 IP 地址：8.8.8.8 即可。&#xA;⚠️ 注意：修改 DNS 配置后记得「应用」。&#xA;解决方案二&#xA;首先确认本机是否存在已配置的 HostName，打开终端执行以下命令：&#xA;scutil --get HostName 如果本机没有配置 HostName，那么执行该命令不会获得任何输出，如果存在 HostName 则会直接返回 HostName 字符串。&#xA;当本机没有配置 HostName 是，终端的主机名会使用来自 DNS 或者 DHCP 服务器，所以我们也可以通过主动配置一个 HostName 解决这个问题，在终端执行以下命令：&#xA;sudo scutil --set HostName &amp;#34;yourHostName&amp;#34; ⚠️ 注意：使用你想要设置的 HostName 替换上面命令中的 yourHostName 。</description>
+    </item>
     <item>
       <title>使用 Cryptomator 加密云同步文件</title>
       <link>http://localhost:1313/p/cryptomator/</link>
@@ -38,7 +45,7 @@
       <description>什么是 dofollow 和 nofollow 链接？ dofollow 和 nofollow 是两个 HTML 属性，用于指示搜索引擎爬虫如何处理网页上面 link 的链接。&#xA;dofollow 意味着搜索引擎会跟随这个链接，并且当前页面会传递一定的权重给被链接的页面，即增加被链接页面在搜索引擎中的权重，增加权重的多少根据当前页面在搜索引擎中的权重不同而不同。&#xA;也就是说如果网站 A 使用 dofollow 链接了网站 B 的链接，网站 B 在搜索引擎中的权重会得到提升，提升的多少由网站 A 在搜索引擎中的权重决定，即网站 A 在搜索引擎中权重越大，网站 B 得到的权重提升也越大。&#xA;nofollow 是由 Google 引入的属性，目的是帮助网站管理员减少网站的垃圾链接，当页面中的一个链接被标记为 nofollow 时，搜索引擎爬虫将不会跟随这个链接去发现新的内容、建立新的索引，同时也也不会从当前页面传递任何权重到被链接页面。搜索引擎的爬虫甚至不会进一步爬取 nofollow 链接。&#xA;一般网站的广告链接、用户评论内容中的链接会使用 nofollow 属性来标记。&#xA;HTML 中 标签默认的属性是 dofollow，如果要标记为 nofollow 可以如下编写：&#xA;&amp;lt;a href=&amp;#34;https://rokcso.com&amp;#34; rel=&amp;#34;nofollow&amp;#34;&amp;gt;Rokcso&amp;#39;s Landing Page&amp;lt;/a&amp;gt; 如何正确应用 dofollow 和 nofollow 链接？ 上面提到的权重本质上就是 PageRank（也被称为 PR 值），是搜索引擎排名的重要指标之一。PR 值只能通过 dofollow 链接传递，不能通过 nofollow 链接传递。&#xA;并且 PR 值的分配是根据页面上搜索链接来平均分配的，不论这个链接是否允许 follow，比如当前页面的 PR 值为 10，页面中有 10 个链接（5 个 dofollow 和 5 个 nofollow），那么每个 dofollow 链接将分别获得 1 PR 值传递，而不是 2；该页面的 10 PR 值被平均分给了该页面中的所有 10 个链接，只是其中标记为 nofollow 的链接不会获得对应的 PR 值传递。</description>
     </item>
     <item>
-      <title>Mac 删除系统自带的 ABC 输入法</title>
+      <title>macOS 删除系统自带的 ABC 输入法</title>
       <link>http://localhost:1313/p/macos-remove-abc/</link>
       <pubDate>Tue, 21 May 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/p/macos-remove-abc/</guid>

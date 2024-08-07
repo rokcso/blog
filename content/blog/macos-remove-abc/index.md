@@ -1,10 +1,13 @@
 ---
-title: "Mac 删除系统自带的 ABC 输入法"
+title: "macOS 删除系统自带的 ABC 输入法"
 date: "2024-05-21"
 draft: false
 slug: "macos-remove-abc"
 summary: ""
-tags: ["skill"]
+tags: [
+    "skill",
+    "macOS"
+]
 description: ""
 toc: true
 readTime: true

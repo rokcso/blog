@@ -20,3 +20,7 @@ I write [some texts](/blog), about life, technology, and curiosity, among other 
 - [X/Twitter](https://x.com/rokcso/)
 - [GitHub](https://github.com/rokcso/)
 - [Jike](https://okjk.co/RqK5zW)
+
+### Pin
+
+- [我的 macOS 初始化配置方案 & 软件分享](/p/macos-setup)

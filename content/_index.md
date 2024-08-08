@@ -15,12 +15,12 @@ I am a product manager, know a bit of programming, love creating, have some proj
 
 I write [some texts](/blog), about life, technology, and curiosity, among other things.
 
-### Some links
+## Some links
 
 - [X/Twitter](https://x.com/rokcso/)
 - [GitHub](https://github.com/rokcso/)
 - [Jike](https://okjk.co/RqK5zW)
 
-### Pin
+## Pin
 
 - [我的 macOS 初始化配置方案 & 软件分享](/p/macos-setup)

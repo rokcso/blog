@@ -8,34 +8,14 @@
 <link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
 <title>NuPhy Air75 V2 使用指南 | Rokcso&#39;s Blog</title>
 <meta name="title" content="NuPhy Air75 V2 使用指南" />
-<meta name="description" content="使用手册 在线版本：NuPhy Air75 V2 Quick Guide
-PDF 文件：
-NuPhy_Air75_V2_Quick_Guide.pdf
-常见问题 😅 设备连接/切换 关于无限连接切换设备、蓝牙匹配、2.4G 连接等操作，使用 FN 键加**::数字键::** 1~4，而不是 FN 键加 F1～F4。
-键盘自动休眠模式 开启键盘自动休眠模式后，若键盘连续 6 分钟没有任何操作，将进入休眠模式（键盘背光关闭）。
-注：自动休眠时间默认 6 分钟，暂时不清楚如何自定义这个自动休眠时间。
-使用快捷键 FN &#43; ] 开关键盘自动休眠模式，按下 FN &#43; ] 后，如果键盘右上角 RGB 灯条闪烁 3 次红灯，意味着关闭自动休眠模式，如果闪烁 3 次绿灯，意味着开启自动休眠模式。
-更新固件 准备 安装 QMK Toolbox 前往 GitHub QMK Toolbox 仓库 下载对应操作系统的软件。
-macOS 可以使用 Homebrew 进行安装：
-brew install qmk-toolbox ⚠️ 注意：QMK Toolbox 似乎还没有专门为 M 芯片（ARM 架构）的 Mac 提供适配。
-我的 M1 Mac 使用 Homebrew 安装的 QMK Toolbox 在后续 Flash 固件时会提示 The operation couldn’t be completed." />
+<meta name="description" content="使用 NuPhy Air75 V2 的一些常用技巧、提示。" />
 <meta name="keywords" content="skill," />
 
 
 <meta property="og:url" content="http://localhost:1313/p/nuphy-air75-v2-use-guide/">
   <meta property="og:site_name" content="Rokcso&#39;s Blog">
   <meta property="og:title" content="NuPhy Air75 V2 使用指南">
-  <meta property="og:description" content="使用手册 在线版本：NuPhy Air75 V2 Quick Guide
-PDF 文件：
-NuPhy_Air75_V2_Quick_Guide.pdf
-常见问题 😅 设备连接/切换 关于无限连接切换设备、蓝牙匹配、2.4G 连接等操作，使用 FN 键加**::数字键::** 1~4，而不是 FN 键加 F1～F4。
-键盘自动休眠模式 开启键盘自动休眠模式后，若键盘连续 6 分钟没有任何操作，将进入休眠模式（键盘背光关闭）。
-注：自动休眠时间默认 6 分钟，暂时不清楚如何自定义这个自动休眠时间。
-使用快捷键 FN &#43; ] 开关键盘自动休眠模式，按下 FN &#43; ] 后，如果键盘右上角 RGB 灯条闪烁 3 次红灯，意味着关闭自动休眠模式，如果闪烁 3 次绿灯，意味着开启自动休眠模式。
-更新固件 准备 安装 QMK Toolbox 前往 GitHub QMK Toolbox 仓库 下载对应操作系统的软件。
-macOS 可以使用 Homebrew 进行安装：
-brew install qmk-toolbox ⚠️ 注意：QMK Toolbox 似乎还没有专门为 M 芯片（ARM 架构）的 Mac 提供适配。
-我的 M1 Mac 使用 Homebrew 安装的 QMK Toolbox 在后续 Flash 固件时会提示 The operation couldn’t be completed.">
+  <meta property="og:description" content="使用 NuPhy Air75 V2 的一些常用技巧、提示。">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
@@ -50,33 +30,13 @@ brew install qmk-toolbox ⚠️ 注意：QMK Toolbox 似乎还没有专门为 M 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/images/share.png">
   <meta name="twitter:title" content="NuPhy Air75 V2 使用指南">
-  <meta name="twitter:description" content="使用手册 在线版本：NuPhy Air75 V2 Quick Guide
-PDF 文件：
-NuPhy_Air75_V2_Quick_Guide.pdf
-常见问题 😅 设备连接/切换 关于无限连接切换设备、蓝牙匹配、2.4G 连接等操作，使用 FN 键加**::数字键::** 1~4，而不是 FN 键加 F1～F4。
-键盘自动休眠模式 开启键盘自动休眠模式后，若键盘连续 6 分钟没有任何操作，将进入休眠模式（键盘背光关闭）。
-注：自动休眠时间默认 6 分钟，暂时不清楚如何自定义这个自动休眠时间。
-使用快捷键 FN &#43; ] 开关键盘自动休眠模式，按下 FN &#43; ] 后，如果键盘右上角 RGB 灯条闪烁 3 次红灯，意味着关闭自动休眠模式，如果闪烁 3 次绿灯，意味着开启自动休眠模式。
-更新固件 准备 安装 QMK Toolbox 前往 GitHub QMK Toolbox 仓库 下载对应操作系统的软件。
-macOS 可以使用 Homebrew 进行安装：
-brew install qmk-toolbox ⚠️ 注意：QMK Toolbox 似乎还没有专门为 M 芯片（ARM 架构）的 Mac 提供适配。
-我的 M1 Mac 使用 Homebrew 安装的 QMK Toolbox 在后续 Flash 固件时会提示 The operation couldn’t be completed.">
+  <meta name="twitter:description" content="使用 NuPhy Air75 V2 的一些常用技巧、提示。">
 
 
 
 
   <meta itemprop="name" content="NuPhy Air75 V2 使用指南">
-  <meta itemprop="description" content="使用手册 在线版本：NuPhy Air75 V2 Quick Guide
-PDF 文件：
-NuPhy_Air75_V2_Quick_Guide.pdf
-常见问题 😅 设备连接/切换 关于无限连接切换设备、蓝牙匹配、2.4G 连接等操作，使用 FN 键加**::数字键::** 1~4，而不是 FN 键加 F1～F4。
-键盘自动休眠模式 开启键盘自动休眠模式后，若键盘连续 6 分钟没有任何操作，将进入休眠模式（键盘背光关闭）。
-注：自动休眠时间默认 6 分钟，暂时不清楚如何自定义这个自动休眠时间。
-使用快捷键 FN &#43; ] 开关键盘自动休眠模式，按下 FN &#43; ] 后，如果键盘右上角 RGB 灯条闪烁 3 次红灯，意味着关闭自动休眠模式，如果闪烁 3 次绿灯，意味着开启自动休眠模式。
-更新固件 准备 安装 QMK Toolbox 前往 GitHub QMK Toolbox 仓库 下载对应操作系统的软件。
-macOS 可以使用 Homebrew 进行安装：
-brew install qmk-toolbox ⚠️ 注意：QMK Toolbox 似乎还没有专门为 M 芯片（ARM 架构）的 Mac 提供适配。
-我的 M1 Mac 使用 Homebrew 安装的 QMK Toolbox 在后续 Flash 固件时会提示 The operation couldn’t be completed.">
+  <meta itemprop="description" content="使用 NuPhy Air75 V2 的一些常用技巧、提示。">
   <meta itemprop="datePublished" content="2024-05-19T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-05-19T00:00:00+00:00">
   <meta itemprop="wordCount" content="173">
@@ -155,6 +115,9 @@ brew install qmk-toolbox ⚠️ 注意：QMK Toolbox 似乎还没有专门为 M 
 
   img {
     max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   code {
@@ -360,7 +323,7 @@ brew install qmk-toolbox ⚠️ 注意：QMK Toolbox 似乎还没有专门为 M 
 <p>当 QMK Toolbox 显示如图中最后一行黄色文本（Flash complete）即意味着固件更新完成。</p>
 <p><img src="image-4.png" alt="alt text"></p>
 <p><img src="image-5.png" alt="alt text"></p>
-<h1 id="使用-via-配置键盘">使用 VIA 配置键盘</h1>
+<h2 id="使用-via-配置键盘">使用 VIA 配置键盘</h2>
 <blockquote>
 <p>Link: <a href="https://nuphy.com/pages/via-usage-guide-for-nuphy-keyboards">https://nuphy.com/pages/via-usage-guide-for-nuphy-keyboards</a></p>
 </blockquote>

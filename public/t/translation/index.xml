@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Translation on Rokcso&#39;s Blog</title>
+    <link>http://localhost:1313/t/translation/</link>
+    <description>Recent content in Translation on Rokcso&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2024, Rokcso.</copyright>
+    <lastBuildDate>Thu, 08 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/t/translation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【译】Duolingo 是如何重新点燃用户增长的</title>
+      <link>http://localhost:1313/p/duolingo-user-growth/</link>
+      <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/p/duolingo-user-growth/</guid>
+      <description>本文由 AI 翻译，人工修正。&#xA;原文链接：https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth&#xA;I was at a small event a few months back where Jorge Mazal (former CPO of Duolingo) shared the story behind Duolingo’s growth reaccelerating. I was captivated. I’ve never seen a growth story like this before—4.5x growth for a mature product, driven by a small handful of product changes, rooted in an innovative growth model, and explained in such actionable detail. I asked Jorge if he’d be willing to share (and expand on) the story with a broader audience, and I’m so happy he agreed.</description>
+    </item>
+  </channel>
+</rss>

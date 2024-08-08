@@ -124,6 +124,7 @@
   code {
     padding: 2px 5px;
     background-color: #f2f2f2;
+    border-radius: 4px;
   }
 
   i {
@@ -138,10 +139,11 @@
     font-size: 14px;
     overflow-x: auto;
   }
-
+  
   div.highlight pre {
     background-color: initial;
     color: initial;
+    border-radius: 4px;
   }
 
   div.highlight code {
@@ -286,10 +288,10 @@
 <p>⚠️ 注意：修改 DNS 配置后记得「应用」。</p>
 <p><strong>解决方案二</strong></p>
 <p>首先确认本机是否存在已配置的 HostName，打开终端执行以下命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scutil --get HostName 
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scutil --get HostName 
 </span></span></code></pre></div><p>如果本机没有配置 HostName，那么执行该命令不会获得任何输出，如果存在 HostName 则会直接返回 HostName 字符串。</p>
 <p>当本机没有配置 HostName 是，终端的主机名会使用来自 DNS 或者 DHCP 服务器，所以我们也可以通过主动配置一个 HostName 解决这个问题，在终端执行以下命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo scutil --set HostName <span style="color:#e6db74">&#34;yourHostName&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo scutil --set HostName <span style="color:#40a02b">&#34;yourHostName&#34;</span>
 </span></span></code></pre></div><p>⚠️ 注意：使用你想要设置的 HostName 替换上面命令中的 <code>yourHostName</code> 。</p>
 
 </content>

@@ -124,6 +124,7 @@
   code {
     padding: 2px 5px;
     background-color: #f2f2f2;
+    border-radius: 4px;
   }
 
   i {
@@ -138,10 +139,11 @@
     font-size: 14px;
     overflow-x: auto;
   }
-
+  
   div.highlight pre {
     background-color: initial;
     color: initial;
+    border-radius: 4px;
   }
 
   div.highlight code {
@@ -281,7 +283,7 @@
 <p>nofollow 是由 Google 引入的属性，目的是帮助网站管理员减少网站的垃圾链接，当页面中的一个链接被标记为 nofollow 时，搜索引擎爬虫将不会跟随这个链接去发现新的内容、建立新的索引，同时也也不会从当前页面传递任何权重到被链接页面。<strong>搜索引擎的爬虫甚至不会进一步爬取 nofollow 链接。</strong></p>
 <p>一般网站的广告链接、用户评论内容中的链接会使用 nofollow 属性来标记。</p>
 <p>HTML 中 <!-- raw HTML omitted --> 标签默认的属性是 dofollow，如果要标记为 nofollow 可以如下编写：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://rokcso.com&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nofollow&#34;</span>&gt;Rokcso&#39;s Landing Page&lt;/<span style="color:#f92672">a</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8839ef">a</span> <span style="color:#1e66f5">href</span><span style="color:#04a5e5;font-weight:bold">=</span><span style="color:#40a02b">&#34;https://rokcso.com&#34;</span> <span style="color:#1e66f5">rel</span><span style="color:#04a5e5;font-weight:bold">=</span><span style="color:#40a02b">&#34;nofollow&#34;</span>&gt;Rokcso&#39;s Landing Page&lt;/<span style="color:#8839ef">a</span>&gt;
 </span></span></code></pre></div><h2 id="如何正确应用-dofollow-和-nofollow-链接">如何正确应用 dofollow 和 nofollow 链接？</h2>
 <p>上面提到的权重本质上就是 <a href="craftdocs://open?blockId=CD09006B-0CCF-4E35-BF90-34650282AA0C&amp;spaceId=e9983e66-9ce7-993a-ad36-dd817783b2b8">PageRank</a>（也被称为 PR 值），是搜索引擎排名的重要指标之一。PR 值只能通过 dofollow 链接传递，不能通过 nofollow 链接传递。</p>
 <p>并且 PR 值的分配是根据页面上搜索链接来平均分配的，不论这个链接是否允许 follow，比如当前页面的 PR 值为 10，页面中有 10 个链接（5 个 dofollow 和 5 个 nofollow），那么每个 dofollow 链接将分别获得 1 PR 值传递，而不是 2；该页面的 10 PR 值被平均分给了该页面中的所有 10 个链接，只是其中标记为 nofollow 的链接不会获得对应的 PR 值传递。</p>

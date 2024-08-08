@@ -124,6 +124,7 @@
   code {
     padding: 2px 5px;
     background-color: #f2f2f2;
+    border-radius: 4px;
   }
 
   i {
@@ -138,10 +139,11 @@
     font-size: 14px;
     overflow-x: auto;
   }
-
+  
   div.highlight pre {
     background-color: initial;
     color: initial;
+    border-radius: 4px;
   }
 
   div.highlight code {
@@ -297,9 +299,9 @@
 <p>开启 SIP 的步骤和关闭非常类似，仅在步骤 3 时，输入 <code>csrutil enable</code> 命令，回车执行该命令。如果一切正常，终端将显示一条消息来提示 SIP 已经启用，并提示重启 Mac，根据提示操作即可。</p>
 <h2 id="修改配置文件以删除-abc-输入法">修改配置文件以删除 ABC 输入法</h2>
 <p>输入法相关的系统配置文件 <code>com.apple.HIToolbox.plist</code> 在 👇 这个路径下，可以打开 Finder 按下 <code>Commans + Shift + G</code> 输入（复制粘贴）该路径，回车，然后将该文件拖入 Xcode（或者使用 Xcode 选择打开）。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>~/Library/Preferences/com.apple.HIToolbox.plist
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>~/Library/Preferences/com.apple.HIToolbox.plist
 </span></span></code></pre></div><p>也可以直接在终端执行以下命令（可能会要求输入密码，即 Mac 开机密码，输入的字符不可见），都可以打开该配置文件。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo open ~/Library/Preferences/com.apple.HIToolbox.plist
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo open ~/Library/Preferences/com.apple.HIToolbox.plist
 </span></span></code></pre></div><p>成功（正常）打开后的配置文件如下图，在 Root - AppleEnabledInputSources 下有一系列 Item，找到 KeyboardLayout Name = ABC 的 Item（比如下图中的 Item 2），将该 Item 完整删除（比如完整选中 Item 2 后点击删除）。</p>
 <p><img src="image.png" alt="alt text"></p>
 <p>删除完成后保存（<code>Command + S</code>）该配置文件，随后重启 Mac 即可。</p>

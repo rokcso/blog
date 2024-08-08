@@ -40,7 +40,7 @@
   <meta itemprop="description" content="介绍如何使用最小化的 Favicon 配置，满足绝大多数需求。">
   <meta itemprop="datePublished" content="2024-08-08T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-08-08T00:00:00+00:00">
-  <meta itemprop="wordCount" content="400">
+  <meta itemprop="wordCount" content="389">
   <meta itemprop="image" content="http://localhost:1313/images/share.png">
   <meta itemprop="keywords" content="Dev,Note">
 <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -124,6 +124,7 @@
   code {
     padding: 2px 5px;
     background-color: #f2f2f2;
+    border-radius: 4px;
   }
 
   i {
@@ -138,10 +139,11 @@
     font-size: 14px;
     overflow-x: auto;
   }
-
+  
   div.highlight pre {
     background-color: initial;
     color: initial;
+    border-radius: 4px;
   }
 
   div.highlight code {
@@ -279,16 +281,16 @@
 <h2 id="最小化配置">最小化配置</h2>
 <p>大多数情况下，只需要 5 个图标（各种文件格式）和一个 JSON 文件。</p>
 <p>首先在 HTML 代码中使用如下配置：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/favicon.ico&#34;</span> <span style="color:#a6e22e">sizes</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;32x32&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/icon.svg&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image/svg+xml&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-icon&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/apple-touch-icon.png&#34;</span>&gt; <span style="color:#75715e">&lt;!-- 180×180 --&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;manifest&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/manifest.webmanifest&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8839ef">link</span> <span style="color:#1e66f5">rel</span><span style="color:#04a5e5;font-weight:bold">=</span><span style="color:#40a02b">&#34;icon&#34;</span> <span style="color:#1e66f5">href</span><span style="color:#04a5e5;font-weight:bold">=</span><span style="color:#40a02b">&#34;/favicon.ico&#34;</span> <span style="color:#1e66f5">sizes</span><span style="color:#04a5e5;font-weight:bold">=</span><span style="color:#40a02b">&#34;32x32&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8839ef">link</span> <span style="color:#1e66f5">rel</span><span style="color:#04a5e5;font-weight:bold">=</span><span style="color:#40a02b">&#34;icon&#34;</span> <span style="color:#1e66f5">href</span><span style="color:#04a5e5;font-weight:bold">=</span><span style="color:#40a02b">&#34;/icon.svg&#34;</span> <span style="color:#1e66f5">type</span><span style="color:#04a5e5;font-weight:bold">=</span><span style="color:#40a02b">&#34;image/svg+xml&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8839ef">link</span> <span style="color:#1e66f5">rel</span><span style="color:#04a5e5;font-weight:bold">=</span><span style="color:#40a02b">&#34;apple-touch-icon&#34;</span> <span style="color:#1e66f5">href</span><span style="color:#04a5e5;font-weight:bold">=</span><span style="color:#40a02b">&#34;/apple-touch-icon.png&#34;</span>&gt; <span style="color:#9ca0b0;font-style:italic">&lt;!-- 180×180 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#8839ef">link</span> <span style="color:#1e66f5">rel</span><span style="color:#04a5e5;font-weight:bold">=</span><span style="color:#40a02b">&#34;manifest&#34;</span> <span style="color:#1e66f5">href</span><span style="color:#04a5e5;font-weight:bold">=</span><span style="color:#40a02b">&#34;/manifest.webmanifest&#34;</span>&gt;
 </span></span></code></pre></div><p>而对应的 manifest 则使用如下配置：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#75715e">// manifest.webmanifest
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;icons&#34;</span>: [
-</span></span><span style="display:flex;"><span>    { <span style="color:#f92672">&#34;src&#34;</span>: <span style="color:#e6db74">&#34;/icon-192.png&#34;</span>, <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;image/png&#34;</span>, <span style="color:#f92672">&#34;sizes&#34;</span>: <span style="color:#e6db74">&#34;192x192&#34;</span> },
-</span></span><span style="display:flex;"><span>    { <span style="color:#f92672">&#34;src&#34;</span>: <span style="color:#e6db74">&#34;/icon-512.png&#34;</span>, <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;image/png&#34;</span>, <span style="color:#f92672">&#34;sizes&#34;</span>: <span style="color:#e6db74">&#34;512x512&#34;</span> }
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic">// manifest.webmanifest
+</span></span></span><span style="display:flex;"><span><span style="color:#9ca0b0;font-style:italic"></span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#8839ef">&#34;icons&#34;</span>: [
+</span></span><span style="display:flex;"><span>    { <span style="color:#8839ef">&#34;src&#34;</span>: <span style="color:#40a02b">&#34;/icon-192.png&#34;</span>, <span style="color:#8839ef">&#34;type&#34;</span>: <span style="color:#40a02b">&#34;image/png&#34;</span>, <span style="color:#8839ef">&#34;sizes&#34;</span>: <span style="color:#40a02b">&#34;192x192&#34;</span> },
+</span></span><span style="display:flex;"><span>    { <span style="color:#8839ef">&#34;src&#34;</span>: <span style="color:#40a02b">&#34;/icon-512.png&#34;</span>, <span style="color:#8839ef">&#34;type&#34;</span>: <span style="color:#40a02b">&#34;image/png&#34;</span>, <span style="color:#8839ef">&#34;sizes&#34;</span>: <span style="color:#40a02b">&#34;512x512&#34;</span> }
 </span></span><span style="display:flex;"><span>  ]
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="配置解释">配置解释</h2>
@@ -297,12 +299,12 @@
 <p><code>180x180</code> 大小的 PNG 图像适用于 Apple 设备，Apple touch icon 是 Apple 设备将网页添加到桌面快捷方式时显示的 App icon，尺寸使用 <code>180x180</code>，即使在某些设备上被压缩后也能得到一个较高质量的图标，如果给 Apple touch icon 提供 20px 的 padding 填充并添加一些背景色，会让图标在视觉上更好看。</p>
 <p><code>manifest.webmanifest</code> 包含适用于 Android 设备的 <code>192x192</code> 和 <code>512x512</code> 尺寸的 PNG 图像，与 Apple touch icon 类似，这种格式的图标来自于 Google PWA 的倡议，都是应用于将网站添加为桌面快捷方式时作为 App icon 使用。</p>
 <h2 id="如何制作-favicon">如何制作 Favicon</h2>
-<h3 id="step-01--准备-svg-文件">Step 01 &gt; 准备 SVG 文件</h3>
+<h3 id="1-准备-svg-文件">1. 准备 SVG 文件</h3>
 <p>一切的开始都是图标的 SVG 文件，注意确保该 SVG 是正方形，具体如何制作 SVG 图标这里不介绍。</p>
 <p>将图标保存为 <code>icon.svg</code> 后，使用文本编辑器（比如 Visual Studio Code）打开该文件，文件内容是使用 <code>&lt;svg&gt; ... &lt;/svg&gt;</code> 标签包裹着 <code>&lt;path /&gt;</code> 标签的 XML 代码，图标的内容就是通过 <code>&lt;path /&gt;</code> 实现（绘制曲线）的。</p>
 <p>我们可以在 <code>&lt;svg&gt; ... &lt;/svg&gt;</code> 中第一层级添加一个 <code>&lt;style&gt;</code> 标签，使用 CSS 语法来添加一个媒体查询，并且设置暗色主题下 SVG 的样式。比如：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;svg</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#a6e22e">viewBox=</span><span style="color:#e6db74">&#34;0 0 447 428&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;style&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#8839ef">&lt;svg</span> <span style="color:#1e66f5">xmlns=</span><span style="color:#40a02b">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#1e66f5">viewBox=</span><span style="color:#40a02b">&#34;0 0 447 428&#34;</span><span style="color:#8839ef">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8839ef">&lt;style&gt;</span>
 </span></span><span style="display:flex;"><span>        .favicon-stroke {
 </span></span><span style="display:flex;"><span>            stroke-width: 8px;
 </span></span><span style="display:flex;"><span>            stroke: #8929ff;
@@ -311,26 +313,26 @@
 </span></span><span style="display:flex;"><span>        #eyes-and-nose, #hat-outline { fill: #8929ff }
 </span></span><span style="display:flex;"><span>        #hat-fill, #hat-bill { fill: #e662e6 }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- 设置暗色主题下 SVG 图标的样式 --&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#9ca0b0;font-style:italic">&lt;!-- 设置暗色主题下 SVG 图标的样式 --&gt;</span>
 </span></span><span style="display:flex;"><span>        @media (prefers-color-scheme: dark) {
 </span></span><span style="display:flex;"><span>            .favicon-stroke { stroke: #343a40 }
 </span></span><span style="display:flex;"><span>            #skull-outline { fill: #adb5bd }
 </span></span><span style="display:flex;"><span>            #hat-outline { fill: #343a40 }
 </span></span><span style="display:flex;"><span>            #eyes-and-nose { fill: #343a40 }
 </span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/style&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;g</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;skull&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;path</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;skull-outline&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;favicon-stroke&#34;</span> <span style="color:#a6e22e">stroke-linejoin=</span><span style="color:#e6db74">&#34;round&#34;</span> <span style="color:#a6e22e">d=</span><span style="color:#e6db74">&#34;M19.62 188.39A166.62 166.62 0 0 1 186.24 21.77c115.25 0 166.61 74.59 166.61 166.62 0 1.83-.08 3.64-.13 5.46h.13s.68 175.09.68 178.65c0 30.11-16.26 41.67-36.32 41.67-12.7 0-35.22-3.93-36.22-32.69h-.2c-1 28.76-16.81 32.69-36.22 32.69-18 0-32.87-6.78-35.77-32.53-2.9 25.75-17.8 32.53-35.8 32.53-20.06 0-36.32-11.56-36.32-41.67 0-2.48.36-24.88.36-24.88A166.68 166.68 0 0 1 19.62 188.39Z&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;path</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;eyes-and-nose&#34;</span> <span style="color:#a6e22e">d=</span><span style="color:#e6db74">&#34;M180.77 205.76c0 23.64 12.84 42.81 28.68 42.81s28.68-19.17 28.68-42.81-12.84-42.82-28.68-42.82-28.68 19.17-28.68 42.82M275 205.76c0 23.64 12.84 42.81 28.68 42.81s28.68-19.17 28.68-42.81-12.84-42.82-28.68-42.82S275 182.11 275 205.76M264.51 276.85s-29.26 43.53-20.12 49.23c7.07 4.41 20.49-16.71 20.49-16.71s12.82 22.58 16.76 20c16.24-10.71-17.13-52.5-17.13-52.5&#34;</span><span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;path</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;jawline&#34;</span> <span style="color:#a6e22e">class=</span><span style="color:#e6db74">&#34;favicon-stroke&#34;</span> <span style="color:#a6e22e">fill=</span><span style="color:#e6db74">&#34;none&#34;</span> <span style="color:#a6e22e">stroke-linecap=</span><span style="color:#e6db74">&#34;round&#34;</span> <span style="color:#a6e22e">d=</span><span style="color:#e6db74">&#34;M114.92 284.33c22.54-1 22 7 22 62.48&#34;</span> <span style="color:#f92672">/&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/g&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/svg&gt;</span>
-</span></span></code></pre></div><h3 id="step-02--创建-ico-文件">Step 02 &gt; 创建 ICO 文件</h3>
-<p>将 Step 01 中的 <code>icon.svg</code> 转换为 <code>32x32</code> 尺寸的 <code>favicon.ico</code> 文件。</p>
-<h3 id="step-03--创建-png-文件">Step 03 &gt; 创建 PNG 文件</h3>
-<p>将 Step 01 中的 <code>icon.svg</code> 转换为 <code>512x512</code> 和 <code>192x192</code> 尺寸的 PNG 文件。</p>
-<p>将 Step 01 中的 <code>icon.svg</code> 中的图像本身调整为 <code>140x140</code> 尺寸，图像的画布调整为 <code>180x180</code> 导出尺寸为 <code>180x180</code> 的 PNG 文件，作为 Apple touch icon 使用。</p>
-<h3 id="step-04--优化文件大小">Step 04 &gt; 优化文件大小</h3>
+</span></span><span style="display:flex;"><span>    <span style="color:#8839ef">&lt;/style&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8839ef">&lt;g</span> <span style="color:#1e66f5">id=</span><span style="color:#40a02b">&#34;skull&#34;</span><span style="color:#8839ef">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8839ef">&lt;path</span> <span style="color:#1e66f5">id=</span><span style="color:#40a02b">&#34;skull-outline&#34;</span> <span style="color:#1e66f5">class=</span><span style="color:#40a02b">&#34;favicon-stroke&#34;</span> <span style="color:#1e66f5">stroke-linejoin=</span><span style="color:#40a02b">&#34;round&#34;</span> <span style="color:#1e66f5">d=</span><span style="color:#40a02b">&#34;M19.62 188.39A166.62 166.62 0 0 1 186.24 21.77c115.25 0 166.61 74.59 166.61 166.62 0 1.83-.08 3.64-.13 5.46h.13s.68 175.09.68 178.65c0 30.11-16.26 41.67-36.32 41.67-12.7 0-35.22-3.93-36.22-32.69h-.2c-1 28.76-16.81 32.69-36.22 32.69-18 0-32.87-6.78-35.77-32.53-2.9 25.75-17.8 32.53-35.8 32.53-20.06 0-36.32-11.56-36.32-41.67 0-2.48.36-24.88.36-24.88A166.68 166.68 0 0 1 19.62 188.39Z&#34;</span> <span style="color:#8839ef">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8839ef">&lt;path</span> <span style="color:#1e66f5">id=</span><span style="color:#40a02b">&#34;eyes-and-nose&#34;</span> <span style="color:#1e66f5">d=</span><span style="color:#40a02b">&#34;M180.77 205.76c0 23.64 12.84 42.81 28.68 42.81s28.68-19.17 28.68-42.81-12.84-42.82-28.68-42.82-28.68 19.17-28.68 42.82M275 205.76c0 23.64 12.84 42.81 28.68 42.81s28.68-19.17 28.68-42.81-12.84-42.82-28.68-42.82S275 182.11 275 205.76M264.51 276.85s-29.26 43.53-20.12 49.23c7.07 4.41 20.49-16.71 20.49-16.71s12.82 22.58 16.76 20c16.24-10.71-17.13-52.5-17.13-52.5&#34;</span><span style="color:#8839ef">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8839ef">&lt;path</span> <span style="color:#1e66f5">id=</span><span style="color:#40a02b">&#34;jawline&#34;</span> <span style="color:#1e66f5">class=</span><span style="color:#40a02b">&#34;favicon-stroke&#34;</span> <span style="color:#1e66f5">fill=</span><span style="color:#40a02b">&#34;none&#34;</span> <span style="color:#1e66f5">stroke-linecap=</span><span style="color:#40a02b">&#34;round&#34;</span> <span style="color:#1e66f5">d=</span><span style="color:#40a02b">&#34;M114.92 284.33c22.54-1 22 7 22 62.48&#34;</span> <span style="color:#8839ef">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8839ef">&lt;/g&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8839ef">&lt;/svg&gt;</span>
+</span></span></code></pre></div><h3 id="2-创建-ico-文件">2. 创建 ICO 文件</h3>
+<p>将第 1 步中的 <code>icon.svg</code> 转换为 <code>32x32</code> 尺寸的 <code>favicon.ico</code> 文件。</p>
+<h3 id="3-创建-png-文件">3. 创建 PNG 文件</h3>
+<p>将第 1 步中的 <code>icon.svg</code> 转换为 <code>512x512</code> 和 <code>192x192</code> 尺寸的 PNG 文件。</p>
+<p>将第 1 步中的 <code>icon.svg</code> 中的图像本身调整为 <code>140x140</code> 尺寸，图像的画布调整为 <code>180x180</code> 导出尺寸为 <code>180x180</code> 的 PNG 文件，作为 Apple touch icon 使用。</p>
+<h3 id="4-优化文件大小">4. 优化文件大小</h3>
 <p>使用你喜欢的工具在保证图像质量的前提下尽可能的压缩文件大小，推荐使用 Google 开源的 <a href="https://squoosh.app/">Squoosh</a> 图像压缩工具，网站、免费、可离线使用。</p>
 <h2 id="参考">参考</h2>
 <ul>

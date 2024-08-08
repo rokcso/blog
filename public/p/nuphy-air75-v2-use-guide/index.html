@@ -123,6 +123,7 @@
   code {
     padding: 2px 5px;
     background-color: #f2f2f2;
+    border-radius: 4px;
   }
 
   i {
@@ -137,10 +138,11 @@
     font-size: 14px;
     overflow-x: auto;
   }
-
+  
   div.highlight pre {
     background-color: initial;
     color: initial;
+    border-radius: 4px;
   }
 
   div.highlight code {
@@ -291,7 +293,7 @@
 </ol>
 <p>前往 <a href="https://github.com/qmk/qmk_toolbox">GitHub QMK Toolbox 仓库</a> 下载对应操作系统的软件。</p>
 <p>macOS 可以使用 Homebrew 进行安装：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install qmk-toolbox
+<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install qmk-toolbox
 </span></span></code></pre></div><p>⚠️ 注意：QMK Toolbox 似乎还没有专门为 M 芯片（ARM 架构）的 Mac 提供适配。</p>
 <p>我的 M1 Mac 使用 Homebrew 安装的 QMK Toolbox 在后续 Flash 固件时会提示 <code>The operation couldn’t be completed. Bad CPU type in executable</code> ，最终固件更新失败。</p>
 <p><img src="image.png" alt="alt text"></p>

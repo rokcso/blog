@@ -48,7 +48,7 @@ Favicon 是 favorite icon 的缩写，在网站的用户侧，用户看到的一
 
 ## 如何制作 Favicon
 
-### Step 01 > 准备 SVG 文件
+### 1. 准备 SVG 文件
 
 一切的开始都是图标的 SVG 文件，注意确保该 SVG 是正方形，具体如何制作 SVG 图标这里不介绍。
 
@@ -83,17 +83,17 @@ Favicon 是 favorite icon 的缩写，在网站的用户侧，用户看到的一
 </svg>
 ```
 
-### Step 02 > 创建 ICO 文件
+### 2. 创建 ICO 文件
 
-将 Step 01 中的 `icon.svg` 转换为 `32x32` 尺寸的 `favicon.ico` 文件。
+将第 1 步中的 `icon.svg` 转换为 `32x32` 尺寸的 `favicon.ico` 文件。
 
-### Step 03 > 创建 PNG 文件
+### 3. 创建 PNG 文件
 
-将 Step 01 中的 `icon.svg` 转换为 `512x512` 和 `192x192` 尺寸的 PNG 文件。
+将第 1 步中的 `icon.svg` 转换为 `512x512` 和 `192x192` 尺寸的 PNG 文件。
 
-将 Step 01 中的 `icon.svg` 中的图像本身调整为 `140x140` 尺寸，图像的画布调整为 `180x180` 导出尺寸为 `180x180` 的 PNG 文件，作为 Apple touch icon 使用。
+将第 1 步中的 `icon.svg` 中的图像本身调整为 `140x140` 尺寸，图像的画布调整为 `180x180` 导出尺寸为 `180x180` 的 PNG 文件，作为 Apple touch icon 使用。
 
-### Step 04 > 优化文件大小
+### 4. 优化文件大小
 
 使用你喜欢的工具在保证图像质量的前提下尽可能的压缩文件大小，推荐使用 Google 开源的 [Squoosh](https://squoosh.app/) 图像压缩工具，网站、免费、可离线使用。
 

@@ -1,6 +1,6 @@
 +++
 title = "dofollow & nofollow"
-description = ""
+description = "介绍什么是 dofollow 和 nofollow，以及如何正确的使用。"
 slug = "dofollow-and-nofollow"
 tags = ["SEO", "note"]
 date = "2024-05-27"

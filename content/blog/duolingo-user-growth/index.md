@@ -1,5 +1,5 @@
 ---
-title: "【译】Duolingo 是如何重新点燃用户增长的"
+title: "译> Duolingo 是如何重新点燃用户增长的"
 description: "中英双语对照翻译，关于 Duolingo 增长加速 350%背后的故事，包括排行榜、连胜记录、通知功能以及其创新的增长模型。"
 slug: "duolingo-user-growth"
 tags: [

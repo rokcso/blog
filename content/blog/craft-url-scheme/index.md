@@ -1,17 +1,10 @@
 ---
 title: "利用 URL Scheme 快速打开 Craft Daily Note"
+description: "关于如何使用 Craft 提供的 URL Scheme 来快速打开 Craft Daily Note。"
+slug: "craft-url-scheme"
+tags: ["skill"]
 date: "2024-05-08"
 draft: false
-slug: "craft-url-scheme"
-summary: ""
-tags: ["skill"]
-description: ""
-toc: true
-readTime: true
-autonumber: true
-math: true
-showTags: false
-hideBackToTop: false
 ---
 
 在 [Craft Help Center](https://support.craft.do/hc/en-us/articles/360020168838-Using-URL-Scheme) 可以查看 Craft 支持的所有 URL Scheme 方案。本文只分享其中「Access to Daily Notes」相关的内容。

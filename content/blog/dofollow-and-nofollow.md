@@ -2,7 +2,7 @@
 title = "dofollow & nofollow"
 description = ""
 slug = "dofollow-and-nofollow"
-tags = ["SEO"]
+tags = ["SEO", "note"]
 date = "2024-05-27"
 draft = false
 +++

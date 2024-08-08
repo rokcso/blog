@@ -1,20 +1,13 @@
 ---
 title: "我的 macOS 初始化配置方案 & 软件分享"
-date: "2024-06-07"
-draft: false
+description: "我常用的 macOS 系统配置和软件分享。"
 slug: "macos-setup"
-summary: ""
 tags: [
    "skill",
    "macOS"
 ]
-description: ""
-toc: true
-readTime: true
-autonumber: true
-math: true
-showTags: false
-hideBackToTop: false
+date: "2024-06-07"
+draft: false
 ---
 
 ## 系统偏好设置

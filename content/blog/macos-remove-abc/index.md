@@ -1,20 +1,13 @@
 ---
 title: "macOS 删除系统自带的 ABC 输入法"
-date: "2024-05-21"
-draft: false
+description: "如何删除 macOS 系统自带的 ABC 输入法。"
 slug: "macos-remove-abc"
-summary: ""
 tags: [
     "skill",
     "macOS"
 ]
-description: ""
-toc: true
-readTime: true
-autonumber: true
-math: true
-showTags: false
-hideBackToTop: false
+date: "2024-05-21"
+draft: false
 ---
 
 > 以下操作均在 macOS Sonoma 14.3 上进行，不确定其他 macOS 系统是否适用。

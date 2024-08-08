@@ -1,17 +1,10 @@
 ---
 title: "NuPhy Air75 V2 使用指南"
+description: "使用 NuPhy Air75 V2 的一些常用技巧、提示。"
+slug: "nuphy-air75-v2-use-guide"
+tags: ["skill"]
 date: "2024-05-19"
 draft: false
-slug: "nuphy-air75-v2-use-guide"
-summary: ""
-tags: ["skill"]
-description: ""
-toc: true
-readTime: true
-autonumber: true
-math: true
-showTags: false
-hideBackToTop: false
 ---
 
 ## 使用手册
@@ -92,7 +85,7 @@ brew install qmk-toolbox
 
 ![alt text](image-5.png)
 
-# 使用 VIA 配置键盘
+## 使用 VIA 配置键盘
 
 > Link: [https://nuphy.com/pages/via-usage-guide-for-nuphy-keyboards](https://nuphy.com/pages/via-usage-guide-for-nuphy-keyboards)
 

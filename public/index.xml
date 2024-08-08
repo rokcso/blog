@@ -87,11 +87,11 @@
       <description>Now </description>
     </item>
     <item>
-      <title>Projtects</title>
+      <title>Projects</title>
       <link>http://localhost:1313/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/</guid>
-      <description>Projects Ongoing projects A network disk search tool navigation station, the first manual test standard Archived projects Online URL Encode/Decode Tool&#xA;Create Feishu/Lark online document quickly (A Raycast extension)&#xA;Dead projects Find all available Z-Library websites in one place (Only survived for 8 days) </description>
+      <description>Projects Ongoing projects A network disk search tool navigation station, the first manual test standard A website to share the useful things I found A Weixin Official Accounts to share the useful things I found (#空字节) Archived projects Online URL Encode/Decode Tool Create Feishu/Lark online document quickly (A Raycast extension) Dead projects Find all available Z-Library websites in one place (Only survived for 8 days) </description>
     </item>
   </channel>
 </rss>

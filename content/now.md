@@ -5,7 +5,7 @@ menu = "main"
 
 # What I'm doing right now
 
-This is a snapshot of my current endeavors and focal points. Inspired by [nownownow.com](https://nownow.com/about).
+This is a snapshot of my current endeavors and focal points. Inspired by [nownownow.com](https://nownownow.com/about).
 
 > Last updated on 2024-08-08, Hangzhou, China.
 

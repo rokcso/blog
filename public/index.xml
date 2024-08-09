@@ -38,6 +38,13 @@
       <description>通常 macOS 终端（Terminal）App 中显示的主机名（HostName）应该是当前设备设定的用户名。&#xA;但是有时打开终端时会发现主机名变成了 192，这主要是由于当前使用的 DNS 服务因为某些原因变成了默认的 192.168.1.1 或 192.168.0.1，我通常在启动了代理服务之后会出现。&#xA;解决方案一&#xA;设备：Mac mini M2&#xA;macOS: Sonama 14.6&#xA;这种情况首先可以尝试修改 DNS 设置，打开「系统偏好设置 -&amp;gt; 网络（或 Wi-Fi） -&amp;gt; 详细信息 -&amp;gt; DNS」。&#xA;如果这里的 DNS 服务器为上面提到的默认 IP 地址，那么直接删除，然后添加新的 DNS 服务器 IP 地址：8.8.8.8 即可。&#xA;⚠️ 注意：修改 DNS 配置后记得「应用」。&#xA;解决方案二&#xA;首先确认本机是否存在已配置的 HostName，打开终端执行以下命令：&#xA;scutil --get HostName 如果本机没有配置 HostName，那么执行该命令不会获得任何输出，如果存在 HostName 则会直接返回 HostName 字符串。&#xA;当本机没有配置 HostName 是，终端的主机名会使用来自 DNS 或者 DHCP 服务器，所以我们也可以通过主动配置一个 HostName 解决这个问题，在终端执行以下命令：&#xA;sudo scutil --set HostName &amp;#34;yourHostName&amp;#34; ⚠️ 注意：使用你想要设置的 HostName 替换上面命令中的 yourHostName 。</description>
     </item>
     <item>
+      <title>我的 Rime 输入法配置方案</title>
+      <link>http://localhost:1313/p/rime-setup/</link>
+      <pubDate>Fri, 19 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/p/rime-setup/</guid>
+      <description>Rime 是一个开源的输入法引擎，它支持多种输入方案，比如拼音、双拼、五笔等等，并且可以自定义输入方案。&#xA;使用 Rime 非常简单（也可以非常复杂），最简单的方式就是从 Rime 官网下载对应平台的客户端，Rime 客户端通常会内置一些默认的输入方案，当 Rime 默认的输入方案不满足我们的需求时就可以开始自定义配置啦！&#xA;我大概 5 年前就开始使用 Rime，在 Windows 平台使用 Rime 提供的官方客户端「小狼毫」，仅仅配置了 小鹤双拼 输入方案和一些简单的皮肤样式、输入习惯等等。&#xA;词库、同步等等比较高级的配置都不曾涉及，每个使用 Rime 的用户都会有自己习惯的配置，为了保证每次换机等需要重新配置 Rime 时能更方便，个人维护一套自己的 Rime 配置非常有必要。&#xA;下面是我的安装、配置 Rime 的完整记录（macOS 平台）。&#xA;安装 Squirrel Rime 在 macOS 平台的客户端名为「鼠须管（Squirrel）」，我通常使用 Homebrew 安装，在 macOS 终端执行如下命令：&#xA;brew install --cask squirrel 随后打开 macOS 系统偏好设置，进入键盘设置，添加输入法选择简体中文下的鼠须管即可。&#xA;自定义配置 我现在的 Rime 配置使用的是 雾凇拼音 维护的一套配置，输入方案依然是小鹤双拼。&#xA;我通过 Rime 官方的配置管理工具 Plum 来快速安装雾凇拼音的配置。&#xA;安装雾凇拼音配置 首先将 Plum 从 GitHub clone 到本地任意文件目录下：&#xA;git clone --depth=1 https://github.com/rime/plum 然后进入本地的 Plum 文件目录下，执行命令以安装雾凇拼音配置到本地 Rime 配置。</description>
+    </item>
+    <item>
       <title>我的 macOS 初始化配置方案 &amp; 软件分享</title>
       <link>http://localhost:1313/p/macos-setup/</link>
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cooking on Rokcso&#39;s Blog</title>
+    <link>http://localhost:1313/t/cooking/</link>
+    <description>Recent content in Cooking on Rokcso&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2024, Rokcso.</copyright>
+    <lastBuildDate>Fri, 09 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/t/cooking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的厨房用具、用法清单</title>
+      <link>http://localhost:1313/p/cooking-list/</link>
+      <pubDate>Fri, 09 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/p/cooking-list/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

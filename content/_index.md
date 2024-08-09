@@ -7,7 +7,7 @@ title = ""
 
 # Hi! 👋 This is Rokcso.
 
-### I'm a maker of things, rider of motorcycle, and like to cook.
+### I'm a maker of things, rider of [motorcycle](https://www.honda.co.jp/CROSSCUB/), and like [cooking](/p/cooking-list).
 
 Live in [Hangzhou](https://zh.wikipedia.org/wiki/%E6%9D%AD%E5%B7%9E%E5%B8%82), an ancient, beautiful and comfortable city in China.
 

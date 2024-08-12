@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dev on Rokcso&#39;s Blog</title>
-    <link>http://localhost:1313/t/dev/</link>
-    <description>Recent content in Dev on Rokcso&#39;s Blog</description>
+    <title>Dev on Rokcso&#39;s blog</title>
+    <link>https://rokcso.com/t/dev/</link>
+    <description>Recent content in Dev on Rokcso&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2024, Rokcso.</copyright>
     <lastBuildDate>Thu, 08 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/t/dev/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rokcso.com/t/dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Favicon 最佳实践</title>
-      <link>http://localhost:1313/p/how-to-favicon/</link>
+      <link>https://rokcso.com/p/how-to-favicon/</link>
       <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/how-to-favicon/</guid>
+      <guid>https://rokcso.com/p/how-to-favicon/</guid>
       <description>Favicon 是 favorite icon 的缩写，在网站的用户侧，用户看到的一个图标实际上是由很多很多个图标文件组成，这主要是为了适配各种各样的设备和屏幕。&#xA;使用 Favicon 生成器可以便捷的生成非常全面的 Favicon 集，但是这显然不是一个优雅的解。Andrey Sitnik 提出了下面这个最小化的 Favicon 配置，这些图标将在所有情况下和所有浏览器中工作，即使在某些边缘情况，这仍然有效，只是不是 100% 完美。&#xA;最小化配置 大多数情况下，只需要 5 个图标（各种文件格式）和一个 JSON 文件。&#xA;首先在 HTML 代码中使用如下配置：&#xA;&amp;lt;link rel=&amp;#34;icon&amp;#34; href=&amp;#34;/favicon.ico&amp;#34; sizes=&amp;#34;32x32&amp;#34;&amp;gt; &amp;lt;link rel=&amp;#34;icon&amp;#34; href=&amp;#34;/icon.svg&amp;#34; type=&amp;#34;image/svg+xml&amp;#34;&amp;gt; &amp;lt;link rel=&amp;#34;apple-touch-icon&amp;#34; href=&amp;#34;/apple-touch-icon.png&amp;#34;&amp;gt; &amp;lt;!-- 180×180 --&amp;gt; &amp;lt;link rel=&amp;#34;manifest&amp;#34; href=&amp;#34;/manifest.webmanifest&amp;#34;&amp;gt; 而对应的 manifest 则使用如下配置：&#xA;// manifest.webmanifest { &amp;#34;icons&amp;#34;: [ { &amp;#34;src&amp;#34;: &amp;#34;/icon-192.png&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;image/png&amp;#34;, &amp;#34;sizes&amp;#34;: &amp;#34;192x192&amp;#34; }, { &amp;#34;src&amp;#34;: &amp;#34;/icon-512.png&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;image/png&amp;#34;, &amp;#34;sizes&amp;#34;: &amp;#34;512x512&amp;#34; } ] } 配置解释 favicon.ico 适用于那些古老的浏览器，注意一定将该文件放在网站根目录下，即 https://rokcso.</description>
     </item>
   </channel>

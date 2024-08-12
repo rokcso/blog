@@ -1,117 +1,124 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rokcso&#39;s Blog</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Rokcso&#39;s Blog</description>
+    <title>Rokcso&#39;s blog</title>
+    <link>https://rokcso.com/</link>
+    <description>Recent content on Rokcso&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2024, Rokcso.</copyright>
-    <lastBuildDate>Fri, 09 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://rokcso.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>译&gt; 领先于时代，落后于潮流：Evernote 为何未能发挥其潜力</title>
+      <link>https://rokcso.com/p/evernote-history/</link>
+      <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://rokcso.com/p/evernote-history/</guid>
+      <description>本文由 AI 翻译，人工修正。&#xA;原文链接：https://nira.com/evernote-history&#xA;Legendary investor, programmer, and Y Combinator co-founder Paul Graham once wrote that one of the best ways to come up with ideas for your next startup is to ask what product you wish someone else would make for you.&#xA;传奇投资者、程序员、Y Combinator 联合创始人 Paul Graham 曾经写道，为下一次创业提出想法的最佳方法之一就是询问你希望其他人为你生产什么产品。&#xA;For Stepan Pachikov, founder of Evernote, that product was a way to help him remember things.&#xA;对于 Evernote 的创始人 Stepan Pachikov 来说，那个产品是一种帮助他记住事情的方式。</description>
+    </item>
     <item>
       <title>我的厨房用具、用法清单</title>
-      <link>http://localhost:1313/p/cooking-list/</link>
+      <link>https://rokcso.com/p/cooking-list/</link>
       <pubDate>Fri, 09 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/cooking-list/</guid>
+      <guid>https://rokcso.com/p/cooking-list/</guid>
       <description>这个清单里的所有东西都是我实际使用过挺长时间的，比较推荐，但可能不是你的最优解，仅供参考。&#xA;刀具 菜刀 | 十八子作 斩切刀 材质：30Cr13&#xA;我做菜就只用这一把刀，能切能斩能满足 99% 的中餐烹饪需求，重约 250g，不算轻。我没有配备磨刀石，偶尔在碗底磨几下，使用至今已有两年有余，锋利稍减。我这把刀其实相当一般，但是家用足矣。&#xA;关于菜刀的选择：&#xA;切片刀（文刀）的刀刃薄，斩砍刀（武刀）的刀刃厚，中餐一般使用这两把刀就够了，而斩切刀前切后斩（前刀刃薄、后刀刃厚）可以同时满足这两种需求。&#xA;菜刀的刀刃也是有不同形状的，一般不要选择刃形弧度太大的就行。刀把的形状也值得注意，只要握起来稳定、舒适就可以，不过我这把刀的刀把就很一般。选择刀具重量时需要注意即使一把刀净重 250g，但是实际使用体感通常大于 250g，因为手握刀把时刀具重心远离手，力臂增加，产生的力矩增加，需要手施加更多的力才能平衡这个力矩（也可以简化为杠杆原理）。&#xA;我其实不太在意刀具重量，甚至喜欢重一点的，掌握正确的用刀姿势（刀法）是可以省力又高效的。&#xA;关于刀的材质，不要选择铁刀，太古老了，容易生锈，用铁刀切过的食材也会容易带有铁锈味。选择不锈钢刀，然后进一步关注钢材的标号，比如 30Cr13 就是一个钢材标号，其中 30 表示碳含量，Cr13 表示铬含量。&#xA;碳含量越高，刀具质地越硬，柔韧性就更差，更容易断裂、崩口，更难磨但是也能保持更持久的锋利，所以切片刀建议选择高碳钢（40 及以上），斩砍刀就不能太硬了。铬含量越高表示不锈钢质量越好，一般选择 Cr13 及以上。&#xA;另外：磨刀每次摩擦都只向同一方向进行，不要来回摩擦，也不要太用力。磨刀石配备一块双面 400/800 目（或 300/600 目）的即可，体积不要太小一块（太小磨刀时不好发力），追求更锋利的可以再配备一块上千目的（家用一般不推荐）。&#xA;削皮刀 | 什物纪 这把刀最常用的就是正常的削皮功能，不分左右手都能使用，顶部的刀尖是有锋利度的，挖削土豆这种就很好用。然后两边的波浪形用来刮鱼鳞很方便。&#xA;我买活鱼基本都是拿回家自己杀、切片，店主帮忙杀的鱼的内脏、鳃、鱼鳞和筋膜等等一般都不会清理得非常干净，并且切片处理得也比较随意。&#xA;花梨木整木砧板 首先我不使用塑料、硅胶、不锈钢等等工业材质的砧板，它们各有各的难用。其次竹制砧板可以用但不推荐，竹制砧板大都需要使用胶合剂拼接竹子等各种碎木，增加健康安全风险，也经不住斩砍等使用，长期使用的竹制砧板容易开裂然后藏污纳垢甚至发霉。&#xA;我现在使用的砧板是一块 35cm * 24cm * 3cm（尺寸不大，适合 1~2 人家庭使用）的刚果花梨木整木砧板，这里面包含了我选择砧板的几个建议：&#xA;木头砧板；整木，无拼接；原木，无油漆 推荐花梨木，不推荐乌檀木、铁木，其他木头还没用过 要有一定厚度，不容易形变、开裂 另外：太硬的砧板会让刀更快的变得不锋利，也不适合斩砍（可能掉木渣）。&#xA;木头砧板需要注意保养，新砧板可以在清洗干净并晾干后涂上植物油阴晾一天，木头会吸收植物油，然后砧板使用起来会更「润」。砧板每次用完清洗干净后竖立放置于阴凉、干燥处，注意尽量保证砧板两面都能暴露在空气中（比如不要砧板一面贴墙放置），推荐使用砧板架（不锈钢的就可以）。&#xA;锅具 铁锅 | 张小泉 聚焰系列 限于客观条件我的厨房没有燃气灶，使用的是电磁炉作为热源，所以我现在使用的铁锅底部是有一定平面（不是纯平底锅）的，这样可以更稳定的放置在电磁炉上。&#xA;我这把铁锅还有一个很不错的点是锅边是有外翻折的，做菜时汤汁就不容易流挂到锅身。&#xA;铁锅通常还会分为生铁、熟铁，生铁含碳量高，更厚重（比如铸铁锅），适合炖煮；一般炒锅都使用熟铁。&#xA;使用铁锅一定要注意保养，新铁锅开锅能使用明火烧蓝开锅效果更好，电磁炉开锅效果较差。铁锅每次使用完清洗干净后最好都烧干抹油。&#xA;电磁炉 | 米家电磁炉 2 不是最佳推荐，但是好看，也算好用。如果要买建议买个延保。&#xA;半自动意式咖啡机 | 柏翠 PE3366 这个领域我不太懂，实际使用下来的感受有两个明显确定：</description>
     </item>
     <item>
       <title>Favicon 最佳实践</title>
-      <link>http://localhost:1313/p/how-to-favicon/</link>
+      <link>https://rokcso.com/p/how-to-favicon/</link>
       <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/how-to-favicon/</guid>
+      <guid>https://rokcso.com/p/how-to-favicon/</guid>
       <description>Favicon 是 favorite icon 的缩写，在网站的用户侧，用户看到的一个图标实际上是由很多很多个图标文件组成，这主要是为了适配各种各样的设备和屏幕。&#xA;使用 Favicon 生成器可以便捷的生成非常全面的 Favicon 集，但是这显然不是一个优雅的解。Andrey Sitnik 提出了下面这个最小化的 Favicon 配置，这些图标将在所有情况下和所有浏览器中工作，即使在某些边缘情况，这仍然有效，只是不是 100% 完美。&#xA;最小化配置 大多数情况下，只需要 5 个图标（各种文件格式）和一个 JSON 文件。&#xA;首先在 HTML 代码中使用如下配置：&#xA;&amp;lt;link rel=&amp;#34;icon&amp;#34; href=&amp;#34;/favicon.ico&amp;#34; sizes=&amp;#34;32x32&amp;#34;&amp;gt; &amp;lt;link rel=&amp;#34;icon&amp;#34; href=&amp;#34;/icon.svg&amp;#34; type=&amp;#34;image/svg+xml&amp;#34;&amp;gt; &amp;lt;link rel=&amp;#34;apple-touch-icon&amp;#34; href=&amp;#34;/apple-touch-icon.png&amp;#34;&amp;gt; &amp;lt;!-- 180×180 --&amp;gt; &amp;lt;link rel=&amp;#34;manifest&amp;#34; href=&amp;#34;/manifest.webmanifest&amp;#34;&amp;gt; 而对应的 manifest 则使用如下配置：&#xA;// manifest.webmanifest { &amp;#34;icons&amp;#34;: [ { &amp;#34;src&amp;#34;: &amp;#34;/icon-192.png&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;image/png&amp;#34;, &amp;#34;sizes&amp;#34;: &amp;#34;192x192&amp;#34; }, { &amp;#34;src&amp;#34;: &amp;#34;/icon-512.png&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;image/png&amp;#34;, &amp;#34;sizes&amp;#34;: &amp;#34;512x512&amp;#34; } ] } 配置解释 favicon.ico 适用于那些古老的浏览器，注意一定将该文件放在网站根目录下，即 https://rokcso.</description>
     </item>
     <item>
       <title>译&gt; Duolingo 是如何重新点燃用户增长的</title>
-      <link>http://localhost:1313/p/duolingo-user-growth/</link>
+      <link>https://rokcso.com/p/duolingo-user-growth/</link>
       <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/duolingo-user-growth/</guid>
+      <guid>https://rokcso.com/p/duolingo-user-growth/</guid>
       <description>本文由 AI 翻译，人工修正。&#xA;原文链接：https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth&#xA;I was at a small event a few months back where Jorge Mazal (former CPO of Duolingo) shared the story behind Duolingo’s growth reaccelerating. I was captivated. I’ve never seen a growth story like this before—4.5x growth for a mature product, driven by a small handful of product changes, rooted in an innovative growth model, and explained in such actionable detail. I asked Jorge if he’d be willing to share (and expand on) the story with a broader audience, and I’m so happy he agreed.</description>
     </item>
     <item>
       <title>修复 macOS 终端主机名显示 192</title>
-      <link>http://localhost:1313/p/macos-hostname-192/</link>
+      <link>https://rokcso.com/p/macos-hostname-192/</link>
       <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/macos-hostname-192/</guid>
+      <guid>https://rokcso.com/p/macos-hostname-192/</guid>
       <description>通常 macOS 终端（Terminal）App 中显示的主机名（HostName）应该是当前设备设定的用户名。&#xA;但是有时打开终端时会发现主机名变成了 192，这主要是由于当前使用的 DNS 服务因为某些原因变成了默认的 192.168.1.1 或 192.168.0.1，我通常在启动了代理服务之后会出现。&#xA;解决方案一&#xA;设备：Mac mini M2&#xA;macOS: Sonama 14.6&#xA;这种情况首先可以尝试修改 DNS 设置，打开「系统偏好设置 -&amp;gt; 网络（或 Wi-Fi） -&amp;gt; 详细信息 -&amp;gt; DNS」。&#xA;如果这里的 DNS 服务器为上面提到的默认 IP 地址，那么直接删除，然后添加新的 DNS 服务器 IP 地址：8.8.8.8 即可。&#xA;⚠️ 注意：修改 DNS 配置后记得「应用」。&#xA;解决方案二&#xA;首先确认本机是否存在已配置的 HostName，打开终端执行以下命令：&#xA;scutil --get HostName 如果本机没有配置 HostName，那么执行该命令不会获得任何输出，如果存在 HostName 则会直接返回 HostName 字符串。&#xA;当本机没有配置 HostName 是，终端的主机名会使用来自 DNS 或者 DHCP 服务器，所以我们也可以通过主动配置一个 HostName 解决这个问题，在终端执行以下命令：&#xA;sudo scutil --set HostName &amp;#34;yourHostName&amp;#34; ⚠️ 注意：使用你想要设置的 HostName 替换上面命令中的 yourHostName 。</description>
     </item>
     <item>
       <title>我的 Rime 输入法配置方案</title>
-      <link>http://localhost:1313/p/rime-setup/</link>
+      <link>https://rokcso.com/p/rime-setup/</link>
       <pubDate>Fri, 19 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/rime-setup/</guid>
+      <guid>https://rokcso.com/p/rime-setup/</guid>
       <description>Rime 是一个开源的输入法引擎，它支持多种输入方案，比如拼音、双拼、五笔等等，并且可以自定义输入方案。&#xA;使用 Rime 非常简单（也可以非常复杂），最简单的方式就是从 Rime 官网下载对应平台的客户端，Rime 客户端通常会内置一些默认的输入方案，当 Rime 默认的输入方案不满足我们的需求时就可以开始自定义配置啦！&#xA;我大概 5 年前就开始使用 Rime，在 Windows 平台使用 Rime 提供的官方客户端「小狼毫」，仅仅配置了 小鹤双拼 输入方案和一些简单的皮肤样式、输入习惯等等。&#xA;词库、同步等等比较高级的配置都不曾涉及，每个使用 Rime 的用户都会有自己习惯的配置，为了保证每次换机等需要重新配置 Rime 时能更方便，个人维护一套自己的 Rime 配置非常有必要。&#xA;下面是我的安装、配置 Rime 的完整记录（macOS 平台）。&#xA;安装 Squirrel Rime 在 macOS 平台的客户端名为「鼠须管（Squirrel）」，我通常使用 Homebrew 安装，在 macOS 终端执行如下命令：&#xA;brew install --cask squirrel 随后打开 macOS 系统偏好设置，进入键盘设置，添加输入法选择简体中文下的鼠须管即可。&#xA;自定义配置 我现在的 Rime 配置使用的是 雾凇拼音 维护的一套配置，输入方案依然是小鹤双拼。&#xA;我通过 Rime 官方的配置管理工具 Plum 来快速安装雾凇拼音的配置。&#xA;安装雾凇拼音配置 首先将 Plum 从 GitHub clone 到本地任意文件目录下：&#xA;git clone --depth=1 https://github.com/rime/plum 然后进入本地的 Plum 文件目录下，执行命令以安装雾凇拼音配置到本地 Rime 配置。</description>
     </item>
     <item>
       <title>我的 macOS 初始化配置方案 &amp; 软件分享</title>
-      <link>http://localhost:1313/p/macos-setup/</link>
+      <link>https://rokcso.com/p/macos-setup/</link>
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/macos-setup/</guid>
+      <guid>https://rokcso.com/p/macos-setup/</guid>
       <description>系统偏好设置 触控板 开启「轻点来点按」 系统偏好设置 → 触控板 → 光标与点按 → 轻点来点按 开启「使用触控板进行拖移」 系统偏好设置 → 辅助功能 → 指针控制 → 触控板选项 → 使用触控板进行拖移 关闭「轻扫切换页面」 系统偏好设置 → 触控板 → 更多手势 → 轻扫切换页面 软件安装 &amp;amp; 配置 ClashX Pro 安装包在阿里云盘&#xA;Homebrew Link: https://brew.sh/&#xA;搜索 Homebrew 支持的包：https://formulae.brew.sh/&#xA;Raycast Link: https://www.raycast.com/&#xA;Install:&#xA;brew install --cask raycast Raycast 扩展程序：&#xA;Brew Color Picker Feishu Document Creator QR Code Generator Random Data Generator 坚果云 Link: https://www.jianguoyun.com/&#xA;Install:&#xA;brew install --cask nutstore KeePassXC Link: https://keepassxc.</description>
     </item>
     <item>
       <title>macOS 彻底阻止 FigmaAgent.app 被添加到登录项</title>
-      <link>http://localhost:1313/p/figmaagent-auto-login/</link>
+      <link>https://rokcso.com/p/figmaagent-auto-login/</link>
       <pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/figmaagent-auto-login/</guid>
+      <guid>https://rokcso.com/p/figmaagent-auto-login/</guid>
       <description>我的 macOS 版本：Sonoma 14.5&#xA;在使用 Figma macOS 客户端时，总有一个 FigmaAgent.app 被自动添加到登录项，即使在「系统设置 - 通用 - 登录项」中手动删除该项目，再次打开 Figma 依然会自动添加，这很烦人。😡&#xA;解决方案 打开「活动监视器」，找到 FigmaAgent，选中后点击「停止（退出）」后选择「强制退出」。 访问「系统设置 - 通用 - 登录项」，删除 FigmaAgent.app。 打开「访达」，进入 ~/Library/Application Support/Figma 文件夹，删除 FigmaAgent.app。 打开「访达」，进入 /Applications/Figma.app/Contents/Library 文件夹，删除 FigmaAgent.app。 完成！✅</description>
     </item>
     <item>
       <title>dofollow &amp; nofollow</title>
-      <link>http://localhost:1313/p/dofollow-and-nofollow/</link>
+      <link>https://rokcso.com/p/dofollow-and-nofollow/</link>
       <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/dofollow-and-nofollow/</guid>
+      <guid>https://rokcso.com/p/dofollow-and-nofollow/</guid>
       <description>什么是 dofollow 和 nofollow 链接？ dofollow 和 nofollow 是两个 HTML 属性，用于指示搜索引擎爬虫如何处理网页上面 link 的链接。&#xA;dofollow 意味着搜索引擎会跟随这个链接，并且当前页面会传递一定的权重给被链接的页面，即增加被链接页面在搜索引擎中的权重，增加权重的多少根据当前页面在搜索引擎中的权重不同而不同。&#xA;也就是说如果网站 A 使用 dofollow 链接了网站 B 的链接，网站 B 在搜索引擎中的权重会得到提升，提升的多少由网站 A 在搜索引擎中的权重决定，即网站 A 在搜索引擎中权重越大，网站 B 得到的权重提升也越大。&#xA;nofollow 是由 Google 引入的属性，目的是帮助网站管理员减少网站的垃圾链接，当页面中的一个链接被标记为 nofollow 时，搜索引擎爬虫将不会跟随这个链接去发现新的内容、建立新的索引，同时也也不会从当前页面传递任何权重到被链接页面。搜索引擎的爬虫甚至不会进一步爬取 nofollow 链接。&#xA;一般网站的广告链接、用户评论内容中的链接会使用 nofollow 属性来标记。&#xA;HTML 中 标签默认的属性是 dofollow，如果要标记为 nofollow 可以如下编写：&#xA;&amp;lt;a href=&amp;#34;https://rokcso.com&amp;#34; rel=&amp;#34;nofollow&amp;#34;&amp;gt;Rokcso&amp;#39;s Landing Page&amp;lt;/a&amp;gt; 如何正确应用 dofollow 和 nofollow 链接？ 上面提到的权重本质上就是 PageRank（也被称为 PR 值），是搜索引擎排名的重要指标之一。PR 值只能通过 dofollow 链接传递，不能通过 nofollow 链接传递。&#xA;并且 PR 值的分配是根据页面上搜索链接来平均分配的，不论这个链接是否允许 follow，比如当前页面的 PR 值为 10，页面中有 10 个链接（5 个 dofollow 和 5 个 nofollow），那么每个 dofollow 链接将分别获得 1 PR 值传递，而不是 2；该页面的 10 PR 值被平均分给了该页面中的所有 10 个链接，只是其中标记为 nofollow 的链接不会获得对应的 PR 值传递。</description>
     </item>
     <item>
       <title>macOS 删除系统自带的 ABC 输入法</title>
-      <link>http://localhost:1313/p/macos-remove-abc/</link>
+      <link>https://rokcso.com/p/macos-remove-abc/</link>
       <pubDate>Tue, 21 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/macos-remove-abc/</guid>
+      <guid>https://rokcso.com/p/macos-remove-abc/</guid>
       <description>以下操作均在 macOS Sonoma 14.3 上进行，不确定其他 macOS 系统是否适用。 但看网上文章即使是其他 macOS 系统大多也都成功了。&#xA;原理：要删除 macOS 自带的 ABC 输入法，本质上就是要删除对应的配置。&#xA;macOS 的配置文件基本都是以 .plist 为后缀的文件，而输入法相关的配置都存储在 com.apple.HIToolbox.plist 这个系统配置文件中，该配置文件主要负责存储与用户界面相关的配置，比如：输入设备、键盘布局、鼠标设置、触控板手势等等。&#xA;💡 提示：打开/修改 .plist 文件需要使用 Xcode 或者 PlistEdit Pro 软件。&#xA;⚠️ 注意：通常不建议普通用户随意修改系统 .plist 文件，这可能会影响系统的稳定性和安全性。&#xA;关闭/开启 SIP 在修改系统配置文件之前，需要先关闭系统完整性保护（SIP），SIP 的主要目的是保护系统文件和目录，防止它们被未经授权的修改，这种保护措施甚至对 Root 用户也有效。&#xA;⚠️ 注意：SIP 默认开启，如需关闭 SIP 以修改一些系统配置文件，也非常建议完成修改之后重启 SIP。&#xA;如何确定是否已经关闭/开启 SIP？&#xA;打开终端，输入 csrutil status 命令，回车执行该命令，终端将显示一条消息来提示 SIP 状态，比如：System Integrity Protection status: enabled 。&#xA;关闭/开启 SIP 的详细步骤：&#xA;重启 Mac，重启过程中持续按住 Command + R ，进入恢复模式 进入恢复模式后，打开终端（路径：顶部菜单栏 - 实用工具 - 终端） 输入 csrutil disable 命令，回车执行该命令 完成步骤 3 后，如果一切正常，终端将显示一条消息来提示 SIP 已经禁用，并提示重启 Mac，根据提示操作即可。</description>
     </item>
     <item>
       <title>NuPhy Air75 V2 使用指南</title>
-      <link>http://localhost:1313/p/nuphy-air75-v2-use-guide/</link>
+      <link>https://rokcso.com/p/nuphy-air75-v2-use-guide/</link>
       <pubDate>Sun, 19 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/nuphy-air75-v2-use-guide/</guid>
+      <guid>https://rokcso.com/p/nuphy-air75-v2-use-guide/</guid>
       <description>使用手册 在线版本：NuPhy Air75 V2 Quick Guide&#xA;PDF 文件：&#xA;NuPhy_Air75_V2_Quick_Guide.pdf&#xA;常见问题 😅 设备连接/切换 关于无限连接切换设备、蓝牙匹配、2.4G 连接等操作，使用 FN 键加**::数字键::** 1~4，而不是 FN 键加 F1～F4。&#xA;键盘自动休眠模式 开启键盘自动休眠模式后，若键盘连续 6 分钟没有任何操作，将进入休眠模式（键盘背光关闭）。&#xA;注：自动休眠时间默认 6 分钟，暂时不清楚如何自定义这个自动休眠时间。&#xA;使用快捷键 FN + ] 开关键盘自动休眠模式，按下 FN + ] 后，如果键盘右上角 RGB 灯条闪烁 3 次红灯，意味着关闭自动休眠模式，如果闪烁 3 次绿灯，意味着开启自动休眠模式。&#xA;更新固件 准备 安装 QMK Toolbox 前往 GitHub QMK Toolbox 仓库 下载对应操作系统的软件。&#xA;macOS 可以使用 Homebrew 进行安装：&#xA;brew install qmk-toolbox ⚠️ 注意：QMK Toolbox 似乎还没有专门为 M 芯片（ARM 架构）的 Mac 提供适配。&#xA;我的 M1 Mac 使用 Homebrew 安装的 QMK Toolbox 在后续 Flash 固件时会提示 The operation couldn’t be completed.</description>
     </item>
     <item>
       <title>利用 URL Scheme 快速打开 Craft Daily Note</title>
-      <link>http://localhost:1313/p/craft-url-scheme/</link>
+      <link>https://rokcso.com/p/craft-url-scheme/</link>
       <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/craft-url-scheme/</guid>
+      <guid>https://rokcso.com/p/craft-url-scheme/</guid>
       <description>在 Craft Help Center 可以查看 Craft 支持的所有 URL Scheme 方案。本文只分享其中「Access to Daily Notes」相关的内容。&#xA;Access to Daily Notes&#xA;Yesterday - craftdocs://openByQuery?query=yesterday&amp;amp;spaceId= Today - craftdocs://openByQuery?query=today&amp;amp;spaceId= Tomorrow - craftdocs://openByQuery?query=tomorrow&amp;amp;spaceId= 以上是 Craft 提供的支持快速打开 Craft Daily Note 的 URL Scheme，3 个 URL Scheme 的区别仅仅在于打开的 Daily Note 是昨天、今天还是明天。&#xA;配置 URL Scheme 参数 所有 URL Scheme 都需要提供一个 spaceId 参数，这个参数可以在 Craft 中任意一篇文档的 Deeplink 中获得。关于 Craft Deeplink 的介绍可以在 Craft Help Center 查看。&#xA;获取 Deeplink 路径/方法：&#xA;打卡任意一篇文档 点击「Share」 点击「Export as」 点击「Advanced」 点击「Copy Deeplink」 将复制到的 Deeplink 粘贴到某个文本编辑器，可以看到如下内容，其中 spaceId= 后面的内容就是我们需要的 spaceId 参数。</description>
     </item>
     <item>
       <title>使用 JavaScript 配置 Umami Track Event</title>
-      <link>http://localhost:1313/p/umami-track-event/</link>
+      <link>https://rokcso.com/p/umami-track-event/</link>
       <pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/umami-track-event/</guid>
+      <guid>https://rokcso.com/p/umami-track-event/</guid>
       <description>当前（2023-08-09）我的 umami 部署版本为 Version 1.40.0，官方已经发布版本为 Version 2.4.1。&#xA;Umami Version 1.40 及以上版本支持 Tarck Event，即事件跟踪，简单的说就是可以跟踪用户在网页上面的事件操作，比如点击按钮。&#xA;在 官方文档 中提供了两种简单配置方案，根据当前（2023-08-09）文档显示可以通过给按钮添加数据属性或者使用 JavaScript 监听按钮的点击事件然后执行 umami.track() 方法上报事件数据。&#xA;调试方法：&#xA;按照官方文档提供的方案进行配置后，访问网页，打开 Chrome 开发者工具中的 Network，然后点击已经配置了 Track Event 的按钮，关注是否有新的名为 collect 的请求被发起，如果有，则关注 Request Payload 中传入的参数是否符合预期。&#xA;问题：&#xA;两种方案在我实践之后均无法成功上报数据，使用 JavaScript 方案时 Chrome 开发者工具 Console 中报错 umami.track is not a function，可能是由于我部署的 umami 版本不支持上述方案，&#xA;解决方案：&#xA;在不升级我部署的 umami 版本的基础上，我最终发现可以通过 JavaScript 监听按钮的点击事件然后执行 umami() 方法上报事件数据。&#xA;比如：&#xA;document.getElementById(&amp;#34;btn-copy&amp;#34;).onclick = () =&amp;gt; umami(&amp;#34;clickCopyBtn&amp;#34;); 除了使用 JavaScript 方案外，umami Version 1.40.0 应该还支持通过给按钮添加 Class 来配置 Track Event，类的命名格式要求为：</description>
     </item>
     <item>
       <title>语义化版本控制规范 2.0.0</title>
-      <link>http://localhost:1313/p/semantic-version/</link>
+      <link>https://rokcso.com/p/semantic-version/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/semantic-version/</guid>
+      <guid>https://rokcso.com/p/semantic-version/</guid>
       <description>版本号格式：主版本号.次版本号.修订号&#xA;版本号递增规则：&#xA;主版本号：当有不向下兼容的功能发布时 次版本号：当有可向下兼容的功能发布时 修订号：当有可向下兼通的问题修正发布时 注意：构建号与版本号不同，不受此规范约束。&#xA;规范重点摘要 标准的版本号必须使用 X.Y.Z 格式（对应 major.minor.patch），且 X、Y、Z 为非负整数，数字前方禁止补零（如 01 是不被允许的），禁止留白。范例：1.3.2、3.0.0 等等 新版本号标记的内容发布后，禁止再使用该版本号发布任何内容，往后任何内容变更都必须新起一个版本号 开发初始阶段（非稳定版），主版本号设定为零 每当主版本号递增时，次版本号和修订号必须归零；每当次版本号递增时，修订号必须归零 先行版本号（非稳定版）标注在正式版本号之后，使用「-」连接，先行版本号由 ASCII 字母、数字 [0-9A-Za-z] 以及分隔符英文句点「.」组成，数字前方禁止补零，禁止留白。范例：1.0.0-alpha、1.0.0-beta.1、1.0.0-0.2.1、1.0.0-x.7.a.13 等等 版本编译信息标注在（正式或先行）版本号之后，使用「+」连接，版本编译信息标识符由 ASCII 字母、数字 [0-9A-Za-z] 以及分隔符英文句点「.」组成，禁止留白。范例：1.0.0+001、1.0.0-beta.1+sha.34f8h4 等等 版本优先级 排序时仅考虑主版本号、次版本号、修订号、先行版本号进行比较，版本编译信息不影响版本优先级 注意：避免使用难以明确优先级的先行版本号。先行版本一般可使用 alpha &amp;lt; beta &amp;lt; rc 标识。&#xA;其他提示 初始开发版本建议为 0.1.0 当软件要被用于生产环境时就可以发布 1.0.0 v2.3.1 不是一个语义化版本号，v 只是 version 的缩写，是版本号的标签 检查语义化版本号正确性的正则表达式： ^(?P&amp;lt;major&amp;gt;0|[1-9]\d*)\.(?P&amp;lt;minor&amp;gt;0|[1-9]\d*)\.(?P&amp;lt;patch&amp;gt;0|[1-9]\d*)(?:-(?P&amp;lt;prerelease&amp;gt;(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P&amp;lt;buildmetadata&amp;gt;[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$ Link: https://regex101.com/r/Ly7O1x/3/&#xA;参考 语义化版本控制规范 2.0.0 </description>
     </item>
     <item>
       <title>Now</title>
-      <link>http://localhost:1313/now/</link>
+      <link>https://rokcso.com/now/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/now/</guid>
+      <guid>https://rokcso.com/now/</guid>
       <description>What I&amp;rsquo;m doing right now This is a snapshot of my current endeavors and focal points. Inspired by nownownow.com.&#xA;Last updated on 2024-08-08, Hangzhou, China.&#xA;Life The heat in Hangzhou is relentless these days, with temperatures soaring close to 40°C daily. Despite the sweltering conditions, I persist in commuting to work on my motorcycle every day. It&amp;rsquo;s actually quite pleasant, the wind passing through me.&#xA;Sui Sui (My cat), has unfortunately been afflicted with ringworm once again, this time still on his face, a recurring issue that surfaces every two to three months.</description>
     </item>
     <item>
       <title>Projects</title>
-      <link>http://localhost:1313/projects/</link>
+      <link>https://rokcso.com/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/</guid>
+      <guid>https://rokcso.com/projects/</guid>
       <description>Projects Ongoing projects A network disk search tool navigation station, the first manual test standard A website to share the useful things I found A Weixin Official Accounts to share the useful things I found (#空字节) Archived projects Online URL Encode/Decode Tool Create Feishu/Lark online document quickly (A Raycast extension) Dead projects Find all available Z-Library websites in one place (Only survived for 8 days) </description>
     </item>
   </channel>

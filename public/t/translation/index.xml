@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Translation on Rokcso&#39;s Blog</title>
-    <link>http://localhost:1313/t/translation/</link>
-    <description>Recent content in Translation on Rokcso&#39;s Blog</description>
+    <title>Translation on Rokcso&#39;s blog</title>
+    <link>https://rokcso.com/t/translation/</link>
+    <description>Recent content in Translation on Rokcso&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2024, Rokcso.</copyright>
-    <lastBuildDate>Thu, 08 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/t/translation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://rokcso.com/t/translation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>译&gt; 领先于时代，落后于潮流：Evernote 为何未能发挥其潜力</title>
+      <link>https://rokcso.com/p/evernote-history/</link>
+      <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://rokcso.com/p/evernote-history/</guid>
+      <description>本文由 AI 翻译，人工修正。&#xA;原文链接：https://nira.com/evernote-history&#xA;Legendary investor, programmer, and Y Combinator co-founder Paul Graham once wrote that one of the best ways to come up with ideas for your next startup is to ask what product you wish someone else would make for you.&#xA;传奇投资者、程序员、Y Combinator 联合创始人 Paul Graham 曾经写道，为下一次创业提出想法的最佳方法之一就是询问你希望其他人为你生产什么产品。&#xA;For Stepan Pachikov, founder of Evernote, that product was a way to help him remember things.&#xA;对于 Evernote 的创始人 Stepan Pachikov 来说，那个产品是一种帮助他记住事情的方式。</description>
+    </item>
     <item>
       <title>译&gt; Duolingo 是如何重新点燃用户增长的</title>
-      <link>http://localhost:1313/p/duolingo-user-growth/</link>
+      <link>https://rokcso.com/p/duolingo-user-growth/</link>
       <pubDate>Thu, 08 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/duolingo-user-growth/</guid>
+      <guid>https://rokcso.com/p/duolingo-user-growth/</guid>
       <description>本文由 AI 翻译，人工修正。&#xA;原文链接：https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth&#xA;I was at a small event a few months back where Jorge Mazal (former CPO of Duolingo) shared the story behind Duolingo’s growth reaccelerating. I was captivated. I’ve never seen a growth story like this before—4.5x growth for a mature product, driven by a small handful of product changes, rooted in an innovative growth model, and explained in such actionable detail. I asked Jorge if he’d be willing to share (and expand on) the story with a broader audience, and I’m so happy he agreed.</description>
     </item>
   </channel>

@@ -5,8 +5,8 @@ slug: "giffgaff"
 tags: [
     "skill"
 ]
-date: "2024-08-14"
-draft: false
+date: "2024-08-13"
+draft: false 
 ---
 
 长期以来，我都是通过接码平台注册 Claude，但是这个方式现在越来越行不通了，并且对于注册得越来越多的海外平台，有一个稳定的海外手机号对我来说变得非常重要。

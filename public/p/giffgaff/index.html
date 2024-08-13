@@ -6,22 +6,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
-<title>修复 macOS 终端主机名显示 192 | Rokcso&#39;s blog</title>
-<meta name="title" content="修复 macOS 终端主机名显示 192" />
-<meta name="description" content="修复 macOS 终端中主机名始终显示 192 的异常。" />
-<meta name="keywords" content="macos,skill," />
+<title>我的海外手机号方案 - giffgaff | Rokcso&#39;s blog</title>
+<meta name="title" content="我的海外手机号方案 - giffgaff" />
+<meta name="description" content="分享如何注册海外手机号，使用 giffgaff 提供的英国手机号，实体 SIM 卡，最低成本保号。" />
+<meta name="keywords" content="skill," />
 
 
-<meta property="og:url" content="http://localhost:1313/p/macos-hostname-192/">
+<meta property="og:url" content="http://localhost:1313/p/giffgaff/">
   <meta property="og:site_name" content="Rokcso&#39;s blog">
-  <meta property="og:title" content="修复 macOS 终端主机名显示 192">
-  <meta property="og:description" content="修复 macOS 终端中主机名始终显示 192 的异常。">
+  <meta property="og:title" content="我的海外手机号方案 - giffgaff">
+  <meta property="og:description" content="分享如何注册海外手机号，使用 giffgaff 提供的英国手机号，实体 SIM 卡，最低成本保号。">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2024-08-07T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-08-07T00:00:00+00:00">
-    <meta property="article:tag" content="MacOS">
+    <meta property="article:published_time" content="2024-08-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-08-13T00:00:00+00:00">
     <meta property="article:tag" content="Skill">
     <meta property="og:image" content="http://localhost:1313/images/share.png">
 
@@ -30,19 +29,19 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/images/share.png">
-  <meta name="twitter:title" content="修复 macOS 终端主机名显示 192">
-  <meta name="twitter:description" content="修复 macOS 终端中主机名始终显示 192 的异常。">
+  <meta name="twitter:title" content="我的海外手机号方案 - giffgaff">
+  <meta name="twitter:description" content="分享如何注册海外手机号，使用 giffgaff 提供的英国手机号，实体 SIM 卡，最低成本保号。">
 
 
 
 
-  <meta itemprop="name" content="修复 macOS 终端主机名显示 192">
-  <meta itemprop="description" content="修复 macOS 终端中主机名始终显示 192 的异常。">
-  <meta itemprop="datePublished" content="2024-08-07T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-08-07T00:00:00+00:00">
-  <meta itemprop="wordCount" content="74">
+  <meta itemprop="name" content="我的海外手机号方案 - giffgaff">
+  <meta itemprop="description" content="分享如何注册海外手机号，使用 giffgaff 提供的英国手机号，实体 SIM 卡，最低成本保号。">
+  <meta itemprop="datePublished" content="2024-08-13T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-08-13T00:00:00+00:00">
+  <meta itemprop="wordCount" content="65">
   <meta itemprop="image" content="http://localhost:1313/images/share.png">
-  <meta itemprop="keywords" content="MacOS,Skill">
+  <meta itemprop="keywords" content="Skill">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -266,38 +265,46 @@
 </header>
   <main>
 
-<h1>修复 macOS 终端主机名显示 192</h1>
+<h1>我的海外手机号方案 - giffgaff</h1>
 <p>
   <i>
-    <time datetime='2024-08-07' pubdate>
-      07 Aug, 2024
+    <time datetime='2024-08-13' pubdate>
+      13 Aug, 2024
     </time>
   </i>
 </p>
 
 <content>
-  <p>通常 macOS 终端（Terminal）App 中显示的主机名（HostName）应该是当前设备设定的用户名。</p>
-<p>但是有时打开终端时会发现主机名变成了 192，这主要是由于当前使用的 DNS 服务因为某些原因变成了默认的 <code>192.168.1.1</code> 或 <code>192.168.0.1</code>，我通常在启动了代理服务之后会出现。</p>
-<p><strong>解决方案一</strong></p>
-<blockquote>
-<p>设备：Mac mini M2</p>
-<p>macOS: Sonama 14.6</p>
-</blockquote>
-<p>这种情况首先可以尝试修改 DNS 设置，打开「系统偏好设置 -&gt; 网络（或 Wi-Fi） -&gt; 详细信息 -&gt; DNS」。</p>
-<p>如果这里的 DNS 服务器为上面提到的默认 IP 地址，那么直接删除，然后添加新的 DNS 服务器 IP 地址：<code>8.8.8.8</code> 即可。</p>
-<p>⚠️ 注意：修改 DNS 配置后记得「应用」。</p>
-<p><strong>解决方案二</strong></p>
-<p>首先确认本机是否存在已配置的 HostName，打开终端执行以下命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scutil --get HostName 
-</span></span></code></pre></div><p>如果本机没有配置 HostName，那么执行该命令不会获得任何输出，如果存在 HostName 则会直接返回 HostName 字符串。</p>
-<p>当本机没有配置 HostName 是，终端的主机名会使用来自 DNS 或者 DHCP 服务器，所以我们也可以通过主动配置一个 HostName 解决这个问题，在终端执行以下命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo scutil --set HostName <span style="color:#40a02b">&#34;yourHostName&#34;</span>
-</span></span></code></pre></div><p>⚠️ 注意：使用你想要设置的 HostName 替换上面命令中的 <code>yourHostName</code> 。</p>
+  <p>长期以来，我都是通过接码平台注册 Claude，但是这个方式现在越来越行不通了，并且对于注册得越来越多的海外平台，有一个稳定的海外手机号对我来说变得非常重要。</p>
+<p>我选择的方案是注册 giffgaff 英国卡（实体卡），免月租（但是激活需要充值 10 英镑话费），接收短信免费，每半年发送一次短信保号（成本 0.3 英镑/条短信）。</p>
+<p>由于我的需求就是「接码」，稳定的「接码」，所以使用这个方案对我来说性价比最高。</p>
+<h2 id="申请">申请</h2>
+<h3 id="官网途径">官网途径</h3>
+<p>通过官网申请 SIM 卡是完全免费的，SIM 卡到手之后激活号卡才需要充值 10 英镑话费。</p>
+<p>访问 <a href="https://www.giffgaff.com/">giffgaff 官网</a>，点击「Order your free SIM」。</p>
+<p><img src="image.png" alt=""></p>
+<p>❌ 如果点击后跳转的 URL 是 <a href="https://www.giffgaff.com/free-sim-cards">https://www.giffgaff.com/free-sim-cards</a>，那么后续订购填写邮寄地址时将只能选择英国的地址。</p>
+<p>✅ 如果要将 SIM 卡邮寄国内（非英国），则需要通过 <a href="https://www.giffgaff.com/freesim-international">https://www.giffgaff.com/freesim-international</a> 订购，如果访问该 URL 后报错，则是代理问题。</p>
+<p>可邮寄国内（非英国）的订购页面如下：</p>
+<p><img src="image-2.png" alt=""></p>
+<p>这里忽略页面上方选择国家，继续下划页面到「Choose your plan」，这里点击「No thanks, I just want a free SIM」。</p>
+<p><img src="image-3.png" alt=""></p>
+<p>然后会弹出「Your details」页面，如图提示填写即可。</p>
+<p><img src="image-5.png" alt=""></p>
+<p>填写完成后点击「Order you free SIM」，页面提示「Your SIM has been ordered」，即表示订购成功。</p>
+<p><img src="image-6.png" alt=""></p>
+<p>接下来就是等待邮寄，是通过平邮到国内，能不能顺利收到纯看一路上的快递员了。</p>
+<h2 id="开箱">开箱</h2>
+<p>等收到快递后再写。</p>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://www.maizimi.com/oversea/oversea-tel-giffgaff/">https://www.maizimi.com/oversea/oversea-tel-giffgaff/</a></li>
+<li><a href="https://fast.v2ex.com/t/971919">https://fast.v2ex.com/t/971919</a></li>
+<li><a href="https://telegra.ph/Giffgaff-SIM-Card-in-China-Channel-10-29">https://telegra.ph/Giffgaff-SIM-Card-in-China-Channel-10-29</a></li>
+</ul>
 
 </content>
 <p>
-  
-  <a href="http://localhost:1313/t/macos/">#MacOS</a>
   
   <a href="http://localhost:1313/t/skill/">#Skill</a>
   

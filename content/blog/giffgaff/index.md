@@ -6,7 +6,7 @@ tags: [
     "skill"
 ]
 date: "2024-08-14"
-draft: true
+draft: false
 ---
 
 长期以来，我都是通过接码平台注册 Claude，但是这个方式现在越来越行不通了，并且对于注册得越来越多的海外平台，有一个稳定的海外手机号对我来说变得非常重要。
@@ -17,7 +17,9 @@ draft: true
 
 ## 申请
 
-### 官网
+### 官网途径
+
+通过官网申请 SIM 卡是完全免费的，SIM 卡到手之后激活号卡才需要充值 10 英镑话费。
 
 访问 [giffgaff 官网](https://www.giffgaff.com/)，点击「Order your free SIM」。
 
@@ -43,12 +45,14 @@ draft: true
 
 ![](image-6.png)
 
+接下来就是等待邮寄，是通过平邮到国内，能不能顺利收到纯看一路上的快递员了。
+
+## 开箱
+
+等收到快递后再写。
+
 ## 参考
 
-https://rh0w322x8w.feishu.cn/wiki/ASkswc9BliHK9IkQX5xcfeeSnJg
-
-https://www.maizimi.com/oversea/oversea-tel-giffgaff/
-
-https://fast.v2ex.com/t/971919
-
-https://telegra.ph/Giffgaff-SIM-Card-in-China-Channel-10-29
+- https://www.maizimi.com/oversea/oversea-tel-giffgaff/
+- https://fast.v2ex.com/t/971919
+- https://telegra.ph/Giffgaff-SIM-Card-in-China-Channel-10-29

@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2024, Rokcso.</copyright>
-    <lastBuildDate>Tue, 13 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Aug 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>译&gt; 重构 UI</title>
+      <link>http://localhost:1313/p/refactoring-ui/</link>
+      <pubDate>Sun, 25 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/p/refactoring-ui/</guid>
+      <description>本文由 AI 翻译，人工修正。&#xA;原文链接：https://www.refactoringui.com/&#xA;Starting from Scratch / 从零开始 Start with a feature, not a layout / 始于功能，而非布局 When you start the design for a new app idea, what do you design first? If it&amp;rsquo;s the navigation bar at the top of the page, you&amp;rsquo;re making a mistake.&#xA;当你开始设计一个新 App 时，你首先设计什么？如果是页面顶部的导航栏，那么你可能犯了一个错误。&#xA;The easiest way to find yourself frustrated and stuck when working on a new design is to start by trying to “design the app.</description>
+    </item>
     <item>
       <title>我的海外手机号方案 - giffgaff</title>
       <link>http://localhost:1313/p/giffgaff/</link>

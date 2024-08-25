@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>译&gt; 重构 UI | Rokcso&#39;s blog</title>
+<meta name="title" content="译&gt; 重构 UI" />
+<meta name="description" content="中英双语对照翻译，关于《Refactoring UI》的全文翻译。" />
+<meta name="keywords" content="translation,UI," />
+
+
+<meta property="og:url" content="http://localhost:1313/p/refactoring-ui/">
+  <meta property="og:site_name" content="Rokcso&#39;s blog">
+  <meta property="og:title" content="译&gt; 重构 UI">
+  <meta property="og:description" content="中英双语对照翻译，关于《Refactoring UI》的全文翻译。">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-08-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-08-25T00:00:00+00:00">
+    <meta property="article:tag" content="Translation">
+    <meta property="article:tag" content="UI">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="译&gt; 重构 UI">
+  <meta name="twitter:description" content="中英双语对照翻译，关于《Refactoring UI》的全文翻译。">
+
+
+
+
+  <meta itemprop="name" content="译&gt; 重构 UI">
+  <meta itemprop="description" content="中英双语对照翻译，关于《Refactoring UI》的全文翻译。">
+  <meta itemprop="datePublished" content="2024-08-25T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-08-25T00:00:00+00:00">
+  <meta itemprop="wordCount" content="16676">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Translation,UI">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+  }
+
+  i {
+    font-style: normal;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+    border-radius: 4px;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 4px solid #999;
+    color: #222;
+    margin: 0;
+    padding-left: 10px;
+    font-style: italic;
+  }
+
+  blockquote p {
+    margin: 0;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+    margin-top: 50px;
+    font-size: small;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+  ul li p {
+    margin: 0;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h1>Rokcso&#39;s blog</h1>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/now/">Now</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>译&gt; 重构 UI</h1>
+<p>
+  <i>
+    <time datetime='2024-08-25' pubdate>
+      25 Aug, 2024
+    </time>
+  </i>
+</p>
+
+<content>
+  <blockquote>
+<p>本文由 AI 翻译，人工修正。</p>
+<p>原文链接：<a href="https://www.refactoringui.com/">https://www.refactoringui.com/</a></p>
+</blockquote>
+<h2 id="starting-from-scratch--从零开始">Starting from Scratch / 从零开始</h2>
+<h3 id="start-with-a-feature-not-a-layout--始于功能而非布局">Start with a feature, not a layout / 始于功能，而非布局</h3>
+<p>When you start the design for a new app idea, what do you design first? If it&rsquo;s the navigation bar at the top of the page, you&rsquo;re making a mistake.</p>
+<p>当你开始设计一个新 App 时，你首先设计什么？如果是页面顶部的导航栏，那么你可能犯了一个错误。</p>
+<p>The easiest way to find yourself frustrated and stuck when working on a new design is to start by trying to “design the app.” When most people think about “designing the app”, they’re thinking about the shell.</p>
+<p>当你开始一项新的设计时，最容易使人感到沮丧和陷入困境的方式就是从「设计 App」开始。大多数人想到「设计 App」时，其实他们想到的只是那层外在的躯壳。</p>
+<ul>
+<li><em>Should it have a top nav, or a sidebar?</em></li>
+<li><em>Should the navigation items be on the left, or on the right?</em></li>
+<li><em>Should the page content be in a container, or should it be full-width?</em></li>
+<li><em>Where should the logo go?</em></li>
+<li><em>应该有一个顶部导航栏，还是一个侧边栏？</em></li>
+<li><em>导航栏里面的子项应该放左边还是右边？</em></li>
+<li><em>页面内容应该放在一个容器里，还是占据页面全宽度？</em></li>
+<li><em>logo 应该放哪里？</em></li>
+</ul>
+<p><img src="img/1.png" alt=""></p>
+<p>The thing is, an “app” is actually a collection of features. Before you’ve designed a few features, you don’t even have the information you need to make a decision about how the navigation should work. No wonder it’s frustrating!</p>
+<p>问题是「App」实际上是功能的集合。在你设计一些功能之前，你甚至没有帮助你决策导航栏如何工作的信息，难怪它是令人沮丧的！</p>
+<p>Instead of starting with the shell, start with a piece of actual functionality.</p>
+<p>不要从外在的躯壳开始，而是从一部分实际的功能开始。</p>
+<p>For example, say you’re building a flight booking service. You could start with a feature like “searching for a flight”.</p>
+<p>例如：假设你正在构建一个航班预订服务。你可以从「搜索航班」这样的功能开始。</p>
+<p>Your interface will need:</p>
+<ul>
+<li>A field for the departure city</li>
+<li>A field for the destination city</li>
+<li>A field for the departure date</li>
+<li>A field for the return date</li>
+<li>A button to perform the search</li>
+</ul>
+<p>你的界面将需要：</p>
+<ul>
+<li>出发城市字段</li>
+<li>目的地城市字段</li>
+<li>出发日期字段</li>
+<li>返回日期字段</li>
+<li>搜索按钮</li>
+</ul>
+<p>Start with that.</p>
+<p>就从那开始。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2D35B388-8CBD-4470-A008-01A82809D46F_2/VSBJ32K4J3DZAREjcrEcVJT6hSElyIS6X7yixErOUwMz/Image.png" alt="Image.png"></p>
+<p>Hell, you might not even need that other stuff anyways — it worked for Google.</p>
+<p>天呐，你甚至可能不需要其他东西 —— 它对 Google 已经足够。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/72193F1B-8DBF-4103-8CFF-1CEC0BBF1816_2/BpOwwrxMBIimQE8j121k2dPBlxxsPr1LszD3pdb2Zv8z/Image.png" alt="Image.png"></p>
+<h3 id="details-comes-later--忽略细节">Details comes later / 忽略细节</h3>
+<p>In the earliest stages of designing a new feature, it’s important that you don’t get hung up making low-level decisions about things like typefaces, shadows, icons, etc.</p>
+<p>在设计新功能的最早期阶段，不要在字体、阴影、图标等低级决策上纠结很重要。</p>
+<p>That stuff will all matter eventually, but it doesn’t matter right now.</p>
+<p>这些东西最终都会很重要，但现在不是。</p>
+<p>If you have trouble ignoring the details when working in a high fidelity environment like the browser or your favorite design tool, one trick Jason Fried of Basecamp likes to use is to design on paper using a thick Sharpie.</p>
+<p>如果你在浏览器或者你最喜欢的设计工具这样的高保真环境中工作时很难不沉迷于细节，Basecamp 的创始人 Jason Fried 有一个技巧是使用粗头马克笔在纸上进行设计。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7B0C00FC-CDC1-4B43-9A94-02D19BE4E881_2/Hr0sYBmeaxULutcE4LXcatTSP8Dt5urqKJ7W6KXm1Nsz/Image.png" alt="Image.png"></p>
+<p>Obsessing over little details just isn’t possible with a Sharpie, so it can be a great way to quickly explore a bunch of different layout ideas.</p>
+<p>使用马克笔进行设计还想痴迷于细节是不可能的，所以这可能是一个探索多种不同布局想法的好方法。</p>
+<p><strong>Hold the color / 克制色彩</strong></p>
+<p>Even when you’re ready to refine an idea in higher fidelity, resist the temptation to introduce color right away.</p>
+<p>即使你准备以更高的保真度来完善一个想法，也要抵制住立即引入色彩的诱惑。</p>
+<p>By designing in grayscale, you’re forced to use spacing, contrast, and size to do all of the heavy lifting.</p>
+<p>在灰度下设计，可以迫使你使用间距、对比度和尺寸来承担所有重任。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/79A76AD4-50AA-491F-9ED9-92713C0BC764_2/MFd1s4XmzNPTOqV4BUrGGIfsLdguOKtOslMvFbVtURsz/Image.png" alt="Image.png"></p>
+<p>It’s a little more challenging, but you’ll end up with a clearer interface with a strong hierarchy that’s easy to enhance with color later.</p>
+<p>这确实具有挑战性，但是最终你将得到一个层次结构更清晰的界面，这也更容易用色彩来优化。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D522CE0B-3D6F-4E53-B137-5EB73E66FE78_2/xUdlS0kAvOJyfGeYERjmG5wFmZferRUg7h52ylyTf8oz/Image.png" alt="Image.png"></p>
+<p><strong>Dont&rsquo;t over-invest / 避免过度投资</strong></p>
+<p>The whole point of designing in low-fidelity is to be able to move fast, so you can start building the real thing as soon as possible.</p>
+<p>使用低保真设计能够快速行动，因此你才有可能更快开始构建真实的东西。</p>
+<p>Sketches and wireframes are disposable — users can’t do anything with static mockups. Use them to explore your ideas, and leave them behind when you’ve made a decision.</p>
+<p>草图和线框是一次性的 —— 用户不能使用它们做任何事情。你利用它们来探索你的想法，在你做出决定之后就请将其抛之脑后。</p>
+<h3 id="dontt-design-too-much--不要过度设计">Dont&rsquo;t design too much / 不要过度设计</h3>
+<p>You don’t need to design every single feature in an app before you move on to implementation; in fact, it’s better if you don’t.</p>
+<p>在进入执行阶段之前，你不需要设计 App 中的每一个功能；事实上，这样（不设计 App 中的每一个功能）会更好。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5715EEE8-1937-444F-B2F5-076C5F3EDCE1_2/Dxyewfmf0lOQVNQCyEcY99UwjOJ5gmqVKrFgLc46W6Uz/Image.png" alt="Image.png"></p>
+<p>Figuring out how every feature in a product should interact and how every edge case should look is really hard, especially in the abstract.</p>
+<p>理清楚产品中每个功能应该如何交互以及每个边缘情况应该如何呈现确实很困难，尤其是在抽象层面。</p>
+<ul>
+<li><em>How should this screen look if the user has 2000 contacts?</em></li>
+<li><em>Where should the error message go in this form?</em></li>
+<li><em>How should this calendar look when there are two events scheduled at the same time?</em></li>
+<li><em>如果用户有 2000 个联系人，页面应该如何呈现？</em></li>
+<li><em>表单的报错提示应该放在哪里？</em></li>
+<li><em>被安排在同一时间的两个事件在日历中应该如何显示？</em></li>
+</ul>
+<p>You’re setting yourself up for frustration by trying to figure this stuff out using only a design tool and your imagination.</p>
+<p>你试图仅凭设计工具和你的想象力来解决这些问题，无疑是在给自己制造挫败。</p>
+<p><strong>Work in cycles / 持续迭代</strong></p>
+<p>Instead of designing everything up front, work in short cycles. Start by designing a simple version of the next feature you want to build.</p>
+<p>与其一开始就设计好一切，不如快速迭代。首先设计你想要构建的下一个功能的简单版本。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/ABA67710-3436-403C-8463-E0D8F97985AE_2/0I5rtEYpjtPz1JxjxSKMZrE8lTMgll5nxwCMucU1Anwz/Image.png" alt="Image.png"></p>
+<p>Once you’re happy with the basic design, <em>make it real</em>.</p>
+<p>一旦你对基础设计感到满意，<em>就将其实现</em>。</p>
+<p>You’ll probably run into some unexpected complexity along the way, but that’s the point — it’s a lot easier to fix design problems in an interface you can actually use than it is to imagine every edge case in advance.</p>
+<p>你可能会遇到意料之外的问题，但重点是 —— 在你可以实际使用的界面中修复设计问题，远比提前设想每一个边缘情况要容易得多。</p>
+<p>Iterate on the working design until there are no more problems left to solve, then jump back into design mode and start working on the next feature.</p>
+<p>持续迭代设计直到没有更多问题需要解决，然后再着手开始设计下一个功能。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/67083182-4B76-4080-8870-77985ED8B288_2/Jw3DvxP43qJFvvuWibAV6d5GViB80LZtuIb2DroTjxAz/Image.png" alt="Image.png"></p>
+<p>Don’t get overwhelmed working in the abstract. Build the real thing as early as possible so your imagination doesn’t have to do all the heavy lifting.</p>
+<p>不要在抽象的工作中感到不知所措。尽早构建真实之物，让你的想象力不必承担所有重担。</p>
+<p><strong>Be a pessimist / 做个悲观主义</strong></p>
+<p>Don’t imply functionality in your designs that you aren’t ready to build.</p>
+<p>不要在你的设计中暗你尚未准备好构建的功能。</p>
+<p>For example, say you’re working on a comment system for a project management tool. You know that one day, you’d like users to be able to attach files to their comments, so you include an attachments section in your design.</p>
+<p>例如：假设你正在开发一个项目管理工具的评论系统。你知道有一天你会希望你的用户可以在评论中添加附件，所以你设计了附件相关的内容。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D66F9448-41E2-4641-ACF0-D64C39699BB9_2/Lj7Qh9t7qPcZ3G29FLluLrHdvyhEA0XjfgFnH5uqcvQz/Image.png" alt="Image.png"></p>
+<p>You get deep into implementation only to discover that supporting attachments is going to be a lot more work than you anticipated. There’s no way you have time to finish it right now, so the whole commenting system sits on the backburner while you take care of other priorities.</p>
+<p>当你深入实施之后，你发现支持添加附件的功能比你预期的要复杂很多很多。现在你没有时间来实现它，所以整个评论系统只好暂时搁置，等待你处理其他优先事项。</p>
+<p>The thing is, a comment system with no attachments would still have been better than no comment system at all, but because you planned to include it from day one you’ve got nothing you can ship.</p>
+<p>事实上，一个没有附件功能的评论系统仍然比完全没有评论系统要好，但因为你从一开始就计划要支持添加附件，结果你现在什么也发布不了。</p>
+<p>When you’re designing a new feature, <strong>expect it to be hard to build.</strong> Designing the smallest useful version you can ship reduces that risk considerably.</p>
+<p>当你在设计一个新功能时，<strong>要有它将难以构建的预期</strong>。设计一个你能发布的最小可用版本可以显著降低这种风险。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/43BC1E17-434B-4B20-940E-DAB6F6D5A6C1_2/51M585rAwn7BAsBIMzsx7ZLrlCST1tXNjs2KYJ4Dhh4z/Image.png" alt="Image.png"></p>
+<p>If part of a feature is a “nice-to-have”, <strong>design it later</strong>. Build the simple version first and you’ll always have something to fall back on.</p>
+<p>如果一个功能的某一部分是「锦上添花」，<strong>那么稍后再设计它</strong>。首先构建简单版本，你将始终有备选方案。</p>
+<h3 id="choose-a-personality--选择风格">Choose a personality / 选择风格</h3>
+<p>Every design has some sort of personality. A banking site might try to communicate secure and professional, while a trendy new startup might have a design that feels fun and playful.</p>
+<p>每种设计都具有某种个性。银行网站可能试图传达安全和专业的感觉，而一家时尚的新创公司可能拥有一个让人感觉有趣和活泼的设计。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1BE9B3E7-4712-4F69-A06F-FAF00D1BA621_2/KQua1tQf1WQAW5JHYBSxDlOiQaptqjMSX64YyW8olzsz/Image.png" alt="Image.png"></p>
+<p>On the surface, giving a design a particular personality might sound abstract and handwavy, but a lot of it is determined by a few solid, concrete factors.</p>
+<p>表面上看，赋予设计一种特定的个性可能听起来很抽象、含糊其辞，但实际上，它的很多方面是由一些坚实、具体的因素决定的。</p>
+<p><strong>Font choice / 字体选择</strong></p>
+<p>Typography plays a huge part in determining how a design feels.</p>
+<p>字体排版在决定设计风格方面有很重要的作用。</p>
+<p>If you want an elegant or classic look, you might want to incorporate a serif typeface in your design:</p>
+<p>如果你想要一个优雅或经典的外观，你可以在设计中加入衬线字体：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/052C0E36-7A30-4513-8549-61D426023B4B_2/W6BDfxnpCXXJcxYM2gsTg57kNvTRFhl78fY9I8LSYu8z/Image.png" alt="Image.png"></p>
+<p>For a playful look, you could use a rounded sans serif:</p>
+<p>为了营造轻松活泼的外观，你可以使用圆润的无衬线字体：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B936BDFD-2835-4248-8D16-97405F679493_2/n5bK5wmivgfNC4GHHIeEFNqqFO6t3vjhE3Ndy9MyHpcz/Image.png" alt="Image.png"></p>
+<p>If you’re going for a plainer look, or want to rely on other elements to provide the personality, a neutral sans serif works great:</p>
+<p>如果你想要更简洁朴素的外观，或者想依赖其他元素来提供风格，那么使用中性无衬线字体就很好：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C75DB261-3A8B-4CC1-9447-F286C820D549_2/36ZZjEL8vs88IMauHiKycbzQIq7MhOZEuHzW0r0bq04z/Image.png" alt="Image.png"></p>
+<p><strong>Color / 颜色</strong></p>
+<p>There’s a lot of science out there on the psychology of color, but in practice, you really just need to pay attention to how different colors feel to you.</p>
+<p>关于色彩心理学的科学知识有很多，但在实践中，你只需要关注不同颜色给你带来的感受。</p>
+<p>Blue is safe and familiar — nobody ever complains about blue:</p>
+<p>蓝色是安全且熟悉的 —— 没人会抱怨蓝色：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/865EBC37-F358-40BE-9584-7BD4BD0783A2_2/6V6xC2hoPfcljGTZWcRCfh0XdNjQNVNrAQSUVW8kyhIz/Image.png" alt="Image.png"></p>
+<p>Gold might say “expensive” and “sophisticated”:</p>
+<p>金色可能是「昂贵」和「精致」：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/351B1A77-AA42-44CB-8679-A4DCDC77C166_2/Wtuoxq2ufsPAYAHEXO1OZCjjTxIUQJBbSmqcY5wCpncz/Image.png" alt="Image.png"></p>
+<p>Pink is a bit more fun, and not so serious:</p>
+<p>粉色更有趣一点，没有那么严肃：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9F8ECD10-77C5-4519-8895-F7072ACA5244_2/OJWhni3FJXuBLSuu1k4MBiSCFRPHbN71mifUZZ21vjEz/Image.png" alt="Image.png"></p>
+<p>While trying to choose colors using only psychology isn’t super practical — a lot of it is just about what looks good to you — it can be helpful to think about when you’re trying to understand why you think a color is the right fit.</p>
+<p>尽管仅凭心理学来选择颜色并不特别实用 —— 很多情况下，它只是关于什么颜色在你看来好看 —— 但在你试图理解为什么你认为某种颜色是合适之选时，思考这些问题可能会有所帮助。</p>
+<p><strong>Border radius / 边框圆角</strong></p>
+<p>As small of a detail as it sounds, if and how much you round the corners in your design can have a big impact on the overall feel.</p>
+<p>虽然听起来只是一个小细节，但是你在设计中是否使用圆角以及圆角的程度会对设计整体产生很大的影响。</p>
+<p>A small border radius is pretty neutral, and doesn’t really communicate much of a personality on its own:</p>
+<p>较小的边框圆角是比较中性的，本身不能传达太多风格：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A38CA9E9-C28A-4969-A754-0062DFB9670C_2/WaXo7xKlSWRFYPoh2yEsvxDe3a29lxpDHXmIiW8Ieikz/Image.png" alt="Image.png"></p>
+<p>A large border radius starts to feel more playful:</p>
+<p>而大的边框圆角则显得更有趣、活泼：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2C35CA13-5232-49A3-BAF7-D5A88F0D1B31_2/4odKg900x6m3iRiylOXxrXyD07H200CjeKdaCxutMmgz/Image.png" alt="Image.png"></p>
+<p>&hellip;while no border radius at all feels a lot more serious or formal:</p>
+<p>当边框没有圆角时则会显得更严肃或正式：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/0A0F62ED-88B3-4CA9-AA90-18826134FF22_2/IZgtritynZxeal8HfffUeAsTn6aP5FDHxlAwWjLgqtgz/Image.png" alt="Image.png"></p>
+<p>Whatever you choose, it’s important to stay consistent. Mixing square corners with rounded corners in the same interface almost always looks worse than sticking with one or the other.</p>
+<p>无论选择什么，保持一致很重要。在同一个界面中混合使用直角和圆角比始终只使用其中一种更糟糕。</p>
+<p><strong>Language / 语言</strong></p>
+<p>While not a visual design technique per se, the words you use in an interface have a massive influence on the overall personality.</p>
+<p>虽然语言本身不是一种视觉设计技巧，但是在页面中使用的词汇对于整体风格也有很大的影响。</p>
+<p>Using a less personal tone might feel more official or professional:</p>
+<p>使用不那么个人化的语气可能会更正式和专业：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2D1BFC00-7998-4875-B71D-85F83C87E3F5_2/xoVozx0PFB80fXGuL9ACLVHXncAxkPsTudax7JFVvFUz/Image.png" alt="Image.png"></p>
+<p>…while using friendlier, more casual language makes a site feel, well, friendlier:</p>
+<p>而使用更友好、随意的语言则会显得更友好：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9FA8DC05-9C6A-4987-8BC6-36964C77E50C_2/GzFGgT795OYYjZt8iHlPTy7rP5LQMQXVtqzhuA332o4z/Image.png" alt="Image.png"></p>
+<p>Words are everywhere in a user interface, and choosing the right ones is just as (if not more) important than choosing the right color or typeface.</p>
+<p>在用户界面中，文字无处不在，选择正确的词汇与选择正确的颜色或字体同样（甚至更为）重要。</p>
+<p><strong>Deciding what you actually want / 确定你真正想要的东西</strong></p>
+<p>A lot of the time you’ll probably just have a gut feeling for the personality you’re going for. But if you don’t, a great way to simplify the decision is to take a look at other sites used by the people you want to reach.</p>
+<p>很多时候，你可能只是凭直觉去感受你要追求的风格。但如果你不确定，一个简化决策的好方法是看看你想要触及的人群所使用的其他网站。</p>
+<p>If they are mostly pretty “serious business”, maybe that’s how your site should look too. If they are more playful with a bit of humor, maybe that’s a better direction to take.</p>
+<p>如果他们大多数都是相当「严肃商务」的风格，也许这就是你的网站也应该呈现的样子。如果他们的风格更加活泼，带有一点幽默感，也许那才是更好的方向。</p>
+<p>Just try not to borrow too much from direct competitors, you don’t want to look like a second-rate version of something else.</p>
+<p>只是要注意尽量不要过多地借鉴直接竞争对手，你不想自己的东西看起来像是其他东西的二流版本吧。</p>
+<h3 id="limit-your-choices--限制选择">Limit your choices / 限制选择</h3>
+<p>Having millions of colors and thousands of fonts to choose from might sound nice in theory, but in practice it’s usually a paralyzing curse.</p>
+<p>理论上来说，拥有数百万种颜色和数千种字体可供选择听起来很不错，但实际上，这通常是一种会令人瘫痪的诅咒。</p>
+<p>And it’s not just fonts and colors, either — you can easily waste time agonizing over almost any minor design decision.</p>
+<p>这不仅仅是字体和颜色的问题 —— 你很容易在几乎所有微小的设计决策上纠结并浪费大量时间。</p>
+<ul>
+<li><em>Should this text be 12px or 13px?</em></li>
+<li><em>Should this box shadow have a 10% opacity or a 15% opacity?</em></li>
+<li><em>Should this avatar be 24px or 25px tall?</em></li>
+<li><em>Should I use a medium font weight for this button or semibold?</em></li>
+<li><em>Should this headline have a bottom margin of 18px or 20px?</em></li>
+<li><em>这段文本尺寸应该是 12px 还是 13px？</em></li>
+<li><em>这个阴影应该使用 10% 不透明度还是 15%？</em></li>
+<li><em>这个头像应该是 24px 高还是 25px？</em></li>
+<li><em>这个按钮文字应该使用中粗字重还是半粗？</em></li>
+<li><em>这个标题的下边距应该是 18px 还是 20px？</em></li>
+</ul>
+<p>When you’re designing without constraints, decision-making is torture because there’s always going to be more than one right choice.</p>
+<p>当你在没有限制的情况下进行设计时，决策过程通常很痛苦，因为总会有不止一个正确的选择。</p>
+<p>For example, these buttons all have different background colors, but it’s almost impossible to tell the difference between them by just looking at them.</p>
+<p>例如：这些按钮都有不同的背景颜色，但仅凭外观几乎无法区分它们之间的差异。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A55CB3E3-7E7A-4F8B-BC2E-A0C17DF73789_2/ryuhyjWRUYQGxOqs3FfnCOOyZi4P6YXRsJCA5IkNObMz/Image.png" alt="Image.png"></p>
+<p>How are you supposed to make a confident decision if none of these would really be bad choices?</p>
+<p>如果这些选择中没有一个会是糟糕的选择，你该如何做出自信的决定呢？</p>
+<p><strong>Define systems in advance / 提前定义系统</strong></p>
+<p>Instead of hand-picking values from a limitless pool any time you need to make a decision, start with a smaller set of options.</p>
+<p>不要在每次需要做决定时都从无限的选项池中手工挑选值，而是从一组较小的选项集开始。</p>
+<p>Don’t reach for the color picker every time you need to pick a new shade of blue — choose from a set of 8-10 shades picked out ahead of time.</p>
+<p>不要每次需要选择一种新蓝色调时都去拿取色器 —— 从预先挑选好的 8-10 种色调中选择。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/24FBE93C-A84B-42F3-9B88-AC73DED79E33_2/lPh0NgSN6VcQ6csBln6VTEXXG4e1KSQyzDfvx94mnrgz/Image.png" alt="Image.png"></p>
+<p>Similarly, don’t tweak a font size one pixel at a time until it looks perfect. Define a restrictive type scale in advance and use that to make any future font size decisions.</p>
+<p>同样地，不要每次一个像素大小的调整直到它看起来完美。提前定义好一组字体大小比例，并使用它来做出任何未来的字体大小的决定。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/808E92B8-1ABC-484C-A3EE-AA34574430CE_2/RXEGgbloJSheXbM1oiumT8t9OiilyFC1rLNDeyid7MYz/Image.png" alt="Image.png"></p>
+<p>When you build systems like this, you only have to do the hard work of picking the initial values once instead of every time you’re designing a new piece of UI. It’s a bit more work up front, but it’s worth it — it’ll save you a ton of decision fatigue down the road.</p>
+<p>当你构建这样的系统时，你只需要做一次挑选初始值的艰难工作，而不是每次设计新的用户界面时都重新决策。这在前期可能需要更多的工作，但这是值得的 —— 它将在未来缓解你大量的决策疲劳。</p>
+<p><strong>Designing by process of elimination / 使用排除法进行设计</strong></p>
+<p>When you’re designing using a constrained set of values, decision-making is a lot easier because there are a lot fewer “right” choices.</p>
+<p>当你在使用一组有限的值进行设计时，决策会容易得多，因为「正确」的选择要少得多。</p>
+<p>For example, say you’re trying to choose a size for an icon. You’ve defined a sizing scale in advance where your only small-to-medium sized options are 12px, 16px, 24px, and 32px.</p>
+<p>例如：假设你正在尝试为一个图标选择尺寸。你已经提前定义了一个尺寸比例，其中小到中等尺寸的选项，分别是 12px、16px、24px 和 32px。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D9586177-E155-4CE2-9D0C-03D03C893403_2/ahpAczi3gkRMaKNaixUFxnInkRikCTuJxXHFUfkfxe4z/Image.png" alt="Image.png"></p>
+<p>To pick the best option, start by taking a guess at which one will look best, maybe 16px. Then try the values on either side (12px and 24px) for comparison.</p>
+<p>为了选择最佳选项，首先猜测哪一个看起来最好，可能是 16px。然后尝试比较两侧的值（12px 和 24px）。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B2D1BBBF-2BB3-4E40-AF32-972B6F471CF2_2/Hwr00Cb8xaaYf9QyZzf49PMCgSiMt81JI8MPFumD4NMz/Image.png" alt="Image.png"></p>
+<p>Chances are, two of those options will seem like obviously bad choices. If it’s the options on the outside, you’re done — the middle option is the only good choice.</p>
+<p>很可能，其中两个选项看起来明显不是好选择。如果外边两个是不好的选项，那么你已经找到了 —— 中间的选项是唯一的好选择。</p>
+<p>If one of the outer options looks best, do another comparison using that option as the “middle” value and make sure there’s not a better choice.</p>
+<p>如果外面的一个选项看起来最好，使用这个选项作为「中间」值再做一次比较，并确保没有更好的选择。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6CC5CFC9-197E-4D95-B610-1F5D3164D12E_2/m3C6r5ATdtMRE7qrpCKd9Szp45xX0Rmho0IyHaT90Aoz/Image.png" alt="Image.png"></p>
+<p>This approach works for anything where you’ve defined a system. When you’re limited to a set of options that all look noticeably different, picking the best one is a piece of cake.</p>
+<p>这种方法适用于你已经定义了系统的任何情况。当你被限制在一组明显不同的选项中选择时，挑选出最佳选项就易如反掌。</p>
+<p><strong>Systematize everything / 系统化一切</strong></p>
+<p>The more systems you have in place, the faster you’ll be able to work and the less you’ll second guess your own decisions.</p>
+<p>这样的系统越多，你的工作效率就越高，你对于自己的决策就越少纠结。</p>
+<p>You’ll want systems for things like:</p>
+<ul>
+<li>Font size</li>
+<li>Font weight</li>
+<li>Line height</li>
+<li>Color</li>
+<li>Margin</li>
+<li>Padding</li>
+<li>Width</li>
+<li>Height</li>
+<li>Box shadows</li>
+<li>Border radius</li>
+<li>Border width</li>
+<li>Opacity</li>
+</ul>
+<p>你将需要以下这些方面的系统：</p>
+<ul>
+<li>字体大小</li>
+<li>字体粗细</li>
+<li>行高</li>
+<li>颜色</li>
+<li>边距</li>
+<li>填充</li>
+<li>宽度</li>
+<li>高度</li>
+<li>阴影</li>
+<li>边框圆角</li>
+<li>边框宽度</li>
+<li>不透明度</li>
+</ul>
+<p>…and anything else you run into where it feels like you’re laboring over a low-level design decision.</p>
+<p>以及你在任何其他情况下遇到的，感觉像是你在为一个低级别的设计决策而努力。</p>
+<p>You don’t have to define all of this stuff ahead of time, just make sure you’re approaching design with a system-focused mindset. Look for opportunities to introduce new systems as you make new decisions, and try to avoid having to make the same minor decision twice.</p>
+<p>你不必提前定义所有这些东西，只要确保你是以系统为中心的思维来处理设计。在做出新决策时寻找引入新系统的机会，并尽量避免需要重复做出相同的小决策。</p>
+<p>Designing with systems is going to be a recurring theme throughout this book, and in later chapters we’ll talk about building a lot of these systems in finer detail.</p>
+<p>使用系统进行设计将是本书贯穿始终的一个主题，在后续章节中，我们将更细致地讨论构建这些系统的更多细节。</p>
+<h2 id="hierarchy-is-everything--层次结构是一切">Hierarchy is Everything / 层次结构是一切</h2>
+<h3 id="not-all-elements-are-equal--所有元素并非平等">Not all elements are equal / 所有元素并非平等</h3>
+<p>When you think of visual design as “styling things so they look good”, it’s easy to see why it might feel hard to achieve without innate artistic talent. But it turns out that one of the biggest factors in making something “look good” has nothing to do with superficial styling at all.</p>
+<p>当你将视觉设计视为「为了让事物看起来好看而进行的风格化」时，很容易理解为什么在没有天生的艺术天赋的情况下可能感觉难以实现。但事实证明，让某物「看起来好看」的最重要因素之一与表面的风格化毫无关系。</p>
+<p>Visual hierarchy refers to how important the elements in an interface appear in relation to one another, and it’s the most effective tool you have for making something feel “designed”.</p>
+<p>视觉层级指的是界面中元素相对于彼此的重要性表现，它才是让你的设计作品具有「设计感」的最有效的工具。</p>
+<p>When everything in an interface is competing for attention, it feels noisy and chaotic, like one big wall of content where it’s not clear what actually matters:</p>
+<p>当界面中的所有元素都在争夺注意力时，它给人的感觉是嘈杂和混乱的，就像一堵巨大的内容墙，让用户不清楚到底什么才是真正重要的：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/EFA33F02-9742-4CD8-8006-77E782D64144_2/KqwiscKg94SZOlFtggxJPENxuQO6j4Y7hQNZagyDkJMz/Image.png" alt="Image.png"></p>
+<p>When you deliberately de-emphasize secondary and tertiary information, and make an effort to highlight the elements that are most important, the result is immediately more pleasing, even though the color scheme, font choice, and layout haven’t changed:</p>
+<p>当你有意识地降低次要和第三重要的信息的强调程度，并努力突出最重要的元素时，结果会立即变得更加令人愉悦，即使配色方案、字体和布局都没有改变：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/26DF2710-BE9E-4366-902E-EFE82247126E_2/L336XE0QqLwCpBPsbd5eErgm68e6my2uMKk5gub36Pgz/Image.png" alt="Image.png"></p>
+<p>So how do you actually make this happen? In the following chapters, we’ll cover a number of specific strategies you can use to introduce hierarchy into your designs.</p>
+<p>那么你如何实际上实现这一点呢？在接下来的章节中，我们将介绍一些特定的策略，你可以使用它们在你的设计中引入层级。</p>
+<h3 id="size-isnt-everything--尺寸不是一切">Size isn’t everything / 尺寸不是一切</h3>
+<p>Relying too much on font size to control your hierarchy is a mistake — it often leads to primary content that’s too large, and secondary content that’s too small.</p>
+<p>过分依赖字体大小来控制你的层级是一个错误 —— 它通常会导致主要内容过大，次要内容过小。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FDE815B9-1170-4A0B-AD7A-8BC7842A29D6_2/tqsyTvUatGd86az6ePA7qijRlSZStFyjiz4Pf5wTEWcz/Image.png" alt="Image.png"></p>
+<p>Instead of leaving all of the heavy lifting to font size alone, try using font weight or color to do the same job.</p>
+<p>不要仅仅依靠字体大小来承担所有重任，尝试使用字体粗细或颜色来完成同样的工作。</p>
+<p>For example, making a primary element bolder lets you use a more reasonable font size, and often does a better job at communicating its importance anyways:</p>
+<p>例如，使主要元素加粗可以让你使用更合理的字体大小，并且通常在传达其重要性方面做得更好：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3C750B57-0D41-413D-87D0-7334FEDE655D_2/yKoOMScWkhiyh70wrZqvhNIi7mxyay77dnGD9lrUhmAz/Image.png" alt="Image.png"></p>
+<p>Similarly, using a softer color for supporting text instead of a tiny font size makes it clear that the text is secondary while sacrificing less on readability:</p>
+<p>同样地，对于辅助文本使用较柔和的颜色而不是极小的字体大小，可以明确表明该文本是次要的，同时在可读性上的牺牲更少。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B7E43E90-5B64-412B-9A46-56699E2340BB_2/LycMy9ltTy8fWu0qdZYIOqCUz0wXpAc0Dh9GF3TXO7kz/Image.png" alt="Image.png"></p>
+<p>Try and stick to two or three colors:</p>
+<ul>
+<li>A dark color for primary content (like the headline of an article)</li>
+<li>A grey for secondary content (like the date an article was published)</li>
+<li>A lighter grey for tertiary content (maybe the copyright notice in a footer)</li>
+</ul>
+<p>尝试坚持使用两到三种颜色：</p>
+<ul>
+<li>深色用于主要内容（比如文章标题）</li>
+<li>灰色用于次要内容（比如文档发布日期）</li>
+<li>浅灰色用于三级内容（比如页脚的版权声明）</li>
+</ul>
+<p>Similarly, two font weights are usually enough for UI work:</p>
+<ul>
+<li>A normal font weight (400 or 500 depending on the font) for most text</li>
+<li>A heavier font weight (600 or 700) for text you want to emphasize</li>
+</ul>
+<p>同样的，通常只用两种字体粗细就足够：</p>
+<ul>
+<li>正常字体粗细（400 或 500，取决于字体）用于大多数文字</li>
+<li>更粗的字体（600 或 700）用于想要强调的文字</li>
+</ul>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/28CAA2DF-CDA7-4B99-8B46-489F686F660D_2/O3MMQNymsGQTshFMQ5HORUAy24EKNYU16rfhyi1ywcAz/Image.png" alt="Image.png"></p>
+<p>Stay away from font weights under 400 for UI work — they can work for large headings but are too hard to read at smaller sizes. If you’re considering using a lighter weight to de-emphasize some text, use a lighter color or smaller font size instead.</p>
+<p>在用户界面工作中，避免使用 400 以下的字体粗细 —— 它们可以用于大型标题，但在较小尺寸上阅读起来太困难。如果你考虑使用较轻的字体粗细来降低某些文本的强调程度，请改用较浅的颜色或更小的字体大小。</p>
+<h3 id="dont-use-grey-text-on-colored-backgrounds--不要在彩色背景上使用灰色文本">Don’t use grey text on colored backgrounds / 不要在彩色背景上使用灰色文本</h3>
+<p>Making text a lighter grey is a great way to de-emphasize it on white backgrounds, but it doesn’t look so great on colored backgrounds.</p>
+<p>在白色背景上将文本设置为浅灰色是降低其强调程度的好方法，但在彩色背景上看起来效果并不那么好。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2CF79B27-5771-43FC-A6F8-66E393CE7AFE_2/6Yk4Qf1AUHTBTHVaUyYFx5VyfbXQAmDjeFCJyrRNhokz/Image.png" alt="Image.png"></p>
+<p>That’s because the effect we’re actually seeing with grey on white is reduced contrast.</p>
+<p>这是因为我们在白色背景上看到的灰色效果实际上是对比度降低了。</p>
+<p>Making the text closer to the background color is what actually helps create hierarchy, not making it light grey.</p>
+<p>使文本更接近背景色才是真正有助于创建层级的方法，而不是将其设置为浅灰色。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5B9C53A5-2975-4183-B926-BB2EE35CA327_2/Yzi9JpOY9gw6cjT2KfEdWnhQiv7xN06WPM1GIrCz8Bcz/Image.png" alt="Image.png"></p>
+<p>You might think that the easiest way to achieve this is to use white text and reduce the opacity:</p>
+<p>你可能认为实现这一点最简单的方法是使用白色文本并降低透明度：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FF98810F-6C82-4214-B557-058E2A695FE8_2/zftPD5XdGTkjRrEjx1pDUovys8c5mrIxlJXy6SUfdJAz/Image.png" alt="Image.png"></p>
+<p>While this does reduce the contrast, it often results in text that looks dull, washed out, and sometimes even disabled.</p>
+<p>虽然这确实降低了对比度，但通常会导致文本看起来暗淡、褪色，有时甚至像是被禁用了。</p>
+<p>Even worse, using this approach on top of an image or pattern means the background will show through the text:</p>
+<p>更糟糕的是，如果将这种方法用在图像或图案上，背景会透过文本显示出来。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7ECC1185-98FD-4E16-9489-84337460627C_2/xwydAlDZjDZSm4qGbKzL9MWhlLJNhawdyMYLoxJlZwsz/Image.png" alt="Image.png"></p>
+<p>A better approach is to hand-pick a new color, based on the background color.</p>
+<p>更好的方法是根据背景色手工挑选一种新的颜色。</p>
+<p>Choose a color with the same hue, and adjust the saturation and lightness until it looks right to you:</p>
+<p>选择一个相同色调的颜色，并调整饱和度和亮度，直到它在你看来是合适的：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5D19F99A-31BC-43CE-8A3A-192737D857CB_2/Cpqu5g1Rzq0D65HLbZXJedyIh12yxeZSVl09sY5kJkoz/Image.png" alt="Image.png"></p>
+<p>Hand-picking a color this way makes it easy to reduce the contrast without the text looking faded.</p>
+<p>通过这种方式手工挑选颜色，可以很容易地降低对比度，同时不让文本看起来褪色。</p>
+<h3 id="emphasize-by-de-emphasizing--通过弱化来强调">Emphasize by de-emphasizing / 通过弱化来强调</h3>
+<p>Sometimes you’ll run into a situation where the main element of an interface isn’t standing out enough, but there’s nothing you can add to it to give it the emphasis it needs.</p>
+<p>有时你会遇到这样的情况，界面的主要元素没有足够突出，但你又无法向它添加任何东西来给予它所需的强调。</p>
+<p>For example, despite trying to make this active nav item “pop” by giving it a different color, it still doesn’t really stand out compared to the inactive items:</p>
+<p>例如，尽管尝试通过给它不同的颜色来使这个活动的导航项「突出」，但与非活动项相比，它仍然没有真正脱颖而出：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9E12D4C7-5F66-42E2-8C7F-EF209004B475_2/05YqDwKXByE1oODIMkNeyq1tLVyZWQhu8VOBoEmonxoz/Image.png" alt="Image.png"></p>
+<p>When you run into situations like this, instead of trying to further emphasize the element you want to draw attention to, figure out how you can de-emphasize the elements that are competing with it.</p>
+<p>当你遇到类似的情况时，不要试图进一步强调你想要强调的元素，而是找出如何弱化与之竞争的元素的强调程度。</p>
+<p>In this example, you could do that by giving the inactive items a softer color so they sit more in the background:</p>
+<p>在这个例子中，你可以通过给非活动项一个更柔和的颜色，使它们更融入背景中：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/0E90F859-2EDD-4000-830A-F4B9AB17162F_2/h2nJw2MvytZz6yYs3HDaehKj2wjeOhyDpINoSjmsILoz/Image.png" alt="Image.png"></p>
+<p>You can apply this thinking to bigger pieces of an interface as well. For example, if a sidebar feels like it’s competing with your main content area, don’t give it a background color — let the content sit directly on the page background instead:</p>
+<p>你也可以将这种思想应用到界面的更大部件上。例如，如果侧边栏感觉它在与你的主要内容区域竞争，不要给它设置背景颜色 —— 让其内容直接放置在页面背景上。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5CC8FE74-F339-4386-8042-47BE891EA224_2/h8FazIhSt4lDjiEkmRPEnh3HqO99lq0fu8zHFRVEeQcz/Image.png" alt="Image.png"></p>
+<h3 id="labels-are-a-last-resort--标签是最后的手段">Labels are a last resort / 标签是最后的手段</h3>
+<p>Put down the accessibility pitchfork — this isn’t about forms.</p>
+<p>不要因为可访问性问题而激动 —— 这里讨论的不是表单问题。</p>
+<p>When presenting data to the user (especially data from the database), it’s easy to fall into the trap of displaying it using a naive <em>label: value</em> format.</p>
+<p>在向用户展示数据（特别是来自数据库的数据）时，很容易陷入使用简单的「标签：值」格式来展示数据的陷阱。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1B24B24D-14AC-4067-88E2-5DA57AB0A87F_2/hv1viqu2WnYbqyyUhDHEAlMjxnstjYdWlfv1nxPYLjEz/Image.png" alt="Image.png"></p>
+<p>The problem with this approach is that it makes it difficult to present the data with any sort of hierarchy; every piece of data is given equal emphasis.</p>
+<p>这种方法的问题在于它使得数据展示难以具有任何层级；每项数据都被赋予了相同的强调。</p>
+<p><strong>You might not need a label at all / 你或许根本不需要标签</strong></p>
+<p>In a lot of situations, you can tell what a piece of data is just by looking at the format.</p>
+<p>在许多情况下，你只需通过查看格式就能知道数据是什么。</p>
+<p>For example, <a href="mailto:janedoe@example.com">janedoe@example.com</a> is an email address, (555) 765-4321 is a phone number and $19.99 is a price.</p>
+<p>例如，janedoe@example.com 是一个电子邮件地址，(555) 765-4321 是一个电话号码，而 $19.99 是一个价格。</p>
+<p>When the format isn’t enough, the context often is. When you see the phrase “Customer Support” listed below someone’s name in an employee directory, you don’t need a label to make the connection that that is the department the person works in.</p>
+<p>当格式本身不足以表达时，上下文往往能够提供足够的信息。当你在员工目录中看到某人的名字下面列出「客户支持」这个短语时，你不需要标签就能联想到那是该人所在的部门。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B528D039-69DB-43CC-BAC2-C3B0FA99B586_2/Hve7zUM9gYuax8YiQv9EZWZsJN1q6oMVAs16Ebx7qxoz/Image.png" alt="Image.png"></p>
+<p>When you’re able to present data without labels, it’s much easier to emphasize important or identifying information, making the interface easier to use while at the same time making it feel more “designed”.</p>
+<p>当你能够不使用标签来展示数据时，强调重要或识别信息就变得容易得多，这使得界面更易于使用，同时也让它感觉更加「有设计感」。</p>
+<p><strong>Combine labels and values / 合并标签和值</strong></p>
+<p>Even when a piece of data isn’t completely clear without a label, you can often avoid adding a label by adding clarifying text to the value.</p>
+<p>没有标签，某项数据的含义可能不完全清晰，但你通常可以通过向值添加澄清文本来避免添加标签。</p>
+<p>For example, if you need to display inventory in an e-commerce interface, instead of “In stock: 12”, try something like “12 left in stock”.</p>
+<p>例如，如果你需要在电商界面上显示库存，不要写成「库存：12」，而是尝试使用「库存剩余 12 件」这样的表述。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FDC8EE64-81BE-4433-9090-CC1A6486E82D_2/oid6m1RdytVRJcqxvciLv6BvBFYldEpoEAEhVPjJpvwz/Image.png" alt="Image.png"></p>
+<p>If you’re building a real estate app, something like “Bedrooms: 3” could simply become “3 bedrooms”.</p>
+<p>如果你正在开发一个房地产应用程序，像「卧室：3」这样的表述可以简单地改为「3 间卧室」。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/DEC77B5A-BBC3-4771-AB17-21D33BCBD999_2/yxsaYUUH8pPBkbutu9PilunJpp2fIm23YSMmWxFkvrgz/Image.png" alt="Image.png"></p>
+<p>When you’re able to combine labels and values into a single unit, it’s much easier to give each piece of data meaningful styling without sacrificing on clarity.</p>
+<p>当你能够将标签和值合并为一个单元时，给每项数据赋予有意义的格式就变得容易得多，同时不会牺牲清晰度。</p>
+<p><strong>Labels are secondary / 标签是次要的</strong></p>
+<p>Sometimes you really do need a label; for example when you’re displaying multiple pieces of similar data and they need to be easily scannable, like on a dashboard.</p>
+<p>有时候你确实需要使用标签；例如，当你需要展示多组相似的数据，并且这些数据需要快速被用户识别和理解，如在仪表板上。</p>
+<p>In these situations, add the label, but treat it as supporting content. The data itself is what matters, the label is just there for clarity.</p>
+<p>在这种情况下，可以添加标签，但要将其视为辅助内容。数据本身是更重要的，标签只是为了更清晰明了。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/68B1CF1C-FFFA-474F-9480-478CCC6531F4_2/UuGJYsQ3hZkEolTb63AI8MZYjt0eUGSCp1IOsbYlEnYz/Image.png" alt="Image.png"></p>
+<p>De-emphasize the label by making it smaller, reducing the contrast, using a lighter font weight, or some combination of all three.</p>
+<p>通过使标签更小、降低对比度、使用较轻的字体粗细，或者这三种方法的组合来降低标签的强调程度。</p>
+<p><strong>When to emphasize a label / 何时强调标签</strong></p>
+<p>If you’re designing an interface where you know the user will be looking for the label, it might make sense to emphasize the label instead of the data.</p>
+<p>如果你正在设计一个用户将会寻找标签的界面，那么强调标签而不是数据可能是有意义的。</p>
+<p>This is often the case on information-dense pages, like the technical specifications of a product.</p>
+<p>这通常出现在信息密集的页面上，比如产品技术规格说明。</p>
+<p>If a user is trying to find out the dimensions of a smartphone, they’re probably scanning the page for words like “depth”, not “7.6mm”.</p>
+<p>如果用户试图找出智能手机的尺寸，他们可能在页面上寻找像「厚度」这样的词，而不是「7.6 毫米」。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/28D24968-D3FD-4CE1-8710-4D1DAB640271_2/2c38ECqLzJVj6CLFhwOvB44mvnJEye0pNtOH24xXy50z/Image.png" alt="Image.png"></p>
+<p>Don’t de-emphasize the data too much in these scenarios; it’s still important information. Simply using a darker color for the label and a slightly lighter color for the value is often enough.</p>
+<p>在这种情况下，不要过分降低数据的强调程度；它仍然是重要的信息。通常，为标签使用较深的颜色，为值使用稍浅的颜色就足够了。</p>
+<h3 id="separate-visual-hierarchy-from-document-hierarchy--将视觉层级与文档层级分开">Separate visual hierarchy from document hierarchy / 将视觉层级与文档层级分开</h3>
+<p>It’s important to use semantic markup when building for the web, which means you’ll often be using heading tags like <code>h1</code>, <code>h2</code>, or <code>h3</code> if you decide to add a title to part of an interface.</p>
+<p>在为网页构建时使用语义化标记非常重要，这意味着如果你决定为界面的某个部分添加标题，通常会使用像 <code>h1</code>、<code>h2</code> 或 <code>h3</code> 这样的标题标签。</p>
+<p>By default, web browsers assign progressively smaller font sizes to heading elements, so an <code>h1</code> is pretty large, and an <code>h6</code> is pretty small. This can be helpful for document-style content like articles or documentation, but it can encourage some bad decisions in application UIs.</p>
+<p>默认情况下，网络浏览器会为标题元素分配逐渐减小的字体大小，所以 <code>h1</code> 非常大，而 <code>h6</code> 非常小。这对于文章或文档等文档样式内容可能很有帮助，但在应用程序用户界面中，它可能会促使一些糟糕的决策。</p>
+<p>Using an <code>h1</code> tag to add a title like <em>Manage Account</em> to a page makes perfect sense semantically, but because we’re trained to believe that <code>h1</code> elements should be big, it’s easy to fall into the trap of making those titles bigger than they really need to be.</p>
+<p>从语义上讲，使用 <code>h1</code> 标签为页面添加「管理账户」这样的标题是完全合理的，但由于我们习惯于认为 <code>h1</code> 元素应该是大号的，很容易陷入让这些标题比实际需要的更大陷阱。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/14124597-53CC-4662-A470-9F8AD8B79A2F_2/PCgZDxwOQmHFK9sdMBjjKQuX5UIcG4BigakhNrZZOxoz/Image.png" alt="Image.png"></p>
+<p>A lot of the time, section titles act more like <em>labels</em> than headings — they are supportive content, they shouldn’t be stealing all the attention.</p>
+<p>很多时候，小节标题更像是标签而不是标题 —— 它们是辅助性内容，不应该抢占所有的注意力。</p>
+<p>Usually the content in that section should be the focus, not the title. That means that a lot of the time, titles should actually be pretty small:</p>
+<p>通常，那个部分的内容应该是焦点，而不是标题。这意味着很多时候，标题实际上应该是相当小的：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/DF0041F8-D45B-4DAF-99F3-104D4F0B8A47_2/eibddFBfX78bQQAzy5AGYyphl0yRP4uqyG3wJoXr8S8z/Image.png" alt="Image.png"></p>
+<p>Taken to the extreme, you might even include section titles in your markup for accessibility reasons but completely hide them visually because the content speaks for itself.</p>
+<p>有时候，尽管出于提高可访问性的考虑，你会在网页的代码中包含小节标题，但如果内容本身就很清楚地传达了信息，你可能会在视觉上选择不展示这些标题。</p>
+<p>Don’t let the element you’re using influence how you choose to style it — pick elements for semantic purposes and style them however you need to create the best visual hierarchy.</p>
+<p>不要让你使用的元素影响你选择的样式 —— 出于语义目的选择元素，并根据创建最佳视觉层级的需要来设计它们的风格。</p>
+<h3 id="balance-weight-and-contrast--平衡重量与对比度">Balance weight and contrast / 平衡重量与对比度</h3>
+<p>The reason bold text feels emphasized compared to regular text is that bold text covers more surface area — in the same amount of space, more pixels are used for text than for the background.</p>
+<p>加粗文本与普通文本相比感觉更加强调的原因是，加粗文本覆盖了更多的表面积 —— 在相同的空间内，用于文本的像素比用于背景的要多。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C7E7BA4D-0B89-4939-B3FD-5A03136BDD1E_2/sXNQhRXxVGSGMBEIUfPHJ4AZaZOeRXP7feFS0OkeId4z/Image.png" alt="Image.png"></p>
+<p>So why is this interesting? Well it turns out that the relationship between surface area and hierarchy has implications on other elements in a UI as well.</p>
+<p>那么，为什么这很有趣呢？事实证明，表面积与层级之间的关系也对用户界面中的其他元素有着影响。</p>
+<p><strong>Using contrast to compensate for weight / 使用对比度来平衡重量</strong></p>
+<p>One of the places understanding this relationship becomes important is when working with icons.</p>
+<p>理解这种关系在设计图标时尤为重要。</p>
+<p>Just like bold text, icons (especially solid ones) are generally pretty “heavy” and cover a lot of surface area. As a result, when you put an icon next to some text, the icon tends to feel emphasized.</p>
+<p>就像加粗的文字一样，图标（尤其是实心的）通常看起来很「重」，并且占据很多空间。因此，当你把一个图标放在文本旁边时，图标往往会显得更加突出。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3C28241B-3427-4710-B985-B0FDAB89DE24_2/A9jrn1yi9QFhz82ysuyYVDyQOkuHKN4H6FZYw5YV2dQz/Image.png" alt="Image.png"></p>
+<p>Unlike text, there’s no way to change the “weight” of an icon, so to create balance it needs to be de-emphasized in some other way.</p>
+<p>与文本不同，我们无法改变图标的「粗细」，因此为了达到平衡，需要用其他方式来降低图标的强调程度。</p>
+<p>A simple and effective way to do this is to lower the contrast of the icon by giving it a softer color.</p>
+<p>一个简单而有效的做法是通过给图标一个更柔和的颜色来降低其对比度。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/ECC4D825-2ADA-4F94-B277-1151207D01F3_2/yzpihx473CrxqpKGWKC8D3V18ZOF7DxyyOhWY5NrQt4z/Image.png" alt="Image.png"></p>
+<p>This works anywhere you need to balance elements that have different weights. Reducing the contrast works like a counterbalance, making heavier elements feel lighter even though the weight hasn’t changed.</p>
+<p>这在你需要平衡具有不同「重量」的元素时都是有效的。降低对比度就像是一个平衡机制，使得「较重」的元素即使在「重量」没有改变的情况下也感觉更轻。</p>
+<p><strong>Using weight to compensate for contrast / 使用重量来平衡对比度</strong></p>
+<p>Just like how reducing contrast helps to de-emphasize heavy elements, increasing weight is a great way to add a bit of emphasis to low contrast elements.</p>
+<p>就像降低对比度有助于减少重元素的强调一样，增加「重量」是给低对比度元素增加一些强调的好方法。</p>
+<p>This is useful when things like thin 1px borders are too subtle using a soft color, but darkening the color makes the design feel harsh and noisy.</p>
+<p>当像给细的 1px 的边框这样的元素使用柔和的颜色过于微妙，而加深颜色又让设计感觉过于强烈和嘈杂时，这种方法就很有用了。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/07480A40-FA73-43BF-8D07-A45CC42C1BA5_2/zayCaKyhVy9QXo97oFI5iAmkdXyQyx72qIB2lFPoUzUz/Image.png" alt="Image.png"></p>
+<p>Making the border a bit heavier by increasing the width helps to emphasize it without losing the softer look:</p>
+<p>通过增加边框宽度使其变得更粗一些，有助于在不失去柔和外观的同时强调边框：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9D26700F-09F2-411B-AD82-DA67A5E6D928_2/zGx3Jh0bJf97YCUrfqbYFir1Pyhg0yrxpreveVVOljcz/Image.png" alt="Image.png"></p>
+<h3 id="semantics-are-secondary--语义是次要的">Semantics are secondary / 语义是次要的</h3>
+<p>When there are multiple actions a user can take on a page, it’s easy to fall into the trap of designing those actions based purely on semantics.</p>
+<p>当页面上用户可以执行多个操作时，很容易陷入仅基于语义来设计这些操作的陷阱。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/60565323-002D-4C73-A2E6-D3B3A6685B5C_2/upHgAIqNinonlbCqe2L11yPkYm8yb6xhahmF5kjCgCYz/Image.png" alt="Image.png"></p>
+<p>Semantics are an important part of button design, but that doesn’t mean you can forget about hierarchy.</p>
+<p>语义是按钮设计中的一个重要部分，但这并不意味着你可以忽视层级。</p>
+<p>Every action on a page sits somewhere in a pyramid of importance. Most pages only have one true primary action, a couple of less important secondary actions, and a few seldom used tertiary actions.</p>
+<p>页面上的每个操作都位于重要性的金字塔中的某个位置。大多数页面只有一个真正的主要操作，几个较不重要的次要操作，以及一些很少使用的第三级操作。</p>
+<p>When designing these actions, it’s important to communicate their place in the hierarchy.</p>
+<p>在设计这些操作时，传达它们在层级中的位置是很重要的。</p>
+<ul>
+<li><strong>Primary actions should be obvious.</strong> Solid, high contrast background colors work great here.</li>
+<li><strong>Secondary actions should be clear but not prominent.</strong> Outline styles or lower contrast background colors are great options.</li>
+<li><strong>Tertiary actions should be discoverable but unobtrusive.</strong> Styling these actions like links is usually the best approach.</li>
+<li><strong>主要操作应该显而易见。</strong> 实心的、高对比度的背景颜色在这里效果很好。</li>
+<li><strong>次要操作应该清晰但不突出。</strong> 轮廓样式或较低对比度的背景颜色是很好的选择。</li>
+<li><strong>第三级操作应该是可发现的，但不显眼。</strong> 通常将这些操作设计成链接样式是最佳方法。</li>
+</ul>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6106ED61-3836-41ED-8FEB-4ED499B0AFFC_2/RzOeCBHsx4lHdpxecZkbup9akeoVHQBbtHyF3VhmidEz/Image.png" alt="Image.png"></p>
+<p>When you take a hierarchy-first approach to designing the actions on page, the result is a much less busy UI that communicates more clearly:</p>
+<p>当你采用以层级为先的方法来设计页面上的操作时，所得到的将是一个不那么杂乱且传达信息更清晰的用户界面：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/51066937-49AC-4D30-A6E5-0ED71D4E8A0B_2/7J6MGyyhenhLK4Sn0UbcAlBl4RuHlysQ1tZVdxL8iYsz/Image.png" alt="Image.png"></p>
+<p><strong>Destructive actions / 破坏性行为</strong></p>
+<p>Being destructive or high severity doesn’t automatically mean a button should be big, red, and bold.</p>
+<p>具有破坏性或高严重性的操作，并不自动意味着按钮应该是大的、红色的、加粗的。</p>
+<p>If a destructive action isn’t the primary action on the page, it might be better to give it a secondary or tertiary button treatment.</p>
+<p>如果一个破坏性操作不是页面上的主要操作，那么给它一个次要或第三级按钮的处理方式可能更好。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F87C52CA-13FA-49B9-A910-9512ADD48B9B_2/ZhPQxj8kyyx34TgSvc2fylassFGSxDkhFkuVC9xZvYMz/Image.png" alt="Image.png"></p>
+<p>Combine this with a confirmation step where the destructive action actually is the primary action, and apply the big, red, bold styling there.</p>
+<p>结合这一点，在实际执行破坏性操作的主要步骤中添加一个确认环节，并在那里应用大号、红色、加粗的样式。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/AA9BD536-3319-498B-B96D-102261289B17_2/JQiZh9rjJk3KLoA06GzEj56N9XPxIYOUxYykyxmoEcoz/Image.png" alt="Image.png"></p>
+<h2 id="layout-and-spacing--布局和间距">Layout and Spacing / 布局和间距</h2>
+<h3 id="start-with-too-much-white-space--在开始保留更多留白">Start with too much white space / 在开始保留更多留白</h3>
+<p>One of the easiest ways to clean up a design is to simply give every element a little more room to breathe.</p>
+<p>简化设计的一个最简单方法是给每个元素更多的空间来「呼吸」，即增加元素之间的间距。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8C6C48EC-3D2F-4BF5-A585-DE79D75E49AC_2/lvcMgWLEMr4UMZAug8gIJrtNx0KymVVBgYXy7rxuc8wz/Image.png" alt="Image.png"></p>
+<p>Sounds simple enough, right? So how come we don’t usually do it?</p>
+<p>听起来够简单了，对吧？那我们通常为什么不这么做呢？</p>
+<p><strong>White space should be removed, not added / 留白应该被移除而非被添加</strong></p>
+<p>When designing for the web, white space is almost always added to a design — if something looks little too cramped, you add a bit of margin or padding until things look better.</p>
+<p>在为 Web 设计时，留白几乎总是会被添加到设计中 —— 如果某些东西看起来有点太拥挤，你会添加一些外边距或内边距，直到看起来更好。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6A2D4538-81AD-497D-8960-16208B15B506_2/IdMSHAd8yeVs7HF4wYFuKsktmIQ7CxNXxnrlXvAxDiMz/Image.png" alt="Image.png"></p>
+<p>The problem with this approach is that elements are only given the minimum amount of breathing room necessary to not look <em>actively bad</em>. To make something actually look <em>great</em>, you usually need more white space.</p>
+<p>这种方法的问题在于，元素只被赋予了避免看起来特别糟糕的最小呼吸空间。要使某物真正看起来很棒，你通常需要更多的空白空间。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/909B689A-B5F1-45B1-97F3-AA7FE45896AF_2/zSP3yPE1PjhxvTcljMA7yry0Z1Li6agTgfhREGdc3PIz/Image.png" alt="Image.png"></p>
+<p>A better approach is to start by giving something way too much space, then remove it until you’re happy with the result.</p>
+<p>一个更好的方法是首先给某个元素过多的留白，然后逐步减少，直到你对结果感到满意。</p>
+<p>You might think you’d end up with too much white space this way, but in practice, what might seem like “a little too much” when focused on an individual element ends up being closer to “just enough” in the context of a complete UI.</p>
+<p>你可能会认为这样会存在太多的留白，但实际上，在单个元素时看似「有点过多」的留白，在完整的用户界面中，结果往往更接近「刚刚好」。</p>
+<p><strong>Dense UIs have their place / 密集的 UI 有其用武之地</strong></p>
+<p>While interfaces with a lot of breathing room almost always feel cleaner and simpler, there are certainly situations where it makes sense for a design to be much more compact.</p>
+<p>虽然拥有大量呼吸空间的界面几乎总是给人一种更干净、更简单的感觉，但在某些情况下，设计得更为紧凑也是完全合理的。</p>
+<p>For example, if you’re designing some sort of dashboard where a lot of information needs to be visible at once, packing that information together so it all fits on one screen might be worth making the design feel more busy.</p>
+<p>例如，如果你正在设计某种信息需要一次性显示很多的仪表板，在这种情况下，将信息紧凑地排列以便全部显示在一个屏幕上，可能会让设计看上去更为拥挤，这是值得的。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/11FA5D67-5CE5-4B96-ADA2-06AC322CD6DD_2/ubfhOqn6uG7uAGPl1x4VZGm5WM3sw0rd3iN0rHrrxnUz/Image.png" alt="Image.png"></p>
+<p>The important thing is to make this a deliberate decision instead of just being the default. It’s a lot more obvious when you need to remove white space than it is when you need to add it.</p>
+<p>关键在于我们应该有意识地做出关于留白的决定，而不是仅仅依赖于默认设置。通常，识别何时需要减少留白以提高界面紧凑性比识别何时需要增加留白以提升清晰度要容易得多。</p>
+<h3 id="establish-a-spacing-and-sizing-system--建立间距和尺寸系统">Establish a spacing and sizing system / 建立间距和尺寸系统</h3>
+<p>You shouldn’t be nitpicking between 120px and 125px when trying to decide on the perfect size for an element in your UI.</p>
+<p>当你试图确定用户界面中元素的完美大小时，你不应该在 120px 还是 125px 之间过分纠结。</p>
+<p>Painfully trialing arbitrary values one pixel at a time will drastically slow you down at best, and create ugly, inconsistent designs at worst.</p>
+<p>逐像素地尝试任意值，最好的情况会大幅拖慢你的进度，最坏的情况则可能创造出丑陋、不一致的设计。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/E8894EDC-1BD8-4066-B591-D1F4C50F1A78_2/rsV7vkERl9JdDOGsTfY5XprLYwk9MtNmM1MkS3ZYT0Iz/Image.png" alt="Image.png"></p>
+<p>Instead, limit yourself to a constrained set of values, defined in advance.</p>
+<p>相反，你应该限制自己使用预先定义好的一组的值。</p>
+<p><strong>A linear scale won’t work / 线性比例失效</strong></p>
+<p>Creating a spacing and sizing system isn’t quite as simple as something like <em>“make sure everything is a multiple of 4px”</em> — a naive approach like that doesn’t make it any easier to choose between 120px and 125px.</p>
+<p>创建一个间距和尺寸系统并不像「*确保一切都是 4px 的倍数」*这样简单 —— 像那样简单粗暴的方法并不能让你在 120px 还是 125px 之间更容易做出选择。</p>
+<p>For a system to be truly useful, it needs to take into consideration the relative difference between adjacent values.</p>
+<p>为了使系统真正有用，它需要考虑到相邻值之间的相对差异。</p>
+<p>At the small end of the scale (<em>like the size of an icon, or the padding inside a button</em>), a couple of pixels can make a big difference. Jumping from 12px to 16px is an increase of 33%!</p>
+<p>在原本尺寸就较小的元素（<em>比如图标的大小，或者按钮内部的内边距</em>），几个像素可以产生很大的差异。从 12px 到 16px 就是增加了 33%！</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8E37E6E4-F40D-44F5-89F0-0F1136FCA63D_2/DCPhfUXk0TfVZUtY96jf2RczP1szpKGWQfmmpxgazawz/Image.png" alt="Image.png"></p>
+<p>But at the large end (the width of a card, or the vertical spacing in a landing page hero), a couple of pixels is basically imperceivable. Even increasing the width of a card from 500px to 520px is only a difference of 4%, which is <em>eight times</em> less significant than the jump from 12px to 16px.</p>
+<p>但原本尺寸就较大的元素（<em>比如卡片的宽度，或者着陆页英雄区域的垂直间距</em>），几个像素基本上是感知不到的。即使将卡片的宽度从 500px 增加到 520px，差异也只有 4%，这比从 12px 增加到 16px 的差异小了八倍。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D4E6EC11-52C4-4EBD-A047-66A54D8A10A9_2/KxGw43y9ZSar8EAWIogsW1zaQxuZdsIc34wwy479kyoz/Image.png" alt="Image.png"></p>
+<p>If you want your system to make sizing decisions easy, make sure no two values in your scale are ever closer than about 25%.</p>
+<p>如果你想让你的系统使尺寸决策变得容易，确保在你的尺寸上任意两个值之间的差异永远不少于大约 25%。</p>
+<p><strong>Defining the system / 定义系统</strong></p>
+<p>Just like you don’t want to toil over arbitrary values when sizing an element or fine-tuning the space between elements, you don’t want to build your spacing and sizing scale from arbitrary values either.</p>
+<p>就像你在确定元素大小或调整元素间距时不希望纠结于任意值一样，你在构建间距和尺寸的标准时也不应该纠结于任何数值。</p>
+<p>A simple approach is to start with a sensible base value, then build a scale using factors and multiples of that value.</p>
+<p>一个简单的方法是从一个合理的基础值开始，然后使用这个值的因数和倍数来构建一个尺寸系统。</p>
+<p>16px is a great number to start with because it divides nicely, and also happens to be the default font size in every major web browser.</p>
+<p>16px 就是一个很好的起始数字，因为它可以很好地被整除，同时也恰好是所有主流网络浏览器的默认字体大小。</p>
+<p>The values at the small end of the scale should start pretty packed together, and get progressively more spaced apart as you get further up the scale.</p>
+<p>尺寸较小端的值应该开始时相当紧密，随着尺寸的增加，这些值之间的间隔应逐渐变大。</p>
+<p>Here’s an example of a fairly practical scale built using this approach:</p>
+<p>这里有一个使用这种方法构建的相当实用的尺寸示例：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3F61A21A-F1A1-45E1-84B2-1C53CBA9822D_2/Zc5OBv8Fl5eIKH5dnwo7Uym2Qa7s2epjaHcIL7cZ42Az/Image.png" alt="Image.png"></p>
+<p><strong>Using the system / 使用系统</strong></p>
+<p>Once you’ve defined your spacing and sizing system, you’ll find that you’re able to design a hell of a lot faster, especially if you design in the browser (<em>sticking to a system is easier when you’re typing in numbers than when you’re dragging with the mouse.</em>)</p>
+<p>当你确立了自己的间距和尺寸规范后，你会发现设计过程会大大提速，尤其是在浏览器中进行设计时（<em>相较于用鼠标拖拽，直接输入数值来遵循系统会更加容易</em>）。</p>
+<p>Need to add some space under an element? Grab a value from your scale and try it out. Not quite enough? The next value is probably perfect.</p>
+<p>需要在某个元素下方增加一些空间吗？从你的尺寸系统中选取一个值来试用一下。空间不够吗？下一个值可能就正好。</p>
+<p>While the workflow improvements are probably the biggest benefit, you’ll also start to notice a subtle consistency in your designs that wasn’t there before, and things will look just a little bit cleaner.</p>
+<p>工作流程的显著提升是最主要的优势，但你也会逐渐察觉到设计中新增了一种细微的统一性，这使得视觉效果更加干净利落。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D9E62437-AFF0-46B0-B5C9-E9EC575B6A91_2/lk97Y7fxW0uhR7zpCpP1en34biZwl5GcmxiJdeCu60sz/Image.png" alt="Image.png"></p>
+<p>A spacing and sizing system will help you create better designs, with less effort, in less time. Design advice doesn’t get much more valuable than that.</p>
+<p>建立一套间距和尺寸规范能够让你以更低的劳动强度和时间成本，打造出更优质的设计。在设计领域，这样的建议可谓珍贵至极。</p>
+<h3 id="you-dont-have-to-fill-the-whole-screen--你不必填满整个屏幕">You don’t have to fill the whole screen / 你不必填满整个屏幕</h3>
+<p>Remember when 960px was the de facto layout width for desktop-size designs? These days you’d be hard-pressed to find a phone with a resolution that low.</p>
+<p>曾几何时，960px 是桌面设计的标准宽度。然而，现在要找到分辨率如此之低的手机几乎是不可能的。</p>
+<p>So it’s no surprise that when most of us open our design tool of choice on our high resolution displays, we give ourselves at least 1200-1400px of space to fill. But just because you have the space, doesn’t mean you need to use it.</p>
+<p>如今，我们大多数人在高分辨率屏幕上启动设计软件时，很自然地会为自己预留至少 1200~1400px 的宽阔空间。然而，拥有这样的空间并不等同于必须将其全部填满。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7507E05A-59C5-4B91-AF8A-146EE469078E_2/dW59sUcNJldKTdUVPtYSCnnyZRkm72pH2mA0hPtI14Ez/Image.png" alt="Image.png"></p>
+<p>If you only need 600px, use 600px. Spreading things out or making things unnecessarily wide just makes an interface harder to interpret, while a little extra space around the edges never hurt anyone.</p>
+<p>如果你只需要 600px，那就只使用 600px。无谓地扩展内容或使内容过宽只会让界面更难以理解，而边缘处多留一些空间对任何人都没有害处。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C1B9ECCF-05DB-4D32-AE60-6334F2083B24_2/HyyPtANPaZ5KLNGQJwotxpwLCR0wWEvy7IoJz1IW9g0z/Image.png" alt="Image.png"></p>
+<p>This is just as applicable to individual sections of an interface, too. You don’t need to make everything full-width just because something else (like your navigation) is full-width.</p>
+<p>这也适用于界面的各个部分。你不必仅仅因为其他元素（比如导航栏）是全宽的，就让所有内容都设置为全宽。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/961D7FB9-7E82-4258-A2A3-79ECB90AE98E_2/EIZZ5pc9UmyyvmflQz6KCo5xkjyG31xBRb2zVfKlDZsz/Image.png" alt="Image.png"></p>
+<p>Give each element just the space it needs — don’t make something worse just to make it match something else.</p>
+<p>给每个元素它所需要的空间 —— 不要为了让它与其他东西相匹配而降低它的质量。</p>
+<p><strong>Shrink the canvas / 缩小画布</strong></p>
+<p>If you’re having a hard time designing a small interface on a large canvas, shrink the canvas! A lot of the time it’s easier to design something small when the constraints are real.</p>
+<p>如果你在一个大画布上设计一个小界面时遇到困难，缩小画布尺寸！很多时候，在有实际限制的情况下设计一个小东西会更容易。</p>
+<p>If you’re building a responsive web application, try starting with a ~400px canvas and designing the mobile layout first.</p>
+<p>如果你正在构建一个响应式 Web 应用程序，尝试从一个大约 400px 的画布开始，并首先设计移动端布局。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D991A412-3482-434A-9A3B-9C1B44E18C8C_2/egz04h6mRCo2STZureD7unnmWLAPbMbPoFRC5YsaQicz/Image.png" alt="Image.png"></p>
+<p>Once you have a mobile design you’re happy with, bring it over to a larger size screen and adjust anything that felt like a compromise on smaller screens. Odds are you won’t have to change as much as you think.</p>
+<p>一旦你对移动端的设计感到满意，就将其应用到更大的屏幕尺寸上，并调整那些在较小屏幕上感觉像是妥协的地方。很可能你需要改变的东西并没有你想象的那么多</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C74672F4-8329-4ACE-93BF-722051AFCEC0_2/YOGBZKbDAU3lLduxidAa9KGGiYvYMix7x67lQdqcDS4z/Image.png" alt="Image.png"></p>
+<p><strong>Thinking in columns / 考虑列</strong></p>
+<p>If you’re designing something that works best at a narrower width but feels unbalanced in the context of an otherwise wide UI, see if you can split it into columns instead of just making it wider.</p>
+<p>如果你正在设计的内容在较窄的宽度下效果最佳，但在其他较宽的用户界面中感觉不平衡，看看是否可以将其分成多列，而不仅仅是将其加宽。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/4D641CFA-5950-49E8-8159-9BEF6E4AE315_2/h5T41E0boiCLmWJHfpdiy7BXuIFJvFge5Kzcbay1EO4z/Image.png" alt="Image.png"></p>
+<p>If you wanted to make better use of the available space without making the form harder to use, you could break the supporting text out into a separate column:</p>
+<p>如果你想更有效地利用可用空间，同时不使表单变得更难使用，你可以将辅助文本分离到一个单独的列中：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3BACD5EF-DE5D-40F8-BCDE-5F6CE891A2F3_2/yyDy61nwGX4nOYJ53ARddPC5BtkFLSHR7dVR6tvyTV8z/Image.png" alt="Image.png"></p>
+<p>This makes the design feel more balanced and consistent without compromising on the optimal width for the form itself.</p>
+<p>这样做使得设计在不牺牲表单本身最佳宽度的前提下，感觉更加平衡和一致。</p>
+<p><strong>Don’t force it / 不要硬来</strong></p>
+<p>Just like you shouldn’t worry about filling the whole screen, you shouldn’t try to cram everything into a small area unnecessarily either.</p>
+<p>就像你不应该担心填满整个屏幕一样，你也不应该不必要地试图将所有东西塞进一个小区域。</p>
+<p>If you need a lot of space, go for it! Just don’t feel obligated to fill it if you don’t have to.</p>
+<p>如果你需要更多空间，那就去争取吧！只是如果你没有必要，就不要觉得有义务去填满它。</p>
+<h3 id="grids-are-overrated--网格被高估了">Grids are overrated / 网格被高估了</h3>
+<p>Using a system like a 12-column grid is a great way to simplify layout decisions, and can bring a satisfying sense of order to your designs.</p>
+<p>使用像 12 列网格这样的系统是简化布局决策的一个很好的方法，它可以为你的设计带来令人满意的秩序感。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/63317E37-A4B7-49DF-8C3F-B4912595E1B3_2/h0SCx4XnlOxJgLvvmDaTSzrWhOaTaAm9pVtAxy62yl0z/Image.png" alt="Image.png"></p>
+<p>But even though grids can be useful, outsourcing all of your layout decisions to a grid can do more harm than good.</p>
+<p>尽管网格可能很有用，但将所有的布局决策都外包给网格可能会带来更多的害处而不是好处。</p>
+<p><strong>Not all elements should be fluid / 并非所有元素都应该具有流动性</strong></p>
+<p>Fundamentally, a grid system is just about giving elements fluid, percentage-based widths, where you’re choosing from a constrained set of percentages.</p>
+<p>网格系统本质上是为元素提供基于百分比的宽度，这些宽度是可变的，你可以根据一个固定的百分比选项集来决定元素的宽度。</p>
+<p>For example, in a 12-column grid each column is 8.33% wide. As long as an element’s width is some multiple of 8.33% (<em>including any gutters</em>), that element is “on the grid”.</p>
+<p>例如，在 12 列网格系统中，每一列的宽度是 8.33%。只要一个元素（<em>包括间隔</em>）的宽度是 8.33% 的某个倍数，那么这个元素就处于「网格上」。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/88A2E3D1-304D-4E63-A62D-BB34DA9DC2B2_2/699BQJWw3XAyW0ATtCYHAE7xfQN6GhMKzlVsNSOxHkEz/Image.png" alt="Image.png"></p>
+<p>The problem with treating grid systems like a religion is that there are a lot of situations where it makes much more sense for an element to have a fixed width instead of a relative width.</p>
+<p>将网格系统当作一种宗教般严格遵守的问题在于，在很多情况下，对于一个元素来说，拥有固定宽度而不是相对宽度更有意义。</p>
+<p>For example, consider a traditional sidebar layout. Using a 12-column grid system, you might give the sidebar a width of three columns (25%) and the main content area a width of nine columns (75%).</p>
+<p>例如，考虑一个传统的侧边栏布局。使用 12 列网格系统，你可能会将侧边栏的宽度设为三列（25%），主要内容区域的宽度设为九列（75%）。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A3CD4156-CC16-4890-8A49-0D70BDE381B4_2/jzBebbuGgVUJeAQ3zsmbbJx1mjFfe3jaHixhHnlMOLYz/Image.png" alt="Image.png"></p>
+<p>This might seem fine at first, but think about what happens when you resize the screen.</p>
+<p>起初这可能看起来没问题，但想想当你调整屏幕大小时会发生什么。</p>
+<p>If you make the screen wider the sidebar gets wider too, taking up space that could’ve been put to better use by the main content area.</p>
+<p>如果你使屏幕变得更宽，侧边栏也会随之变宽，占据了本可以由主要内容区域更有效利用的空间。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/EDC1EA71-6F9D-459A-A114-EEECEB743E08_2/9e5m43M0hrppQRRj66yrBy5kM9jhlqPnjnWYnyy7yE8z/Image.png" alt="Image.png"></p>
+<p>Similarly, if you make the screen narrower, the sidebar can shrink below its minimum reasonable width, causing awkward text wrapping or truncation.</p>
+<p>同样地，如果你使屏幕变得更窄，侧边栏可能会缩小到其最小合理宽度以下，导致文本出现尴尬的换行或截断。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D9BB5CBD-4A0B-4AC9-8C80-0904A81FF628_2/UymELESa1yeAoX8Ty1RSX9QM97ey5jaaxa1H9UOykcsz/Image.png" alt="Image.png"></p>
+<p>In this situation, it makes much more sense to give the sidebar a fixed width that’s optimized for its contents. The main content area can then flex to fill the remaining space, using its own internal grid to lay out its children.</p>
+<p>在这种情况下，给侧边栏设定一个固定宽度，以优化其内容，这样更有意义。然后，主要内容区域可以伸缩以填充剩余空间，并使用它自己的内部网格来布局其子元素。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/87468DD1-7AAB-46CF-8090-28D8855ABBFD_2/xZpqzJAqs95R7XCrvo1ETUVjaA3j0ZkwNKVK9KclG9cz/Image.png" alt="Image.png"></p>
+<p>This applies within components, too — don’t use percentages to size something unless you actually want it to scale.</p>
+<p>这同样适用于组件内部 —— 除非你确实希望某个元素按比例缩放，否则不要使用百分比来设定其大小。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FCC250F8-ABF3-4113-97BE-B9AFEB523C01_2/dknkfNZIq9YB4yuP8UuTGOfxYnLe70dO6moP9sHgxJEz/Image.png" alt="Image.png"></p>
+<p><strong>Don’t shrink an element until you need to / 非必要不要缩小元素</strong></p>
+<p>Say you’re designing a login card. Using the full screen width would look ugly, so you give it a width of 6 columns (50%) with a 3-column offset on each side.</p>
+<p>假设你正在设计登录界面的卡片。为了美观，不使用整个屏幕宽度，而是将其宽度设置为 6 列，占屏幕的一半（即 50%），并在两侧各保留 3 列的空间作为边距。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/05BBE00A-AF06-4376-A793-442D52903615_2/xQoqlVjd0zHIeKY8uXQwDdX30iKyETaTLcA2sOBxa7Qz/Image.png" alt="Image.png"></p>
+<p>On medium-sized screens you realize the card is a little narrow even though you have the space to make it bigger, so at that screen size you switch it to a width of 8 columns, with two empty columns on each side.</p>
+<p>在中等大小的屏幕上，你发现卡片即使在有足够空间的情况下也略显狭窄，因此在该屏幕尺寸下，你将其宽度调整为 8 列，并在每一侧留出两列的空白列。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/ABF5975D-48EE-4EEF-A787-9511214BED8C_2/118aiLazukEcvUw2dtYBLoWFWUOBz5AZnURWW3DbnGQz/Image.png" alt="Image.png"></p>
+<p>The silly thing about this approach is that because column widths are fluid, there’s a range in screen sizes where the login card is wider on medium screens than it is on large screens:</p>
+<p>这种方法的荒谬之处在于，因为列宽是可变的，所以在一些屏幕尺寸中，中等屏幕上的登录卡片宽度实际上比大屏幕上的还要宽：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/E392A932-F989-4978-AAB3-F1F9706FF985_2/7ZxcmFukhVdyXxag8QT2iiSnlKbiG5Aud9BFI78d9doz/Image.png" alt="Image.png"></p>
+<p>If you know that say 500px is the optimal size for the card, why should it ever get smaller than that if you have the space for it?</p>
+<p>如果你知道 500px 是卡片的最佳尺寸，那么如果有足够空间，为什么还要让它小于这个尺寸呢？</p>
+<p>Instead of sizing elements like this based on a grid, give them a max-width so they don’t get too large, and only force them to shrink when the screen gets smaller than that max-width.</p>
+<p>不要基于网格来这样设定元素的大小，给它们设定一个最大宽度，以防止它们变得过大，并且只有在屏幕宽度小于这个最大宽度时才强制它们缩小。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/90DE56A7-FF2C-4EB2-984B-185E8B1C92E9_2/W94BpPejyY0wSFUExx6q1mbsh6A8z1gZzUHZq0q5Is0z/Image.png" alt="Image.png"></p>
+<p>Don’t be a slave to the grid — give your components the space they need and don’t make any compromises until it’s actually necessary.</p>
+<p>不要成为网格的奴隶 —— 给你的组件它们需要的空间，并且在真正必要时才做出妥协。</p>
+<h3 id="relative-sizing-doesnt-scale--相对尺寸不缩放">Relative sizing doesn’t scale / 相对尺寸不缩放</h3>
+<p>It’s tempting to believe that every part of an interface should be sized relative to one another, and that if element A needs to shrink by 25% on smaller screens, that element B should shrink by 25%, too.</p>
+<p>人们很容易认为界面的每个部分都应该相对于彼此来设定大小，如果元素 A 在较小屏幕上需要缩小 25%，那么元素 B 也应该缩小 25%。</p>
+<p>For example, say you’re designing an article at a large screen size. If your body copy is 18px and your headlines are 45px, it’s tempting to encode that relationship by defining your headline size as 2.5em; 2.5 times the current font size.</p>
+<p>例如，假设你正在为大屏幕设计一篇文章。如果你的正文字体大小是 18px，你的标题字体大小是 45px，人们很容易通过定义标题大小为 2.5em 来编码这种相对关系；即当前字体大小的 2.5 倍。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/80DF976F-4618-4204-ACAB-A7C762EC1B81_2/ZwRQLIBfnCdvOftfFCmhZoZBw5kfkmeYDRNfkfdRX08z/Image.png" alt="Image.png"></p>
+<p>There’s nothing inherently wrong with using relative units like em, but don’t be fooled into believing that relationships defined this way can remain static — 2.5em might be the perfect headline size on desktop but there’s no guarantee that it’ll be the right size on smaller screens.</p>
+<p>使用像 em 这样的相对单位本身并没有错，但不要误以为以这种方式定义的关系可以保持不变 —— 2.5em 在桌面上可能是完美的标题大小，但在较小屏幕上可能就不一定合适了。</p>
+<p>Say you reduce the size of your body copy to 14px on small screens to keep the line length in check. Keeping your headlines at 2.5em means a rendered font size of 35px — way too big for a small screen!</p>
+<p>假设你在小屏幕上将正文字体大小减少到 14px 以控制行长度。如果你的标题保持在 2.5em，那么渲染出的字体大小将是 35px —— 对于小屏幕来说太大了！</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A4232AD6-46A0-487D-893B-91665B4CECCF_2/V3ARw8rlIDVXO8gkjSpQ3EqFl9DGjMIpIBunjch5Oxgz/Image.png" alt="Image.png"></p>
+<p>A better headline size for small screens might be somewhere between 20px and 24px:</p>
+<p>对于小屏幕来说，更合适的标题大小可能在 20px 到 24px 之间。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/30F5F16F-834D-4497-900A-1A4050F1D07C_2/FxEMKFfcFqNsROJsACGF6f36rRpk6gH5h57uTj4Z2LEz/Image.png" alt="Image.png"></p>
+<p>That’s only 1.5-1.7x the size of the 14px body copy — a totally different relationship than what made sense on desktop screens. That means there isn’t any real relationship at all, and that there’s no real benefit in trying to define the headline size relative to the body copy size.</p>
+<p>这只有 14px 正文字体大小的 1.5 到 1.7 倍 —— 与在桌面屏幕上有意义的比例完全不同。这意味着实际上并没有固定的比例关系，并且尝试根据正文字体大小来定义标题大小并没有真正的好处。</p>
+<p>As a general rule, elements that are large on large screens need to shrink faster than elements that are already fairly small — the difference between small elements and large elements should be less extreme at small screen sizes.</p>
+<p>通常来说，大屏幕上的大元素在屏幕尺寸变小时，应该比小元素更显著地减小尺寸 —— 确保在小屏幕上，大元素和小元素之间的比例差异不会太过悬殊。</p>
+<p><strong>Relationships within elements / 元素内部的关系</strong></p>
+<p>The idea that things should scale independently doesn’t just apply to sizing elements at different screen sizes; it applies to the properties of a single component, too.</p>
+<p>事物应独立缩放的理念不仅适用于不同屏幕尺寸上的元素尺寸调整；它也适用于单一组件的属性。</p>
+<p>Say you’ve designed a button. It’s got a 16px font size, 16px of horizontal padding, and 12px of vertical padding:</p>
+<p>假设你设计了一个按钮。它的字体大小为 16px，水平内边距为 16px，垂直内边距为 12px。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9D0B1D43-5AF1-44CF-9E79-7EAA99F3C977_2/zJc8UkFuMW3cBN3D79yhz3xMpYF5K5fRTvr402dHvRQz/Image.png" alt="Image.png"></p>
+<p>Much like the previous example, it’s tempting to think that the padding should be defined in terms of the current font size. That way if you want a larger or smaller button, you only need to change the font size and the padding will update automatically, right?</p>
+<p>与前一个例子类似，人们很容易认为内边距应该以当前字体大小来定义。这样一来，如果你想要一个更大或更小的按钮，只需要改变字体大小，内边距就会自动更新，不是吗？</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/E88B9371-B18A-4DEC-8B91-751287C9FF7E_2/vACi7J34CNClf7dqQUgccxRezfA4lgX9XOX08hwqNGYz/Image.png" alt="Image.png"></p>
+<p>This works — the buttons do scale up or down and preserve the same proportions. But is that what we really want?</p>
+<p>这种方法是可行的 —— 按钮确实可以按比例放大或缩小。但我们真的想要这样吗？</p>
+<p>Compare that to these buttons, where the padding gets more generous at larger sizes and disproportionately tighter at smaller sizes:</p>
+<p>与此相比，这些按钮在较大尺寸时内边距更宽松，在较小尺寸时内边距则不成比例地更紧凑：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3D1A9F91-06EC-4817-9693-D4AA984AD2E8_2/IBRcaLePFlkYV0KwXtw7S3U1Bajc4jBlIgPfEm0Ovxkz/Image.png" alt="Image.png"></p>
+<p>Here the large button actually feels like a larger button, and the small buttons actually feel like smaller buttons, not like we simply adjusted the zoom.</p>
+<p>在这里，大号按钮实际上给人的感觉就是更大，小号按钮给人的感觉也确实更小，并不是我们仅仅调整了缩放比例。</p>
+<p>Let go of the idea that everything needs to scale proportionately — giving yourself the freedom to fine-tune things independently makes it a hell of a lot easier to design for multiple contexts.</p>
+<p>放弃所有元素都需要等比例缩放的想法 —— 给自己自由去独立微调各个元素，从而使针对多种上下文进行设计变得容易得多。</p>
+<h3 id="avoid-ambiguous-spacing--避免含糊的间距">Avoid ambiguous spacing / 避免含糊的间距</h3>
+<p>When groups of elements are explicitly separated — usually by a border or background color — it’s obvious which elements belong to which group.</p>
+<p>当元素组被明确分隔开时 —— 通常通过边框或背景颜色 —— 很明显可以看出哪些元素属于哪个组。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B9CE2A62-A92A-4A08-B098-C4CF64772EAF_2/HstyTeXKy0jWD9mz9tJqUQX4F8NoC0gvTRPAbijVMVUz/Image.png" alt="Image.png"></p>
+<p>But when there isn’t a visible separator, it’s not always so obvious.</p>
+<p>但是当没有可见的分隔符时，情况就不一定那么明显了。</p>
+<p>Say you’re designing a form with stacked labels and inputs. If the margin below the label is the same as the margin below the input, the elements in the form group won’t feel obviously “connected”.</p>
+<p>假设你正在设计一个具有堆叠标签和输入框的表单。如果标签下方的边距与输入框下方的边距相同，那么表单组中的元素就不会给人一种明显「相连」的感觉。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/30507579-96F5-4FE8-91DD-901A3A25FBA9_2/0myDjb6dVlIZNjraIdxw5h3hv3Llx5Rja7ZaCctM210z/Image.png" alt="Image.png"></p>
+<p>At best the user has to work harder to interpret the UI, and at worst it means accidentally putting the wrong data in the wrong field.</p>
+<p>在最好的情况下，用户需要更努力地去理解用户界面，而在最坏的情况下，这意味着可能会不小心将错误的数据填入错误的字段。</p>
+<p>The fix is to increase the space between each form group so it’s clear which label belongs to which input:</p>
+<p>解决方法是增加每个表单组之间的空间，以清楚地表明哪个标签属于哪个输入框。</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/92E015D3-1A7C-44EB-9C00-ED121F052D15_2/yAyjapDCndQp5gggOKS19Rj7Qp6kr5lfSa2JxBbBOHIz/Image.png" alt="Image.png"></p>
+<p>This same problem shows up in article design when there’s not enough space above section headings:</p>
+<p>当部分标题上方没有足够的空间时，同样的问题也会出现在文章设计中：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/85E68CD9-5346-40F5-90CC-A23E3F68D733_2/R769ylbonmJsT7CygB8aEnnYIBjBzXhyM5vOcWaPTC8z/Image.png" alt="Image.png"></p>
+<p>…and in bulleted lists, when the space between bullets matches the line-height of a single bullet:</p>
+<p>以及在项目符号列表中，当项目符号之间的空间与单个项目符号的行高相匹配时：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3E2A5A60-3F8E-488D-BA21-1119BC073A77_2/XSaB9k5VhhZTdUyQjQxVEeGWVLXZqYWydct4oJQj5Z8z/Image.png" alt="Image.png"></p>
+<p>It’s not just vertical spacing that you have to worry about either; it’s easy to make this mistake with components that are laid out horizontally, too:</p>
+<p>这不仅仅是垂直间距的问题；在水平布局的组件中，也很容易犯同样的错误：</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/52924FFA-BCC3-41D1-8F1F-C458A4E9E4E6_2/PlDZOtK2hgcQLNipdrhJzMvoYEBUraxvQhT05yFJFuwz/Image.png" alt="Image.png"></p>
+<p>Whenever you’re relying on spacing to connect a group of elements, always make sure there’s more space around the group than there is within it — interfaces that are hard to understand always look worse.</p>
+<p>每当你依赖间距来连接一组元素时，一定要确保组周围的空间比组内的多 —— 难以理解的界面看起来总是更糟糕。</p>
+<h2 id="designing-text--设计文本">Designing Text / 设计文本</h2>
+<h3 id="establish-a-type-scale--建立一个类型比例尺">Establish a type scale / 建立一个类型比例尺</h3>
+<p>Most interfaces use way too many font sizes. Unless a team has a rigid design system in place, it’s not uncommon to find that every pixel value from 10px to 24px has been used in the UI <em>somewhere</em>.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C6E634F6-E53C-4A23-BFB5-AD25F648AA64_2/iiLyOk1wQlI8S5guQxBkMhrJZXcRYabPFtQCp1odN4sz/Image.png" alt="Image.png"></p>
+<p>Choosing font sizes without a system is a bad idea for two reasons:</p>
+<ol>
+<li>It leads to annoying inconsistencies in your designs.</li>
+<li>It slows down your workflow.</li>
+</ol>
+<p>So how do you define a type system?</p>
+<p><strong>Choosing a scale / 选择比例尺</strong></p>
+<p>Just like with spacing and sizing, a linear scale won’t work. Smaller jumps between font sizes are useful at the bottom of the scale, but you don’t want to waste time deciding between 46px and 48px for a large headline.</p>
+<p><strong>Modular scales / 模块化比例尺</strong></p>
+<p>One approach is to calculate your type scale using a ratio, like 4:5 (a “<em>major third</em>”), 2:3 (a “<em>perfect fifth</em>”), or perhaps the “golden ratio”, 1:1.618. This is often called a “modular scale”.</p>
+<p>You start with a sensible base value (<em>16px is common since it’s the default font size for most browsers</em>), apply your ratio to get the next value, then apply your ratio to that value to get the next value, and so on and so forth:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/162067AB-B875-4650-8CBB-C11B682FE8FF_2/lhF7VYjQnUJNuKyBWuSg7p0ydwVX05ckXJyZgMDUpTIz/Image.png" alt="Image.png"></p>
+<p>The mathematical purity of this approach is alluring, but in practice, it’s not perfect for a couple of reasons.</p>
+<ol>
+<li><strong>You end up with fractional values.</strong></li>
+</ol>
+<p>Using a 16px base and 4:5 ratio, your scale will end up with lots of sizes that don’t land right on the pixel, like 31.25px, 39.063px, 48.828px, etc. Browsers all handle subpixel rounding a little bit differently, so it’s best to avoid fractional sizes if you can avoid it.</p>
+<p>If you do want to use this approach, make sure you round the values yourself when defining the scale to avoid off-by-one pixel issues across browsers.</p>
+<ol start="2">
+<li><strong>You usually need more sizes.</strong></li>
+</ol>
+<p>This approach can work well if you’re defining a type scale for long form content like an article, but for interface design, the jumps you get using a modular scale are often a bit too limiting.</p>
+<p>With a (<em>rounded</em>) 3:4 type scale, you get sizes like 12px, 16px, 21px, and 28px. While this might not seem too limiting on the surface, in practice you’re going to wish you had a size between 12px and 16px, and another between 16px and 21px.</p>
+<p>You could use a tighter ratio like 8:9, but at this point you’re just trying to pick a scale that happens to match the sizes you already know you want.</p>
+<p><strong>Hand-crafted scales / 手动比例</strong></p>
+<p>For interface design, a more practical approach is to simply pick values by hand. You don’t have to worry about subpixel rounding errors this way, and you have total control over which sizes exist instead of outsourcing that job to some mathematical formula.</p>
+<p>Here’s an example of a scale that works well for most projects and aligns nicely with the spacing and sizing scale recommended in “<em>Establishing a spacing and sizing system</em>”:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6BD5C1FE-1D81-43A2-9A25-1550B6AA380F_2/kZrV3NmOdVJNPm7x1SRfDbywrySCbzC17yauxCB6MAQz/Image.png" alt="Image.png"></p>
+<p>It’s constrained just enough to speed up your decision making, but isn’t so limited as to make you feel like you’re missing a useful size.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/61F20646-6975-453E-988A-C65ED70E43A1_2/xvNX2qwGqTxECa3HobudY0RgJKwTHQrHwOz1SxZCGbQz/Image.png" alt="Image.png"></p>
+<p><strong>Avoid em units / 避免使用 em</strong></p>
+<p>When you’re building a type scale, don’t use em units to define your sizes.</p>
+<p>Because em units are relative to the current font size, the computed font size of nested elements is often not actually a value in your scale.</p>
+<p>For example, say you’ve defined an em-based type scale like this:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/01901E01-5D56-45E1-ACA8-D4BD52D2AB5B_2/mGAjneJYAFTcMnfvsrCpop97Z5FQMtef6wMyqF9BOmkz/Image.png" alt="Image.png"></p>
+<p>If you give an element a font size of 1.25em (20px by default), inside of that element 1em is now equal to 20px. That means that if you give one of the nested elements a font size of .875em, the actual computed font size is 17.5px, not a value from your type scale!</p>
+<p>Stick to px or rem units — it’s the only way to guarantee you’re actually sticking to the system.</p>
+<h3 id="use-good-fonts--使用好的字体">Use good fonts / 使用好的字体</h3>
+<p>With thousands of different typefaces out there to choose from, separating the good from the bad can be an intimidating task.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1100A860-398F-4343-8DB1-B39664EA8A27_2/fWo2igfYxb33FyyYPP3mwdUpn6QPKIT5xhybaDo4YAUz/Image.png" alt="Image.png"></p>
+<p>Developing an eye for all of the details that make a good typeface can take years. You probably don’t have years, so here are a few tricks you can use to start picking out high quality typefaces right away.</p>
+<p><strong>Play it safe / 稳扎稳打</strong></p>
+<p>For UI design, your safest bet is a fairly neutral sans-serif — think something like Helvetica.</p>
+<p>If you really don’t trust your own taste, one great option is to rely on the system font stack:</p>
+<p><code>-apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;</code></p>
+<p>It might not be the most ambitious choice, but at least your users will already be used to seeing it.</p>
+<p><strong>Ignore typefaces with less than five weights / 忽略重量少于 5 种的字体</strong></p>
+<p>This isn’t <em>always</em> true, but as a general rule, typefaces that come in a lot of different weights tend to be crafted with more care and attention to detail than typefaces with fewer weights.</p>
+<p>Many font directories (<em>like Google Fonts</em>) will let you filter by “number of styles”, which is a combination of the available weights as well as the italic variations of those weights.</p>
+<p>A great way to limit the number of options you have to choose from is to crank that up to 10+ (<em>to account for italics</em>):</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F2A00978-AE35-4DBE-B5C9-D802B8691202_2/uWQwUkf3ZeH5iQyobsEtA0MjBht2I4AbQhIUYDScIy4z/Image.png" alt="Image.png"></p>
+<p>On Google Fonts specifically, that cuts out 85% of the available options, leaving you with less than 50 sans-serifs to choose from.</p>
+<p><strong>Optimize for legibility / 优化可读性</strong></p>
+<p>When someone designs a font family, they are usually designing it for a specific purpose. Fonts meant for headlines usually have tighter letter- spacing and shorter lowercase letters (a shorter x-height), while fonts meant for smaller sizes have wider letter-spacing and taller lowercase letters.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A93307A3-8C78-467A-9D06-ADF377B8E3D1_2/DtVMF5kXDyxIxf38PrS2mIfvQ0FxAKKAW9M8e8tvbKwz/Image.png" alt="Image.png"></p>
+<p>Keep this in mind and avoid using condensed typefaces with short x-heights for your main UI text.</p>
+<p><strong>Trust the wisdom of the crowd / 相信群众的智慧</strong></p>
+<p>If a font is popular, it’s probably a good font. Most font directories will let you sort by popularity, so this can be a great way to limit your choices.</p>
+<p>This is especially useful when you’re trying to pick out something other than a neutral UI typeface. Picking a nice serif with some personality for example can be tough.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/DD5EAAA7-901C-46C8-8BC4-29BFA18FC0D2_2/JkhXSgCLXOdIv8t4A41OBKcEyk7ygI7csQQwbvAPCNMz/Image.png" alt="Image.png"></p>
+<p>Leveraging the collective decision-making power of thousands of other people can make it a lot easier.</p>
+<p><strong>Steal from people who care / 从关心你的人哪里偷东西</strong></p>
+<p>Inspect some of your favorite sites and see what typefaces they are using.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7EF66E2B-BE83-4EB6-8E44-6D15A068BAC3_2/9b0koedXDjx3ninXYRwIsx6oXOuUgpzELYTMqsEYlTkz/Image.png" alt="Image.png"></p>
+<p>There are a lot of great design teams out there full of people with really strong opinions about typography, and they’ll often choose great fonts that you might have never found using some of the safer approaches outlined above.</p>
+<p><strong>Developing your intuition / 培养你的直觉</strong></p>
+<p>Once you start paying closer attention to the typography on well-designed sites, it’s not long before you feel pretty comfortable labeling a typeface as awesome or terrible.</p>
+<p>You’re gonna be a type snob soon enough, but the advice outlined above will help get you by in the meantime.</p>
+<h3 id="keep-your-line-length-in-check--保证你的行长度在控制之内">Keep your line length in check / 保证你的行长度在控制之内</h3>
+<p>When styling paragraphs, it’s easy to make the mistake of fitting the text to your layout instead of trying to create the best reading experience.</p>
+<p>Usually this means lines that are too long, making text harder to read.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/11110024-01E3-4EE4-8DA8-A2420AB976D8_2/vjjIgFDF2HiNTukkGpqX55Ayx4I93yVaVAo6C7A4F2Uz/Image.png" alt="Image.png"></p>
+<p>For the best reading experience, make your paragraphs wide enough to fit between 45 and 75 characters per line. The easiest way to do this on the web is using em units, which are relative to the current font size. A width of 20-35em will get you in the right ballpark.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/0CE51F46-9DEB-4D26-93DC-7B785151F6E6_2/ZxZmbK9yp25En5DeUdyq9xcxb0BFAXjOhKIWTAvbZgoz/Image.png" alt="Image.png"></p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F996FC02-6303-4773-9271-F26515C4F996_2/aDN7kfqQuLI6y0hyWrQItEpXyYcy8xTQyI4o54Fhibsz/Image.png" alt="Image.png"></p>
+<p>Going a bit wider than 75 characters per line can sometimes work too, but be aware that you’re entering risky territory — stick to the 45-75 range if you want to play it safe.</p>
+<p><strong>Dealing with wider content / 处理更广泛的内容</strong></p>
+<p>If you’re mixing paragraph text with images or other large components, you should still limit the paragraph width even if the overall content area needs to be wider to accommodate the other elements.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/50432468-ABE1-4B6D-97AD-4787CD335BC6_2/30qlTS7opX1ZmgjDNpFsqhy6iQIhkSejUJHudggAxzoz/Image.png" alt="Image.png"></p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/088A546C-B52A-4EDF-BD97-02B03BA8FD9E_2/7xIPqq2uuOcqaQuVLyp8vnqbIQc6U1ref4S6VxUIKzUz/Image.png" alt="Image.png"></p>
+<p>It might seem counterintuitive at first to use different widths in the same content area, but the result almost always looks more polished.</p>
+<h3 id="baseline-not-center--基线不居中">Baseline, not center / 基线，不居中</h3>
+<p>There are a lot of situations where it makes sense to use multiple font sizes to create hierarchy on a single line.</p>
+<p>For example, maybe you’re designing a card that has a large title in the top left and a smaller list of actions in the top right.</p>
+<p>When you’re mixing font sizes like this, your instinct might be to vertically center the text for balance:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C92832BA-9720-414E-910B-221DC4337E74_2/e6YyPqyYR2C3txPcow28HF8tkh5WkxgU2nTi9r9EVxwz/Image.png" alt="Image.png"></p>
+<p>When there’s a decent amount of space between the different font sizes it often won’t look bad enough to catch your attention, but when the text is close together the awkward alignment becomes more obvious:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8357E295-F832-49B4-BD73-CE651BBE86EE_2/i0iGFLeFnmsMFKBfRzNRS0H8oOeKj4EZqHMsybGNbRsz/Image.png" alt="Image.png"></p>
+<p>A better approach is to align mixed font sizes by their baseline, which is the imaginary line that letters rest on:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/787C95A5-9FE7-4F09-9BA5-EC33B888B930_2/3vfs1KDhB8qDPfEmund4TJ6pgbgevuGbiMOgmzgnvyQz/Image.png" alt="Image.png"></p>
+<p>When you align mixed font sizes by their baseline, you’re taking advantage of an alignment reference that your eyes already perceive.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D96B40F1-63B0-4E60-91CA-8F55610E5AE6_2/4QBOPWJyjqs3tAkZGrEI0xCtOowH8tDtnHUKoH577JEz/Image.png" alt="Image.png"></p>
+<p>The result is a simpler, cleaner look than what you get when you center two pieces of text and offset their baselines.</p>
+<h3 id="line-height-is-proportional--行高是成比例的">Line-height is proportional / 行高是成比例的</h3>
+<p>You might have heard the advice that a line-height of about 1.5 is a good starting point from a readability perspective.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/4489D93A-9417-45C3-AB2B-110B7B25C8C5_2/EIuyEV7pnEEdTgPb7Qq3VLHVaTp62DRpMxex3zFiHyQz/Image.png" alt="Image.png"></p>
+<p>While that’s not necessarily untrue, choosing the right line-height for your text is a bit more complicated than just using the same value across the board in all situations.</p>
+<p><strong>Accounting for line length / 考虑行长度</strong></p>
+<p>The reason we add space between lines of text is to make it easy for the reader to find the next line when the text wraps. Have you ever accidentally read the same line of text twice, or accidentally skipped a line? The line- height was probably too short.</p>
+<p>When lines of text are spaced too tightly, it’s easy to finish reading a line of text at the right edge of a page then jump your eyes all the way back to the left edge only to be unsure which line is next.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2AAE0C31-60A0-4FCD-A4A6-236808AF816B_2/k5QgYxnhLy2SpmAavTHUxyw92mnOdQgdfj14GzagycAz/Image.png" alt="Image.png"></p>
+<p>This problem is magnified when lines of text are long. The further your eyes have to jump horizontally to read the next line, the easier it is to lose your place.</p>
+<p>That means that your line-height and paragraph width should be proportional — narrow content can use a shorter line-height like 1.5, but wide content might need a line-height as tall as 2.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FB207A28-D409-44A8-BCFC-11A7B62D6CAF_2/y6RzyrxIIgUCtVhzyTytwUBmJ1FGA8aWzeaX7DlINd0z/Image.png" alt="Image.png"></p>
+<p><strong>Accounting for font size / 考虑字体大小</strong></p>
+<p>Line length isn’t the only factor in choosing the right line-height — font size has a big impact as well.</p>
+<p>When text is small, extra line spacing is important because it makes it a lot easier for your eyes to find the next line when the text wraps.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/DBFBF38B-8B91-446E-BE2E-E10F9BC2DA3E_2/RnJ4Npy0oOolk0Rl1phKxR0Jq50o7PFUyrxpKRC5bdEz/Image.png" alt="Image.png"></p>
+<p>But as text gets larger, your eyes don’t need as much help. This means that for large headline text you might not need any extra line spacing, and a line- height of 1 is perfectly fine.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1AE49F9B-A472-4570-BC87-AB34D05BE359_2/sNUAmiMUcBWRdzBh56qI2xABfuFYd8QWxnL8ScMOr8Az/Image.png" alt="Image.png"></p>
+<p>Line-height and font size are inversely proportional — use a taller line-height for small text and a shorter line-height for large text.</p>
+<h3 id="not-every-link-needs-a-color--不是每个链接都需要颜色">Not every link needs a color / 不是每个链接都需要颜色</h3>
+<p>When you’re including a link in a block of otherwise non-link text, it’s important to make sure that the link stands out and looks clickable.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A77B78FF-E4B9-44A9-968D-D129FB29B905_2/kybCa9W2N8GxzRMOKdFaf97Rk6vfUrIj1DdxsuI1WeQz/Image.png" alt="Image.png"></p>
+<p>But when you’re designing an interface where almost everything is a link, using a treatment designed to make links “pop” in paragraph text can be really overbearing.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/44900941-33A0-41EF-BC57-6B850578C617_2/4Z9RGiDx6f0kFG0oJRMcEzwJiBGNaR5gEVIoyphlqbEz/Image.png" alt="Image.png"></p>
+<p>Instead, emphasize most links in a more subtle way, like by just using a heavier font weight or darker color.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/135F006A-23B4-4E50-8D1C-216F1A7FFEB2_2/yAZe93Rg6KtmZixHRSAhLWTH5ZIXnfrO9W7EVjnlgxEz/Image.png" alt="Image.png"></p>
+<p>Some links might not even need to be emphasized by default at all. If you’ve got links in your interface that are really ancillary and not part of the main path a user takes through the application, consider adding an underline or changing the color only on hover.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8D96E8EF-DB42-43D6-8A04-1C6292E5C592_2/b2yApCypBCCo8dz0BO39uNUPxH05SDX2RVsDvqfDd6cz/Image.png" alt="Image.png"></p>
+<p>They’ll still be discoverable to any users who think to try, but won’t compete for attention with more important actions on the page.</p>
+<h3 id="align-with-readability-in-mind--以可读性为目标对齐">Align with readability in mind / 以可读性为目标对齐</h3>
+<p>In general, text should be aligned to match the direction of the language it’s written in. For English (and most other languages), that means that the vast majority of text should be left-aligned.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F433A7A9-5F95-4C77-8D73-7C0D1FA52B8D_2/ScSrvkZytg18yjnyNShmvHncAuDJzSx6PovXCjLnUtgz/Image.png" alt="Image.png"></p>
+<p>Other alignment options do have their place though, you just need to use them effectively.</p>
+<p><strong>Don’t center long form text / 不要居中长文本</strong></p>
+<p>Center-alignment can look great for headlines or short, independent blocks of text.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/73485CDA-28B5-4504-B6F1-87C10E5FD5FD_2/VGG5r8gfB1KULxlYeZfrCs0KejFXhljov7OcAExgPCQz/Image.png" alt="Image.png"></p>
+<p>But if something is longer than two or three lines, it will almost always look better left-aligned.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1CB120F9-2E46-4AEE-B578-7C266B0E6B1D_2/m8KyGzk1LKKMNcxtXFy5egTPXPi14OAyoK2UTgQtwwgz/Image.png" alt="Image.png"></p>
+<p>If you’ve got a few blocks of text you want to center but one of them is a bit too long, the easiest fix is to rewrite the content and make it shorter:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7553601E-B29E-4984-80DD-B807804C3E61_2/CmymZmbZv4xIpV2HF2y8Pl8XqBdAjqgiyQcolLRVwlkz/Image.png" alt="Image.png"></p>
+<p>Not only will it fix the alignment issue, it will make your design feel more consistent, too.</p>
+<p><strong>Right-align numbers / 数字右对齐</strong></p>
+<p>If you’re designing a table that includes numbers, right-align them.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/038F38D6-BF8F-4A3E-B84A-84F6522287DD_2/5rAdQ99l6nfOSXmkXBILBBN1iklCnuXycmBe9Fwq2RAz/Image.png" alt="Image.png"></p>
+<p>When the decimal in a list of numbers is always in the same place, they’re a lot easier to compare at a glance.</p>
+<p><strong>Hyphenate justified text / 分隔符对齐的文本</strong></p>
+<p>Justified text looks great in print and can work well on the web when you’re going for a more formal look, but without special care, it can create a lot of awkward gaps between words:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/77E77409-9DBD-498C-9F82-10A564944DF9_2/lGZK7R4ImwMNUbixkBeXto4y48NZmp2xtNcytD2GQXIz/Image.png" alt="Image.png"></p>
+<p>To avoid this, whenever you justify text, you should also enable hyphenation:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/ABDFCFB7-8044-424F-9BFC-3557C28A63B0_2/jOrbujTSsYjAUDZ2Ev3pMr3mpz9CVBGwGaG0x5HJuuEz/Image.png" alt="Image.png"></p>
+<p>Justified text works best in situations where you’re trying to mimic a print look, perhaps for an online magazine or newspaper. Even then, left aligned text works great too, so it’s really just a matter of preference.</p>
+<h3 id="use-letter-spacing-effectively--有效使用字间距">Use letter-spacing effectively / 有效使用字间距</h3>
+<p>When styling text, a lot of effort is put into getting the weight, color, and line- height just right, but it’s easy to forget that letter-spacing can be tweaked, too.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D15E74FC-28BD-4F5F-BCC3-4D747E6B4EED_2/oDJnUfrjnfIZN7AjxbYP1eQQSI3dFbwT6EmjMsS8ZbQz/Image.png" alt="Image.png"></p>
+<p>As a general rule, you should trust the typeface designer and leave letter- spacing alone. That said, there are a couple of common situations where adjusting it can improve your designs.</p>
+<p><strong>Tightening headlines / 紧缩的新闻标题</strong></p>
+<p>When someone designs a font family, they design it with a purpose in mind.</p>
+<p>A family like Open Sans is designed to be highly legible even at small sizes, so the built-in letter-spacing is a lot wider than a family like Oswald which is designed for headlines.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3D7310C7-4D44-4AF7-8503-178C1A63DD2A_2/xt0Kg2GN2vRy3xRoGpwZyzmyYvcHFdTWYeQirXyM9Wcz/Image.png" alt="Image.png"></p>
+<p>If you want to use a family with wider letter-spacing for headlines or titles, it can often make sense to decrease the letter-spacing to mimic the condensed look of a purpose-built headline family:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6CE8469E-B496-48AD-A75A-F235FAB0A350_2/ZN9QQcX5QmknkjcXezxZafNJ36lzoxiwl0Yk1lBpqpUz/Image.png" alt="Image.png"></p>
+<p>Avoid trying to make this work the other way around though — headline fonts rarely work well at small sizes even if you increase the letter spacing.</p>
+<p><strong>Improving all-caps legibility / 提高全大写易读性</strong></p>
+<p>The letter-spacing in most font families is optimized for normal “sentence case” text — a capital letter followed by mostly lowercase letters.</p>
+<p>Lowercase letters have a lot of variety visually. Letters like n, v, and e fit entirely within a typeface’s x-height, other letters like y, g, and p have descenders that poke out below the baseline, and letters like b, f, and t have ascenders that extend above.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FC867203-69FB-49AB-8FF6-0F3412E4DBB2_2/tPzP8suFlJB03Uwz1y1opF9ybfH7hM8ShxwGlZQjNRsz/Image.png" alt="Image.png"></p>
+<p>All-caps text on the other hand isn’t so diverse. Since every letter is the same height, using the default letter-spacing often leads to text that is harder to read because there are fewer distinguishing characteristics between letters.</p>
+<p>For that reason, it often makes sense to increase the letter-spacing of all- caps text to improve readability:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C4178B48-D191-4F40-A0FB-54824DCB6049_2/u7UY26WgzxHxU89mTz0VNu5xOmiIzrz9Qv68Qy1CWs4z/Image.png" alt="Image.png"></p>
+<h2 id="working-with-color--与色彩合作">Working with Color / 与色彩合作</h2>
+<h3 id="ditch-hex-for-hsl--放弃-hex选择-hsl">Ditch hex for HSL / 放弃 HEX，选择 HSL</h3>
+<p>Hex and RGB are the most common formats for representing color on the web, but they’re not the most useful.</p>
+<p>Using hex or RGB, colors that have a lot in common visually look nothing alike in code.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/761545F1-B493-42B2-807C-A52FF450E3CB_2/x5KqPNPtDg2zQy38WneU1hLKj8mIYeOCxy6Sgn1M9Kwz/Image.png" alt="Image.png"></p>
+<p>HSL fixes this by representing colors using attributes the human-eye intuitively perceives: hue, saturation, and lightness.</p>
+<p><strong>Hue</strong> is a color’s position on the color wheel — it’s the attribute of a color that lets us identify two colors as “blue” even if they aren’t identical.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B9704D67-4E00-4213-8D4D-1231E71219B5_2/U6a2Jnx6lVI7ibwHE8TV5uw4JrJxfrsCAEimapQrs64z/Image.png" alt="Image.png"></p>
+<p>Hue is measured in degrees, where 0° is red, 120° is green, and 240° is blue.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2F5792BD-F620-401A-8860-A378FF343956_2/mxENh3NLKAe1xl153BBx0HgM9dXtV1wvk3fCmAeitsMz/Image.png" alt="Image.png"></p>
+<p><strong>Saturation</strong> is how colorful or vivid a color looks. 0% saturation is grey (no color), and 100% saturation is vibrant and intense.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/183336EE-FFD3-44C6-8320-4C05F5D2B28A_2/p6d6iGTUECcxYECbISTtuK0aNeDBoEndXDax0ZOl8jgz/Image.png" alt="Image.png"></p>
+<p>Without saturation, hue is irrelevant — rotating the hue when saturation is 0% doesn’t actually change the color at all.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A8C64666-7AAE-4162-86D0-C2FEBCE1CBEE_2/tAZ2i0YrSChpYhgyxHSPLRFIwcmsttwtuWnGwi751rAz/Image.png" alt="Image.png"></p>
+<p><strong>Lightness</strong> is just what it sounds like — it measures how close a color is to black or to white. 0% lightness is pure black, 100% lightness is pure white, and 50% lightness is a pure color at the given hue.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F85826F0-03FC-4AF6-AE16-262D3E1D3723_2/cxxIXS7Qps0z6kHASF2JpHHm2Kpxz7TsXy27IuOe1J8z/Image.png" alt="Image.png"></p>
+<p><strong>HSL vs. HSB</strong></p>
+<p>Don’t confuse HSL for HSB — <em>lightness</em> in HSL is not the same as brightness in HSB.</p>
+<p>In HSB, 0% brightness is always black, but 100% brightness is only white when the saturation is 0%. When saturation is 100%, 100% brightness in HSB is the same as 100% saturation and 50% lightness in HSL.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/08E56A14-4B0F-45D4-AF41-286B115BD231_2/0lvwdx1wWnMj54xwvR2nYmPqFAbYphNfNEiPbdKctVQz/Image.png" alt="Image.png"></p>
+<p>HSB is more common than HSL in design software, but browsers only understand HSL, so if you’re designing for the web, HSL should be your weapon of choice.</p>
+<h3 id="you-need-more-colors-than-you-think--你需要比你想的更多的颜色">You need more colors than you think / 你需要比你想的更多的颜色</h3>
+<p>Ever used one of those color palette generators where you pick a starting color, tweak some options, and are then bestowed the five perfect colors you should use to build your website?</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/00D0B148-CAE3-47CE-BE26-6DA62D797DB4_2/5xQyA2JZxQsbMjbRk42p320kYUZac31aRwJmo3sxuFgz/Image.png" alt="Image.png"></p>
+<p>This calculated approach to picking the perfect color scheme is extremely seductive, but it’s not very useful unless you want your site to look like this:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/24255380-79F6-45B8-98A1-B4FDDBCEF923_2/b5bxpi4U4yK1DOW8hx3h8o2g9uezOGD1hyPKfyrkku4z/Image.png" alt="Image.png"></p>
+<p><strong>What you actually need / 你需要什么</strong></p>
+<p>You can’t build anything with five hex codes. To build something real, you need a much more comprehensive set of colors to choose from.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/06D2827F-0851-4C8E-A588-E48EF32A4A35_2/Yyrw7oeureOhyX8rBvCPM95xAd3fGISnPeJ4IhiTJIgz/Image.png" alt="Image.png"></p>
+<p>You can break a good color palette down into three categories.</p>
+<p><strong>Greys /</strong></p>
+<p>Text, backgrounds, panels, form controls — almost everything in an interface is grey.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7B829C8E-779E-423D-9FD4-E14B1A50BBAC_2/yrjU3acWXLY9SzHlNC8fyKbl0e76KrrTuAmr7kjNEooz/Image.png" alt="Image.png"></p>
+<p>You’ll need more greys than you think, too — three or four shades might sound like plenty but it won’t be long before you wish you had something a little darker than shade #2 but a little lighter than shade #3.</p>
+<p>In practice, you want 8-10 shades to choose from (<em>more on this in “Define your shades up front”</em>). Not so many that you waste time deciding between shade #77 and shade #78, but enough to make sure you don’t have to compromise too much.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F187C2A4-32A8-4DE8-BFB0-2F5CB2347922_2/HTuEKnVsXV6yVimo8yGreW4PIm2dSKOiMikWJ5DWHrsz/Image.png" alt="Image.png"></p>
+<p>True black tends to look pretty unnatural, so start with a really dark grey and work your way up to white in steady increments.</p>
+<p><strong>Primary color(s) /</strong></p>
+<p>Most sites need one, <em>maybe</em> two colors that are used for primary actions, active navigation elements, etc. These are the colors that determine the overall look of a site — the ones that make you think of Facebook as “blue”.</p>
+<p>Just like with greys, you need a variety (5-10) of lighter and darker shades to choose from.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/43A9686C-A863-4E77-8375-BB99DCA0049A_2/u1nxvnjBtwirZ37mDx6NUFZ7CPDfWZv5xfLlUQPibzEz/Image.png" alt="Image.png"></p>
+<p>Ultra-light shades can be useful as a tinted background for things like alerts, while darker shades work great for text.</p>
+<p><strong>Accent colors /</strong></p>
+<p>On top of primary colors, every site needs a few accent colors for communicating different things to the user.</p>
+<p>For example, you might want to use an eye-grabbing color like yellow, pink, or teal to highlight a new feature:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2F383817-7DAA-4483-800A-5C1D93DFE36F_2/x4vFtR2nPiEydRx4yeYUMBLehUglxgIxBdjoZF7WSX0z/Image.png" alt="Image.png"></p>
+<p>You might also need colors to emphasize different semantic states, like red for confirming a destructive action:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7EB1AB6A-87D1-4DF6-AD02-0D83756B65FE_2/w0tNtbJiyKx9VST024Nb1b6JCvF34yLuTXezymKlDYYz/Image.png" alt="Image.png"></p>
+<p>&hellip;yellow for a warning message:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/78652FE8-499A-461D-98AE-CED8962E76D9_2/krQgBNQxur5GlPYAvOvzZl3nKuSd5pFKEuUdpr7Lytkz/Image.png" alt="Image.png"></p>
+<p>&hellip;or green to highlight a positive trend:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A4AF47E4-64B7-4747-82AB-69AE4E5900EC_2/J85beNIWP1SmtjHXauDTVllk5PQjWMNGmsryzwQiWG0z/Image.png" alt="Image.png"></p>
+<p>You’ll want multiple shades for these colors too, even though they should be used pretty sparingly throughout the UI.</p>
+<p>If you’re building something where you need to use color to distinguish or categorize similar elements (like lines on graphs, events in a calendar, or tags on a project), you might need even more accent colors.</p>
+<p>All in, it’s not uncommon to need as many as ten different colors with 5-10 shades each for a complex UI.</p>
+<h3 id="define-your-shades-up-front-">Define your shades up front /</h3>
+<p>When you need to create a lighter or darker variation of a color in your palette, don’t get clever using CSS preprocessor functions like “lighten” or “darken” to create shades on the fly. That’s how you end up with 35 slightly different blues that all look the same.</p>
+<p>Instead, define a fixed set of shades up front that you can choose from as you work.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/30828304-5C05-48EA-8174-73AAD296D176_2/POOb5vBy38X2OUnutT3rH4t1lGxV7q4auBngehYC3pcz/Image.png" alt="Image.png"></p>
+<p>So how do you put together a palette like this anyways?</p>
+<p><strong>Choose the base color first /</strong></p>
+<p>Start by picking a base color for the scale you want to create — the color in the middle that your lighter and darker shades are based on.</p>
+<p>There’s no real scientific way to do this, but for primary and accent colors, a good rule of thumb is to pick a shade that would work well as a button background.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2135DD07-FB40-4489-A3BC-6E8BEC2BCAB7_2/FZXDPR2lvquampnXX79hKfXypnU1oY1uGswa3gVokggz/Image.png" alt="Image.png"></p>
+<p>It’s important to note that there are no real rules here like “start at 50% lightness” or anything — every color behaves a bit differently, so you’ll have to rely on your eyes for this one.</p>
+<p><strong>Finding the edges /</strong></p>
+<p>Next, pick your darkest shade and your lightest shade. There’s no real science to this either, but it helps to think about where they will be used and choose them using that context.</p>
+<p>The darkest shade of a color is usually reserved for text, while the lightest shade might be used to tint the background of an element.</p>
+<p>A simple alert component is a good example that combines both of these use cases, so it can be a great place to pick these colors.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9C57B293-65C9-4E83-A20B-14505886E89B_2/ZysQulveAu0AouZdCn1MQ6HIq7HZeloNpCPs4h8IHbcz/Image.png" alt="Image.png"></p>
+<p>Start with a color that matches the hue of your base color, and adjust the saturation and lightness until you’re satisfied.</p>
+<p><strong>Filling in the gaps /</strong></p>
+<p>Once you’ve got your base, darkest, and lightest shades, you just need to fill in the gaps in between them.</p>
+<p>For most projects, you’ll need at least 5 shades per color, and probably closer to 10 if you don’t want to feel too constrained.</p>
+<p>Nine is a great number because it’s easy to divide and makes filling in the gaps a little more straightforward. Let’s call our darkest shade 900, our base shade 500, and our lightest shade 100.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A4A687F1-15AA-4F29-8B63-B1D90A8AB37B_2/fYgaq7bC2mEejMbhDV7WlhJsTiNWi0pxZH8qE8VI28Az/Image.png" alt="Image.png"></p>
+<p>Start by picking shades 700 and 300, the ones right in the middle of the gaps. You want these shades to feel like the perfect compromise between the shades on either side.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A54DE831-ADF3-4AEC-9400-DAC984B1E1F4_2/iG7cpMsPMc3zeEItXlPquqRo3Da0OMJcK12QS4j90kcz/Image.png" alt="Image.png"></p>
+<p>This creates four more holes in the scale (800, 600, 400, and 200), which you can fill using the same approach.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/E4E37DD8-86EE-4DC8-BFAE-D7196C60179C_2/jmwzvc52hP3ZPB2NQxrS2v3CinLRB2mTyJRr6V1lMG0z/Image.png" alt="Image.png"></p>
+<p>You should end up with a pretty balanced set of colors that provide just enough options to accommodate your design ideas without feeling limiting.</p>
+<p><strong>What about greys?</strong> /</p>
+<p>With greys the base color isn’t as important, but otherwise the process is the same. Start at the edges and fill in the gaps until you have what you need.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D88B60D2-3481-4D52-AD20-8494CFCEE215_2/l4c2ehxNNZOKg8SL8ZRc3Gd3BEYdnGnU2AfxvIXlAWkz/Image.png" alt="Image.png"></p>
+<p>Pick your darkest grey by choosing a color for the darkest text in your project, and your lightest grey by choosing something that works well for a subtle off-white background.</p>
+<p><strong>It’s not a science /</strong></p>
+<p>As tempting as it is, you can’t rely purely on math to craft the perfect color palette.</p>
+<p>A systematic approach like the one described above is great to get you started, but don’t be afraid to make little tweaks if you need to.</p>
+<p>Once you actually start using your colors in your designs, it’s almost inevitable that you’ll want to tweak the saturation on a shade, or make a couple of shades lighter or darker. Trust your eyes, not the numbers.</p>
+<p>Just try to avoid adding new shades too often if you can avoid it. If you’re not diligent about limiting your palette, you might as well have no color system at all.</p>
+<h3 id="dont-let-lightness-kill-your-saturation-">Don’t let lightness kill your saturation /</h3>
+<p>In the HSL color space, as a color gets closer to 0% or 100% lightness, the impact of saturation is weakened — the same saturation value at 50% lightness looks more colorful than it does at 90% lightness.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D4F180B2-58FB-48AF-901C-4E10E23FF742_2/AamiHJiqXVWfVvxCGJxsywTPKoAaWeV8s8UtZPE4yYYz/Image.png" alt="Image.png"></p>
+<p>That means that if you don’t want the lighter and darker shades of a given color to look washed out, you need to increase the saturation as the lightness gets further away from 50%.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2A5388CC-9777-4743-863D-E2331F2D66DC_2/IOVyJT9EBSS0204vymuMZJpMX2Fx9HxTuzF3KvxTfKEz/Image.png" alt="Image.png"></p>
+<p>It’s subtle but little details like this add up, especially when a color is being applied to a large section of a UI.</p>
+<p>But what if your base color is already heavily saturated? How do you increase the saturation if it’s already at 100%?</p>
+<p><strong>Use perceived brightness to your advantage /</strong></p>
+<p>Which of these two colors do you think is lighter?</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/0D1EE1ED-DF41-49CF-9800-9711EACB35E4_2/MSW2Mt4ECNnBHkyAxAB3upOQiydWc6UFWT7Y5If1bHgz/Image.png" alt="Image.png"></p>
+<p>The yellow, right? Well it turns out both colors actually have the exact same “lightness” in terms of HSL:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9C5745EF-3DCF-4F04-9E59-62AF7B9B730E_2/MGOQxnPbEgqYOQBcbBq0uxLxF92isgXSaq5qGSaK9aAz/Image.png" alt="Image.png"></p>
+<p>So why do we see the yellow as lighter? Well it turns out that every hue has an inherent perceived brightness due to how the human eye perceives color.</p>
+<p>You can calculate the perceived brightness of a color by plugging its RGB components into this formula:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C7CBFFCD-266B-4F4C-8CA2-9AADC06EB173_2/diNSz2MK4dk1604CDYyViFlLqiDpNbKHZPOu1Kvj1n8z/Image.png" alt="Image.png"></p>
+<p>Taking samples of different hues with 100% saturation and 50% lightness, we can get a good sense of the perceived brightness of different colors around the color wheel:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/62E68F87-394F-49AB-B83A-F4EA698B68BE_2/TIJyUWW5gxYGhvYMiBJbqVCRRYa702XjiO1mnAgQDJ4z/Image.png" alt="Image.png"></p>
+<p>As expected, yellow has a higher perceived brightness than blue. But what’s interesting here is that perceived brightness doesn’t simply change linearly from the darkest hue to the lightest hue — instead, there are three separate local minimums (red, green, and blue) and three local maximums (yellow, cyan, and magenta).</p>
+<p><strong>Changing brightness by rotating hue /</strong></p>
+<p>On the surface, this is certainly an interesting thing to understand about color. But things get really interesting when you realize how you can use this knowledge in your designs.</p>
+<p>Normally when you want to change how light a color looks, you adjust the <em>lightness</em> component:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1B2BDD34-68AB-4239-96C8-3C9FC8240E25_2/zK7Z2UXW9m5Ydsz4VCyJTigbvnMb7LUjYSHTAYItwMMz/Image.png" alt="Image.png"></p>
+<p>While this does work to lighten or darken a color, you often lose some of the color’s <em>intensity</em> — the color also looks closer to white or to black, not just lighter or darker.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D2516AB2-500E-4222-AC59-EE491D5D8DAF_2/GI5lskJEi8ZxylXyqyJlG7DDeeHER5cm2yr1xf4IrPEz/Image.png" alt="Image.png"></p>
+<p>Since different hues have a different perceived brightness, another way you can change the brightness of a color is by <em>rotating</em> its hue.</p>
+<p>To make a color lighter, rotate the hue towards the nearest bright hue — 60°, 180°, or 300°.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7D6B2BDE-EF9B-4E71-9E1F-A446979C955D_2/Gmt2x6ygXqwi938k7QR925t3yLXxzAwsVbxmeLqxzZ8z/Image.png" alt="Image.png"></p>
+<p>To make a color darker, rotate the hue towards the nearest dark hue — 0°, 120°, or 240°.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/75CE680C-FA4B-4099-8EF1-A5F8B08A0EA3_2/20sCulFD0qv82SDmyGjp8xdqajQnAzV5g6XCZQFhjysz/Image.png" alt="Image.png"></p>
+<p>This can be really useful when trying to create a palette for a light color like yellow. By gradually rotating the hue towards more of an orange as you decrease the lightness, the darker shades will feel warm and rich instead of dull and brown:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/97E694BD-E226-43A5-9316-421FB86C911E_2/D1KgTLQfmhMNiOFrWrOGRPrxGA0zqvZJ3oMIVWJgjx0z/Image.png" alt="Image.png"></p>
+<p>You can of course combine these approaches too, getting some of the brightness by adjusting the hue and some from adjusting the lightness.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/BC5EC96B-99D1-4C01-95BC-4686C2AD9653_2/YkFyStrTnSsauiNdoZobIZJz43MUlIZqhLcRjbAVL3wz/Image.png" alt="Image.png"></p>
+<p>While this is a great way to change a color’s brightness without affecting its intensity, it works best in small doses. Don’t rotate the hue more than 20-30° or it will look like a totally different color instead of just lighter or darker.</p>
+<h3 id="greys-dont-have-to-be-grey-">Greys don’t have to be grey /</h3>
+<p>By definition, true grey has a saturation of 0% — it doesn’t have any actual color in it at all.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/61E8403A-DF75-48B7-BAA5-AE31C2CB57C6_2/owK0ZDcJBFnNDhwqVt8GzS3MJkHTayxI27NWMnvFw8Ez/Image.png" alt="Image.png"></p>
+<p>But in practice, a lot of the colors that we <em>think of</em> as grey are actually saturated quite heavily:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/01BCD746-7ADD-45AF-A71E-3AB1ACDD9FB1_2/ooRgyt34g2zlbLeNMB3eVptpALTSFuBDfqI9YxBUykwz/Image.png" alt="Image.png"></p>
+<p>This saturation is what makes some greys feel cool and other greys feel warm.</p>
+<p><strong>Color temperature /</strong></p>
+<p>If you’ve ever purchased light bulbs before, you’ve had to make the decision between “warm white” bulbs that give off a yellow-ish light, and “cool white” bulbs that give off a blue-ish light.</p>
+<p>Saturating greys in a user interface works in a similar same way.</p>
+<p>If you want your greys to feel cool, saturate them with a bit of blue:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C8CDB265-A152-4A82-8227-21671A6A550A_2/PJrn4UT20Ch2witxL5sNEjHAOvtdAMTcnYpcEqkx4vsz/Image.png" alt="Image.png"></p>
+<p>To give your greys a warmer feel, saturate them with a bit of yellow or orange:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D2F6BFE4-2AEB-4AE6-997A-2553C98812A5_2/azaSYbxYNyYF3ZafzBF63nBT8mXpWcBMs78GPeygLHYz/Image.png" alt="Image.png"></p>
+<p>To maintain a consistent temperature, don’t forget to increase the saturation for the lighter and darker shades. If you don’t, those shades will look a bit washed out compared to the greys that are closer to 50% lightness.</p>
+<p>How much you want to saturate your greys is completely up to you — add just a little if you only want to tip the temperature slightly, or crank it up if you want the interface to lean strongly in one direction or the other.</p>
+<h3 id="accessible-doesnt-have-to-mean-ugly-">Accessible doesn’t have to mean ugly /</h3>
+<p>To make sure your designs are accessible, the Web Content Accessibility Guidelines (WCAG) recommend that normal text (under ~18px) has a contrast ratio of at least 4.5:1, and that larger text has a contrast ratio of at least 3:1.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D121687F-A0CE-46F3-BE67-6B7D121AA83F_2/u7OjsF6yWVUJZpkWxUb44w3lZ4wfxSljwvxOpD5o6wEz/Image.png" alt="Image.png"></p>
+<p>For typical <em>dark-text-on-a-light-background</em> situations, meeting this recommendation is pretty easy, but it gets a lot trickier when you start working with color.</p>
+<p><strong>Flipping the contrast</strong></p>
+<p>When using white text on a colored background, you’d be surprised how dark the color often needs to be to meet that 4.5:1 contrast ratio.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/47184B84-E870-4582-A333-7AD690E9F75E_2/jbLBfU3UY2INbmx53JfcqeRbgt5GaFcHyv6zoKcjeXAz/Image.png" alt="Image.png"></p>
+<p>This can create hierarchy issues when those elements aren’t supposed to be the focus of the page — dark colored backgrounds will really grab the user’s attention.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/179E3877-C884-453D-ABC6-4AA5D0DA37C4_2/uz7c8LK6iBjgUS70RNWg8hht5lZN6FeiRrRrluiSxJMz/Image.png" alt="Image.png"></p>
+<p>You can solve this problem by flipping the contrast. Instead of using light text on a dark colored background, use dark colored text on a light colored background:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/96AA46DF-BF17-4666-B84C-33A693D86C6E_2/HEFO5rfyd2lx7lQlGrF9PyNWdpnBX48inMWnFfgoPx0z/Image.png" alt="Image.png"></p>
+<p>The color is still there to help support the text, but it’s way less in-your-face and doesn’t interfere as much with other actions on the page.</p>
+<p><strong>Rotating the hue /</strong></p>
+<p>Even harder than white text on a colored background is colored text on a colored background. You’ll run into this situation if you’re ever trying to pick a color for some secondary text inside a dark-colored panel.</p>
+<p>If you start by taking the background color and simply adjusting the lightness and saturation, you’ll find that it’s hard to meet the recommended contrast ratio without getting very close to pure white.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/750AB443-A064-41A2-98D4-841027AF9E92_2/UghxiR8rWEl3yIyFc3xxCvaiqyuE5vim11y8AaaeQSEz/Image.png" alt="Image.png"></p>
+<p>You don’t want the primary text and the secondary text to look the same, so what else can you do?</p>
+<p>Well since some colors are brighter than others, one way to increase the contrast without getting closer to white is to <em>rotate the hue</em> towards a brighter color, like cyan, magenta, or yellow.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FC168915-09BE-4032-BE5B-5C2B20327DDD_2/YOD4mH57QrMptErUP0uMl966SxIycfDfSxkyJutoXfUz/Image.png" alt="Image.png"></p>
+<p>This can make it a lot easier to make the text accessible while still keeping it colorful.</p>
+<h3 id="dont-rely-on-color-alone-">Don’t rely on color alone /</h3>
+<p>Color can be a fantastic way to enhance information and make it easier to understand, but be careful not to rely on it, or users with color blindness will have a hard time interpreting your UI.</p>
+<p>Take these metric cards for example. With this design, someone who is red- green colorblind can’t easily tell if a metric has gotten better or worse:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/CC25105E-8632-4D85-9CB1-E87B99E4D9B0_2/bc5hJRkyI1bPAKTfP6x31Xuyj3MAPXXEvrIik1yx2P0z/Image.png" alt="Image.png"></p>
+<p>An easy fix for this is to also communicate that information in some other way, like by adding icons to indicate if the change is positive or negative.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/44EEEBB2-DF27-4FD6-BEC0-C13F565558A7_2/gcTzHTpUhAXTRYJjWvxwhNYtaNyiM5TlZEM5uh2HEy8z/Image.png" alt="Image.png"></p>
+<p>What about something like a graph, where each trend line has a different color?</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F84A5BF8-0B32-4520-A21F-8B0448AFC9B0_2/MGAqbdaAqHk8OD1eQAabFfgCXnxJtX3xhTDkqMvRM48z/Image.png" alt="Image.png"></p>
+<p>In situations like this, try relying on contrast instead of using completely different colors. It’s much easier for someone who’s colorblind to tell the difference between light and dark than it is for them to tell the difference between two distinct colors.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F02AB032-9315-4045-9CB2-93BBC1ED7076_2/h7gUFEovKUxXXJH2xy4wZ75kMmyq5WSGxHLKzKIvusEz/Image.png" alt="Image.png"></p>
+<p>Always use color to support something that your design is already saying; never use it as the only means of communication.</p>
+<h2 id="creating-depth-">Creating Depth /</h2>
+<h3 id="emulate-a-light-source-">Emulate a light source /</h3>
+<p>Have you ever noticed how some elements in an interface feel like they’re raised off of the page, while others feel like they are inset into the background?</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D7686C0A-9A8A-4456-9143-E31D373B0890_2/Y6zQy1tOzyR0Q3W893E8PW3Y6SA58haFGodLtr8KLYgz/Image.png" alt="Image.png"></p>
+<p>Creating this effect might look complicated at first, but it actually only requires you to understand one fundamental rule.</p>
+<p><strong>Light comes from above /</strong></p>
+<p>Take a look at the panelling on this door:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/AFD51592-818D-4776-9E4C-718B74F40B16_2/p8uLkcVLDrPO8NKIILR4DsyRxJcM1KFIvwfpTmEXKx0z/Image.jpeg" alt="Image.jpeg"></p>
+<p>Even though you’re just looking at a flat image, it’s still pretty obvious that the panels on the door are raised. Why is that?</p>
+<p>Notice how the top edge of the panel is lighter? That’s because it’s angled towards the sky and receives more light. Similarly, the bottom edge is darker because it’s angled away from the sky, receiving <em>less</em> light.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A68382EC-EC9D-4539-9E88-4C1830C1E2D0_2/SMQxp4nuPimwuZX2sWfECqvH3yocQsSy5vnVM67NFxsz/Image.png" alt="Image.png"></p>
+<p>The only way those edges could possibly be oriented that way is if the panel itself is raised, so that’s how our brains perceive it.</p>
+<p>Now take a look at the panelling on this cabinet:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F0A9DD6F-45F6-4F84-B9D7-F5F2FBF05782_2/AEh1ze4OPfxAS3EnxoHPxcNLxOcmr0BYptIdsKka1dYz/Image.jpeg" alt="Image.jpeg"></p>
+<p>In this case it’s clear that the panels are <em>inset</em> because there’s a shadow at the top indicating that the lip above is blocking the light, and the bottom edge is lighter, indicating that it’s angled upward.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/314BCCDB-5815-40D7-A708-8EC599F5900E_2/1zNHCnBNhA7pc9cdWAP19qR4SJDhnDHC7ramRRpgymIz/Image.png" alt="Image.png"></p>
+<p>To create this same sense of depth in your designs, all you need to do is mimic the way light affects things in the real world.</p>
+<p><strong>Simulating light in a user interface /</strong></p>
+<p>If you want an element to appear raised or inset, first figure out what profile you want that element to have, then mimic how a light source would interact with that shape.</p>
+<p><strong>Raised elements</strong> /</p>
+<p>For example, say you had a button and you wanted it to feel raised off of the page, with perfectly flat edges on the top and bottom:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FBDFB76F-EEC5-4023-8668-FDADB748F0A0_2/rOqsD51Zofl024TH0RWae2F4xkyUgjqhFUhr2GTFmuIz/Image.png" alt="Image.png"></p>
+<p>Because the top and bottom edges are both flat, it would be impossible to see both of them at the same time. People generally look slightly downward towards their screens, so for the most natural look, reveal a little bit of the top edge and hide the bottom edge.</p>
+<p>Since the top edge is facing upward, make it slightly lighter than the face of the button, usually using a top border or an inset box shadow with a slight vertical offset:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2699BF92-4BFB-4E3A-A76A-EB197C6F25F8_2/Tzvt9yjUDGyEAQWz8Xw29wUJyn5GMotAPYB4NEICkAMz/Image.png" alt="Image.png"></p>
+<p>Choose the lighter color by hand instead of using a semi-transparent white for best results — simply overlaying white can suck the saturation out of the underlying color.</p>
+<p>Next, you need to account for the fact that a raised element will block some of the light from reaching the area below the element.</p>
+<p>Do this by adding a small dark box shadow with a slight vertical offset (<em>you only want the shadow to appear below the element</em>):</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3E9F2767-516F-4AEF-B72D-E14C03DFB2B7_2/yGC87yHElArhIxxnsEdAseYwP3SKaxnur35QOUJ6Wegz/Image.png" alt="Image.png"></p>
+<p>Don’t get carried away with the blur radius, a couple of pixels is plenty. These</p>
+<p>sorts of shadows should have pretty sharp edges — take a look at the shadow cast by the bottom of a wall outlet or window frame for a real-world example.</p>
+<p><strong>Inset elements</strong> /</p>
+<p>Say you’re designing a “well” component that should feel like it’s recessed into the page.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6B7AA6D9-1F76-4AFC-A18A-423E4131F9E1_2/MbhcyNyx2yyn1Zo9ADdDWz6ksl1qdW1YhiyjzyafsHoz/Image.png" alt="Image.png"></p>
+<p>Looking slightly downward, only the bottom lip would be visible. Since it’s facing towards the sky, give that edge a slightly lighter color using a bottom border or inset shadow with a negative vertical offset:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1EC06540-D717-48E7-91A7-A73A3764A61C_2/xn7jrs7ayAysxWxMv8MvDGtGPW0bC48r7C0y2ygrk8oz/Image.png" alt="Image.png"></p>
+<p>The area above the well should block some of the light from reaching the very top of the well, so add a small dark inset box shadow with a slight positive vertical offset to make sure it doesn’t poke through at the bottom:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7BFF6051-AD46-4D19-B034-A3A9EC0D4E91_2/EPV7PrGYQZlaqKHtK3fcf17uga4hKOOXl6arcZ1SiLcz/Image.png" alt="Image.png"></p>
+<p>This same treatment works for any element that may need to appear inset, for example text inputs and checkboxes:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/CAD4F435-1A10-4D19-8A42-ACD766396D46_2/b8mqtrOwyMyh8gtMlyySsvyxwb7P1jLFqqK1AX2GyxAz/Image.png" alt="Image.png"></p>
+<p><strong>Don’t get carried away /</strong></p>
+<p>Once you understand how to simulate light in an interface, it can be tempting to tinker away for hours, tweaking and tweaking to see how closely you can mimic the real world.</p>
+<p>While this can be a fun exercise, in practice it can lead to interfaces that are busy and unclear. Borrowing some visual cues from the real world is a great way to add a bit of depth, but there’s no need to try and make things look photo-realistic.</p>
+<h3 id="use-shadows-to-convey-elevation-">Use shadows to convey elevation /</h3>
+<p>Shadows can be more than just a flashy effect — used thoughtfully, they let you position elements on a virtual z-axis to create a meaningful sense of depth.</p>
+<p>Small shadows with a tight blur radius make an element feel only slightly raised off of the background, while larger shadows with a higher blur radius make an element feel much closer to the user:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8A654B9F-B758-4B3C-8946-8D0E6FC8F370_2/twTFSuj8786dwx5gQgRRhF7XPHWjceTczi2syvcvgFsz/Image.png" alt="Image.png"></p>
+<p>The closer something feels to the user, the more it will attract their focus.</p>
+<p>You might use a smaller shadow for something like a button, where you want the user to notice it but don’t want it to dominate the page:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B6E50F55-EF77-4653-A255-741F580837C4_2/f4VEcmY83xSXmkftosdLUEyEi7v3zEdPrPraXUyx4WMz/Image.png" alt="Image.png"></p>
+<p>Medium shadows are useful for things like dropdowns; elements that need to sit a bit further above the rest of the UI:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/62D48C56-9EC0-4F63-9077-3386E8158216_2/R0E7yZjRzvdq3BL6Sg91fevbwK0fMdCaaRPBsZxn4vYz/Image.png" alt="Image.png"></p>
+<p>Large shadows are great for modal dialogs, where you really want to capture the user’s attention:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9047FB70-FC94-4CA4-A375-938FBFA6C87C_2/QvvUJ10MMz0bEzwNzzyJvgpYAqkukKFKmTH34whllFUz/Image.png" alt="Image.png"></p>
+<p><strong>Establishing an elevation system /</strong></p>
+<p>Just like with color, typography, spacing, and sizing, defining a fixed set of shadows will speed up your workflow and help maintain consistency in your designs.</p>
+<p>You don’t need a ton of different shadows — five options is usually plenty.</p>
+<p>Start by defining your smallest shadow and your largest shadow, then fill in the middle with shadows that increase in size pretty linearly:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/97B53938-8555-4F60-99D9-2BA2DA2EEAA1_2/9O2V8fd3XetS30uQ3Ci1ux43LxGni7xP9ZkcyoDyT8Yz/Image.png" alt="Image.png"></p>
+<p><strong>Combining shadows with interaction /</strong></p>
+<p>Shadows aren’t only useful for positioning elements on the z-axis statically; they’re a great way to provide visual cues to the user as they interact with elements, too.</p>
+<p>For example, say you had a list of items where the user could click and drag each item to sort them. Adding a shadow to an item when a user clicks it makes it feel like it pops forward above the other items in the list, and makes it clear to the user that they can drag it:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/75FBE5D0-85F0-4422-9A89-06324E5840F1_2/KrEQSQAWpheBtOo9EjMy5OvyA02HyhLBIYUunCHwvz4z/Image.png" alt="Image.png"></p>
+<p>Similarly, you can make a button feel like it’s being pressed into the page when a user clicks it by switching to a smaller shadow, or perhaps removing the shadow altogether:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/BBA3A96E-697A-4613-89E9-C21B5134F001_2/l3DyzQWoVnwLTAoctVg2pMc5PhFj7souz2H6kWLmN7Iz/Image.png" alt="Image.png"></p>
+<p>Using shadows in a meaningful way like this is a great way to hack the process of choosing what sort of shadow an element should have. Don’t think about the shadow itself, think about where you want the element to sit on the z-axis and assign it a shadow accordingly.</p>
+<h3 id="shadows-can-have-two-parts-">Shadows can have two parts /</h3>
+<p>Ever inspected a really nice shadow on a site and noticed they were actually using two shadows?</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/58E9BAA2-290E-4359-8DD6-12B64F7B15DB_2/Tb3SxzoV8IAywESSyyql5ntgj5T8Zc77w67JlceHHgwz/Image.png" alt="Image.png"></p>
+<p>There’s a method to this madness, and it’s actually pretty simple and makes a lot of sense.</p>
+<p>When you see someone combining two shadows, they’re not just experimenting randomly until things look nice, they’re using each shadow to do a specific job.</p>
+<p>The first shadow is larger and softer, with a considerable vertical offset and large blur radius. It simulates the shadow cast behind an object by a direct light source.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5CB995A2-3F82-476A-823F-191B95DE1F3C_2/gKGaL4pckk7vSSlkX1kMtViXhnT0Kdx2Bhn2xCjioSkz/Image.png" alt="Image.png"></p>
+<p>The second shadow is tighter and darker, with less of a vertical offset and a smaller blur radius. It simulates the shadowed area underneath an object where even ambient light has a hard time reaching.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/66980FD5-4742-4E22-BBAF-FC56528C0EB8_2/1ryjTg2AN9aUWKVT1xftvrsSSSt0UzlFX5JDdNkxLi0z/Image.png" alt="Image.png"></p>
+<p>Using two shadows like this gives you a lot more control than you’d get with a single shadow — you can keep the larger shadow nice and subtle while still making the shadow closer the element’s edges nice and defined.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/CC2A455B-0CB5-485B-A274-DA1645D00531_2/20QEYGNJlY65ZPwOtgXlHUKHDjbOOxwuNdAOLTPDnUYz/Image.png" alt="Image.png"></p>
+<p><strong>Accounting for elevation /</strong></p>
+<p>As an object gets further away from a surface, the small, dark shadow created by a lack of ambient light slowly disappears (<em>go ahead, try it out with something on your desk</em>).</p>
+<p>So if you’re going to use this two-shadow technique in your own projects, make sure you make that shadow more subtle for shadows that represent a higher elevation.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/4D42C3FD-64BD-487F-95D2-6D902D899984_2/mqanRvCkuYIyVK4ANymmQRiHjx3lZ5QTi09Y02XbE3Iz/Image.png" alt="Image.png"></p>
+<p>It should be quite distinct for your lowest elevation, and almost (<em>or completely</em>) invisible at your highest elevation.</p>
+<h3 id="even-flat-designs-can-have-depth-">Even flat designs can have depth /</h3>
+<p>When most people talk about “flat design”, they mean designing without shadows, gradients, or any other effects that try to mimic how light interacts with things in the real-world.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/BC61BF3E-9946-46F5-8BB6-2CE0D9BAE676_2/UPxr0zLdVcvs3mybkIvrWkXZXtUl2GxAq3CpuheJ0BMz/Image.png" alt="Image.png"></p>
+<p>But the most effective flat designs still convey depth, they just do it in a different way.</p>
+<p><strong>Creating depth with color /</strong></p>
+<p>In general (especially with shades of the same color), lighter objects feel closer to us and darker objects feel further away.</p>
+<p>Make an element lighter than the background color to make it feel like it’s raised off of the page, or darker than the background color if you want it to feel inset like a well:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/BA43B297-9644-4AAC-A4F4-6802EBC9B2BE_2/jX4POt0JeYu9ggsbI6cJV4BPyA2Ohijhsxz8m7M9vUwz/Image.png" alt="Image.png"></p>
+<p>This is just as applicable to non-flat designs, too — color is just another tool in your toolbelt for conveying distance.</p>
+<p><strong>Using solid shadows /</strong></p>
+<p>Another way to communicate depth in a flat design is to use short, vertically offset shadows with no blur radius at all.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8DC34BEE-216E-47FB-8CA0-6C97E1A46FF5_2/Ra48I7be8YmLjwu7Y6NmrvTxfV0qxWc6X1MvJ5v5yWsz/Image.png" alt="Image.png"></p>
+<p>It’s a great way to make a card or button stand off the page a little bit without sacrificing that flat aesthetic.</p>
+<h3 id="overlap-elements-to-create-layers-">Overlap elements to create layers /</h3>
+<p>One of the most effective ways to create depth is to overlap different elements to make it feel like a design has multiple layers.</p>
+<p>For example, instead of containing a card entirely within another element, offset it so it crosses the transition between two different backgrounds:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1B066FCC-5B4D-4D50-9997-7186424F2A90_2/why6WXotPx7SMxVgcLJUJblYvVWw0BvxuTuOIpSFumgz/Image.png" alt="Image.png"></p>
+<p>You could also make an element taller than its parent, so it overlaps on both sides:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6BEFC964-BCD1-4E8B-BCA3-3FFC46F4BBF2_2/umSSPfjyhlfhvmCIH2NASl6Z4rRtKPEIuCx8OxcPPq8z/Image.png" alt="Image.png"></p>
+<p>Overlapping elements can add depth to smaller components too, for example the controls on this carousel:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A20BA4E1-337F-40EE-AF12-587AAE223835_2/O01TUgiFGbRxnhXW1c9SxCSXYvHX2tEywyqYEkyEawIz/Image.png" alt="Image.png"></p>
+<p><strong>Overlapping images /</strong></p>
+<p>This technique can work great with images as well, but without special consideration it’s easy for overlapping images to clash.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/94435A67-4503-4A14-A55E-E254DC27249D_2/KIlWbQqs3yweHYOtSm0n7oNFOhI1IRkfcBdxIhQJtZgz/Image.png" alt="Image.png"></p>
+<p>A simple trick for avoiding this is to give the images an “invisible border” — one that matches the background color — so there’s always a bit of a gap between images:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6EBB5C25-529C-45A9-9A3F-5E4F49915342_2/WBHvbSauYDyDxlMyBzZEzN4oL7iaW3yaeaLXcaJdbOEz/Image.png" alt="Image.png"></p>
+<p>You’ll still create the appearance of layers but with none of the ugly clashing.</p>
+<h2 id="working-with-images-">Working with Images /</h2>
+<h3 id="use-good-photos-">Use good photos /</h3>
+<p>Bad photos will ruin a design, even if everything else about it looks great.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B27F43EB-C84C-4805-AF67-640DA80E19D4_2/PAVTTYA8Z1LRzqUvsmmgyzcWsMRj3G2NaDIXFGwItmoz/Image.png" alt="Image.png"></p>
+<p>If your design needs photography and you’re not a talented photographer, you’ve got two options:</p>
+<ol>
+<li><strong>Hire a professional photographer.</strong></li>
+</ol>
+<p>If you need very specific photos for your project, entrust a professional. Taking great photos isn’t just about using an expensive camera, it’s about lighting, composition, color — skills that take years to develop.</p>
+<ol start="2">
+<li><strong>Use high quality stock photography.</strong></li>
+</ol>
+<p>If your needs are more generic, there are tons of great resources out there where you can purchase great stock photos. There are even sites like Unsplash that offer beautiful photography for free.</p>
+<p>Whatever you do, don’t design using placeholder images and expect to be able to take some photos with your smartphone and swap them in later. It never works.</p>
+<h3 id="text-needs-consistent-contrast-">Text needs consistent contrast /</h3>
+<p>Ever tried to slap a headline on a big hero image, only to find that no matter what color you tried for the text, it was still hard to read?</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A7994229-890E-41FF-AB44-F13FABF0E40B_2/hDmlaiPRAQlOyVdzpmAUsMDDnwcUeaJPETBDNsg94pcz/Image.png" alt="Image.png"></p>
+<p>That’s because the problem isn’t the text, it’s the image.</p>
+<p><strong>The problem with background images</strong></p>
+<p>Photos can be very dynamic, with a lot of really light areas, and a lot of really dark areas. White text might look great in the dark areas, but it gets lost in the light areas. Dark text looks great in the light areas, but gets lost in the dark areas.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F6625A80-9924-4F79-8A67-ED44FC527D14_2/VsfjBdLukQ2CTPMWxSJHuEAlrddk9kymdOAdf0IIjSYz/Image.png" alt="Image.png"></p>
+<p>To solve this problem, you need to reduce the dynamics in the image to make the contrast between the text and the background more consistent.</p>
+<p><strong>Add an overlay /</strong></p>
+<p>One way to increase the overall text contrast is to add a semi-transparent overlay to the background image.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/EE8B802F-0320-40F0-A500-C912B87A10B8_2/ZWJhSQAWAN7PultNHhjXzCS7xkxCg1Zr5EkkL6sR6NYz/Image.png" alt="Image.png"></p>
+<p>A black overlay will tone down the light areas and help light text stand out, while a white overlay will brighten up the dark areas and help dark text stand out.</p>
+<p><strong>Lower the image contrast /</strong></p>
+<p>One of the compromises you make when using an overlay is that you’re lightening or darkening the whole image, not just the problem areas.</p>
+<p>If you want more control, another solution is to lower the contrast of the image itself:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/468508E5-A306-4301-8914-CA4FD34F6B77_2/IsgyIac3yeQoA9daeTP5u5Cupkjxy0ctwO7cywoGuxgz/Image.png" alt="Image.png"></p>
+<p>Lowering the contrast will change how light or dark the image feels overall, so make sure to adjust the brightness to compensate.</p>
+<p><strong>Colorize the image /</strong></p>
+<p>Another way to help text stand out against an image is to colorize the image with a single color.</p>
+<p>Some photo editing software includes this as a first-class feature, but if yours doesn’t, you can create this effect in three steps:</p>
+<ol>
+<li><strong>Lower the image contrast</strong>, to balance things out a bit.</li>
+<li><strong>Desaturate the image</strong>, to remove any existing color.</li>
+<li><strong>Add a solid fill</strong>, using the “multiply” blend mode.</li>
+</ol>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D43FDA4E-8509-4CA7-B758-29D75500751D_2/n67tC8Rr4WKNqzKM4Tnyv1uqoWnGkPBTn5UppDM9wNsz/Image.png" alt="Image.png"></p>
+<p>This can also be a great way to make a background image pair more nicely with your existing brand colors.</p>
+<p><strong>Add a text shadow /</strong></p>
+<p>If you want to preserve a bit more of the dynamics in a background image, a text shadow can be a great way to increase contrast only where you need it most.</p>
+<p>You want it to look more like a subtle glow than an actual shadow, so use a large blur radius and don’t add any kind of offset.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7E498BF0-98F3-48AA-8837-ADD6BB37A5D1_2/Vw1c75pd2dEofCYdJkxkWEwjHkVatAcYQkJOfZy73tgz/Image.png" alt="Image.png"></p>
+<p>It’s still a good idea to reduce the overall image contrast, but combining that with a text shadow means you can reduce it a little less.</p>
+<h3 id="everything-has-an-intended-size-">Everything has an intended size /</h3>
+<p>Everyone knows that scaling bitmap images to larger than their original size is a bad idea — they immediately feel “fuzzy” and lose their definition.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/943D322D-F42A-4034-8335-8642CD75FC24_2/pDTZCakZSig7m4G5wnztnz337a3IMZcuMaYqos3AbyYz/Image.png" alt="Image.png"></p>
+<p>But that’s not the only way you can go wrong with scaling, even when you think you’re playing it safe.</p>
+<p><strong>Don’t scale up icons /</strong></p>
+<p>If you’re designing something that could use some large icons (like maybe the “features” section of a landing page), you might instinctively grab your favorite SVG icon set and bump up the size until they fit your needs.</p>
+<p>They’re vector images after all, so the quality isn’t going to suffer if you increase the size, right?</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/009F790E-9F04-469C-8E14-DEDA37823376_2/OGo9yn3McDx5UgyjmJd07gVog9ATKd0GNrrTgqrUzRkz/Image.png" alt="Image.png"></p>
+<p>While it’s true that vector images won’t degrade in quality when you increase their size, icons that were drawn at 16–24px are never going to look very professional when you blow them up to 3x or 4x their intended size. They lack detail, and always feel disproportionately “chunky”.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/00FB1C27-F84B-4ED8-9C72-A309B5282B1A_2/QyB4kuXTQevCIRtFs7zyC5nKkBw0xveHDvy4IVKz3uYz/Image.png" alt="Image.png"></p>
+<p>If small icons are all you’ve got, try enclosing them inside another shape and giving the shape a background color:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/AC836053-4A89-4CF2-BAA2-840A91120B06_2/TtlwZ12avYQmRoRH5vfwtMVqGFmjN0TBAjVQSihLWQQz/Image.png" alt="Image.png"></p>
+<p>This lets you keep the actual icon closer to its intended size, while still filling the larger space.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B5B8F846-A6E8-4927-A5AE-A4A15AF55538_2/5beyxoT0E7Pl1dKeZXMTnAax8icOvvb7t0UfvsQVC6gz/Image.png" alt="Image.png"></p>
+<p><strong>Don’t scale down screenshots /</strong></p>
+<p>Say you want to include a screenshot of your app on that same features page.</p>
+<p>If you take a full-size screenshot and shrink it by 70% to make it fit, you’ll end up with an image that’s trying to cram way too much detail into far too little space.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/06A17E45-FC0C-48C4-898A-83663033190A_2/EbjdROZT0OKMTAv9K047qpAgIp1gyxxBkUmcRLliEg4z/Image.png" alt="Image.png"></p>
+<p>The 16px font in your app becomes a 4px font in your screenshot, and visitors will be squinting with their eyeballs two inches from the screen, struggling to make out what all that text says.</p>
+<p>If you want to include a detailed screenshot in your design, take the screenshot at a smaller screen size (like maybe your tablet layout) and save a lot of space for it so you don’t have to shrink it as much:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/23C8D52F-4895-486F-8370-F747A5D204FA_2/NOjyZRqjstVac3EKW5MwMCkKxHyySvRveJa26MK3uboz/Image.png" alt="Image.png"></p>
+<p>Or consider taking just a partial screenshot, so you can display it in less space without needing to scale it down:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/CA02DF5F-F91C-4CC5-859C-F7BF2AF4E377_2/TUK398WrxukqTiro0nd0KPEB75rgcJel8pYQoJuYYx4z/Image.png" alt="Image.png"></p>
+<p>If you really need to fit a whole-app screenshot in a tight space, try drawing a simplified version of the UI with details removed and small text replaced with simple lines:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/DAF64072-B03C-4077-B327-1559B6793EB1_2/tOqpmGp50oPeirSBeIX2eTO1VQHUy7Un6sdjpSlftuAz/Image.png" alt="Image.png"></p>
+<p>It’ll still communicate the big-picture design without tempting visitors to try and make out all of the details.</p>
+<p><strong>Don’t scale down icons, either /</strong></p>
+<p>Just as icons drawn to be used at 16px look chunky when you scale them up, icons intended to be used at larger sizes look choppy and fuzzy when you scale them down.</p>
+<p>The most extreme example of this are favicons, those little icons you see next to the page title in a browser tab.</p>
+<p>If you try to shrink a logo drawn at 128px down to favicon size, it all turns to mush as the browser tries its best to render all of that detail in a tiny 16px square:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/0DE5E13F-9DFC-495B-AEB7-A6E9718A914C_2/aMEZYiEd4NIHpySzrNUu8Uz7S4K2162tLaxW0xQRF4Yz/Image.png" alt="Image.png"></p>
+<p>A better approach is to redraw a super simplified version of the logo at the target size, so you control the compromises instead of leaving it up to the browser:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/99DF38A9-B9A6-4E26-9DA6-03C958E9AE0F_2/hcdbX6sHcoolQIGe9WRc2Xyj0ZPy8ZG51TYPjRoTnSIz/Image.png" alt="Image.png"></p>
+<h3 id="beware-user-uploaded-content-">Beware user-uploaded content /</h3>
+<p>When you’re depending on user-uploaded images, you don’t have the luxury of fine-tuning contrast, carefully adjusting colors, or cropping the perfect frame.</p>
+<p>While you’ll always be at your users’ mercy to some extent, there are a few things you can do to make sure their content doesn’t completely undermine your design.</p>
+<p><strong>Control the shape and size /</strong></p>
+<p>Displaying user-uploaded images at their intrinsic aspect ratio can really throw off a layout, especially if there are a lot of images on the screen at once.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/ECA5D23A-41D8-452C-AA8F-E02423DC8C56_2/KtHsnkHNaOox6IY8ey7pTEfYwQuDz4QsgBzv8jaxgyMz/Image.png" alt="Image.png"></p>
+<p>Instead of letting users wreak havoc on your page structure, center their images inside fixed containers, cropping out anything that doesn’t fit.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/DD30E0AA-84C2-4DEB-956D-863CBA5C5C13_2/qvdT3xgyDINyFKmsUW1hjrkwOyr0qycsFt8CTZSUOtgz/Image.png" alt="Image.png"></p>
+<p>This is really easy to do with CSS these days by making the image a background image, and setting the <code>background-size</code> property to <code>cover</code>.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/81BFAFCA-3874-4FCC-8783-DFCD80F6E1F4_2/PsGfZtu8J632OSmAdwJRCCLVPW3skUQyHQyrRflFyrQz/Image.png" alt="Image.png"></p>
+<p><strong>Prevent background bleed /</strong></p>
+<p>When a user provides an image with a background color that’s similar to the background in your UI, the image and the background can bleed together, causing the image to lose its shape.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/AA341142-9A93-4A47-83F5-316B446D7763_2/br9Eff1hsnzLdCIr2ZyDxbwtoQ0PV7O4JgvoeZXYxMoz/Image.png" alt="Image.png"></p>
+<p>Instead of trying to solve this with a border, try using a subtle inner box shadow:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8650B2B4-AC90-4DA4-9948-4EE2C803F104_2/9IVz6Wp6gIUtLmT2jXP6hGhfUI17XUZ3PyGUyxtL9B8z/Image.png" alt="Image.png"></p>
+<p>Borders will often clash with the colors in the image, while most people will barely even realize the shadow is there.</p>
+<p>If you don’t like the slight “inset” look you get from using a box shadow, a semi-transparent inner border works great, too.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/45FD2B1E-490E-49D7-94E4-72CBA30CA2B5_2/Ix5x8ht0kqRR6vDtcZI4HiZ3VVN1BmEKLMuTeYqnj00z/Image.png" alt="Image.png"></p>
+<h2 id="finishing-touches-">Finishing Touches /</h2>
+<h3 id="supercharge-the-defaults-">Supercharge the defaults /</h3>
+<p>You don’t always have to add new elements to a design to add flare — there are a lot of ways to liven up a page by “supercharging” what’s already there.</p>
+<p>For example, if your design includes a bulleted list, try replacing the bullets with icons:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/93937A53-2CAF-46C6-BB5E-E5CD8D454C02_2/g0Xq5HfoQIo3EfnD7U0vilLYrNMHH7cdI5mJbfoxrVYz/Image.png" alt="Image.png"></p>
+<p>Checkmarks and arrows are great generic choices for a lot of situations, but you can also use something more specific to your content, like a padlock icon for a list of security-related features:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5A1D71FA-593B-43BC-B446-A22EF961776B_2/slctvaF1SzB0ChqyyhoYk8jmY5H8BIYV6FixRCL2clsz/Image.png" alt="Image.png"></p>
+<p>Similarly, if you’re working on a testimonial try “promoting” the quotes into visual elements by increasing the size and changing the color:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1AE84EBB-0B90-44E0-B5DF-EECCC81E7118_2/qXX78ae2X8MU3wQVxm2wXzEXYrtyRyVi9oVTZaSD9rwz/Image.png" alt="Image.png"></p>
+<p>Links are another great candidate for special styling. You can do something as simple as changing the color and font weight, or something as fancy as a thick and colorful custom underline that partially overlaps the text:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8582E138-A76E-49A6-AB78-BBC099E95E2C_2/HNA94k16DOfbMxSeqPHerak0wvP6iUrXILHxt1LYoCkz/Image.png" alt="Image.png"></p>
+<p>If you’re working on a form, using custom checkboxes and radio buttons is an easy way to add some color to the design:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/93725E07-E961-4B22-AA82-C0C1BD70B172_2/BrREhkjKngpCaTNAquh5fhls22LiGPxJxaNsci8Wbh0z/Image.png" alt="Image.png"></p>
+<p>Just using one of your brand colors for the selected states instead of the browser defaults is often enough to take something from feeling boring to feeling polished and well-designed.</p>
+<h3 id="add-color-with-accent-borders-">Add color with accent borders /</h3>
+<p>If you’re not a graphic designer, how do you add that dash of visual flair to your UI that other designs get from beautiful photography or colorful illustrations?</p>
+<p>One simple trick that can make a big difference is to add colorful accent borders to parts of your interface that would otherwise feel a bit bland.</p>
+<p>For example, across the top of a card:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D819482E-6D6B-45E0-8F56-8470822992B7_2/rtkAGOQzhY06msWyRdgOEKpZfQ4rtEMA3HyMmFK8OEMz/Image.png" alt="Image.png"></p>
+<p>&hellip;or to highlight active navigation items:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/E832D5CB-DDE3-4F5F-B680-CE4879999DC8_2/wpNIxldNZCv31MReOrkvcB2PXjN4gyyyoThaxqpMyvcz/Image.png" alt="Image.png"></p>
+<p>&hellip;or along the side of an alert message:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/0487089D-15DB-4BB3-9052-E1A1DF0A39DE_2/KiAxGGgfrgUk1avGj9UqGK4Ei4BQb6IluEy8rNRYM4Az/Image.png" alt="Image.png"></p>
+<p>&hellip;or as a short accent underneath a headline:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/91F150E3-4542-46EB-ADB4-C3E87C291DAE_2/MY8v9h3qDI6SSqbZSJYGJtSv9y9FlxLxQGxHU6QHxSwz/Image.png" alt="Image.png"></p>
+<p>&hellip;or even across the top of your entire layout:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/823E3E2A-A83A-412F-94E8-A2152A3FA492_2/GNvmJswChqc27xtwtHlwCcl1cwnfkst0thsi8y5xCzAz/Image.png" alt="Image.png"></p>
+<p>It doesn’t take any graphic design talent to add a colored rectangle to your UI, and it can go a long way towards making something feel more “designed.”</p>
+<h3 id="decorate-your-backgrounds-">Decorate your backgrounds /</h3>
+<p>Even if you do a great job with hierarchy, spacing, and typography, sometimes a design will still feel a little bit plain.</p>
+<p>A great way to break up some of the monotony without drastically altering the design is to add some excitement to a few of your backgrounds.</p>
+<p><strong>Change the background color</strong></p>
+<p>One way to add some excitement to a background is to simply change the color.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6A5D1970-1C81-434E-AC0C-8D01175A2DA4_2/JGoXNAyyjDyoiNmEZEkLgXWX4sMpceh92V295bW2tvkz/Image.png" alt="Image.png"></p>
+<p>This works great for emphasizing an individual panel, as well as for adding some distinction between entire page sections.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/14533C27-9BF4-4CED-BF17-0B83FA840C99_2/qdUHmcPyX7nieFCKxRGMjphVPmqgRqfPSoYiOs8PyVwz/Image.png" alt="Image.png"></p>
+<p>For a more energetic look, you could even use a slight gradient:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3DE34815-F34A-4A0F-B077-533ECFED1618_2/pkUYmjzeBQCZnyWL9dERa2wuKdInG2fhAEG7VG3Gd1Ez/Image.png" alt="Image.png"></p>
+<p>For best results, use two hues that are no more than about 30° apart.</p>
+<p><strong>Use a repeating pattern /</strong></p>
+<p>Another approach is to add a subtle repeatable pattern, like this one from Hero Patterns:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/27F43A46-1DDF-4288-99F1-5C5218BF8615_2/pX1TpY9FCCyeoWrP8t34t4KVIXQ5x5yAPBLX2DGq0oQz/Image.png" alt="Image.png"></p>
+<p>You don’t have to necessarily repeat it across the entire background, either — a pattern designed to repeat along a single edge can look great, too.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9F2F5D29-A2BD-4C7A-A0C0-97D4F248FF5F_2/ElFCJOT06kEncNS2V7QfeEns0gA5XZuFprSTsZAr2BQz/Image.png" alt="Image.png"></p>
+<p>Keep the contrast between the background and the pattern pretty low to ensure readability.</p>
+<p><strong>Add a simple shape or illustration /</strong></p>
+<p>Instead of decorating an entire background, you can also try including an individual graphic or two in specific positions.</p>
+<p>Simple geometric shapes work well for this:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/0BC0A6E9-58FF-447D-9194-E9B197A5C579_2/x439dPLCnyktdCdFeUbQ75uUcyvXXn0FyMaebsazy3Yz/Image.png" alt="Image.png"></p>
+<p>&hellip;as do small chunks of a repeatable pattern:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/CA6F82F6-2973-44B3-BE60-F834D5E8739B_2/9dnkRauQegzN9JA6ONeCfAAkHBx4WlH0RL71oghOG7Mz/Image.png" alt="Image.png"></p>
+<p>You can even do something more complex, like a simplified world map:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/24932671-8A6A-4E21-B249-71B3D8AA2D2C_2/BIMSw906NBs0paGHjgxdxdZW1peAnosRwjQXbreAqSIz/Image.png" alt="Image.png"></p>
+<p>Just like with a full background pattern, it’s best to keep the contrast low so nothing interferes with the content.</p>
+<h3 id="dont-overlook-empty-states-">Don’t overlook empty states /</h3>
+<p>Imagine you’re designing a new feature for an app you’re working on.</p>
+<p>You’ve spent a ton of time crafting the perfect realistic sample data, picking out usernames and avatars, and putting together a beautiful and electrifying screen.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/76E5708E-26FE-4081-8E80-19BDB0B8AD43_2/O46tFJmyeupCNHjS7W1F1NJ0RjlQgP2itUtPbiFkGhEz/Image.png" alt="Image.png"></p>
+<p>You code it all up and deploy it to production. But when an excited user clicks the new item in the nav, they see this:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FF984A2E-09C3-4DF3-8CC0-D03FB719EB1D_2/NA0nphmMskP1TYzLeuKty4WJ4WPg978G30SrKP8fG4Ez/Image.png" alt="Image.png"></p>
+<p>If you’re designing something that depends on user-generated content, the empty state should be a priority, not an afterthought.</p>
+<p>Try incorporating an image or illustration to grab the user’s attention, and emphasizing the call-to-action to encourage them to take the next step:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/90AEAAE8-0D68-4833-91FA-B26C5287F851_2/sL1Sb4QhyVcxPID4p1wxLIctBg4kuWbOrFUR4OrUJ80z/Image.png" alt="Image.png"></p>
+<p>If you’re working on something that has a bunch of supporting UI like tabs or filters, consider hiding that stuff entirely. There’s no point in presenting a bunch of actions that don’t do anything until the user has created some content.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/443B4400-C39F-4BFF-9410-78A9FA01DFDE_2/wxP0itd9rHubrDq8Lxv5co0p82pUSjGsA0vWi81WcPcz/Image.png" alt="Image.png"></p>
+<p>Empty states are a user’s first interaction with a new product or feature. Use them as an opportunity to be interesting and exciting — don’t settle for plain and boring.</p>
+<h3 id="use-fewer-borders-">Use fewer borders /</h3>
+<p>When you need to create separation between two elements, try to resist immediately reaching for a border.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/803F635F-4020-42A7-863B-30FE81146772_2/uIiEVBpyLJMb2JK2cFuCtLZqxN3RrFecartHyXOHkrQz/Image.png" alt="Image.png"></p>
+<p>While borders are a great way to distinguish two elements from one another, they aren’t the only way, and using too many of them can make your design feel busy and cluttered.</p>
+<p><strong>Use a box shadow</strong></p>
+<p>Box shadows do a great job of outlining an element like a border would, but can be more subtle and accomplish the same goal without being as distracting.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/46FF00D7-8AC9-4701-8A49-4FCBBC3AC25E_2/SYoYUT8ztf2dayzyAbXybSeazVFSb4Hn9yx3q4wj7mUz/Image.png" alt="Image.png"></p>
+<p>This approach works best when the element you are applying the box shadow to is not the same color as the background.</p>
+<p><strong>Use two different background colors /</strong></p>
+<p>Giving adjacent elements slightly different background colors is usually all you need to create distinction between them.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F117ABC1-C808-43E5-AE22-B58D594947F3_2/fZfpxH9Zcg9JgnyggygLznU1ScAXN9Jdx9ARpsPkYpUz/Image.png" alt="Image.png"></p>
+<p>If you’re already using different background colors in addition to a border, try removing the border; you might not need it.</p>
+<p><strong>Add extra spacing /</strong></p>
+<p>What better way to create separation between elements than to simply increase the separation?</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/90BD8FCC-2B9A-4F5E-AAC2-5A3D1D81993B_2/lxr4dGpIJgpdpi78xNMyiuhnthHz0WkUZJrw14CUua0z/Image.png" alt="Image.png"></p>
+<p>Spacing things further apart is a great way to create distinction between groups of elements without introducing any new UI at all.</p>
+<h3 id="think-outside-the-box-">Think outside the box /</h3>
+<p>Most people have a lot of preconceived notions about how certain components are supposed to look. But just because we’ve been conditioned to believe that there’s only one way to design a particular component, doesn’t mean it’s true.</p>
+<p>For example, picture a dropdown menu. You’re probably picturing a white box with a bit of a drop shadow and a list of links stacked inside of it:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/337D7335-9565-4F05-82DC-A9432ADB9366_2/QhSz9GrvH3B9MuoCJ1LxKiXb4C6b1zfZ4FzLO1w54Voz/Image.png" alt="Image.png"></p>
+<p>But who says a dropdown needs to be a boring list of links? It’s just a floating box on the screen, you can do anything you want with it.</p>
+<p>Break it into sections, use multiple columns, add supporting text or colorful icons — do something fun with it!</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/59F6C806-5B4F-4E39-890C-1A1D8E1D1163_2/MctyhZUuSyPKny3L2VLtjTuHSNLuoKH5eCtZEzO4R4sz/Image.png" alt="Image.png"></p>
+<p>And don’t just stop at dropdowns; what about something like a table?</p>
+<p>When you imagine a table, you probably think of columns that each contain one specific piece of data:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5483874E-CD32-41E5-98A1-B26410772BE3_2/NEH4paCpjk98yk27PPpXxzb1EvwFowcHuBLVyA69Qeoz/Image.png" alt="Image.png"></p>
+<p>Tables don’t have to work this way, though — if a column doesn’t need to be sortable, there’s no reason you can’t combine it with a related column and introduce some interesting hierarchy:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/76806F85-673A-47FB-B02E-A33FBD9DA067_2/k9myxD3aBLIFzUsUAHn5iYKEWZ7LcivSKu4Xv0LP2Hoz/Image.png" alt="Image.png"></p>
+<p>Table content doesn’t have to be plain text, either. Add images if it makes sense, or introduce some color to enrich the existing data:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8EDF8E07-ED6B-4572-A9E5-59D4D17CECF5_2/C1lehvuNCTCfSP17MovYtsWF6y6WoiDbY97F12uz5pEz/Image.png" alt="Image.png"></p>
+<p>How about radio buttons? There’s nothing more boring than a stack of labels with little circles next to them.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B42EFE15-12CB-44BE-9B3A-352041730A00_2/1H3K1RJcS4VTzvbGA4u7Z00txBZ3PTcO2lQpNYeoOpwz/Image.png" alt="Image.png"></p>
+<p>If a set of radio buttons are an important part of the UI you’re designing, try something like selectable cards instead:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2CE5F566-2EAB-43BF-91A1-7BAB0F755A00_2/eBIuQsxWPq72b9Qkcc1CAcKmvDnsn4mLn4FxKN2AW4kz/Image.png" alt="Image.png"></p>
+<p>Don’t let your existing beliefs hold back your designs — constraints are powerful but sometimes a bit of freedom is just what you need to take an interface to the next level.</p>
+<h2 id="leveling-up-">Leveling Up /</h2>
+<p>Hopefully after reading this book you feel much more confident in your ability to make something look awesome, without relying on a designer. But even though we’ve tried our best to cram in every good idea we could possibly think of, there will always be more out there to learn.</p>
+<p>Here are two of the best ways you can continue to hone your skills, and add new tools to your toolbelt.</p>
+<p><strong>Look for decisions you wouldn’t have made /</strong></p>
+<p>Whenever you stumble across a design you really like, ask yourself:</p>
+<p>“Did the designer do anything here that I never would have thought to do?”</p>
+<p>Maybe it’s the way they inverted the background color on a datepicker:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/79B9BD8E-9D0C-458A-A4F7-3B295DABB785_2/HZajFrn5mQAcUMG19dvr7f2S82XjaqoW9GpPvtdrSJsz/Image.png" alt="Image.png"></p>
+<p>&hellip;or the way they positioned a button within a text input instead of on the outside:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B9E79320-DBBC-4C83-B977-E24318018A17_2/KekZedQtsajwMFwXeC6zv3KEKegBPiIOJvgp93o51hAz/Image.png" alt="Image.png"></p>
+<p>&hellip;or something as simple as using two different font colors for a headline:</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/626C7A0C-CEE8-4780-9526-ACCD933CADD7_2/HX3TpqQ7EjTBCnD8DsSScTFLmVdA98vtc8SmShRvn0sz/Image.png" alt="Image.png"></p>
+<p>Paying attention to these sorts of unintuitive decisions is a great way to discover new ideas that you can apply to your own designs.</p>
+<p><strong>Rebuild your favorite interfaces</strong> /</p>
+<p>The absolute best way to notice the little details that make a design look really polished is to recreate that design from scratch, without peeking at the developer tools.</p>
+<p>When you’re trying to figure out why your version looks different than the original, you’ll discover tricks like “reduce your line height for headings”, “add letter-spacing to uppercase text”, or “combine multiple shadows” all on your own.</p>
+<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1B1580C2-D5E7-4C91-A650-BD33D64E1B12_2/hMKMWqv2ByiK3f8aBVxY4fJ97NyM8G6TAut7nt9AKNoz/Image.png" alt="Image.png"></p>
+<p>By continually studying the work that inspires you with a careful eye, you’ll be picking up design tricks for years to come.</p>
+<p>— Adam Wathan &amp; Steve Schoger</p>
+
+</content>
+<p>
+  
+  <a href="http://localhost:1313/t/translation/">#Translation</a>
+  
+  <a href="http://localhost:1313/t/ui/">#UI</a>
+  
+</p>
+
+  </main>
+  <footer>Subscribe via <a href="/index.xml">RSS</a> or just
+  <a href="mailto:rokcsox@gmail.com">say hello</a>.
+<br />
+Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo Bear</a>.</footer>
+
+    
+</body>
+
+</html>

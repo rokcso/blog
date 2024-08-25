@@ -481,94 +481,87 @@ When you think of visual design as “styling things so they look good”, it’
 
 人们常将视觉设计理解为「美化事物」，这使得没有天赋的艺术家觉得难以达成。然而，事实证明，让事物「看起来好看」的一个关键因素实际上与表面的装饰无关。
 
-<!-- 翻译到这里，下面都是没有翻译的 -->
-
 Visual hierarchy refers to how important the elements in an interface appear in relation to one another, and it’s the most effective tool you have for making something feel “designed”.
 
-视觉层级指的是界面中元素相对于彼此的重要性表现，它才是让你的设计作品具有「设计感」的最有效的工具。
+视觉层级是指界面元素根据其重要性相互之间的呈现关系，它是使你的作品具有「设计感」的最有效手段。
 
 When everything in an interface is competing for attention, it feels noisy and chaotic, like one big wall of content where it’s not clear what actually matters:
 
-当界面中的所有元素都在争夺注意力时，它给人的感觉是嘈杂和混乱的，就像一堵巨大的内容墙，让用户不清楚到底什么才是真正重要的：
+如果用户界面中的每个元素都在争夺用户的注意力，那么它将显得喧闹和混乱，仿佛是一整面内容繁杂的墙，让人难以辨识出哪些信息才是真正关键的：
 
 ![](img/30.png)
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/EFA33F02-9742-4CD8-8006-77E782D64144_2/KqwiscKg94SZOlFtggxJPENxuQO6j4Y7hQNZagyDkJMz/Image.png)
 
 When you deliberately de-emphasize secondary and tertiary information, and make an effort to highlight the elements that are most important, the result is immediately more pleasing, even though the color scheme, font choice, and layout haven’t changed:
 
-当你有意识地降低次要和第三重要的信息的强调程度，并努力突出最重要的元素时，结果会立即变得更加令人愉悦，即使配色方案、字体和布局都没有改变：
+通过刻意减少对次要和第三重要信息的强调，并着力突出最关键的元素，即便在配色、字体和布局保持不变的情况下，整体效果也会立刻变得更加赏心悦目：
 
 ![](img/31.png)
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/26DF2710-BE9E-4366-902E-EFE82247126E_2/L336XE0QqLwCpBPsbd5eErgm68e6my2uMKk5gub36Pgz/Image.png)
 
 So how do you actually make this happen? In the following chapters, we’ll cover a number of specific strategies you can use to introduce hierarchy into your designs.
 
-那么你如何实际上实现这一点呢？在接下来的章节中，我们将介绍一些特定的策略，你可以使用它们在你的设计中引入层级。
+要实现这一点，具体应该怎么做呢？在随后的章节里，我们会详细讨论多种特定策略，这些策略可以用来在你的设计中建立层级关系。
 
 ### Size isn’t everything / 尺寸不是一切
 
 Relying too much on font size to control your hierarchy is a mistake — it often leads to primary content that’s too large, and secondary content that’s too small.
 
-过分依赖字体大小来控制你的层级是一个错误 —— 它通常会导致主要内容过大，次要内容过小。
+过分依赖字体大小来建立视觉层级是一个常见的误区，可能会导致主要内容显得过大，而次要内容则显得过小。
 
 ![](img/32.png)
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FDE815B9-1170-4A0B-AD7A-8BC7842A29D6_2/tqsyTvUatGd86az6ePA7qijRlSZStFyjiz4Pf5wTEWcz/Image.png)
 
 Instead of leaving all of the heavy lifting to font size alone, try using font weight or color to do the same job.
 
-不要仅仅依靠字体大小来承担所有重任，尝试使用字体粗细或颜色来完成同样的工作。
+与其完全依赖字体大小来建立视觉层级，不如尝试利用字体的粗细或颜色来达到相同的目的。
 
 For example, making a primary element bolder lets you use a more reasonable font size, and often does a better job at communicating its importance anyways:
 
-例如，使主要元素加粗可以让你使用更合理的字体大小，并且通常在传达其重要性方面做得更好：
+例如，将主要元素的字体加粗，不仅可以让你采用更为适中的字体大小，而且在传达其重要性时往往更为有效：
 
 ![](img/33.png)
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3C750B57-0D41-413D-87D0-7334FEDE655D_2/yKoOMScWkhiyh70wrZqvhNIi7mxyay77dnGD9lrUhmAz/Image.png)
 
 Similarly, using a softer color for supporting text instead of a tiny font size makes it clear that the text is secondary while sacrificing less on readability:
 
-同样地，对于辅助文本使用较柔和的颜色而不是极小的字体大小，可以明确表明该文本是次要的，同时在可读性上的牺牲更少。
+类似地，使用较柔和的颜色来呈现辅助文本，而不是采用过小的字体大小，这样做在降低文本的主导性的同时，对可读性的影响较小：
 
 ![](img/34.png)
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B7E43E90-5B64-412B-9A46-56699E2340BB_2/LycMy9ltTy8fWu0qdZYIOqCUz0wXpAc0Dh9GF3TXO7kz/Image.png)
 
 Try and stick to two or three colors:
+
+尝试限制你的配色方案在两种或三种颜色之内：
 
 - A dark color for primary content (like the headline of an article)
 - A grey for secondary content (like the date an article was published)
 - A lighter grey for tertiary content (maybe the copyright notice in a footer)
-
-尝试坚持使用两到三种颜色：
-
-- 深色用于主要内容（比如文章标题）
-- 灰色用于次要内容（比如文档发布日期）
-- 浅灰色用于三级内容（比如页脚的版权声明）
+>
+- 对于主要内容，选择一种深色（例如文章标题）
+- 对于次要内容，采用灰色（例如文章发布日期）
+- 对于第三级内容，使用更浅的灰色（如页脚的版权声明）
 
 Similarly, two font weights are usually enough for UI work:
 
+在用户界面设计中，通常使用两种不同的字体粗细就足够区分内容的层级：
+
 - A normal font weight (400 or 500 depending on the font) for most text
 - A heavier font weight (600 or 700) for text you want to emphasize
-
-同样的，通常只用两种字体粗细就足够：
-
-- 正常字体粗细（400 或 500，取决于字体）用于大多数文字
-- 更粗的字体（600 或 700）用于想要强调的文字
+>
+- 对于大部分文本内容，选择标准字体粗细（如 400 或 500，具体取决于所使用的字体）
+- 对于需要突出显示的文本，采用更粗的字体（如 600 或 700）
 
 ![](img/35.png)
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/28CAA2DF-CDA7-4B99-8B46-489F686F660D_2/O3MMQNymsGQTshFMQ5HORUAy24EKNYU16rfhyi1ywcAz/Image.png)
 
 Stay away from font weights under 400 for UI work — they can work for large headings but are too hard to read at smaller sizes. If you’re considering using a lighter weight to de-emphasize some text, use a lighter color or smaller font size instead.
 
-在用户界面工作中，避免使用 400 以下的字体粗细 —— 它们可以用于大型标题，但在较小尺寸上阅读起来太困难。如果你考虑使用较轻的字体粗细来降低某些文本的强调程度，请改用较浅的颜色或更小的字体大小。
+在用户界面设计工作中，应避免采用 400 以下的字体粗细，因为虽然它们适合用于大标题，但在较小尺寸时阅读性较差。如果你想通过使用较轻的字体粗细来降低某些文本的视觉重要性，可以考虑改用较浅的颜色或选择较小的字体大小来实现这一目的。
 
 ### Don’t use grey text on colored backgrounds / 不要在彩色背景上使用灰色文本
+
+<!-- 翻译到这里，下面都是没有翻译的 -->
 
 Making text a lighter grey is a great way to de-emphasize it on white backgrounds, but it doesn’t look so great on colored backgrounds.
 
 在白色背景上将文本设置为浅灰色是降低其强调程度的好方法，但在彩色背景上看起来效果并不那么好。
 
 ![](img/36.png)
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2CF79B27-5771-43FC-A6F8-66E393CE7AFE_2/6Yk4Qf1AUHTBTHVaUyYFx5VyfbXQAmDjeFCJyrRNhokz/Image.png)
 
 That’s because the effect we’re actually seeing with grey on white is reduced contrast.
 
@@ -579,14 +572,12 @@ Making the text closer to the background color is what actually helps create hie
 使文本更接近背景色才是真正有助于创建层级的方法，而不是将其设置为浅灰色。
 
 ![](img/37.png)
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5B9C53A5-2975-4183-B926-BB2EE35CA327_2/Yzi9JpOY9gw6cjT2KfEdWnhQiv7xN06WPM1GIrCz8Bcz/Image.png)
 
 You might think that the easiest way to achieve this is to use white text and reduce the opacity:
 
 你可能认为实现这一点最简单的方法是使用白色文本并降低透明度：
 
 ![](img/38.png)
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FF98810F-6C82-4214-B557-058E2A695FE8_2/zftPD5XdGTkjRrEjx1pDUovys8c5mrIxlJXy6SUfdJAz/Image.png)
 
 While this does reduce the contrast, it often results in text that looks dull, washed out, and sometimes even disabled.
 
@@ -597,7 +588,6 @@ Even worse, using this approach on top of an image or pattern means the backgrou
 更糟糕的是，如果将这种方法用在图像或图案上，背景会透过文本显示出来。
 
 ![](img/39.png)
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7ECC1185-98FD-4E16-9489-84337460627C_2/xwydAlDZjDZSm4qGbKzL9MWhlLJNhawdyMYLoxJlZwsz/Image.png)
 
 A better approach is to hand-pick a new color, based on the background color.
 
@@ -608,7 +598,6 @@ Choose a color with the same hue, and adjust the saturation and lightness until 
 选择一个相同色调的颜色，并调整饱和度和亮度，直到它在你看来是合适的：
 
 ![](img/40.png)
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5D19F99A-31BC-43CE-8A3A-192737D857CB_2/Cpqu5g1Rzq0D65HLbZXJedyIh12yxeZSVl09sY5kJkoz/Image.png)
 
 Hand-picking a color this way makes it easy to reduce the contrast without the text looking faded.
 

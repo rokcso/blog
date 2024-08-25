@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="https://rokcso.com/images/favicon.png" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
 <title>译&gt; 重构 UI | Rokcso&#39;s blog</title>
 <meta name="title" content="译&gt; 重构 UI" />
 <meta name="description" content="中英双语对照翻译，关于《Refactoring UI》的全文翻译。" />
 <meta name="keywords" content="translation,UI," />
 
 
-<meta property="og:url" content="https://rokcso.com/p/refactoring-ui/">
+<meta property="og:url" content="http://localhost:1313/p/refactoring-ui/">
   <meta property="og:site_name" content="Rokcso&#39;s blog">
   <meta property="og:title" content="译&gt; 重构 UI">
   <meta property="og:description" content="中英双语对照翻译，关于《Refactoring UI》的全文翻译。">
@@ -23,13 +23,13 @@
     <meta property="article:modified_time" content="2024-08-25T00:00:00+00:00">
     <meta property="article:tag" content="Translation">
     <meta property="article:tag" content="UI">
-    <meta property="og:image" content="https://rokcso.com/images/share.png">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
 
 
 
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://rokcso.com/images/share.png">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
   <meta name="twitter:title" content="译&gt; 重构 UI">
   <meta name="twitter:description" content="中英双语对照翻译，关于《Refactoring UI》的全文翻译。">
 
@@ -40,8 +40,8 @@
   <meta itemprop="description" content="中英双语对照翻译，关于《Refactoring UI》的全文翻译。">
   <meta itemprop="datePublished" content="2024-08-25T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-08-25T00:00:00+00:00">
-  <meta itemprop="wordCount" content="16679">
-  <meta itemprop="image" content="https://rokcso.com/images/share.png">
+  <meta itemprop="wordCount" content="16677">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
   <meta itemprop="keywords" content="Translation,UI">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -283,26 +283,30 @@
 <h2 id="starting-from-scratch--从零开始">Starting from Scratch / 从零开始</h2>
 <h3 id="start-with-a-feature-not-a-layout--始于功能而非布局">Start with a feature, not a layout / 始于功能，而非布局</h3>
 <p>When you start the design for a new app idea, what do you design first? If it&rsquo;s the navigation bar at the top of the page, you&rsquo;re making a mistake.</p>
-<p>当你开始设计一个新 App 时，你首先设计什么？如果是页面顶部的导航栏，那么你可能犯了一个错误。</p>
+<p>在开始设计一个新应用时，如果你首先着手于页面顶部的导航栏，这其实是一个误区。</p>
 <p>The easiest way to find yourself frustrated and stuck when working on a new design is to start by trying to “design the app.” When most people think about “designing the app”, they’re thinking about the shell.</p>
-<p>当你开始一项新的设计时，最容易使人感到沮丧和陷入困境的方式就是从「设计 App」开始。大多数人想到「设计 App」时，其实他们想到的只是那层外在的躯壳。</p>
+<p>在着手新设计项目时，一个常见的陷阱是直接尝试去构建应用的整体外观。实际上，许多人在谈论「设计应用」时，他们实际上在考虑的是应用的框架或外壳。</p>
 <ul>
 <li><em>Should it have a top nav, or a sidebar?</em></li>
 <li><em>Should the navigation items be on the left, or on the right?</em></li>
 <li><em>Should the page content be in a container, or should it be full-width?</em></li>
 <li><em>Where should the logo go?</em></li>
-<li><em>应该有一个顶部导航栏，还是一个侧边栏？</em></li>
-<li><em>导航栏里面的子项应该放左边还是右边？</em></li>
-<li><em>页面内容应该放在一个容器里，还是占据页面全宽度？</em></li>
-<li><em>logo 应该放哪里？</em></li>
+</ul>
+<blockquote>
+</blockquote>
+<ul>
+<li><em>是否应该设置顶部导航栏或侧边栏？</em></li>
+<li><em>导航项应该置于左侧还是右侧？</em></li>
+<li><em>页面内容是否应该限制在容器内，或者应该采用全宽布局？</em></li>
+<li><em>Logo 应放置于何处？</em></li>
 </ul>
 <p><img src="img/1.png" alt=""></p>
 <p>The thing is, an “app” is actually a collection of features. Before you’ve designed a few features, you don’t even have the information you need to make a decision about how the navigation should work. No wonder it’s frustrating!</p>
-<p>问题是「App」实际上是功能的集合。在你设计一些功能之前，你甚至没有帮助你决策导航栏如何工作的信息，难怪它是令人沮丧的！</p>
+<p>实际上，一个「应用」是由多个功能组成的。在设计了一些功能之前，我们并没有足够的信息来决定导航的最佳方式。这正是让人感到挫败的原因。</p>
 <p>Instead of starting with the shell, start with a piece of actual functionality.</p>
-<p>不要从外在的躯壳开始，而是从一部分实际的功能开始。</p>
+<p>与其从应用的框架和外壳着手，不如先从具体的功能点开始设计。</p>
 <p>For example, say you’re building a flight booking service. You could start with a feature like “searching for a flight”.</p>
-<p>例如：假设你正在构建一个航班预订服务。你可以从「搜索航班」这样的功能开始。</p>
+<p>以构建航班预订服务为例，你可以首先着手开发「搜索航班」的功能。</p>
 <p>Your interface will need:</p>
 <ul>
 <li>A field for the departure city</li>
@@ -311,207 +315,216 @@
 <li>A field for the return date</li>
 <li>A button to perform the search</li>
 </ul>
-<p>你的界面将需要：</p>
+<p>你的用户界面应当包含以下元素：</p>
 <ul>
-<li>出发城市字段</li>
-<li>目的地城市字段</li>
-<li>出发日期字段</li>
-<li>返回日期字段</li>
+<li>出发城市的输入框</li>
+<li>目的地城市的输入框</li>
+<li>出发日期的输入框</li>
+<li>返回日期的输入框</li>
 <li>搜索按钮</li>
 </ul>
 <p>Start with that.</p>
-<p>就从那开始。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2D35B388-8CBD-4470-A008-01A82809D46F_2/VSBJ32K4J3DZAREjcrEcVJT6hSElyIS6X7yixErOUwMz/Image.png" alt="Image.png"></p>
+<p>就从这里着手。</p>
+<p><img src="img/2.png" alt=""></p>
 <p>Hell, you might not even need that other stuff anyways — it worked for Google.</p>
-<p>天呐，你甚至可能不需要其他东西 —— 它对 Google 已经足够。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/72193F1B-8DBF-4103-8CFF-1CEC0BBF1816_2/BpOwwrxMBIimQE8j121k2dPBlxxsPr1LszD3pdb2Zv8z/Image.png" alt="Image.png"></p>
-<h3 id="details-comes-later--忽略细节">Details comes later / 忽略细节</h3>
+<p>事实上，你或许根本无需那些额外的功能 —— 正如谷歌所证明的那样，它已经足够有效了。</p>
+<p><img src="img/3.png" alt=""></p>
+<h3 id="details-comes-later--细节可以稍后再考虑">Details comes later / 细节可以稍后再考虑。</h3>
 <p>In the earliest stages of designing a new feature, it’s important that you don’t get hung up making low-level decisions about things like typefaces, shadows, icons, etc.</p>
-<p>在设计新功能的最早期阶段，不要在字体、阴影、图标等低级决策上纠结很重要。</p>
+<p>在设计新功能之初，重要的是不要过早深入到字体选择、阴影效果、图标设计等细节层面的决策中。</p>
 <p>That stuff will all matter eventually, but it doesn’t matter right now.</p>
-<p>这些东西最终都会很重要，但现在不是。</p>
+<p>这些细节最终会显得重要，但目前并不是关注的重点。</p>
 <p>If you have trouble ignoring the details when working in a high fidelity environment like the browser or your favorite design tool, one trick Jason Fried of Basecamp likes to use is to design on paper using a thick Sharpie.</p>
-<p>如果你在浏览器或者你最喜欢的设计工具这样的高保真环境中工作时很难不沉迷于细节，Basecamp 的创始人 Jason Fried 有一个技巧是使用粗头马克笔在纸上进行设计。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7B0C00FC-CDC1-4B43-9A94-02D19BE4E881_2/Hr0sYBmeaxULutcE4LXcatTSP8Dt5urqKJ7W6KXm1Nsz/Image.png" alt="Image.png"></p>
+<p>如果你在高保真环境，比如浏览器或你偏爱的设计软件中工作时，难以忽视细节，Basecamp 的 Jason Fried 推荐的一个方法是使用粗记号笔在纸上进行设计。</p>
+<p><img src="img/4.png" alt=""></p>
 <p>Obsessing over little details just isn’t possible with a Sharpie, so it can be a great way to quickly explore a bunch of different layout ideas.</p>
-<p>使用马克笔进行设计还想痴迷于细节是不可能的，所以这可能是一个探索多种不同布局想法的好方法。</p>
-<p><strong>Hold the color / 克制色彩</strong></p>
+<p>由于使用记号笔难以专注于小细节，这成为了一种快速探索多种布局概念的有效方法。</p>
+<p><strong>Hold the color / 暂不考虑颜色</strong></p>
 <p>Even when you’re ready to refine an idea in higher fidelity, resist the temptation to introduce color right away.</p>
-<p>即使你准备以更高的保真度来完善一个想法，也要抵制住立即引入色彩的诱惑。</p>
+<p>即便你已经准备好在更高保真度下对想法进行细化，也要避免立即引入颜色。</p>
 <p>By designing in grayscale, you’re forced to use spacing, contrast, and size to do all of the heavy lifting.</p>
-<p>在灰度下设计，可以迫使你使用间距、对比度和尺寸来承担所有重任。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/79A76AD4-50AA-491F-9ED9-92713C0BC764_2/MFd1s4XmzNPTOqV4BUrGGIfsLdguOKtOslMvFbVtURsz/Image.png" alt="Image.png"></p>
+<p>采用灰度色彩进行设计，你将不得不依赖于空间、对比度和尺寸来承担所有关键的视觉任务。</p>
+<p><img src="img/5.png" alt=""></p>
 <p>It’s a little more challenging, but you’ll end up with a clearer interface with a strong hierarchy that’s easy to enhance with color later.</p>
-<p>这确实具有挑战性，但是最终你将得到一个层次结构更清晰的界面，这也更容易用色彩来优化。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D522CE0B-3D6F-4E53-B137-5EB73E66FE78_2/xUdlS0kAvOJyfGeYERjmG5wFmZferRUg7h52ylyTf8oz/Image.png" alt="Image.png"></p>
-<p><strong>Dont&rsquo;t over-invest / 避免过度投资</strong></p>
+<p>这种方法虽然更具挑战性，但最终能够创造出一个结构清晰、层级分明的界面，这在稍后用颜色进行美化时会变得更加容易。</p>
+<p><img src="img/6.png" alt=""></p>
+<p><strong>Dont&rsquo;t over-invest / 不要过度投资</strong></p>
 <p>The whole point of designing in low-fidelity is to be able to move fast, so you can start building the real thing as soon as possible.</p>
-<p>使用低保真设计能够快速行动，因此你才有可能更快开始构建真实的东西。</p>
+<p>采用低保真度设计的核心在于能够迅速推进，以便尽早开始构建实际的产品。</p>
 <p>Sketches and wireframes are disposable — users can’t do anything with static mockups. Use them to explore your ideas, and leave them behind when you’ve made a decision.</p>
-<p>草图和线框是一次性的 —— 用户不能使用它们做任何事情。你利用它们来探索你的想法，在你做出决定之后就请将其抛之脑后。</p>
+<p>草图和线框图是临时的，用户无法与静态原型互动。但你可以利用它们来探索你的概念，并在决策确定后将它们搁置一旁。</p>
 <h3 id="dontt-design-too-much--不要过度设计">Dont&rsquo;t design too much / 不要过度设计</h3>
 <p>You don’t need to design every single feature in an app before you move on to implementation; in fact, it’s better if you don’t.</p>
-<p>在进入执行阶段之前，你不需要设计 App 中的每一个功能；事实上，这样（不设计 App 中的每一个功能）会更好。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5715EEE8-1937-444F-B2F5-076C5F3EDCE1_2/Dxyewfmf0lOQVNQCyEcY99UwjOJ5gmqVKrFgLc46W6Uz/Image.png" alt="Image.png"></p>
+<p>在进入实现阶段之前，没有必要设计出应用中的每一个功能；实际上，不这么做反而更有利。</p>
+<p><img src="img/7.png" alt=""></p>
 <p>Figuring out how every feature in a product should interact and how every edge case should look is really hard, especially in the abstract.</p>
-<p>理清楚产品中每个功能应该如何交互以及每个边缘情况应该如何呈现确实很困难，尤其是在抽象层面。</p>
+<p>确定产品中每个功能之间的交互方式以及每个特殊情况的呈现形式是一项极具挑战性的任务，尤其是在缺乏具体情境的抽象阶段。</p>
 <ul>
 <li><em>How should this screen look if the user has 2000 contacts?</em></li>
 <li><em>Where should the error message go in this form?</em></li>
 <li><em>How should this calendar look when there are two events scheduled at the same time?</em></li>
-<li><em>如果用户有 2000 个联系人，页面应该如何呈现？</em></li>
-<li><em>表单的报错提示应该放在哪里？</em></li>
-<li><em>被安排在同一时间的两个事件在日历中应该如何显示？</em></li>
+</ul>
+<blockquote>
+</blockquote>
+<ul>
+<li><em>用户联系人达到 2000 个时，这个界面应如何设计？</em></li>
+<li><em>在表单中，错误提示应该放置在什么位置？</em></li>
+<li><em>当有两个事件被安排在同一时间时，日历界面中应如何展示？</em></li>
 </ul>
 <p>You’re setting yourself up for frustration by trying to figure this stuff out using only a design tool and your imagination.</p>
-<p>你试图仅凭设计工具和你的想象力来解决这些问题，无疑是在给自己制造挫败。</p>
+<p>如果只依靠设计工具和你自己的想象来解决这些问题，你很可能会陷入挫败。</p>
 <p><strong>Work in cycles / 持续迭代</strong></p>
 <p>Instead of designing everything up front, work in short cycles. Start by designing a simple version of the next feature you want to build.</p>
-<p>与其一开始就设计好一切，不如快速迭代。首先设计你想要构建的下一个功能的简单版本。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/ABA67710-3436-403C-8463-E0D8F97985AE_2/0I5rtEYpjtPz1JxjxSKMZrE8lTMgll5nxwCMucU1Anwz/Image.png" alt="Image.png"></p>
+<p>与其一开始就设计所有内容，不如持续迭代。首先，从设计你接下来想要开发的功能的简化版开始。</p>
+<p><img src="img/8.png" alt=""></p>
 <p>Once you’re happy with the basic design, <em>make it real</em>.</p>
-<p>一旦你对基础设计感到满意，<em>就将其实现</em>。</p>
+<p>当你对基础设计感到满意时，<em>就将其实现出来</em>。</p>
 <p>You’ll probably run into some unexpected complexity along the way, but that’s the point — it’s a lot easier to fix design problems in an interface you can actually use than it is to imagine every edge case in advance.</p>
-<p>你可能会遇到意料之外的问题，但重点是 —— 在你可以实际使用的界面中修复设计问题，远比提前设想每一个边缘情况要容易得多。</p>
+<p>在实现过程中，你可能会遇到一些未预见的复杂情况，但这正是关键所在 —— 与提前设想所有可能的特殊情况相比，在实际可用的界面中解决设计问题要简单得多。</p>
 <p>Iterate on the working design until there are no more problems left to solve, then jump back into design mode and start working on the next feature.</p>
-<p>持续迭代设计直到没有更多问题需要解决，然后再着手开始设计下一个功能。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/67083182-4B76-4080-8870-77985ED8B288_2/Jw3DvxP43qJFvvuWibAV6d5GViB80LZtuIb2DroTjxAz/Image.png" alt="Image.png"></p>
+<p>对现行设计进行迭代改进，直至所有问题都得到解决。之后，再切换回设计模式，着手下一个功能。</p>
+<p><img src="img/9.png" alt=""></p>
 <p>Don’t get overwhelmed working in the abstract. Build the real thing as early as possible so your imagination doesn’t have to do all the heavy lifting.</p>
-<p>不要在抽象的工作中感到不知所措。尽早构建真实之物，让你的想象力不必承担所有重担。</p>
-<p><strong>Be a pessimist / 做个悲观主义</strong></p>
+<p>避免在抽象概念的工作中感到压力过大。尽可能早地构建实际产品，让你的想象力不再承担所有重任。</p>
+<p><strong>Be a pessimist / 做个悲观主义者</strong></p>
 <p>Don’t imply functionality in your designs that you aren’t ready to build.</p>
-<p>不要在你的设计中暗你尚未准备好构建的功能。</p>
+<p>避免在设计中展示那些你尚未准备好实现的功能。</p>
 <p>For example, say you’re working on a comment system for a project management tool. You know that one day, you’d like users to be able to attach files to their comments, so you include an attachments section in your design.</p>
-<p>例如：假设你正在开发一个项目管理工具的评论系统。你知道有一天你会希望你的用户可以在评论中添加附件，所以你设计了附件相关的内容。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D66F9448-41E2-4641-ACF0-D64C39699BB9_2/Lj7Qh9t7qPcZ3G29FLluLrHdvyhEA0XjfgFnH5uqcvQz/Image.png" alt="Image.png"></p>
+<p>以项目管理工具中的评论系统为例，你设想未来用户可以在评论中附上文件，因此你在设计中加入了附件区域。</p>
+<p><img src="img/10.png" alt=""></p>
 <p>You get deep into implementation only to discover that supporting attachments is going to be a lot more work than you anticipated. There’s no way you have time to finish it right now, so the whole commenting system sits on the backburner while you take care of other priorities.</p>
-<p>当你深入实施之后，你发现支持添加附件的功能比你预期的要复杂很多很多。现在你没有时间来实现它，所以整个评论系统只好暂时搁置，等待你处理其他优先事项。</p>
+<p>当你深入实现阶段，才意识到添加附件支持的工作量远超预期。你目前肯定没有足够的时间来完成这项工作，导致整个评论系统不得不暂时搁置，转而处理其他更紧急的任务。</p>
 <p>The thing is, a comment system with no attachments would still have been better than no comment system at all, but because you planned to include it from day one you’ve got nothing you can ship.</p>
-<p>事实上，一个没有附件功能的评论系统仍然比完全没有评论系统要好，但因为你从一开始就计划要支持添加附件，结果你现在什么也发布不了。</p>
+<p>实际上，即使是一个不能附加文件的评论系统，也比没有评论系统要好。但由于你最初就计划要加入这个功能，结果导致你现在无法发布任何可用的版本。</p>
 <p>When you’re designing a new feature, <strong>expect it to be hard to build.</strong> Designing the smallest useful version you can ship reduces that risk considerably.</p>
-<p>当你在设计一个新功能时，<strong>要有它将难以构建的预期</strong>。设计一个你能发布的最小可用版本可以显著降低这种风险。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/43BC1E17-434B-4B20-940E-DAB6F6D5A6C1_2/51M585rAwn7BAsBIMzsx7ZLrlCST1tXNjs2KYJ4Dhh4z/Image.png" alt="Image.png"></p>
+<p>在设计新功能时，<strong>应预料到构建过程的困难</strong>。通过设计一个能够发布且功能最小的版本，你可以显著降低开发过程中的风险。</p>
+<p><img src="img/11.png" alt=""></p>
 <p>If part of a feature is a “nice-to-have”, <strong>design it later</strong>. Build the simple version first and you’ll always have something to fall back on.</p>
-<p>如果一个功能的某一部分是「锦上添花」，<strong>那么稍后再设计它</strong>。首先构建简单版本，你将始终有备选方案。</p>
-<h3 id="choose-a-personality--选择风格">Choose a personality / 选择风格</h3>
+<p>对于那些属于「锦上添花」的功能部分，<strong>应选择稍后设计</strong>。首先开发一个基础版本，这样你就永远有一个可靠的退路。</p>
+<h3 id="choose-a-personality--确定个性">Choose a personality / 确定个性</h3>
 <p>Every design has some sort of personality. A banking site might try to communicate secure and professional, while a trendy new startup might have a design that feels fun and playful.</p>
-<p>每种设计都具有某种个性。银行网站可能试图传达安全和专业的感觉，而一家时尚的新创公司可能拥有一个让人感觉有趣和活泼的设计。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1BE9B3E7-4712-4F69-A06F-FAF00D1BA621_2/KQua1tQf1WQAW5JHYBSxDlOiQaptqjMSX64YyW8olzsz/Image.png" alt="Image.png"></p>
+<p>每个设计都蕴含着特定的个性。例如，银行网站通常会传达出一种安全和专业的形象，而一些时尚的新创企业则可能拥有一种让人感觉轻松愉快和有趣的设计风格。</p>
+<p><img src="img/12.png" alt=""></p>
 <p>On the surface, giving a design a particular personality might sound abstract and handwavy, but a lot of it is determined by a few solid, concrete factors.</p>
-<p>表面上看，赋予设计一种特定的个性可能听起来很抽象、含糊其辞，但实际上，它的很多方面是由一些坚实、具体的因素决定的。</p>
-<p><strong>Font choice / 字体选择</strong></p>
+<p>虽然在表面上，为设计赋予特定的个性似乎是一个抽象且难以捉摸的概念，但其实这种个性很大程度上是由一些明确而具体的要素所决定的。</p>
+<p><strong>Font choice / 字体</strong></p>
 <p>Typography plays a huge part in determining how a design feels.</p>
-<p>字体排版在决定设计风格方面有很重要的作用。</p>
+<p>排版对于塑造设计的氛围和感觉扮演着至关重要的角色。</p>
 <p>If you want an elegant or classic look, you might want to incorporate a serif typeface in your design:</p>
-<p>如果你想要一个优雅或经典的外观，你可以在设计中加入衬线字体：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/052C0E36-7A30-4513-8549-61D426023B4B_2/W6BDfxnpCXXJcxYM2gsTg57kNvTRFhl78fY9I8LSYu8z/Image.png" alt="Image.png"></p>
+<p>若要营造一种优雅或古典的风格，你可以考虑在设计中使用衬线字体：</p>
+<p><img src="img/13.png" alt=""></p>
 <p>For a playful look, you could use a rounded sans serif:</p>
-<p>为了营造轻松活泼的外观，你可以使用圆润的无衬线字体：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B936BDFD-2835-4248-8D16-97405F679493_2/n5bK5wmivgfNC4GHHIeEFNqqFO6t3vjhE3Ndy9MyHpcz/Image.png" alt="Image.png"></p>
+<p>若要设计出一种活泼的风格，你可以选择使用圆角的无衬线字体：</p>
+<p><img src="img/14.png" alt=""></p>
 <p>If you’re going for a plainer look, or want to rely on other elements to provide the personality, a neutral sans serif works great:</p>
-<p>如果你想要更简洁朴素的外观，或者想依赖其他元素来提供风格，那么使用中性无衬线字体就很好：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C75DB261-3A8B-4CC1-9447-F286C820D549_2/36ZZjEL8vs88IMauHiKycbzQIq7MhOZEuHzW0r0bq04z/Image.png" alt="Image.png"></p>
+<p>若要实现更为朴素的外观，或打算依靠其他设计元素来表现个性，中性风格的无衬线字体将非常适用：</p>
+<p><img src="img/15.png" alt=""></p>
 <p><strong>Color / 颜色</strong></p>
 <p>There’s a lot of science out there on the psychology of color, but in practice, you really just need to pay attention to how different colors feel to you.</p>
-<p>关于色彩心理学的科学知识有很多，但在实践中，你只需要关注不同颜色给你带来的感受。</p>
+<p>尽管有关颜色心理学的学问颇为深奥，实际上，你只需关注不同颜色对你个人情感的影响。</p>
 <p>Blue is safe and familiar — nobody ever complains about blue:</p>
-<p>蓝色是安全且熟悉的 —— 没人会抱怨蓝色：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/865EBC37-F358-40BE-9584-7BD4BD0783A2_2/6V6xC2hoPfcljGTZWcRCfh0XdNjQNVNrAQSUVW8kyhIz/Image.png" alt="Image.png"></p>
+<p>蓝色给人以安全感和亲切感 —— 通常没有人会对使用蓝色的设计提出异议：</p>
+<p><img src="img/16.png" alt=""></p>
 <p>Gold might say “expensive” and “sophisticated”:</p>
-<p>金色可能是「昂贵」和「精致」：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/351B1A77-AA42-44CB-8679-A4DCDC77C166_2/Wtuoxq2ufsPAYAHEXO1OZCjjTxIUQJBbSmqcY5wCpncz/Image.png" alt="Image.png"></p>
+<p>金色通常给人以「奢华」和「精致」的印象：</p>
+<p><img src="img/17.png" alt=""></p>
 <p>Pink is a bit more fun, and not so serious:</p>
-<p>粉色更有趣一点，没有那么严肃：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9F8ECD10-77C5-4519-8895-F7072ACA5244_2/OJWhni3FJXuBLSuu1k4MBiSCFRPHbN71mifUZZ21vjEz/Image.png" alt="Image.png"></p>
+<p>粉色给人一种更加轻松愉快的感觉，不那么正式：</p>
+<p><img src="img/18.png" alt=""></p>
 <p>While trying to choose colors using only psychology isn’t super practical — a lot of it is just about what looks good to you — it can be helpful to think about when you’re trying to understand why you think a color is the right fit.</p>
-<p>尽管仅凭心理学来选择颜色并不特别实用 —— 很多情况下，它只是关于什么颜色在你看来好看 —— 但在你试图理解为什么你认为某种颜色是合适之选时，思考这些问题可能会有所帮助。</p>
+<p>尽管仅根据心理学来挑选颜色并不十分实用 —— 毕竟很多选择还是基于你个人的审美 —— 但在你努力理解为何某种颜色适合你的设计时，这些心理学因素可以提供一些帮助。</p>
 <p><strong>Border radius / 边框圆角</strong></p>
 <p>As small of a detail as it sounds, if and how much you round the corners in your design can have a big impact on the overall feel.</p>
-<p>虽然听起来只是一个小细节，但是你在设计中是否使用圆角以及圆角的程度会对设计整体产生很大的影响。</p>
+<p>尽管听起来似乎微不足道，但设计中圆角的使用及其程度实际上对整体氛围有着显著的影响。</p>
 <p>A small border radius is pretty neutral, and doesn’t really communicate much of a personality on its own:</p>
-<p>较小的边框圆角是比较中性的，本身不能传达太多风格：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A38CA9E9-C28A-4969-A754-0062DFB9670C_2/WaXo7xKlSWRFYPoh2yEsvxDe3a29lxpDHXmIiW8Ieikz/Image.png" alt="Image.png"></p>
+<p>边框圆角较小时，其表现相当中立，并不单独传达出鲜明的个性特征：</p>
+<p><img src="img/19.png" alt=""></p>
 <p>A large border radius starts to feel more playful:</p>
-<p>而大的边框圆角则显得更有趣、活泼：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2C35CA13-5232-49A3-BAF7-D5A88F0D1B31_2/4odKg900x6m3iRiylOXxrXyD07H200CjeKdaCxutMmgz/Image.png" alt="Image.png"></p>
+<p>当边框圆角较大时，设计会显得更加生动有趣：</p>
+<p><img src="img/20.png" alt=""></p>
 <p>&hellip;while no border radius at all feels a lot more serious or formal:</p>
-<p>当边框没有圆角时则会显得更严肃或正式：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/0A0F62ED-88B3-4CA9-AA90-18826134FF22_2/IZgtritynZxeal8HfffUeAsTn6aP5FDHxlAwWjLgqtgz/Image.png" alt="Image.png"></p>
+<p>完全没有圆角的边框设计则显得更为严肃和正式：</p>
+<p><img src="img/21.png" alt=""></p>
 <p>Whatever you choose, it’s important to stay consistent. Mixing square corners with rounded corners in the same interface almost always looks worse than sticking with one or the other.</p>
-<p>无论选择什么，保持一致很重要。在同一个界面中混合使用直角和圆角比始终只使用其中一种更糟糕。</p>
+<p>无论你做出何种选择，保持设计风格的一致性至关重要。在同一用户界面中同时使用直角和圆角边框，其效果几乎总是不如坚持单一风格的协调。</p>
 <p><strong>Language / 语言</strong></p>
 <p>While not a visual design technique per se, the words you use in an interface have a massive influence on the overall personality.</p>
-<p>虽然语言本身不是一种视觉设计技巧，但是在页面中使用的词汇对于整体风格也有很大的影响。</p>
+<p>尽管这并非直接的视觉设计手法，但界面中所用的措辞对整体风格和个性有着极大的影响。</p>
 <p>Using a less personal tone might feel more official or professional:</p>
-<p>使用不那么个人化的语气可能会更正式和专业：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2D1BFC00-7998-4875-B71D-85F83C87E3F5_2/xoVozx0PFB80fXGuL9ACLVHXncAxkPsTudax7JFVvFUz/Image.png" alt="Image.png"></p>
-<p>…while using friendlier, more casual language makes a site feel, well, friendlier:</p>
-<p>而使用更友好、随意的语言则会显得更友好：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9FA8DC05-9C6A-4987-8BC6-36964C77E50C_2/GzFGgT795OYYjZt8iHlPTy7rP5LQMQXVtqzhuA332o4z/Image.png" alt="Image.png"></p>
+<p>采用不那么个人化的语气可以营造出更加正式或专业的氛围：</p>
+<p><img src="img/22.png" alt=""></p>
+<p>&hellip;while using friendlier, more casual language makes a site feel, well, friendlier:</p>
+<p>使用更亲切、更轻松的语言，则会让网站显得更加亲切：</p>
+<p><img src="img/23.png" alt=""></p>
 <p>Words are everywhere in a user interface, and choosing the right ones is just as (if not more) important than choosing the right color or typeface.</p>
-<p>在用户界面中，文字无处不在，选择正确的词汇与选择正确的颜色或字体同样（甚至更为）重要。</p>
+<p>在用户界面中，文字无处不在，恰当的措辞选择与颜色或字体的选择同等重要，甚至可能更为关键。</p>
 <p><strong>Deciding what you actually want / 确定你真正想要的东西</strong></p>
 <p>A lot of the time you’ll probably just have a gut feeling for the personality you’re going for. But if you don’t, a great way to simplify the decision is to take a look at other sites used by the people you want to reach.</p>
-<p>很多时候，你可能只是凭直觉去感受你要追求的风格。但如果你不确定，一个简化决策的好方法是看看你想要触及的人群所使用的其他网站。</p>
+<p>通常，你可能会根据自己的直觉来把握所追求的个性。如果你还没有明确的方向，一个有效的简化决策的方法是观察你想要吸引的用户群体所使用的其他网站。</p>
 <p>If they are mostly pretty “serious business”, maybe that’s how your site should look too. If they are more playful with a bit of humor, maybe that’s a better direction to take.</p>
-<p>如果他们大多数都是相当「严肃商务」的风格，也许这就是你的网站也应该呈现的样子。如果他们的风格更加活泼，带有一点幽默感，也许那才是更好的方向。</p>
+<p>如果目标用户群体主要使用的是典型的「严肃商务」风格网站，那么你的网站设计可能也应该体现出类似的风格。如果这些用户更倾向于活泼且带有幽默感的网站，那么在设计上融入这些元素可能是一个更佳的选择。</p>
 <p>Just try not to borrow too much from direct competitors, you don’t want to look like a second-rate version of something else.</p>
-<p>只是要注意尽量不要过多地借鉴直接竞争对手，你不想自己的东西看起来像是其他东西的二流版本吧。</p>
-<h3 id="limit-your-choices--限制选择">Limit your choices / 限制选择</h3>
+<p>尽量避免从直接竞争对手那里过度借鉴，以免你的设计看起来像是其他产品的二流版本。</p>
+<h3 id="limit-your-choices--缩小选择范围">Limit your choices / 缩小选择范围</h3>
 <p>Having millions of colors and thousands of fonts to choose from might sound nice in theory, but in practice it’s usually a paralyzing curse.</p>
-<p>理论上来说，拥有数百万种颜色和数千种字体可供选择听起来很不错，但实际上，这通常是一种会令人瘫痪的诅咒。</p>
+<p>虽然理论上拥有数百万种颜色和数千种字体可供选择似乎很有吸引力，但实际上这种情况往往会使人陷入选择困难。</p>
 <p>And it’s not just fonts and colors, either — you can easily waste time agonizing over almost any minor design decision.</p>
-<p>这不仅仅是字体和颜色的问题 —— 你很容易在几乎所有微小的设计决策上纠结并浪费大量时间。</p>
+<p>问题不仅限于字体和颜色 —— 在许多小的设计决策上，人们往往容易耗费时间，陷入过度纠结。</p>
 <ul>
 <li><em>Should this text be 12px or 13px?</em></li>
 <li><em>Should this box shadow have a 10% opacity or a 15% opacity?</em></li>
 <li><em>Should this avatar be 24px or 25px tall?</em></li>
 <li><em>Should I use a medium font weight for this button or semibold?</em></li>
 <li><em>Should this headline have a bottom margin of 18px or 20px?</em></li>
-<li><em>这段文本尺寸应该是 12px 还是 13px？</em></li>
-<li><em>这个阴影应该使用 10% 不透明度还是 15%？</em></li>
-<li><em>这个头像应该是 24px 高还是 25px？</em></li>
-<li><em>这个按钮文字应该使用中粗字重还是半粗？</em></li>
-<li><em>这个标题的下边距应该是 18px 还是 20px？</em></li>
+</ul>
+<blockquote>
+</blockquote>
+<ul>
+<li><em>文字大小是选择 12px 还是 13px？</em></li>
+<li><em>阴影的不透明度是设为 10% 还是 15%？</em></li>
+<li><em>头像的高度是 24px 还是 25px？</em></li>
+<li><em>按钮的字体粗细是用中等还是半粗体？</em></li>
+<li><em>标题的底部边距是设为 18px 还是 20px？</em></li>
 </ul>
 <p>When you’re designing without constraints, decision-making is torture because there’s always going to be more than one right choice.</p>
-<p>当你在没有限制的情况下进行设计时，决策过程通常很痛苦，因为总会有不止一个正确的选择。</p>
+<p>在没有限制的设计过程中，做出决策是一项挑战，因为往往存在多种正确的选项。</p>
 <p>For example, these buttons all have different background colors, but it’s almost impossible to tell the difference between them by just looking at them.</p>
-<p>例如：这些按钮都有不同的背景颜色，但仅凭外观几乎无法区分它们之间的差异。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A55CB3E3-7E7A-4F8B-BC2E-A0C17DF73789_2/ryuhyjWRUYQGxOqs3FfnCOOyZi4P6YXRsJCA5IkNObMz/Image.png" alt="Image.png"></p>
+<p>以这些按钮为例，尽管它们各自拥有不同的背景色彩，但仅通过视觉却几乎无法辨认出它们之间的差别。</p>
+<p><img src="img/24.png" alt=""></p>
 <p>How are you supposed to make a confident decision if none of these would really be bad choices?</p>
-<p>如果这些选择中没有一个会是糟糕的选择，你该如何做出自信的决定呢？</p>
-<p><strong>Define systems in advance / 提前定义系统</strong></p>
+<p>当所有这些选项都不会导致不良结果时，你该如何自信地做出决策呢？</p>
+<p><strong>Define systems in advance / 事先建立体系</strong></p>
 <p>Instead of hand-picking values from a limitless pool any time you need to make a decision, start with a smaller set of options.</p>
-<p>不要在每次需要做决定时都从无限的选项池中手工挑选值，而是从一组较小的选项集开始。</p>
+<p>与其在每次决策时从无限的选择中手工挑选，不如一开始就限定在一个较小的选项集中进行选择。</p>
 <p>Don’t reach for the color picker every time you need to pick a new shade of blue — choose from a set of 8-10 shades picked out ahead of time.</p>
-<p>不要每次需要选择一种新蓝色调时都去拿取色器 —— 从预先挑选好的 8-10 种色调中选择。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/24FBE93C-A84B-42F3-9B88-AC73DED79E33_2/lPh0NgSN6VcQ6csBln6VTEXXG4e1KSQyzDfvx94mnrgz/Image.png" alt="Image.png"></p>
+<p>在挑选新蓝色调时，无需每次都使用颜色选择器。相反，应该从预先选定的 8 至 10 种颜色中选取。</p>
+<p><img src="img/25.png" alt=""></p>
 <p>Similarly, don’t tweak a font size one pixel at a time until it looks perfect. Define a restrictive type scale in advance and use that to make any future font size decisions.</p>
-<p>同样地，不要每次一个像素大小的调整直到它看起来完美。提前定义好一组字体大小比例，并使用它来做出任何未来的字体大小的决定。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/808E92B8-1ABC-484C-A3EE-AA34574430CE_2/RXEGgbloJSheXbM1oiumT8t9OiilyFC1rLNDeyid7MYz/Image.png" alt="Image.png"></p>
+<p>同样，不要通过逐像素微调来追求完美的字体大小。应该提前设定一个具有限制性的字体比例表，并依据此表来决定所有未来的字体大小选择。</p>
+<p><img src="img/26.png" alt=""></p>
 <p>When you build systems like this, you only have to do the hard work of picking the initial values once instead of every time you’re designing a new piece of UI. It’s a bit more work up front, but it’s worth it — it’ll save you a ton of decision fatigue down the road.</p>
-<p>当你构建这样的系统时，你只需要做一次挑选初始值的艰难工作，而不是每次设计新的用户界面时都重新决策。这在前期可能需要更多的工作，但这是值得的 —— 它将在未来缓解你大量的决策疲劳。</p>
-<p><strong>Designing by process of elimination / 使用排除法进行设计</strong></p>
+<p>通过构建此类体系，您只需一次性完成选择初始值的艰巨工作，而不必在每次设计新的用户界面元素时重复这一过程。虽然前期可能需要更多的努力，但这是非常值得的 —— 它将在未来缓解你大量的决策疲劳。</p>
+<p><strong>Designing by process of elimination / 利用排除法进行设计</strong></p>
 <p>When you’re designing using a constrained set of values, decision-making is a lot easier because there are a lot fewer “right” choices.</p>
-<p>当你在使用一组有限的值进行设计时，决策会容易得多，因为「正确」的选择要少得多。</p>
+<p>使用一组限定的值进行设计时，做出决策会更加简单，因为可选的「正确」选项数量大幅减少。</p>
 <p>For example, say you’re trying to choose a size for an icon. You’ve defined a sizing scale in advance where your only small-to-medium sized options are 12px, 16px, 24px, and 32px.</p>
-<p>例如：假设你正在尝试为一个图标选择尺寸。你已经提前定义了一个尺寸比例，其中小到中等尺寸的选项，分别是 12px、16px、24px 和 32px。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D9586177-E155-4CE2-9D0C-03D03C893403_2/ahpAczi3gkRMaKNaixUFxnInkRikCTuJxXHFUfkfxe4z/Image.png" alt="Image.png"></p>
+<p>以图标大小的选择为例。如果你已经事先设定了一个尺寸比例，那么你在小尺寸到中等尺寸的选项中，仅有的选择可能是 12px、16px、24px 和 32px。</p>
+<p><img src="img/27.png" alt=""></p>
 <p>To pick the best option, start by taking a guess at which one will look best, maybe 16px. Then try the values on either side (12px and 24px) for comparison.</p>
-<p>为了选择最佳选项，首先猜测哪一个看起来最好，可能是 16px。然后尝试比较两侧的值（12px 和 24px）。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B2D1BBBF-2BB3-4E40-AF32-972B6F471CF2_2/Hwr00Cb8xaaYf9QyZzf49PMCgSiMt81JI8MPFumD4NMz/Image.png" alt="Image.png"></p>
+<p>要挑选最佳选项，你可以先猜测哪个尺寸看起来最合适，比如 16px。接着，尝试使用它左右两边的尺寸（即 12px 和 24px）来做出对比。</p>
+<p><img src="img/28.png" alt=""></p>
 <p>Chances are, two of those options will seem like obviously bad choices. If it’s the options on the outside, you’re done — the middle option is the only good choice.</p>
-<p>很可能，其中两个选项看起来明显不是好选择。如果外边两个是不好的选项，那么你已经找到了 —— 中间的选项是唯一的好选择。</p>
+<p>通常情况下，这些选项中有两个会明显不是好的选择。如果这两个是边缘选项，那么你的决策就简单了 —— 中间的选项自然成为了最佳选择。</p>
 <p>If one of the outer options looks best, do another comparison using that option as the “middle” value and make sure there’s not a better choice.</p>
-<p>如果外面的一个选项看起来最好，使用这个选项作为「中间」值再做一次比较，并确保没有更好的选择。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6CC5CFC9-197E-4D95-B610-1F5D3164D12E_2/m3C6r5ATdtMRE7qrpCKd9Szp45xX0Rmho0IyHaT90Aoz/Image.png" alt="Image.png"></p>
+<p>如果发现其中一个边缘选项实际上是最佳选择，那么应该以该选项为「中心」再次进行比较，以确保没有遗漏更佳的选择。</p>
+<p><img src="img/29.png" alt=""></p>
 <p>This approach works for anything where you’ve defined a system. When you’re limited to a set of options that all look noticeably different, picking the best one is a piece of cake.</p>
-<p>这种方法适用于你已经定义了系统的任何情况。当你被限制在一组明显不同的选项中选择时，挑选出最佳选项就易如反掌。</p>
-<p><strong>Systematize everything / 系统化一切</strong></p>
+<p>当您在一个您已经建立体系的领域内工作时，这种方法非常有效。如果您的选择范围被限定在一组明显有区别的选项之内，那么选出最佳选项就会变得易如反掌。</p>
+<p><strong>Systematize everything / 体系化一切</strong></p>
 <p>The more systems you have in place, the faster you’ll be able to work and the less you’ll second guess your own decisions.</p>
-<p>这样的系统越多，你的工作效率就越高，你对于自己的决策就越少纠结。</p>
+<p>随着您建立的体系越来越多，您的工作效率将大幅提升，同时也会减少对自己决策的犹豫和怀疑。</p>
 <p>You’ll want systems for things like:</p>
+<p>您应该为以下方面建立系统：</p>
 <ul>
 <li>Font size</li>
 <li>Font weight</li>
@@ -526,14 +539,15 @@
 <li>Border width</li>
 <li>Opacity</li>
 </ul>
-<p>你将需要以下这些方面的系统：</p>
+<blockquote>
+</blockquote>
 <ul>
 <li>字体大小</li>
 <li>字体粗细</li>
 <li>行高</li>
 <li>颜色</li>
-<li>边距</li>
-<li>填充</li>
+<li>外边距</li>
+<li>内边距</li>
 <li>宽度</li>
 <li>高度</li>
 <li>阴影</li>
@@ -541,38 +555,44 @@
 <li>边框宽度</li>
 <li>不透明度</li>
 </ul>
-<p>…and anything else you run into where it feels like you’re laboring over a low-level design decision.</p>
-<p>以及你在任何其他情况下遇到的，感觉像是你在为一个低级别的设计决策而努力。</p>
+<p>&hellip;and anything else you run into where it feels like you’re laboring over a low-level design decision.</p>
+<p>以及任何其他你在设计过程中遇到的，需要在细节上花费大量精力的低层次决策问题。</p>
 <p>You don’t have to define all of this stuff ahead of time, just make sure you’re approaching design with a system-focused mindset. Look for opportunities to introduce new systems as you make new decisions, and try to avoid having to make the same minor decision twice.</p>
-<p>你不必提前定义所有这些东西，只要确保你是以系统为中心的思维来处理设计。在做出新决策时寻找引入新系统的机会，并尽量避免需要重复做出相同的小决策。</p>
+<p>你无需一开始就定义所有这些元素，关键是要以体系化的思维方式来处理设计问题。在制定新决策时，寻找机会建立新的体系，并努力避免重复进行相同的小决策。</p>
 <p>Designing with systems is going to be a recurring theme throughout this book, and in later chapters we’ll talk about building a lot of these systems in finer detail.</p>
-<p>使用系统进行设计将是本书贯穿始终的一个主题，在后续章节中，我们将更细致地讨论构建这些系统的更多细节。</p>
+<p>体系化设计是本书的一个核心议题，而在后续章节，我们会详细探讨这些体系构建的诸多细节。</p>
 <h2 id="hierarchy-is-everything--层次结构是一切">Hierarchy is Everything / 层次结构是一切</h2>
-<h3 id="not-all-elements-are-equal--所有元素并非平等">Not all elements are equal / 所有元素并非平等</h3>
+<h3 id="not-all-elements-are-equal--元素之间并非平等">Not all elements are equal / 元素之间并非平等</h3>
 <p>When you think of visual design as “styling things so they look good”, it’s easy to see why it might feel hard to achieve without innate artistic talent. But it turns out that one of the biggest factors in making something “look good” has nothing to do with superficial styling at all.</p>
-<p>当你将视觉设计视为「为了让事物看起来好看而进行的风格化」时，很容易理解为什么在没有天生的艺术天赋的情况下可能感觉难以实现。但事实证明，让某物「看起来好看」的最重要因素之一与表面的风格化毫无关系。</p>
+<p>人们常将视觉设计理解为「美化事物」，这使得没有天赋的艺术家觉得难以达成。然而，事实证明，让事物「看起来好看」的一个关键因素实际上与表面的装饰无关。</p>
+<!-- raw HTML omitted -->
 <p>Visual hierarchy refers to how important the elements in an interface appear in relation to one another, and it’s the most effective tool you have for making something feel “designed”.</p>
 <p>视觉层级指的是界面中元素相对于彼此的重要性表现，它才是让你的设计作品具有「设计感」的最有效的工具。</p>
 <p>When everything in an interface is competing for attention, it feels noisy and chaotic, like one big wall of content where it’s not clear what actually matters:</p>
 <p>当界面中的所有元素都在争夺注意力时，它给人的感觉是嘈杂和混乱的，就像一堵巨大的内容墙，让用户不清楚到底什么才是真正重要的：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/EFA33F02-9742-4CD8-8006-77E782D64144_2/KqwiscKg94SZOlFtggxJPENxuQO6j4Y7hQNZagyDkJMz/Image.png" alt="Image.png"></p>
+<p><img src="img/30.png" alt="">
+<img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/EFA33F02-9742-4CD8-8006-77E782D64144_2/KqwiscKg94SZOlFtggxJPENxuQO6j4Y7hQNZagyDkJMz/Image.png" alt="Image.png"></p>
 <p>When you deliberately de-emphasize secondary and tertiary information, and make an effort to highlight the elements that are most important, the result is immediately more pleasing, even though the color scheme, font choice, and layout haven’t changed:</p>
 <p>当你有意识地降低次要和第三重要的信息的强调程度，并努力突出最重要的元素时，结果会立即变得更加令人愉悦，即使配色方案、字体和布局都没有改变：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/26DF2710-BE9E-4366-902E-EFE82247126E_2/L336XE0QqLwCpBPsbd5eErgm68e6my2uMKk5gub36Pgz/Image.png" alt="Image.png"></p>
+<p><img src="img/31.png" alt="">
+<img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/26DF2710-BE9E-4366-902E-EFE82247126E_2/L336XE0QqLwCpBPsbd5eErgm68e6my2uMKk5gub36Pgz/Image.png" alt="Image.png"></p>
 <p>So how do you actually make this happen? In the following chapters, we’ll cover a number of specific strategies you can use to introduce hierarchy into your designs.</p>
 <p>那么你如何实际上实现这一点呢？在接下来的章节中，我们将介绍一些特定的策略，你可以使用它们在你的设计中引入层级。</p>
 <h3 id="size-isnt-everything--尺寸不是一切">Size isn’t everything / 尺寸不是一切</h3>
 <p>Relying too much on font size to control your hierarchy is a mistake — it often leads to primary content that’s too large, and secondary content that’s too small.</p>
 <p>过分依赖字体大小来控制你的层级是一个错误 —— 它通常会导致主要内容过大，次要内容过小。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FDE815B9-1170-4A0B-AD7A-8BC7842A29D6_2/tqsyTvUatGd86az6ePA7qijRlSZStFyjiz4Pf5wTEWcz/Image.png" alt="Image.png"></p>
+<p><img src="img/32.png" alt="">
+<img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FDE815B9-1170-4A0B-AD7A-8BC7842A29D6_2/tqsyTvUatGd86az6ePA7qijRlSZStFyjiz4Pf5wTEWcz/Image.png" alt="Image.png"></p>
 <p>Instead of leaving all of the heavy lifting to font size alone, try using font weight or color to do the same job.</p>
 <p>不要仅仅依靠字体大小来承担所有重任，尝试使用字体粗细或颜色来完成同样的工作。</p>
 <p>For example, making a primary element bolder lets you use a more reasonable font size, and often does a better job at communicating its importance anyways:</p>
 <p>例如，使主要元素加粗可以让你使用更合理的字体大小，并且通常在传达其重要性方面做得更好：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3C750B57-0D41-413D-87D0-7334FEDE655D_2/yKoOMScWkhiyh70wrZqvhNIi7mxyay77dnGD9lrUhmAz/Image.png" alt="Image.png"></p>
+<p><img src="img/33.png" alt="">
+<img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3C750B57-0D41-413D-87D0-7334FEDE655D_2/yKoOMScWkhiyh70wrZqvhNIi7mxyay77dnGD9lrUhmAz/Image.png" alt="Image.png"></p>
 <p>Similarly, using a softer color for supporting text instead of a tiny font size makes it clear that the text is secondary while sacrificing less on readability:</p>
 <p>同样地，对于辅助文本使用较柔和的颜色而不是极小的字体大小，可以明确表明该文本是次要的，同时在可读性上的牺牲更少。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B7E43E90-5B64-412B-9A46-56699E2340BB_2/LycMy9ltTy8fWu0qdZYIOqCUz0wXpAc0Dh9GF3TXO7kz/Image.png" alt="Image.png"></p>
+<p><img src="img/34.png" alt="">
+<img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B7E43E90-5B64-412B-9A46-56699E2340BB_2/LycMy9ltTy8fWu0qdZYIOqCUz0wXpAc0Dh9GF3TXO7kz/Image.png" alt="Image.png"></p>
 <p>Try and stick to two or three colors:</p>
 <ul>
 <li>A dark color for primary content (like the headline of an article)</li>
@@ -595,31 +615,37 @@
 <li>正常字体粗细（400 或 500，取决于字体）用于大多数文字</li>
 <li>更粗的字体（600 或 700）用于想要强调的文字</li>
 </ul>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/28CAA2DF-CDA7-4B99-8B46-489F686F660D_2/O3MMQNymsGQTshFMQ5HORUAy24EKNYU16rfhyi1ywcAz/Image.png" alt="Image.png"></p>
+<p><img src="img/35.png" alt="">
+<img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/28CAA2DF-CDA7-4B99-8B46-489F686F660D_2/O3MMQNymsGQTshFMQ5HORUAy24EKNYU16rfhyi1ywcAz/Image.png" alt="Image.png"></p>
 <p>Stay away from font weights under 400 for UI work — they can work for large headings but are too hard to read at smaller sizes. If you’re considering using a lighter weight to de-emphasize some text, use a lighter color or smaller font size instead.</p>
 <p>在用户界面工作中，避免使用 400 以下的字体粗细 —— 它们可以用于大型标题，但在较小尺寸上阅读起来太困难。如果你考虑使用较轻的字体粗细来降低某些文本的强调程度，请改用较浅的颜色或更小的字体大小。</p>
 <h3 id="dont-use-grey-text-on-colored-backgrounds--不要在彩色背景上使用灰色文本">Don’t use grey text on colored backgrounds / 不要在彩色背景上使用灰色文本</h3>
 <p>Making text a lighter grey is a great way to de-emphasize it on white backgrounds, but it doesn’t look so great on colored backgrounds.</p>
 <p>在白色背景上将文本设置为浅灰色是降低其强调程度的好方法，但在彩色背景上看起来效果并不那么好。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2CF79B27-5771-43FC-A6F8-66E393CE7AFE_2/6Yk4Qf1AUHTBTHVaUyYFx5VyfbXQAmDjeFCJyrRNhokz/Image.png" alt="Image.png"></p>
+<p><img src="img/36.png" alt="">
+<img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2CF79B27-5771-43FC-A6F8-66E393CE7AFE_2/6Yk4Qf1AUHTBTHVaUyYFx5VyfbXQAmDjeFCJyrRNhokz/Image.png" alt="Image.png"></p>
 <p>That’s because the effect we’re actually seeing with grey on white is reduced contrast.</p>
 <p>这是因为我们在白色背景上看到的灰色效果实际上是对比度降低了。</p>
 <p>Making the text closer to the background color is what actually helps create hierarchy, not making it light grey.</p>
 <p>使文本更接近背景色才是真正有助于创建层级的方法，而不是将其设置为浅灰色。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5B9C53A5-2975-4183-B926-BB2EE35CA327_2/Yzi9JpOY9gw6cjT2KfEdWnhQiv7xN06WPM1GIrCz8Bcz/Image.png" alt="Image.png"></p>
+<p><img src="img/37.png" alt="">
+<img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5B9C53A5-2975-4183-B926-BB2EE35CA327_2/Yzi9JpOY9gw6cjT2KfEdWnhQiv7xN06WPM1GIrCz8Bcz/Image.png" alt="Image.png"></p>
 <p>You might think that the easiest way to achieve this is to use white text and reduce the opacity:</p>
 <p>你可能认为实现这一点最简单的方法是使用白色文本并降低透明度：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FF98810F-6C82-4214-B557-058E2A695FE8_2/zftPD5XdGTkjRrEjx1pDUovys8c5mrIxlJXy6SUfdJAz/Image.png" alt="Image.png"></p>
+<p><img src="img/38.png" alt="">
+<img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FF98810F-6C82-4214-B557-058E2A695FE8_2/zftPD5XdGTkjRrEjx1pDUovys8c5mrIxlJXy6SUfdJAz/Image.png" alt="Image.png"></p>
 <p>While this does reduce the contrast, it often results in text that looks dull, washed out, and sometimes even disabled.</p>
 <p>虽然这确实降低了对比度，但通常会导致文本看起来暗淡、褪色，有时甚至像是被禁用了。</p>
 <p>Even worse, using this approach on top of an image or pattern means the background will show through the text:</p>
 <p>更糟糕的是，如果将这种方法用在图像或图案上，背景会透过文本显示出来。</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7ECC1185-98FD-4E16-9489-84337460627C_2/xwydAlDZjDZSm4qGbKzL9MWhlLJNhawdyMYLoxJlZwsz/Image.png" alt="Image.png"></p>
+<p><img src="img/39.png" alt="">
+<img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7ECC1185-98FD-4E16-9489-84337460627C_2/xwydAlDZjDZSm4qGbKzL9MWhlLJNhawdyMYLoxJlZwsz/Image.png" alt="Image.png"></p>
 <p>A better approach is to hand-pick a new color, based on the background color.</p>
 <p>更好的方法是根据背景色手工挑选一种新的颜色。</p>
 <p>Choose a color with the same hue, and adjust the saturation and lightness until it looks right to you:</p>
 <p>选择一个相同色调的颜色，并调整饱和度和亮度，直到它在你看来是合适的：</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5D19F99A-31BC-43CE-8A3A-192737D857CB_2/Cpqu5g1Rzq0D65HLbZXJedyIh12yxeZSVl09sY5kJkoz/Image.png" alt="Image.png"></p>
+<p><img src="img/40.png" alt="">
+<img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5D19F99A-31BC-43CE-8A3A-192737D857CB_2/Cpqu5g1Rzq0D65HLbZXJedyIh12yxeZSVl09sY5kJkoz/Image.png" alt="Image.png"></p>
 <p>Hand-picking a color this way makes it easy to reduce the contrast without the text looking faded.</p>
 <p>通过这种方式手工挑选颜色，可以很容易地降低对比度，同时不让文本看起来褪色。</p>
 <h3 id="emphasize-by-de-emphasizing--通过弱化来强调">Emphasize by de-emphasizing / 通过弱化来强调</h3>
@@ -975,15 +1001,22 @@
 <p>Whenever you’re relying on spacing to connect a group of elements, always make sure there’s more space around the group than there is within it — interfaces that are hard to understand always look worse.</p>
 <p>每当你依赖间距来连接一组元素时，一定要确保组周围的空间比组内的多 —— 难以理解的界面看起来总是更糟糕。</p>
 <h2 id="designing-text--设计文本">Designing Text / 设计文本</h2>
-<h3 id="establish-a-type-scale--建立一个类型比例尺">Establish a type scale / 建立一个类型比例尺</h3>
+<h3 id="establish-a-type-scale--建立一个字符比例尺">Establish a type scale / 建立一个字符比例尺</h3>
 <p>Most interfaces use way too many font sizes. Unless a team has a rigid design system in place, it’s not uncommon to find that every pixel value from 10px to 24px has been used in the UI <em>somewhere</em>.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C6E634F6-E53C-4A23-BFB5-AD25F648AA64_2/iiLyOk1wQlI8S5guQxBkMhrJZXcRYabPFtQCp1odN4sz/Image.png" alt="Image.png"></p>
+<p>在许多用户界面设计中，字体大小的使用往往过于繁多。如果没有一个固定的设计体系，界面上从 10px 到 24px 的字体大小几乎<em>随处可见</em>。</p>
+<p><img src="img/101.png" alt=""></p>
 <p>Choosing font sizes without a system is a bad idea for two reasons:</p>
 <ol>
 <li>It leads to annoying inconsistencies in your designs.</li>
 <li>It slows down your workflow.</li>
 </ol>
+<p>没有系统地选择字体大小不是一个好主意，原因有两个：</p>
+<ol>
+<li>这会导致你的设计中出现令人恼火的不一致性。</li>
+<li>这种做法还会拖慢你的工作效率。</li>
+</ol>
 <p>So how do you define a type system?</p>
+<p>那么你如何定义一个字符系统。</p>
 <p><strong>Choosing a scale / 选择比例尺</strong></p>
 <p>Just like with spacing and sizing, a linear scale won’t work. Smaller jumps between font sizes are useful at the bottom of the scale, but you don’t want to waste time deciding between 46px and 48px for a large headline.</p>
 <p><strong>Modular scales / 模块化比例尺</strong></p>
@@ -1640,9 +1673,9 @@
 </content>
 <p>
   
-  <a href="https://rokcso.com/t/translation/">#Translation</a>
+  <a href="http://localhost:1313/t/translation/">#Translation</a>
   
-  <a href="https://rokcso.com/t/ui/">#UI</a>
+  <a href="http://localhost:1313/t/ui/">#UI</a>
   
 </p>
 

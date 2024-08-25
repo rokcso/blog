@@ -2587,3 +2587,5 @@ When you’re trying to figure out why your version looks different than the ori
 By continually studying the work that inspires you with a careful eye, you’ll be picking up design tricks for years to come.
 
 — Adam Wathan & Steve Schoger
+
+[⬇️ Download PDF](/pdfs/Refactoring-UI-v1.0.2.pdf)

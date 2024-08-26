@@ -391,7 +391,7 @@ Similarly, don’t tweak a font size one pixel at a time until it looks perfect.
 
 When you build systems like this, you only have to do the hard work of picking the initial values once instead of every time you’re designing a new piece of UI. It’s a bit more work up front, but it’s worth it — it’ll save you a ton of decision fatigue down the road.
 
-通过构建此类体系，您只需一次性完成选择初始值的艰巨工作，而不必在每次设计新的用户界面元素时重复这一过程。虽然前期可能需要更多的努力，但这是非常值得的 —— 它将在未来缓解你大量的决策疲劳。
+通过构建此类体系，你只需一次性完成选择初始值的艰巨工作，而不必在每次设计新的用户界面元素时重复这一过程。虽然前期可能需要更多的努力，但这是非常值得的 —— 它将在未来缓解你大量的决策疲劳。
 
 **Designing by process of elimination / 利用排除法进行设计**
 
@@ -423,17 +423,17 @@ If one of the outer options looks best, do another comparison using that option 
 
 This approach works for anything where you’ve defined a system. When you’re limited to a set of options that all look noticeably different, picking the best one is a piece of cake.
 
-当您在一个您已经建立体系的领域内工作时，这种方法非常有效。如果您的选择范围被限定在一组明显有区别的选项之内，那么选出最佳选项就会变得易如反掌。
+当你在一个你已经建立体系的领域内工作时，这种方法非常有效。如果你的选择范围被限定在一组明显有区别的选项之内，那么选出最佳选项就会变得易如反掌。
 
 **Systematize everything / 体系化一切**
 
 The more systems you have in place, the faster you’ll be able to work and the less you’ll second guess your own decisions.
 
-随着您建立的体系越来越多，您的工作效率将大幅提升，同时也会减少对自己决策的犹豫和怀疑。
+随着你建立的体系越来越多，你的工作效率将大幅提升，同时也会减少对自己决策的犹豫和怀疑。
 
 You’ll want systems for things like:
 
-您应该为以下方面建立系统：
+你应该为以下方面建立系统：
 
 - Font size
 - Font weight
@@ -555,103 +555,103 @@ Stay away from font weights under 400 for UI work — they can work for large he
 
 ### Don’t use grey text on colored backgrounds / 不要在彩色背景上使用灰色文本
 
-<!-- 翻译到这里，下面都是没有翻译的 -->
-
 Making text a lighter grey is a great way to de-emphasize it on white backgrounds, but it doesn’t look so great on colored backgrounds.
 
-在白色背景上将文本设置为浅灰色是降低其强调程度的好方法，但在彩色背景上看起来效果并不那么好。
+在白色背景上，使用浅灰色文本是一种有效的降低其视觉重要性的策略，然而，这种方法在彩色背景上可能效果不佳。
 
 ![](img/36.png)
 
 That’s because the effect we’re actually seeing with grey on white is reduced contrast.
 
-这是因为我们在白色背景上看到的灰色效果实际上是对比度降低了。
+实际上，灰色文本在白色背景上产生的效果是降低了对比度，这有会减少文本的视觉强调。
 
 Making the text closer to the background color is what actually helps create hierarchy, not making it light grey.
 
-使文本更接近背景色才是真正有助于创建层级的方法，而不是将其设置为浅灰色。
+但是通过使文本颜色更接近背景色更有助于帮助建立视觉层级，而不是简单地将其变为浅灰色。
 
 ![](img/37.png)
 
 You might think that the easiest way to achieve this is to use white text and reduce the opacity:
 
-你可能认为实现这一点最简单的方法是使用白色文本并降低透明度：
+你可能认为，通过使用白色文字并调低其不透明度是最直接方式：
 
 ![](img/38.png)
 
 While this does reduce the contrast, it often results in text that looks dull, washed out, and sometimes even disabled.
 
-虽然这确实降低了对比度，但通常会导致文本看起来暗淡、褪色，有时甚至像是被禁用了。
+降低不透明度确实能够减少文字的视觉对比，但这种方法往往会使文字显得单调、没有生气，甚至给人一种不可点击或不可用的错觉。
 
 Even worse, using this approach on top of an image or pattern means the background will show through the text:
 
-更糟糕的是，如果将这种方法用在图像或图案上，背景会透过文本显示出来。
+更糟糕的是，将此方法应用于图像或图案之上，将导致背景透过文字显现，影响文字的可读性：
 
 ![](img/39.png)
 
 A better approach is to hand-pick a new color, based on the background color.
 
-更好的方法是根据背景色手工挑选一种新的颜色。
+更优的方法是依据背景色彩，手动选择一种合适的新颜色。
 
 Choose a color with the same hue, and adjust the saturation and lightness until it looks right to you:
 
-选择一个相同色调的颜色，并调整饱和度和亮度，直到它在你看来是合适的：
+选择一个与背景色相匹配的色调，并调整其饱和度和亮度，直至达到你满意的视觉效果：
 
 ![](img/40.png)
 
 Hand-picking a color this way makes it easy to reduce the contrast without the text looking faded.
 
-通过这种方式手工挑选颜色，可以很容易地降低对比度，同时不让文本看起来褪色。
+采用这种手工挑选颜色的方法，可以在不使文字显得褪色的情况下，轻松实现对比度的降低。
 
 ### Emphasize by de-emphasizing / 通过弱化来强调
 
 Sometimes you’ll run into a situation where the main element of an interface isn’t standing out enough, but there’s nothing you can add to it to give it the emphasis it needs.
 
-有时你会遇到这样的情况，界面的主要元素没有足够突出，但你又无法向它添加任何东西来给予它所需的强调。
+在某些情况下，你可能会发现用户界面中的核心元素并不如预期那样醒目，同时你也无法通过添加新元素来增加其视觉强调。
 
 For example, despite trying to make this active nav item “pop” by giving it a different color, it still doesn’t really stand out compared to the inactive items:
 
-例如，尽管尝试通过给它不同的颜色来使这个活动的导航项「突出」，但与非活动项相比，它仍然没有真正脱颖而出：
+以活动的导航项为例，即使我们尝试通过改变颜色让它更加「醒目」，但如果与非活动项相比较，它看起来仍然不够突出：
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9E12D4C7-5F66-42E2-8C7F-EF209004B475_2/05YqDwKXByE1oODIMkNeyq1tLVyZWQhu8VOBoEmonxoz/Image.png)
+![](img/41.png)
 
 When you run into situations like this, instead of trying to further emphasize the element you want to draw attention to, figure out how you can de-emphasize the elements that are competing with it.
 
-当你遇到类似的情况时，不要试图进一步强调你想要强调的元素，而是找出如何弱化与之竞争的元素的强调程度。
+面对这种情况，与其继续尝试强化你希望引人注目的元素，不如考虑如何弱化那些与其争夺注意力的元素。
 
 In this example, you could do that by giving the inactive items a softer color so they sit more in the background:
 
-在这个例子中，你可以通过给非活动项一个更柔和的颜色，使它们更融入背景中：
+以这个例子来说，可以通过为非活动项选择一种更柔和的颜色，使它们在视觉上更靠后，从而让它们更加融入背景：
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/0E90F859-2EDD-4000-830A-F4B9AB17162F_2/h2nJw2MvytZz6yYs3HDaehKj2wjeOhyDpINoSjmsILoz/Image.png)
+![](img/42.png)
 
 You can apply this thinking to bigger pieces of an interface as well. For example, if a sidebar feels like it’s competing with your main content area, don’t give it a background color — let the content sit directly on the page background instead:
 
-你也可以将这种思想应用到界面的更大部件上。例如，如果侧边栏感觉它在与你的主要内容区域竞争，不要给它设置背景颜色 —— 让其内容直接放置在页面背景上。
+这种思路同样适用于界面更大的元素。比如，如果侧边栏看起来与主要内容区域争夺视觉焦点，就不要为其设置背景色 —— 而是让其内容直接显示在页面的背景之上：
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5CC8FE74-F339-4386-8042-47BE891EA224_2/h8FazIhSt4lDjiEkmRPEnh3HqO99lq0fu8zHFRVEeQcz/Image.png)
+![](img/43.png)
 
 ### Labels are a last resort / 标签是最后的手段
 
 Put down the accessibility pitchfork — this isn’t about forms.
 
-不要因为可访问性问题而激动 —— 这里讨论的不是表单问题。
+请不要急于用可访问性的标准来指责 —— 这里讨论的不是表单问题。
+
+> 译者注：通常认为标签可以提高可访问性，而这一小节提出将标签作为最后的手段（即减少使用标签），则可能降低可访问性。
 
 When presenting data to the user (especially data from the database), it’s easy to fall into the trap of displaying it using a naive *label: value* format.
 
 在向用户展示数据（特别是来自数据库的数据）时，很容易陷入使用简单的「标签：值」格式来展示数据的陷阱。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1B24B24D-14AC-4067-88E2-5DA57AB0A87F_2/hv1viqu2WnYbqyyUhDHEAlMjxnstjYdWlfv1nxPYLjEz/Image.png)
+![](img/44.png)
 
 The problem with this approach is that it makes it difficult to present the data with any sort of hierarchy; every piece of data is given equal emphasis.
 
-这种方法的问题在于它使得数据展示难以具有任何层级；每项数据都被赋予了相同的强调。
+这种方式存在一个问题，即它难以表现出数据之间的层级关系；结果是，所有数据项都获得了相同的视觉重要性。
 
 **You might not need a label at all / 你或许根本不需要标签**
 
 In a lot of situations, you can tell what a piece of data is just by looking at the format.
 
-在许多情况下，你只需通过查看格式就能知道数据是什么。
+在许多情况下，通过查看数据的呈现格式，我们就能辨识出数据的内容。
 
 For example, janedoe@example.com is an email address, (555) 765-4321 is a phone number and $19.99 is a price.
 
@@ -659,117 +659,123 @@ For example, janedoe@example.com is an email address, (555) 765-4321 is a phone 
 
 When the format isn’t enough, the context often is. When you see the phrase “Customer Support” listed below someone’s name in an employee directory, you don’t need a label to make the connection that that is the department the person works in.
 
-当格式本身不足以表达时，上下文往往能够提供足够的信息。当你在员工目录中看到某人的名字下面列出「客户支持」这个短语时，你不需要标签就能联想到那是该人所在的部门。
+如果数据的格式本身不足以让信息清晰，那么上下文环境往往能够帮助我们理解。比如，在员工名册中，当看到某人名字下面写着「客户支持」时，我们不必依赖额外的标签就能明白这个人隶属于客户服务部门。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B528D039-69DB-43CC-BAC2-C3B0FA99B586_2/Hve7zUM9gYuax8YiQv9EZWZsJN1q6oMVAs16Ebx7qxoz/Image.png)
+![](img/45.png)
 
 When you’re able to present data without labels, it’s much easier to emphasize important or identifying information, making the interface easier to use while at the same time making it feel more “designed”.
 
-当你能够不使用标签来展示数据时，强调重要或识别信息就变得容易得多，这使得界面更易于使用，同时也让它感觉更加「有设计感」。
+能够不依赖标签来呈现数据时，可以更容易地突出重要或识别性信息，这不仅让界面变得更加易用，同时也赋予了它更强的「设计感」。
 
 **Combine labels and values / 合并标签和值**
 
 Even when a piece of data isn’t completely clear without a label, you can often avoid adding a label by adding clarifying text to the value.
 
-没有标签，某项数据的含义可能不完全清晰，但你通常可以通过向值添加澄清文本来避免添加标签。
+即便某些数据项在缺少标签的情况下不够明确，我们也可以通过在数值旁边附加说明性文字来省去标签的使用。
 
 For example, if you need to display inventory in an e-commerce interface, instead of “In stock: 12”, try something like “12 left in stock”.
 
-例如，如果你需要在电商界面上显示库存，不要写成「库存：12」，而是尝试使用「库存剩余 12 件」这样的表述。
+以电商界面中展示库存情况为例，与其写成「库存：12」，不如采用「库存剩余 12 件」这样的表达方式。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FDC8EE64-81BE-4433-9090-CC1A6486E82D_2/oid6m1RdytVRJcqxvciLv6BvBFYldEpoEAEhVPjJpvwz/Image.png)
+![](img/46.png)
 
 If you’re building a real estate app, something like “Bedrooms: 3” could simply become “3 bedrooms”.
 
-如果你正在开发一个房地产应用程序，像「卧室：3」这样的表述可以简单地改为「3 间卧室」。
+在开发房地产应用时，可以将「卧室：3」直接改写为「3 间卧室」，使信息表达更为简洁。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/DEC77B5A-BBC3-4771-AB17-21D33BCBD999_2/yxsaYUUH8pPBkbutu9PilunJpp2fIm23YSMmWxFkvrgz/Image.png)
+![](img/47.png)
 
 When you’re able to combine labels and values into a single unit, it’s much easier to give each piece of data meaningful styling without sacrificing on clarity.
 
-当你能够将标签和值合并为一个单元时，给每项数据赋予有意义的格式就变得容易得多，同时不会牺牲清晰度。
+能够将标签和数值整合为单一单元时，就可以在不损失信息清晰度的前提下，为每个数据项添加有意义的样式设计。
 
-**Labels are secondary / 标签是次要的**
+**Labels are secondary / 标签是辅助**
 
 Sometimes you really do need a label; for example when you’re displaying multiple pieces of similar data and they need to be easily scannable, like on a dashboard.
 
-有时候你确实需要使用标签；例如，当你需要展示多组相似的数据，并且这些数据需要快速被用户识别和理解，如在仪表板上。
+在某些情况下，使用标签是必要的；比如，在仪表板等环境中展示多个相似数据项时，为了便于快速浏览，标签的使用就变得尤为重要。
 
 In these situations, add the label, but treat it as supporting content. The data itself is what matters, the label is just there for clarity.
 
-在这种情况下，可以添加标签，但要将其视为辅助内容。数据本身是更重要的，标签只是为了更清晰明了。
+遇到这类情况时，应当添加标签，但应将其作为补充信息对待。真正关键的是数据本身，而标签的作用主要是为了提高信息的可读性。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/68B1CF1C-FFFA-474F-9480-478CCC6531F4_2/UuGJYsQ3hZkEolTb63AI8MZYjt0eUGSCp1IOsbYlEnYz/Image.png)
+![](img/48.png)
 
 De-emphasize the label by making it smaller, reducing the contrast, using a lighter font weight, or some combination of all three.
 
-通过使标签更小、降低对比度、使用较轻的字体粗细，或者这三种方法的组合来降低标签的强调程度。
+要降低标签的视觉重要性，可以采取以下措施：缩小标签的字号、降低其与背景的对比度、选择较细的字体，或者结合这三种方法来实现。
 
 **When to emphasize a label / 何时强调标签**
 
 If you’re designing an interface where you know the user will be looking for the label, it might make sense to emphasize the label instead of the data.
 
-如果你正在设计一个用户将会寻找标签的界面，那么强调标签而不是数据可能是有意义的。
+在设计界面时，如果你知道用户将会寻找特定的标签，那么增强标签的视觉显著性而不仅仅是数据，可能是更合理的选择。
 
 This is often the case on information-dense pages, like the technical specifications of a product.
 
-这通常出现在信息密集的页面上，比如产品技术规格说明。
+在信息量很大的页面上，如产品技术规格的详细说明，这种情况尤为常见。
 
 If a user is trying to find out the dimensions of a smartphone, they’re probably scanning the page for words like “depth”, not “7.6mm”.
 
-如果用户试图找出智能手机的尺寸，他们可能在页面上寻找像「厚度」这样的词，而不是「7.6 毫米」。
+当用户试图查找智能手机的尺寸时，他们通常会在页面上搜索「厚度」这样的关键词，而不是直接寻找「7.6 毫米」这样的具体数值。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/28D24968-D3FD-4CE1-8710-4D1DAB640271_2/2c38ECqLzJVj6CLFhwOvB44mvnJEye0pNtOH24xXy50z/Image.png)
+![](img/49.png)
 
 Don’t de-emphasize the data too much in these scenarios; it’s still important information. Simply using a darker color for the label and a slightly lighter color for the value is often enough.
 
-在这种情况下，不要过分降低数据的强调程度；它仍然是重要的信息。通常，为标签使用较深的颜色，为值使用稍浅的颜色就足够了。
+在这种情况下，不应过度降低数据的视觉重要性；它仍然是关键信息。通常，只需为标签选择较深的颜色，而为数值选择略浅的颜色，这样的对比就已足够。
 
 ### Separate visual hierarchy from document hierarchy / 将视觉层级与文档层级分开
 
 It’s important to use semantic markup when building for the web, which means you’ll often be using heading tags like `h1`, `h2`, or `h3` if you decide to add a title to part of an interface.
 
-在为网页构建时使用语义化标记非常重要，这意味着如果你决定为界面的某个部分添加标题，通常会使用像 `h1`、`h2` 或 `h3` 这样的标题标签。
+在进行网页构建时，采用语义化标签非常关键，这表示在为用户界面的某个部分添加标题时，你可能会使用 `h1`、`h2` 或 `h3` 等标题标签。
 
 By default, web browsers assign progressively smaller font sizes to heading elements, so an `h1` is pretty large, and an `h6` is pretty small. This can be helpful for document-style content like articles or documentation, but it can encourage some bad decisions in application UIs.
 
-默认情况下，网络浏览器会为标题元素分配逐渐减小的字体大小，所以 `h1` 非常大，而 `h6` 非常小。这对于文章或文档等文档样式内容可能很有帮助，但在应用程序用户界面中，它可能会促使一些糟糕的决策。
+浏览器默认为 HTML 标题标签设置按等级递减的字体大小，其中 `h1` 标签的字体最大，而 `h6` 标签的字体最小。这种设计对于文章或文档等阅读型内容很有益处，但在应用程序的用户界面设计中，可能诱发一些不良的设计选择。
 
 Using an `h1` tag to add a title like *Manage Account* to a page makes perfect sense semantically, but because we’re trained to believe that `h1` elements should be big, it’s easy to fall into the trap of making those titles bigger than they really need to be.
 
-从语义上讲，使用 `h1` 标签为页面添加「管理账户」这样的标题是完全合理的，但由于我们习惯于认为 `h1` 元素应该是大号的，很容易陷入让这些标题比实际需要的更大陷阱。
+在语义上，使用 `h1` 标签为页面添加例如「管理账户」这样的标题是恰当的，但由于我们通常认为 `h1` 元素应该是较大的字体，这可能会导致我们不自觉地将这些标题做得过大，超出了实际所需的尺寸。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/14124597-53CC-4662-A470-9F8AD8B79A2F_2/PCgZDxwOQmHFK9sdMBjjKQuX5UIcG4BigakhNrZZOxoz/Image.png)
+![](img/50.png)
 
 A lot of the time, section titles act more like *labels* than headings — they are supportive content, they shouldn’t be stealing all the attention.
 
-很多时候，小节标题更像是标签而不是标题 —— 它们是辅助性内容，不应该抢占所有的注意力。
+在许多情况下，部分标题的功能更像是「标签」而非传统意义上的「标题」—— 它们作为补充信息，不应该吸引过多的注意力。
 
 Usually the content in that section should be the focus, not the title. That means that a lot of the time, titles should actually be pretty small:
 
-通常，那个部分的内容应该是焦点，而不是标题。这意味着很多时候，标题实际上应该是相当小的：
+这时我们应该关注的是该部分的内容，而不是标题。因此，许多时候，标题的大小应当偏小：
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/DF0041F8-D45B-4DAF-99F3-104D4F0B8A47_2/eibddFBfX78bQQAzy5AGYyphl0yRP4uqyG3wJoXr8S8z/Image.png)
+![](img/51.png)
 
 Taken to the extreme, you might even include section titles in your markup for accessibility reasons but completely hide them visually because the content speaks for itself.
 
-有时候，尽管出于提高可访问性的考虑，你会在网页的代码中包含小节标题，但如果内容本身就很清楚地传达了信息，你可能会在视觉上选择不展示这些标题。
+在某些情况下，为了可访问性考虑，你可能会在代码中保留小节标题，但如果内容已经清晰表达了必要的信息，你可以选择在视觉上将其完全隐藏。
 
 Don’t let the element you’re using influence how you choose to style it — pick elements for semantic purposes and style them however you need to create the best visual hierarchy.
 
-不要让你使用的元素影响你选择的样式 —— 出于语义目的选择元素，并根据创建最佳视觉层级的需要来设计它们的风格。
+不要因为所使用的元素（HTML 标签）本身而决定其样式 —— 应基于语义目的来选取元素（HTML 标签），并根据创建最佳视觉层级的需要来决定其样式。
 
 ### Balance weight and contrast / 平衡重量与对比度
 
+> 译者注：重量即字体重量，也叫字重或字体粗细。
+
 The reason bold text feels emphasized compared to regular text is that bold text covers more surface area — in the same amount of space, more pixels are used for text than for the background.
 
-加粗文本与普通文本相比感觉更加强调的原因是，加粗文本覆盖了更多的表面积 —— 在相同的空间内，用于文本的像素比用于背景的要多。
+粗体文本之所以给人一种强调的感觉，是因为它在视觉上覆盖了更大的区域。在相同的空间范围内，粗体字比背景的像素占比更大，从而使得文字显得更加突出。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C7E7BA4D-0B89-4939-B3FD-5A03136BDD1E_2/sXNQhRXxVGSGMBEIUfPHJ4AZaZOeRXP7feFS0OkeId4z/Image.png)
+![](img/52.png)
 
 So why is this interesting? Well it turns out that the relationship between surface area and hierarchy has implications on other elements in a UI as well.
 
-那么，为什么这很有趣呢？事实证明，表面积与层级之间的关系也对用户界面中的其他元素有着影响。
+这背后的意义何在？实际上，表面积与视觉层级之间的关系也对用户界面中的其他元素产生了影响。
+
+
+<!-- 翻译到这里，下面都是没有翻译的 -->
+
 
 **Using contrast to compensate for weight / 使用对比度来平衡重量**
 
@@ -781,7 +787,7 @@ Just like bold text, icons (especially solid ones) are generally pretty “heavy
 
 就像加粗的文字一样，图标（尤其是实心的）通常看起来很「重」，并且占据很多空间。因此，当你把一个图标放在文本旁边时，图标往往会显得更加突出。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3C28241B-3427-4710-B985-B0FDAB89DE24_2/A9jrn1yi9QFhz82ysuyYVDyQOkuHKN4H6FZYw5YV2dQz/Image.png)
+![](img/53.png)
 
 Unlike text, there’s no way to change the “weight” of an icon, so to create balance it needs to be de-emphasized in some other way.
 
@@ -791,7 +797,7 @@ A simple and effective way to do this is to lower the contrast of the icon by gi
 
 一个简单而有效的做法是通过给图标一个更柔和的颜色来降低其对比度。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/ECC4D825-2ADA-4F94-B277-1151207D01F3_2/yzpihx473CrxqpKGWKC8D3V18ZOF7DxyyOhWY5NrQt4z/Image.png)
+![](img/54.png)
 
 This works anywhere you need to balance elements that have different weights. Reducing the contrast works like a counterbalance, making heavier elements feel lighter even though the weight hasn’t changed.
 
@@ -807,13 +813,13 @@ This is useful when things like thin 1px borders are too subtle using a soft col
 
 当像给细的 1px 的边框这样的元素使用柔和的颜色过于微妙，而加深颜色又让设计感觉过于强烈和嘈杂时，这种方法就很有用了。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/07480A40-FA73-43BF-8D07-A45CC42C1BA5_2/zayCaKyhVy9QXo97oFI5iAmkdXyQyx72qIB2lFPoUzUz/Image.png)
+![](img/55.png)
 
 Making the border a bit heavier by increasing the width helps to emphasize it without losing the softer look:
 
 通过增加边框宽度使其变得更粗一些，有助于在不失去柔和外观的同时强调边框：
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9D26700F-09F2-411B-AD82-DA67A5E6D928_2/zGx3Jh0bJf97YCUrfqbYFir1Pyhg0yrxpreveVVOljcz/Image.png)
+![](img/56.png)
 
 ### Semantics are secondary / 语义是次要的
 
@@ -821,7 +827,7 @@ When there are multiple actions a user can take on a page, it’s easy to fall i
 
 当页面上用户可以执行多个操作时，很容易陷入仅基于语义来设计这些操作的陷阱。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/60565323-002D-4C73-A2E6-D3B3A6685B5C_2/upHgAIqNinonlbCqe2L11yPkYm8yb6xhahmF5kjCgCYz/Image.png)
+![](img/57.png)
 
 Semantics are an important part of button design, but that doesn’t mean you can forget about hierarchy.
 
@@ -842,13 +848,13 @@ When designing these actions, it’s important to communicate their place in the
 - **次要操作应该清晰但不突出。** 轮廓样式或较低对比度的背景颜色是很好的选择。
 - **第三级操作应该是可发现的，但不显眼。** 通常将这些操作设计成链接样式是最佳方法。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6106ED61-3836-41ED-8FEB-4ED499B0AFFC_2/RzOeCBHsx4lHdpxecZkbup9akeoVHQBbtHyF3VhmidEz/Image.png)
+![](img/58.png)
 
 When you take a hierarchy-first approach to designing the actions on page, the result is a much less busy UI that communicates more clearly:
 
 当你采用以层级为先的方法来设计页面上的操作时，所得到的将是一个不那么杂乱且传达信息更清晰的用户界面：
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/51066937-49AC-4D30-A6E5-0ED71D4E8A0B_2/7J6MGyyhenhLK4Sn0UbcAlBl4RuHlysQ1tZVdxL8iYsz/Image.png)
+![](img/59.png)
 
 **Destructive actions / 破坏性行为**
 
@@ -860,13 +866,13 @@ If a destructive action isn’t the primary action on the page, it might be bett
 
 如果一个破坏性操作不是页面上的主要操作，那么给它一个次要或第三级按钮的处理方式可能更好。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F87C52CA-13FA-49B9-A910-9512ADD48B9B_2/ZhPQxj8kyyx34TgSvc2fylassFGSxDkhFkuVC9xZvYMz/Image.png)
+![](img/60.png)
 
 Combine this with a confirmation step where the destructive action actually is the primary action, and apply the big, red, bold styling there.
 
 结合这一点，在实际执行破坏性操作的主要步骤中添加一个确认环节，并在那里应用大号、红色、加粗的样式。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/AA9BD536-3319-498B-B96D-102261289B17_2/JQiZh9rjJk3KLoA06GzEj56N9XPxIYOUxYykyxmoEcoz/Image.png)
+![](img/61.png)
 
 ## Layout and Spacing / 布局和间距
 

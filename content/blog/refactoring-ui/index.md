@@ -773,51 +773,47 @@ So why is this interesting? Well it turns out that the relationship between surf
 
 这背后的意义何在？实际上，表面积与视觉层级之间的关系也对用户界面中的其他元素产生了影响。
 
-
-<!-- 翻译到这里，下面都是没有翻译的 -->
-
-
 **Using contrast to compensate for weight / 使用对比度来平衡重量**
 
 One of the places understanding this relationship becomes important is when working with icons.
 
-理解这种关系在设计图标时尤为重要。
+这种关系的理解在某些情况下尤为重要，特别是当涉及到图标设计时。
 
 Just like bold text, icons (especially solid ones) are generally pretty “heavy” and cover a lot of surface area. As a result, when you put an icon next to some text, the icon tends to feel emphasized.
 
-就像加粗的文字一样，图标（尤其是实心的）通常看起来很「重」，并且占据很多空间。因此，当你把一个图标放在文本旁边时，图标往往会显得更加突出。
+与粗体文字相似，图标（特别是实心图标）在视觉上往往显得较为「重」，占据较大的视觉空间。所以当你将图标与文本并置时，图标往往会显得更加突出。
 
 ![](img/53.png)
 
 Unlike text, there’s no way to change the “weight” of an icon, so to create balance it needs to be de-emphasized in some other way.
 
-与文本不同，我们无法改变图标的「粗细」，因此为了达到平衡，需要用其他方式来降低图标的强调程度。
+不同于文本可以通过字体粗细来调整视觉重量，图标的视觉重量是固定的，因此要实现视觉平衡，就需要通过其他方法来降低其视觉显著性。
 
 A simple and effective way to do this is to lower the contrast of the icon by giving it a softer color.
 
-一个简单而有效的做法是通过给图标一个更柔和的颜色来降低其对比度。
+降低图标对比度的一个简单有效方法是为其选择一种更柔和的颜色。
 
 ![](img/54.png)
 
 This works anywhere you need to balance elements that have different weights. Reducing the contrast works like a counterbalance, making heavier elements feel lighter even though the weight hasn’t changed.
 
-这在你需要平衡具有不同「重量」的元素时都是有效的。降低对比度就像是一个平衡机制，使得「较重」的元素即使在「重量」没有改变的情况下也感觉更轻。
+这种方法适用于任何需要平衡视觉重量不同的元素的场合。通过降低对比度，可以起到平衡作用，让视觉重量较大的元素感觉上更轻盈，尽管它们的视觉重量实际上并没有变化。
 
 **Using weight to compensate for contrast / 使用重量来平衡对比度**
 
 Just like how reducing contrast helps to de-emphasize heavy elements, increasing weight is a great way to add a bit of emphasis to low contrast elements.
 
-就像降低对比度有助于减少重元素的强调一样，增加「重量」是给低对比度元素增加一些强调的好方法。
+正如降低对比度可以减轻较重元素的视觉强调，相应地，增加元素的视觉重量是为那些对比度较低的元素增添强调效果的有效方式。
 
 This is useful when things like thin 1px borders are too subtle using a soft color, but darkening the color makes the design feel harsh and noisy.
 
-当像给细的 1px 的边框这样的元素使用柔和的颜色过于微妙，而加深颜色又让设计感觉过于强烈和嘈杂时，这种方法就很有用了。
+这种方法在处理如 1px 细边框等元素时非常有用，因为使用柔和的颜色可能使它们显得过于细腻，而加深颜色又可能使设计显得过于强硬和杂乱。
 
 ![](img/55.png)
 
 Making the border a bit heavier by increasing the width helps to emphasize it without losing the softer look:
 
-通过增加边框宽度使其变得更粗一些，有助于在不失去柔和外观的同时强调边框：
+通过增加边框的宽度，我们可以在不牺牲柔和外观的同时，有效强调这些边框：
 
 ![](img/56.png)
 
@@ -825,25 +821,26 @@ Making the border a bit heavier by increasing the width helps to emphasize it wi
 
 When there are multiple actions a user can take on a page, it’s easy to fall into the trap of designing those actions based purely on semantics.
 
-当页面上用户可以执行多个操作时，很容易陷入仅基于语义来设计这些操作的陷阱。
+在用户面对页面上的多个可执行操作时，我们可能会错误地仅根据操作的语义含义来设计它们。
 
 ![](img/57.png)
 
 Semantics are an important part of button design, but that doesn’t mean you can forget about hierarchy.
 
-语义是按钮设计中的一个重要部分，但这并不意味着你可以忽视层级。
+虽然语义在按钮设计中扮演重要角色，但这并不是说我们可以忽视视觉层级的重要性。
 
 Every action on a page sits somewhere in a pyramid of importance. Most pages only have one true primary action, a couple of less important secondary actions, and a few seldom used tertiary actions.
 
-页面上的每个操作都位于重要性的金字塔中的某个位置。大多数页面只有一个真正的主要操作，几个较不重要的次要操作，以及一些很少使用的第三级操作。
+每个页面上的操作都可以视为位于一个重要性金字塔的不同层级。大多数情况下，页面上会有一个主要的操作，几个次要的操作，以及一些不常用的第三级操作。
 
 When designing these actions, it’s important to communicate their place in the hierarchy.
 
-在设计这些操作时，传达它们在层级中的位置是很重要的。
+设计这些操作时，重要的是要清晰地表达它们在层级结构中的位置。
 
 - **Primary actions should be obvious.** Solid, high contrast background colors work great here.
 - **Secondary actions should be clear but not prominent.** Outline styles or lower contrast background colors are great options.
 - **Tertiary actions should be discoverable but unobtrusive.** Styling these actions like links is usually the best approach.
+>
 - **主要操作应该显而易见。** 实心的、高对比度的背景颜色在这里效果很好。
 - **次要操作应该清晰但不突出。** 轮廓样式或较低对比度的背景颜色是很好的选择。
 - **第三级操作应该是可发现的，但不显眼。** 通常将这些操作设计成链接样式是最佳方法。
@@ -852,7 +849,7 @@ When designing these actions, it’s important to communicate their place in the
 
 When you take a hierarchy-first approach to designing the actions on page, the result is a much less busy UI that communicates more clearly:
 
-当你采用以层级为先的方法来设计页面上的操作时，所得到的将是一个不那么杂乱且传达信息更清晰的用户界面：
+采取以层级为先的设计方法来规划页面操作，将带来一个更为简洁明了的用户界面：
 
 ![](img/59.png)
 
@@ -860,17 +857,17 @@ When you take a hierarchy-first approach to designing the actions on page, the r
 
 Being destructive or high severity doesn’t automatically mean a button should be big, red, and bold.
 
-具有破坏性或高严重性的操作，并不自动意味着按钮应该是大的、红色的、加粗的。
+操作具有破坏性或高风险级别，并不意味着按钮设计必须是大尺寸、红色和加粗。
 
 If a destructive action isn’t the primary action on the page, it might be better to give it a secondary or tertiary button treatment.
 
-如果一个破坏性操作不是页面上的主要操作，那么给它一个次要或第三级按钮的处理方式可能更好。
+如果这类操作在页面上并非主要功能，可能更适宜采用次要或第三级按钮的设计。
 
 ![](img/60.png)
 
 Combine this with a confirmation step where the destructive action actually is the primary action, and apply the big, red, bold styling there.
 
-结合这一点，在实际执行破坏性操作的主要步骤中添加一个确认环节，并在那里应用大号、红色、加粗的样式。
+而在执行破坏性操作的确认步骤中 —— 此时该操作成为主要功能 —— 则可以采用更为醒目的大号、红色和加粗的设计风格。
 
 ![](img/61.png)
 
@@ -880,103 +877,103 @@ Combine this with a confirmation step where the destructive action actually is t
 
 One of the easiest ways to clean up a design is to simply give every element a little more room to breathe.
 
-简化设计的一个最简单方法是给每个元素更多的空间来「呼吸」，即增加元素之间的间距。
+一种简化设计的有效方法是为界面上的每个元素提供更多的空间，让它们有更充足的「呼吸」空间。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8C6C48EC-3D2F-4BF5-A585-DE79D75E49AC_2/lvcMgWLEMr4UMZAug8gIJrtNx0KymVVBgYXy7rxuc8wz/Image.png)
+![](img/62.png)
 
 Sounds simple enough, right? So how come we don’t usually do it?
 
-听起来够简单了，对吧？那我们通常为什么不这么做呢？
+这听起来很简单，但我们通常为什么不这么做呢？
 
-**White space should be removed, not added / 留白应该被移除而非被添加**
+**White space should be removed, not added / 通过移除留白而非添加来设计留白**
 
 When designing for the web, white space is almost always added to a design — if something looks little too cramped, you add a bit of margin or padding until things look better.
 
-在为 Web 设计时，留白几乎总是会被添加到设计中 —— 如果某些东西看起来有点太拥挤，你会添加一些外边距或内边距，直到看起来更好。
+在网页设计中，留白几乎总是通过添加实现 —— 如果某个部分看起来过于拥挤，我们就会添加一些外边距或内边距，直到视觉效果改善。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6A2D4538-81AD-497D-8960-16208B15B506_2/IdMSHAd8yeVs7HF4wYFuKsktmIQ7CxNXxnrlXvAxDiMz/Image.png)
+![](img/63.png)
 
 The problem with this approach is that elements are only given the minimum amount of breathing room necessary to not look *actively bad*. To make something actually look *great*, you usually need more white space.
 
-这种方法的问题在于，元素只被赋予了避免看起来特别糟糕的最小呼吸空间。要使某物真正看起来很棒，你通常需要更多的空白空间。
+但这种方法的问题在于，我们通常只为元素提供刚好足够的空间，以避免它们看起来*非常糟糕*。要真正让设计看起来*出色*，我们往往需要更多的留白。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/909B689A-B5F1-45B1-97F3-AA7FE45896AF_2/zSP3yPE1PjhxvTcljMA7yry0Z1Li6agTgfhREGdc3PIz/Image.png)
+![](img/64.png)
 
 A better approach is to start by giving something way too much space, then remove it until you’re happy with the result.
 
-一个更好的方法是首先给某个元素过多的留白，然后逐步减少，直到你对结果感到满意。
+一种更好的方法是，开始时给元素过多的空间，然后逐步减少，直至达到满意的效果。
 
 You might think you’d end up with too much white space this way, but in practice, what might seem like “a little too much” when focused on an individual element ends up being closer to “just enough” in the context of a complete UI.
 
-你可能会认为这样会存在太多的留白，但实际上，在单个元素时看似「有点过多」的留白，在完整的用户界面中，结果往往更接近「刚刚好」。
+你可能会担心这样做最终会留下过多的留白，但实际上，当你专注于单个元素时，那些看似「过多】的空间，在整体用户界面中往往正是「恰到好处」。
 
-**Dense UIs have their place / 密集的 UI 有其用武之地**
+**Dense UIs have their place / 密集 UI 有其用武之地**
 
 While interfaces with a lot of breathing room almost always feel cleaner and simpler, there are certainly situations where it makes sense for a design to be much more compact.
 
-虽然拥有大量呼吸空间的界面几乎总是给人一种更干净、更简单的感觉，但在某些情况下，设计得更为紧凑也是完全合理的。
+尽管那些留有大量空间的界面通常看起来更加简洁和清晰，但确实存在一些情况，设计更为紧凑是合理的。
 
 For example, if you’re designing some sort of dashboard where a lot of information needs to be visible at once, packing that information together so it all fits on one screen might be worth making the design feel more busy.
 
-例如，如果你正在设计某种信息需要一次性显示很多的仪表板，在这种情况下，将信息紧凑地排列以便全部显示在一个屏幕上，可能会让设计看上去更为拥挤，这是值得的。
+比如，如果你在设计一个需要一次性展示大量信息的仪表板，将所有信息紧凑地布局以适应单一屏幕，可能会使设计显得较为密集，但这是值得的。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/11FA5D67-5CE5-4B96-ADA2-06AC322CD6DD_2/ubfhOqn6uG7uAGPl1x4VZGm5WM3sw0rd3iN0rHrrxnUz/Image.png)
+![](img/65.png)
 
 The important thing is to make this a deliberate decision instead of just being the default. It’s a lot more obvious when you need to remove white space than it is when you need to add it.
 
-关键在于我们应该有意识地做出关于留白的决定，而不是仅仅依赖于默认设置。通常，识别何时需要减少留白以提高界面紧凑性比识别何时需要增加留白以提升清晰度要容易得多。
+关键在于我们应该有意识地做出关于留白的决定，而不是仅仅依赖于默认选择。通常，识别何时需要减少留白以提高界面紧凑性比识别何时需要增加留白以提升清晰度要容易得多。
 
-### Establish a spacing and sizing system / 建立间距和尺寸系统
+### Establish a spacing and sizing system / 建立间距和尺寸体系
 
 You shouldn’t be nitpicking between 120px and 125px when trying to decide on the perfect size for an element in your UI.
 
-当你试图确定用户界面中元素的完美大小时，你不应该在 120px 还是 125px 之间过分纠结。
+在确定用户界面元素的尺寸时，无需在 120px 和 125px 之间过分纠结。
 
 Painfully trialing arbitrary values one pixel at a time will drastically slow you down at best, and create ugly, inconsistent designs at worst.
 
-逐像素地尝试任意值，最好的情况会大幅拖慢你的进度，最坏的情况则可能创造出丑陋、不一致的设计。
+逐像素地尝试任意值，不仅会极度消耗时间，还可能导致设计难看且缺乏一致性。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/E8894EDC-1BD8-4066-B591-D1F4C50F1A78_2/rsV7vkERl9JdDOGsTfY5XprLYwk9MtNmM1MkS3ZYT0Iz/Image.png)
+![](img/66.png)
 
 Instead, limit yourself to a constrained set of values, defined in advance.
 
-相反，你应该限制自己使用预先定义好的一组的值。
+因此，应该采用一种更好的方法：事先定义一组有限的值，然后在这些值中进行选择。
 
-**A linear scale won’t work / 线性比例失效**
+**A linear scale won’t work / 线性比例并不适用**
 
 Creating a spacing and sizing system isn’t quite as simple as something like *“make sure everything is a multiple of 4px”* — a naive approach like that doesn’t make it any easier to choose between 120px and 125px.
 
-创建一个间距和尺寸系统并不像「*确保一切都是 4px 的倍数」*这样简单 —— 像那样简单粗暴的方法并不能让你在 120px 还是 125px 之间更容易做出选择。
+建立一个间距和尺寸体系并不像简单遵循「*所有尺寸为 4px 的倍数*」这样直接 —— 这种初级方法并不能有效帮助你在 120px 和 125px 之间做出决策。
 
 For a system to be truly useful, it needs to take into consideration the relative difference between adjacent values.
 
-为了使系统真正有用，它需要考虑到相邻值之间的相对差异。
+一个真正有效的体系需要考虑到相邻值之间的相对差异。
 
 At the small end of the scale (*like the size of an icon, or the padding inside a button*), a couple of pixels can make a big difference. Jumping from 12px to 16px is an increase of 33%!
 
-在原本尺寸就较小的元素（*比如图标的大小，或者按钮内部的内边距*），几个像素可以产生很大的差异。从 12px 到 16px 就是增加了 33%！
+在较小的尺寸端（*例如图标大小或按钮内部的填充*），几像素的差异可能非常明显。例如，从 12px 增加到 16px 意味着增加了 33%！
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8E37E6E4-F40D-44F5-89F0-0F1136FCA63D_2/DCPhfUXk0TfVZUtY96jf2RczP1szpKGWQfmmpxgazawz/Image.png)
+![](img/67.png)
 
 But at the large end (the width of a card, or the vertical spacing in a landing page hero), a couple of pixels is basically imperceivable. Even increasing the width of a card from 500px to 520px is only a difference of 4%, which is *eight times* less significant than the jump from 12px to 16px.
 
-但原本尺寸就较大的元素（*比如卡片的宽度，或者着陆页英雄区域的垂直间距*），几个像素基本上是感知不到的。即使将卡片的宽度从 500px 增加到 520px，差异也只有 4%，这比从 12px 增加到 16px 的差异小了八倍。
+然而，在较大的尺寸端（*如卡片宽度或着陆页主要区域的垂直间距*），几像素的差异几乎无法察觉。即使将卡片宽度从 500px 增加到 520px，变化率仅为 4%，这比 12px 到 16px 的增加显著性小了八倍。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D4E6EC11-52C4-4EBD-A047-66A54D8A10A9_2/KxGw43y9ZSar8EAWIogsW1zaQxuZdsIc34wwy479kyoz/Image.png)
+![](img/68.png)
 
 If you want your system to make sizing decisions easy, make sure no two values in your scale are ever closer than about 25%.
 
-如果你想让你的系统使尺寸决策变得容易，确保在你的尺寸上任意两个值之间的差异永远不少于大约 25%。
+如果你想让你的体系简化尺寸决策过程，请确保尺度上任意两个值的差异不低于 25%。
 
-**Defining the system / 定义系统**
+**Defining the system / 构建体系**
 
 Just like you don’t want to toil over arbitrary values when sizing an element or fine-tuning the space between elements, you don’t want to build your spacing and sizing scale from arbitrary values either.
 
-就像你在确定元素大小或调整元素间距时不希望纠结于任意值一样，你在构建间距和尺寸的标准时也不应该纠结于任何数值。
+在确定元素大小或微调元素间距时，我们应避免纠结于任意值；同样，在构建间距和尺寸体系时，我们也不应纠结于从任意值开始。
 
 A simple approach is to start with a sensible base value, then build a scale using factors and multiples of that value.
 
-一个简单的方法是从一个合理的基础值开始，然后使用这个值的因数和倍数来构建一个尺寸系统。
+一种简单的方法是从一个合理的基础值着手，然后基于这个值的因数和倍数来建立一个比例系统。
 
 16px is a great number to start with because it divides nicely, and also happens to be the default font size in every major web browser.
 
@@ -984,169 +981,176 @@ A simple approach is to start with a sensible base value, then build a scale usi
 
 The values at the small end of the scale should start pretty packed together, and get progressively more spaced apart as you get further up the scale.
 
-尺寸较小端的值应该开始时相当紧密，随着尺寸的增加，这些值之间的间隔应逐渐变大。
+在尺度的较小端，值应该相对集中；随着尺度的增加，这些值之间的间隔应逐渐变得更宽。
 
 Here’s an example of a fairly practical scale built using this approach:
 
-这里有一个使用这种方法构建的相当实用的尺寸示例：
+以下是一个根据这种方法建立的实用尺度的示例：
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3F61A21A-F1A1-45E1-84B2-1C53CBA9822D_2/Zc5OBv8Fl5eIKH5dnwo7Uym2Qa7s2epjaHcIL7cZ42Az/Image.png)
+![](img/69.png)
 
-**Using the system / 使用系统**
+**Using the system / 应用体系**
 
 Once you’ve defined your spacing and sizing system, you’ll find that you’re able to design a hell of a lot faster, especially if you design in the browser (*sticking to a system is easier when you’re typing in numbers than when you’re dragging with the mouse.*)
 
-当你确立了自己的间距和尺寸规范后，你会发现设计过程会大大提速，尤其是在浏览器中进行设计时（*相较于用鼠标拖拽，直接输入数值来遵循系统会更加容易*）。
+一旦你建立了间距和尺寸规范，你会发现设计速度会大大提升，尤其是在浏览器中进行设计时（*使用系统时，输入数值比用鼠标拖拽更为便捷。*）。
 
 Need to add some space under an element? Grab a value from your scale and try it out. Not quite enough? The next value is probably perfect.
 
-需要在某个元素下方增加一些空间吗？从你的尺寸系统中选取一个值来试用一下。空间不够吗？下一个值可能就正好。
+需要在某个元素下增加空间？从你的尺寸体系中选择一个值进行尝试。如果空间不够？试试下一个更大的值，它很可能就是合适的。
 
 While the workflow improvements are probably the biggest benefit, you’ll also start to notice a subtle consistency in your designs that wasn’t there before, and things will look just a little bit cleaner.
 
-工作流程的显著提升是最主要的优势，但你也会逐渐察觉到设计中新增了一种细微的统一性，这使得视觉效果更加干净利落。
+除了工作流程的优化可能是最明显的好处，你还将逐渐发现设计中出现了一种之前未曾有的微妙一致性，使得整体外观更加整洁。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D9E62437-AFF0-46B0-B5C9-E9EC575B6A91_2/lk97Y7fxW0uhR7zpCpP1en34biZwl5GcmxiJdeCu60sz/Image.png)
+![](img/70.png)
 
 A spacing and sizing system will help you create better designs, with less effort, in less time. Design advice doesn’t get much more valuable than that.
 
-建立一套间距和尺寸规范能够让你以更低的劳动强度和时间成本，打造出更优质的设计。在设计领域，这样的建议可谓珍贵至极。
+一个间距和尺寸体系将帮助你以更低的劳动强度、在更短的时间内创造出更优秀的设计。在设计建议中，这可以说是极具价值的。
 
-### You don’t have to fill the whole screen / 你不必填满整个屏幕
+### You don’t have to fill the whole screen / 不必填满整个屏幕
 
 Remember when 960px was the de facto layout width for desktop-size designs? These days you’d be hard-pressed to find a phone with a resolution that low.
 
-曾几何时，960px 是桌面设计的标准宽度。然而，现在要找到分辨率如此之低的手机几乎是不可能的。
+你是否记得 960px 宽度曾是桌面设计的标准？如今，找到分辨率如此低的手机几乎是不可能的。
 
 So it’s no surprise that when most of us open our design tool of choice on our high resolution displays, we give ourselves at least 1200-1400px of space to fill. But just because you have the space, doesn’t mean you need to use it.
 
-如今，我们大多数人在高分辨率屏幕上启动设计软件时，很自然地会为自己预留至少 1200~1400px 的宽阔空间。然而，拥有这样的空间并不等同于必须将其全部填满。
+因此，当我们在高分辨率屏幕上打开常用的设计软件时，很自然地会给自己分配 1200~1400px 的广阔空间。但拥有这样的空间，并不意味着你必须完全使用它。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7507E05A-59C5-4B91-AF8A-146EE469078E_2/dW59sUcNJldKTdUVPtYSCnnyZRkm72pH2mA0hPtI14Ez/Image.png)
+![](img/71.png)
 
 If you only need 600px, use 600px. Spreading things out or making things unnecessarily wide just makes an interface harder to interpret, while a little extra space around the edges never hurt anyone.
 
-如果你只需要 600px，那就只使用 600px。无谓地扩展内容或使内容过宽只会让界面更难以理解，而边缘处多留一些空间对任何人都没有害处。
+如果你的设计内容只需要 600px 的宽度，那就只使用 600px。无谓地拉宽界面或使元素过于分散，会使用户更难理解界面，而在边缘保留适当的空间则总是有益的。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C1B9ECCF-05DB-4D32-AE60-6334F2083B24_2/HyyPtANPaZ5KLNGQJwotxpwLCR0wWEvy7IoJz1IW9g0z/Image.png)
+![](img/72.png)
 
 This is just as applicable to individual sections of an interface, too. You don’t need to make everything full-width just because something else (like your navigation) is full-width.
 
-这也适用于界面的各个部分。你不必仅仅因为其他元素（比如导航栏）是全宽的，就让所有内容都设置为全宽。
+这一原则同样适用于界面的各个部分。不要仅仅因为导航栏等其他元素采用了全宽设计，就强迫所有内容都变成全宽。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/961D7FB9-7E82-4258-A2A3-79ECB90AE98E_2/EIZZ5pc9UmyyvmflQz6KCo5xkjyG31xBRb2zVfKlDZsz/Image.png)
+![](img/73.png)
 
 Give each element just the space it needs — don’t make something worse just to make it match something else.
 
-给每个元素它所需要的空间 —— 不要为了让它与其他东西相匹配而降低它的质量。
+为每个元素分配其真正需要的空间 —— 不要为了追求一致性而牺牲了设计的合理性。
 
-**Shrink the canvas / 缩小画布**
+**Shrink the canvas / 缩小设计区域**
 
 If you’re having a hard time designing a small interface on a large canvas, shrink the canvas! A lot of the time it’s easier to design something small when the constraints are real.
 
-如果你在一个大画布上设计一个小界面时遇到困难，缩小画布尺寸！很多时候，在有实际限制的情况下设计一个小东西会更容易。
+在大尺寸的画布上设计小型界面时，如果感到困难，尝试缩小画布尺寸！真实限制条件下的设计往往更易于操作。
 
 If you’re building a responsive web application, try starting with a ~400px canvas and designing the mobile layout first.
 
-如果你正在构建一个响应式 Web 应用程序，尝试从一个大约 400px 的画布开始，并首先设计移动端布局。
+设计响应式网页应用时，你可以先从一个大约 400px 宽的画布着手，优先设计移动端的布局。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D991A412-3482-434A-9A3B-9C1B44E18C8C_2/egz04h6mRCo2STZureD7unnmWLAPbMbPoFRC5YsaQicz/Image.png)
+![](img/74.png)
 
 Once you have a mobile design you’re happy with, bring it over to a larger size screen and adjust anything that felt like a compromise on smaller screens. Odds are you won’t have to change as much as you think.
 
-一旦你对移动端的设计感到满意，就将其应用到更大的屏幕尺寸上，并调整那些在较小屏幕上感觉像是妥协的地方。很可能你需要改变的东西并没有你想象的那么多
+完成了令你满意的移动端设计后，再将其适配到更大的屏幕，并调整那些在小尺寸屏幕上不得不妥协的部分。你可能会发现，需要改动的地方比你预期的要少。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C74672F4-8329-4ACE-93BF-722051AFCEC0_2/YOGBZKbDAU3lLduxidAa9KGGiYvYMix7x67lQdqcDS4z/Image.png)
+![](img/75.png)
 
-**Thinking in columns / 考虑列**
+**Thinking in columns / 采用分列设计思路**
 
 If you’re designing something that works best at a narrower width but feels unbalanced in the context of an otherwise wide UI, see if you can split it into columns instead of just making it wider.
 
-如果你正在设计的内容在较窄的宽度下效果最佳，但在其他较宽的用户界面中感觉不平衡，看看是否可以将其分成多列，而不仅仅是将其加宽。
+如果你的设计在较窄的宽度下表现更佳，但在宽阔的用户界面中显得不协调，考虑将其分割成多列，而不是简单地加宽。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/4D641CFA-5950-49E8-8159-9BEF6E4AE315_2/h5T41E0boiCLmWJHfpdiy7BXuIFJvFge5Kzcbay1EO4z/Image.png)
+![](img/76.png)
 
 If you wanted to make better use of the available space without making the form harder to use, you could break the supporting text out into a separate column:
 
-如果你想更有效地利用可用空间，同时不使表单变得更难使用，你可以将辅助文本分离到一个单独的列中：
+例如，为了在不增加表单复杂性的同时更好地利用空间，你可以将辅助文本独立成列：
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3BACD5EF-DE5D-40F8-BCDE-5F6CE891A2F3_2/yyDy61nwGX4nOYJ53ARddPC5BtkFLSHR7dVR6tvyTV8z/Image.png)
+![](img/77.png)
 
 This makes the design feel more balanced and consistent without compromising on the optimal width for the form itself.
 
-这样做使得设计在不牺牲表单本身最佳宽度的前提下，感觉更加平衡和一致。
+这种方法可以在保持表单最佳宽度的同时，让整体设计看起来更加均衡和统一。
 
 **Don’t force it / 不要硬来**
 
 Just like you shouldn’t worry about filling the whole screen, you shouldn’t try to cram everything into a small area unnecessarily either.
 
-就像你不应该担心填满整个屏幕一样，你也不应该不必要地试图将所有东西塞进一个小区域。
+你不应该强求填满整个屏幕，同样地，也不应该无端地将内容硬塞进一个狭小的空间。
 
 If you need a lot of space, go for it! Just don’t feel obligated to fill it if you don’t have to.
 
-如果你需要更多空间，那就去争取吧！只是如果你没有必要，就不要觉得有义务去填满它。
+如果你的设计确实需要更多的空间，那就大胆地扩展它！但如果你不需要那么多空间，就不要感觉必须去填满它。
 
 ### Grids are overrated / 网格被高估了
 
 Using a system like a 12-column grid is a great way to simplify layout decisions, and can bring a satisfying sense of order to your designs.
 
-使用像 12 列网格这样的系统是简化布局决策的一个很好的方法，它可以为你的设计带来令人满意的秩序感。
+采用 12 列网格等系统是简化布局决策的有效方式，能够为你的设计带来一种有序的美感。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/63317E37-A4B7-49DF-8C3F-B4912595E1B3_2/h0SCx4XnlOxJgLvvmDaTSzrWhOaTaAm9pVtAxy62yl0z/Image.png)
+![](img/78.png)
 
 But even though grids can be useful, outsourcing all of your layout decisions to a grid can do more harm than good.
 
-尽管网格可能很有用，但将所有的布局决策都外包给网格可能会带来更多的害处而不是好处。
+然而，尽管网格系统有其用处，如果完全依赖网格系统来做出所有布局决策，可能会带来更多的负面影响而非好处。
 
 **Not all elements should be fluid / 并非所有元素都应该具有流动性**
 
 Fundamentally, a grid system is just about giving elements fluid, percentage-based widths, where you’re choosing from a constrained set of percentages.
 
-网格系统本质上是为元素提供基于百分比的宽度，这些宽度是可变的，你可以根据一个固定的百分比选项集来决定元素的宽度。
+网格系统本质上是为元素提供基于百分比的流动宽度，你需从一组预设的百分比中选择。
 
 For example, in a 12-column grid each column is 8.33% wide. As long as an element’s width is some multiple of 8.33% (*including any gutters*), that element is “on the grid”.
 
-例如，在 12 列网格系统中，每一列的宽度是 8.33%。只要一个元素（*包括间隔*）的宽度是 8.33% 的某个倍数，那么这个元素就处于「网格上」。
+例如，在 12 列网格系统中，每列宽 8.33%。只要元素的宽度是 8.33% 的整数倍（*包括间隙*），该元素就符合「网格」规范。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/88A2E3D1-304D-4E63-A62D-BB34DA9DC2B2_2/699BQJWw3XAyW0ATtCYHAE7xfQN6GhMKzlVsNSOxHkEz/Image.png)
+![](img/79.png)
 
 The problem with treating grid systems like a religion is that there are a lot of situations where it makes much more sense for an element to have a fixed width instead of a relative width.
 
-将网格系统当作一种宗教般严格遵守的问题在于，在很多情况下，对于一个元素来说，拥有固定宽度而不是相对宽度更有意义。
+然而，盲目遵循网格系统可能导致问题，因为在许多情况下，为元素设置固定宽度而非相对宽度会更为合理。
 
 For example, consider a traditional sidebar layout. Using a 12-column grid system, you might give the sidebar a width of three columns (25%) and the main content area a width of nine columns (75%).
 
-例如，考虑一个传统的侧边栏布局。使用 12 列网格系统，你可能会将侧边栏的宽度设为三列（25%），主要内容区域的宽度设为九列（75%）。
+以传统的侧边栏布局为例。在 12 列网格系统中，你可能会给侧边栏分配三列宽（25%），而主要内容区域则占九列（75%）。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A3CD4156-CC16-4890-8A49-0D70BDE381B4_2/jzBebbuGgVUJeAQ3zsmbbJx1mjFfe3jaHixhHnlMOLYz/Image.png)
+![](img/80.png)
 
 This might seem fine at first, but think about what happens when you resize the screen.
 
-起初这可能看起来没问题，但想想当你调整屏幕大小时会发生什么。
+这在一开始可能看起来合适，但当你调整屏幕尺寸时，问题就出现了。
 
 If you make the screen wider the sidebar gets wider too, taking up space that could’ve been put to better use by the main content area.
 
-如果你使屏幕变得更宽，侧边栏也会随之变宽，占据了本可以由主要内容区域更有效利用的空间。
+如果屏幕变宽，侧边栏也随之变宽，占据了本可以由主要内容更有效使用的屏幕空间。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/EDC1EA71-6F9D-459A-A114-EEECEB743E08_2/9e5m43M0hrppQRRj66yrBy5kM9jhlqPnjnWYnyy7yE8z/Image.png)
+![](img/81.png)
 
 Similarly, if you make the screen narrower, the sidebar can shrink below its minimum reasonable width, causing awkward text wrapping or truncation.
 
-同样地，如果你使屏幕变得更窄，侧边栏可能会缩小到其最小合理宽度以下，导致文本出现尴尬的换行或截断。
+反之，如果屏幕变窄，侧边栏可能会缩小至不适宜的最小宽度，导致文本出现不雅的换行或截断。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D9BB5CBD-4A0B-4AC9-8C80-0904A81FF628_2/UymELESa1yeAoX8Ty1RSX9QM97ey5jaaxa1H9UOykcsz/Image.png)
+![](img/82.png)
 
 In this situation, it makes much more sense to give the sidebar a fixed width that’s optimized for its contents. The main content area can then flex to fill the remaining space, using its own internal grid to lay out its children.
 
-在这种情况下，给侧边栏设定一个固定宽度，以优化其内容，这样更有意义。然后，主要内容区域可以伸缩以填充剩余空间，并使用它自己的内部网格来布局其子元素。
+在这种情况下，为侧边栏设置一个根据其内容优化的固定宽度会更加合理。这样，主要内容区域就可以灵活地填充剩余空间，并利用自己的内部网格系统来安排子元素布局。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/87468DD1-7AAB-46CF-8090-28D8855ABBFD_2/xZpqzJAqs95R7XCrvo1ETUVjaA3j0ZkwNKVK9KclG9cz/Image.png)
+![](img/83.png)
 
 This applies within components, too — don’t use percentages to size something unless you actually want it to scale.
 
-这同样适用于组件内部 —— 除非你确实希望某个元素按比例缩放，否则不要使用百分比来设定其大小。
+这一原则同样适用于组件内部设计 —— 除非你希望某个元素能够随着容器大小的变化而缩放，否则不要使用百分比来定义其大小。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FCC250F8-ABF3-4113-97BE-B9AFEB523C01_2/dknkfNZIq9YB4yuP8UuTGOfxYnLe70dO6moP9sHgxJEz/Image.png)
+![](img/84.png)
+
+
+
+<!-- 翻译到这里，下面都是没有翻译的 -->
+
+
+
 
 **Don’t shrink an element until you need to / 非必要不要缩小元素**
 
@@ -1154,19 +1158,19 @@ Say you’re designing a login card. Using the full screen width would look ugly
 
 假设你正在设计登录界面的卡片。为了美观，不使用整个屏幕宽度，而是将其宽度设置为 6 列，占屏幕的一半（即 50%），并在两侧各保留 3 列的空间作为边距。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/05BBE00A-AF06-4376-A793-442D52903615_2/xQoqlVjd0zHIeKY8uXQwDdX30iKyETaTLcA2sOBxa7Qz/Image.png)
+![](img/85.png)
 
 On medium-sized screens you realize the card is a little narrow even though you have the space to make it bigger, so at that screen size you switch it to a width of 8 columns, with two empty columns on each side.
 
 在中等大小的屏幕上，你发现卡片即使在有足够空间的情况下也略显狭窄，因此在该屏幕尺寸下，你将其宽度调整为 8 列，并在每一侧留出两列的空白列。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/ABF5975D-48EE-4EEF-A787-9511214BED8C_2/118aiLazukEcvUw2dtYBLoWFWUOBz5AZnURWW3DbnGQz/Image.png)
+![](img/86.png)
 
 The silly thing about this approach is that because column widths are fluid, there’s a range in screen sizes where the login card is wider on medium screens than it is on large screens:
 
 这种方法的荒谬之处在于，因为列宽是可变的，所以在一些屏幕尺寸中，中等屏幕上的登录卡片宽度实际上比大屏幕上的还要宽：
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/E392A932-F989-4978-AAB3-F1F9706FF985_2/7ZxcmFukhVdyXxag8QT2iiSnlKbiG5Aud9BFI78d9doz/Image.png)
+![](img/87.png)
 
 If you know that say 500px is the optimal size for the card, why should it ever get smaller than that if you have the space for it?
 
@@ -1176,7 +1180,7 @@ Instead of sizing elements like this based on a grid, give them a max-width so t
 
 不要基于网格来这样设定元素的大小，给它们设定一个最大宽度，以防止它们变得过大，并且只有在屏幕宽度小于这个最大宽度时才强制它们缩小。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/90DE56A7-FF2C-4EB2-984B-185E8B1C92E9_2/W94BpPejyY0wSFUExx6q1mbsh6A8z1gZzUHZq0q5Is0z/Image.png)
+![](img/88.png)
 
 Don’t be a slave to the grid — give your components the space they need and don’t make any compromises until it’s actually necessary.
 
@@ -1192,7 +1196,7 @@ For example, say you’re designing an article at a large screen size. If your b
 
 例如，假设你正在为大屏幕设计一篇文章。如果你的正文字体大小是 18px，你的标题字体大小是 45px，人们很容易通过定义标题大小为 2.5em 来编码这种相对关系；即当前字体大小的 2.5 倍。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/80DF976F-4618-4204-ACAB-A7C762EC1B81_2/ZwRQLIBfnCdvOftfFCmhZoZBw5kfkmeYDRNfkfdRX08z/Image.png)
+![](img/89.png)
 
 There’s nothing inherently wrong with using relative units like em, but don’t be fooled into believing that relationships defined this way can remain static — 2.5em might be the perfect headline size on desktop but there’s no guarantee that it’ll be the right size on smaller screens.
 
@@ -1202,13 +1206,13 @@ Say you reduce the size of your body copy to 14px on small screens to keep the l
 
 假设你在小屏幕上将正文字体大小减少到 14px 以控制行长度。如果你的标题保持在 2.5em，那么渲染出的字体大小将是 35px —— 对于小屏幕来说太大了！
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A4232AD6-46A0-487D-893B-91665B4CECCF_2/V3ARw8rlIDVXO8gkjSpQ3EqFl9DGjMIpIBunjch5Oxgz/Image.png)
+![](img/90.png)
 
 A better headline size for small screens might be somewhere between 20px and 24px:
 
 对于小屏幕来说，更合适的标题大小可能在 20px 到 24px 之间。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/30F5F16F-834D-4497-900A-1A4050F1D07C_2/FxEMKFfcFqNsROJsACGF6f36rRpk6gH5h57uTj4Z2LEz/Image.png)
+![](img/91.png)
 
 That’s only 1.5-1.7x the size of the 14px body copy — a totally different relationship than what made sense on desktop screens. That means there isn’t any real relationship at all, and that there’s no real benefit in trying to define the headline size relative to the body copy size.
 
@@ -1228,13 +1232,13 @@ Say you’ve designed a button. It’s got a 16px font size, 16px of horizontal 
 
 假设你设计了一个按钮。它的字体大小为 16px，水平内边距为 16px，垂直内边距为 12px。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9D0B1D43-5AF1-44CF-9E79-7EAA99F3C977_2/zJc8UkFuMW3cBN3D79yhz3xMpYF5K5fRTvr402dHvRQz/Image.png)
+![](img/92.png)
 
 Much like the previous example, it’s tempting to think that the padding should be defined in terms of the current font size. That way if you want a larger or smaller button, you only need to change the font size and the padding will update automatically, right?
 
 与前一个例子类似，人们很容易认为内边距应该以当前字体大小来定义。这样一来，如果你想要一个更大或更小的按钮，只需要改变字体大小，内边距就会自动更新，不是吗？
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/E88B9371-B18A-4DEC-8B91-751287C9FF7E_2/vACi7J34CNClf7dqQUgccxRezfA4lgX9XOX08hwqNGYz/Image.png)
+![](img/93.png)
 
 This works — the buttons do scale up or down and preserve the same proportions. But is that what we really want?
 
@@ -1244,7 +1248,7 @@ Compare that to these buttons, where the padding gets more generous at larger si
 
 与此相比，这些按钮在较大尺寸时内边距更宽松，在较小尺寸时内边距则不成比例地更紧凑：
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3D1A9F91-06EC-4817-9693-D4AA984AD2E8_2/IBRcaLePFlkYV0KwXtw7S3U1Bajc4jBlIgPfEm0Ovxkz/Image.png)
+![](img/94.png)
 
 Here the large button actually feels like a larger button, and the small buttons actually feel like smaller buttons, not like we simply adjusted the zoom.
 
@@ -1260,7 +1264,7 @@ When groups of elements are explicitly separated — usually by a border or back
 
 当元素组被明确分隔开时 —— 通常通过边框或背景颜色 —— 很明显可以看出哪些元素属于哪个组。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B9CE2A62-A92A-4A08-B098-C4CF64772EAF_2/HstyTeXKy0jWD9mz9tJqUQX4F8NoC0gvTRPAbijVMVUz/Image.png)
+![](img/95.png)
 
 But when there isn’t a visible separator, it’s not always so obvious.
 
@@ -1270,7 +1274,7 @@ Say you’re designing a form with stacked labels and inputs. If the margin belo
 
 假设你正在设计一个具有堆叠标签和输入框的表单。如果标签下方的边距与输入框下方的边距相同，那么表单组中的元素就不会给人一种明显「相连」的感觉。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/30507579-96F5-4FE8-91DD-901A3A25FBA9_2/0myDjb6dVlIZNjraIdxw5h3hv3Llx5Rja7ZaCctM210z/Image.png)
+![](img/96.png)
 
 At best the user has to work harder to interpret the UI, and at worst it means accidentally putting the wrong data in the wrong field.
 
@@ -1280,25 +1284,25 @@ The fix is to increase the space between each form group so it’s clear which l
 
 解决方法是增加每个表单组之间的空间，以清楚地表明哪个标签属于哪个输入框。
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/92E015D3-1A7C-44EB-9C00-ED121F052D15_2/yAyjapDCndQp5gggOKS19Rj7Qp6kr5lfSa2JxBbBOHIz/Image.png)
+![](img/97.png)
 
 This same problem shows up in article design when there’s not enough space above section headings:
 
 当部分标题上方没有足够的空间时，同样的问题也会出现在文章设计中：
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/85E68CD9-5346-40F5-90CC-A23E3F68D733_2/R769ylbonmJsT7CygB8aEnnYIBjBzXhyM5vOcWaPTC8z/Image.png)
+![](img/98.png)
 
 …and in bulleted lists, when the space between bullets matches the line-height of a single bullet:
 
 以及在项目符号列表中，当项目符号之间的空间与单个项目符号的行高相匹配时：
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3E2A5A60-3F8E-488D-BA21-1119BC073A77_2/XSaB9k5VhhZTdUyQjQxVEeGWVLXZqYWydct4oJQj5Z8z/Image.png)
+![](img/99.png)
 
 It’s not just vertical spacing that you have to worry about either; it’s easy to make this mistake with components that are laid out horizontally, too:
 
 这不仅仅是垂直间距的问题；在水平布局的组件中，也很容易犯同样的错误：
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/52924FFA-BCC3-41D1-8F1F-C458A4E9E4E6_2/PlDZOtK2hgcQLNipdrhJzMvoYEBUraxvQhT05yFJFuwz/Image.png)
+![](img/100.png)
 
 Whenever you’re relying on spacing to connect a group of elements, always make sure there’s more space around the group than there is within it — interfaces that are hard to understand always look worse.
 

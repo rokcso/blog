@@ -1145,284 +1145,337 @@ This applies within components, too — don’t use percentages to size somethin
 
 ![](img/84.png)
 
-
-
-<!-- 翻译到这里，下面都是没有翻译的 -->
-
-
-
-
 **Don’t shrink an element until you need to / 非必要不要缩小元素**
 
 Say you’re designing a login card. Using the full screen width would look ugly, so you give it a width of 6 columns (50%) with a 3-column offset on each side.
 
-假设你正在设计登录界面的卡片。为了美观，不使用整个屏幕宽度，而是将其宽度设置为 6 列，占屏幕的一半（即 50%），并在两侧各保留 3 列的空间作为边距。
+以设计登录界面卡片为例。若使用全屏宽度会显得不美观，因此你可能给它设定为 6 列（占50%）的宽度，并在两侧各留出 3 列的空间作为边距。
 
 ![](img/85.png)
 
 On medium-sized screens you realize the card is a little narrow even though you have the space to make it bigger, so at that screen size you switch it to a width of 8 columns, with two empty columns on each side.
 
-在中等大小的屏幕上，你发现卡片即使在有足够空间的情况下也略显狭窄，因此在该屏幕尺寸下，你将其宽度调整为 8 列，并在每一侧留出两列的空白列。
+然而，在中等尺寸的屏幕上，即便有空间使卡片更宽，卡片还是显得有些窄，于是你决定在该屏幕尺寸下将其宽度调整为 8 列，每侧留出两列空白。
 
 ![](img/86.png)
 
 The silly thing about this approach is that because column widths are fluid, there’s a range in screen sizes where the login card is wider on medium screens than it is on large screens:
 
-这种方法的荒谬之处在于，因为列宽是可变的，所以在一些屏幕尺寸中，中等屏幕上的登录卡片宽度实际上比大屏幕上的还要宽：
+这种方法的问题在于，由于列宽是可变的，在一系列屏幕尺寸范围内，中等屏幕上的登录卡片宽度可能会超过大屏幕：
 
 ![](img/87.png)
 
 If you know that say 500px is the optimal size for the card, why should it ever get smaller than that if you have the space for it?
 
-如果你知道 500px 是卡片的最佳尺寸，那么如果有足够空间，为什么还要让它小于这个尺寸呢？
+如果你知道卡片的最佳宽度是 500px，那么只要空间允许，它就不应该小于这个宽度。
 
 Instead of sizing elements like this based on a grid, give them a max-width so they don’t get too large, and only force them to shrink when the screen gets smaller than that max-width.
 
-不要基于网格来这样设定元素的大小，给它们设定一个最大宽度，以防止它们变得过大，并且只有在屏幕宽度小于这个最大宽度时才强制它们缩小。
+与其根据网格系统来调整元素大小，不如为它们设定一个最大宽度，以防止它们变得过大，并只在屏幕尺寸小于这个最大宽度时才让它们缩小。
 
 ![](img/88.png)
 
 Don’t be a slave to the grid — give your components the space they need and don’t make any compromises until it’s actually necessary.
 
-不要成为网格的奴隶 —— 给你的组件它们需要的空间，并且在真正必要时才做出妥协。
+不要完全受制于网格系统 —— 为你的组件提供所需的空间，只有在真正必要的情况下才做出调整。
 
-### Relative sizing doesn’t scale / 相对尺寸不缩放
+### Relative sizing doesn’t scale / 相对尺寸不要等比缩放
 
 It’s tempting to believe that every part of an interface should be sized relative to one another, and that if element A needs to shrink by 25% on smaller screens, that element B should shrink by 25%, too.
 
-人们很容易认为界面的每个部分都应该相对于彼此来设定大小，如果元素 A 在较小屏幕上需要缩小 25%，那么元素 B 也应该缩小 25%。
+有一种普遍的想法，认为界面的每个部分尺寸都应该相对于其他部分进行调整。例如，如果元素 A 在较小屏幕上缩小了 25%，人们可能会认为元素 B 也应该按相同比例缩小。
 
 For example, say you’re designing an article at a large screen size. If your body copy is 18px and your headlines are 45px, it’s tempting to encode that relationship by defining your headline size as 2.5em; 2.5 times the current font size.
 
-例如，假设你正在为大屏幕设计一篇文章。如果你的正文字体大小是 18px，你的标题字体大小是 45px，人们很容易通过定义标题大小为 2.5em 来编码这种相对关系；即当前字体大小的 2.5 倍。
+以大屏幕设计文章为例，如果你的正文字体是 18px，标题是 45px，你可能会想要将标题大小设置为 2.5 倍于正文字体，即 2.5em。
 
 ![](img/89.png)
 
 There’s nothing inherently wrong with using relative units like em, but don’t be fooled into believing that relationships defined this way can remain static — 2.5em might be the perfect headline size on desktop but there’s no guarantee that it’ll be the right size on smaller screens.
 
-使用像 em 这样的相对单位本身并没有错，但不要误以为以这种方式定义的关系可以保持不变 —— 2.5em 在桌面上可能是完美的标题大小，但在较小屏幕上可能就不一定合适了。
+使用 em 这样的相对单位没有问题，但不要错误地认为这样定义的比例就可以固定不变的。在桌面端，2.5em 可能是完美的标题大小，但在小屏幕上可能就太大了。
 
 Say you reduce the size of your body copy to 14px on small screens to keep the line length in check. Keeping your headlines at 2.5em means a rendered font size of 35px — way too big for a small screen!
 
-假设你在小屏幕上将正文字体大小减少到 14px 以控制行长度。如果你的标题保持在 2.5em，那么渲染出的字体大小将是 35px —— 对于小屏幕来说太大了！
+假设你在小屏幕上将正文字体缩小到 14px 以保持合适的行长度。如果标题仍保持 2.5em，那么实际渲染的字体大小将是 35px，这对于小屏幕来说可能过于庞大。
 
 ![](img/90.png)
 
 A better headline size for small screens might be somewhere between 20px and 24px:
 
-对于小屏幕来说，更合适的标题大小可能在 20px 到 24px 之间。
+在小屏幕上，标题的更合适大小可能是 20~24px。
 
 ![](img/91.png)
 
 That’s only 1.5-1.7x the size of the 14px body copy — a totally different relationship than what made sense on desktop screens. That means there isn’t any real relationship at all, and that there’s no real benefit in trying to define the headline size relative to the body copy size.
 
-这只有 14px 正文字体大小的 1.5 到 1.7 倍 —— 与在桌面屏幕上有意义的比例完全不同。这意味着实际上并没有固定的比例关系，并且尝试根据正文字体大小来定义标题大小并没有真正的好处。
+这仅是正文字体大小的 1.5~1.7 倍，与大屏幕上的比例完全不同。这意味着实际上并没有固定的比例关系，而且尝试根据正文字体大小来确定标题大小并没有实际的好处。
 
 As a general rule, elements that are large on large screens need to shrink faster than elements that are already fairly small — the difference between small elements and large elements should be less extreme at small screen sizes.
 
-通常来说，大屏幕上的大元素在屏幕尺寸变小时，应该比小元素更显著地减小尺寸 —— 确保在小屏幕上，大元素和小元素之间的比例差异不会太过悬殊。
+通常，大屏幕上较大的元素在小屏幕上需要更显著地缩小，而较小的元素则不需要那么大的缩小幅度 —— 在小屏幕上，大元素和小元素之间的差异应该更小。
 
 **Relationships within elements / 元素内部的关系**
 
 The idea that things should scale independently doesn’t just apply to sizing elements at different screen sizes; it applies to the properties of a single component, too.
 
-事物应独立缩放的理念不仅适用于不同屏幕尺寸上的元素尺寸调整；它也适用于单一组件的属性。
+独立缩放的理念不仅适用于不同屏幕尺寸下元素尺寸的调整，同样适用于单个组件内部属性的设计。
 
 Say you’ve designed a button. It’s got a 16px font size, 16px of horizontal padding, and 12px of vertical padding:
 
-假设你设计了一个按钮。它的字体大小为 16px，水平内边距为 16px，垂直内边距为 12px。
+以按钮设计为例。如果按钮的字体大小设为 16px，水平内边距也是 16px，垂直内边距为 12px：
 
 ![](img/92.png)
 
 Much like the previous example, it’s tempting to think that the padding should be defined in terms of the current font size. That way if you want a larger or smaller button, you only need to change the font size and the padding will update automatically, right?
 
-与前一个例子类似，人们很容易认为内边距应该以当前字体大小来定义。这样一来，如果你想要一个更大或更小的按钮，只需要改变字体大小，内边距就会自动更新，不是吗？
+人们可能会认为，为了保持设计的比例一致，填充应该基于当前字体大小来设定。这样一来，如果需要调整按钮的大小，只需更改字体大小，填充就会相应自动调整，是这样吗？
 
 ![](img/93.png)
 
 This works — the buttons do scale up or down and preserve the same proportions. But is that what we really want?
 
-这种方法是可行的 —— 按钮确实可以按比例放大或缩小。但我们真的想要这样吗？
+这种方法确实有效，按钮能够保持相同的比例缩放。但这真的是我们所追求的吗？
 
 Compare that to these buttons, where the padding gets more generous at larger sizes and disproportionately tighter at smaller sizes:
 
-与此相比，这些按钮在较大尺寸时内边距更宽松，在较小尺寸时内边距则不成比例地更紧凑：
+看看这些按钮，它们在较大尺寸时内边距更宽松，在较小尺寸时内边距则更紧凑：
 
 ![](img/94.png)
 
 Here the large button actually feels like a larger button, and the small buttons actually feel like smaller buttons, not like we simply adjusted the zoom.
 
-在这里，大号按钮实际上给人的感觉就是更大，小号按钮给人的感觉也确实更小，并不是我们仅仅调整了缩放比例。
+这样的设计让大按钮实际显得更大，小按钮实际显得更小，而不仅仅是简单的缩放效果。
 
 Let go of the idea that everything needs to scale proportionately — giving yourself the freedom to fine-tune things independently makes it a hell of a lot easier to design for multiple contexts.
 
-放弃所有元素都需要等比例缩放的想法 —— 给自己自由去独立微调各个元素，从而使针对多种上下文进行设计变得容易得多。
+放弃所有元素都需要等比例缩放的想法 —— 给自己留有独立微调各个部分的自由，将极大地简化多场景下的设计工作。
 
-### Avoid ambiguous spacing / 避免含糊的间距
+### Avoid ambiguous spacing / 避免间距不明确
 
 When groups of elements are explicitly separated — usually by a border or background color — it’s obvious which elements belong to which group.
 
-当元素组被明确分隔开时 —— 通常通过边框或背景颜色 —— 很明显可以看出哪些元素属于哪个组。
+当元素组通过边框或背景色清晰区分时，很容易识别哪些元素属于同一组。
 
 ![](img/95.png)
 
 But when there isn’t a visible separator, it’s not always so obvious.
 
-但是当没有可见的分隔符时，情况就不一定那么明显了。
+但在缺少可见分隔的情况下，元素归属的识别就不那么直观了。
 
 Say you’re designing a form with stacked labels and inputs. If the margin below the label is the same as the margin below the input, the elements in the form group won’t feel obviously “connected”.
 
-假设你正在设计一个具有堆叠标签和输入框的表单。如果标签下方的边距与输入框下方的边距相同，那么表单组中的元素就不会给人一种明显「相连」的感觉。
+例如，在设计一个具有层叠标签和输入字段的表单时，如果标签和输入字段下方的边距相同，那么这些元素看起来就不那么「相关联」。
 
 ![](img/96.png)
 
 At best the user has to work harder to interpret the UI, and at worst it means accidentally putting the wrong data in the wrong field.
 
-在最好的情况下，用户需要更努力地去理解用户界面，而在最坏的情况下，这意味着可能会不小心将错误的数据填入错误的字段。
+最好的情况这可能导致用户在理解界面时需要更多的努力，最坏的情况是可能会错误地将数据填入错误的字段。
 
 The fix is to increase the space between each form group so it’s clear which label belongs to which input:
 
-解决方法是增加每个表单组之间的空间，以清楚地表明哪个标签属于哪个输入框。
+解决这一问题的方法是增加表单组之间的间距，使得每个标签和对应输入字段的关系更加清晰：
 
 ![](img/97.png)
 
 This same problem shows up in article design when there’s not enough space above section headings:
 
-当部分标题上方没有足够的空间时，同样的问题也会出现在文章设计中：
+在文章设计中，如果节标题上方的空间不足，也会出现相似的问题：
 
 ![](img/98.png)
 
-…and in bulleted lists, when the space between bullets matches the line-height of a single bullet:
+...and in bulleted lists, when the space between bullets matches the line-height of a single bullet:
 
-以及在项目符号列表中，当项目符号之间的空间与单个项目符号的行高相匹配时：
+以及在项目列表中，如果列表项之间的空间与单个列表项的行高一致时：
 
 ![](img/99.png)
 
 It’s not just vertical spacing that you have to worry about either; it’s easy to make this mistake with components that are laid out horizontally, too:
 
-这不仅仅是垂直间距的问题；在水平布局的组件中，也很容易犯同样的错误：
+问题不仅限于垂直间距；在水平布局的组件中也可能出现类似的错误：
 
 ![](img/100.png)
 
 Whenever you’re relying on spacing to connect a group of elements, always make sure there’s more space around the group than there is within it — interfaces that are hard to understand always look worse.
 
-每当你依赖间距来连接一组元素时，一定要确保组周围的空间比组内的多 —— 难以理解的界面看起来总是更糟糕。
+无论你何时依赖间距来连接一组元素，请确保组与组之间的空间大于组内部的元素间距 —— 难以理解的界面在视觉上总是不够美观。
 
-## Designing Text / 设计文本
+## Designing Text / 文本设计
 
-### Establish a type scale / 建立一个字符比例尺
+### Establish a type scale / 建立一个字符规范
 
 Most interfaces use way too many font sizes. Unless a team has a rigid design system in place, it’s not uncommon to find that every pixel value from 10px to 24px has been used in the UI *somewhere*.
 
-在许多用户界面设计中，字体大小的使用往往过于繁多。如果没有一个固定的设计体系，界面上从 10px 到 24px 的字体大小几乎*随处可见*。
+在大多数用户界面中，往往使用了过多的字体大小。如果团队没有一个严格的设计体系，那么在界面设计中使用从 10px 到 24px 的每一个尺寸值是*很常见*的现象。
 
 ![](img/101.png)
 
 Choosing font sizes without a system is a bad idea for two reasons:
 
+没有体系地选择字体大小会导致两个问题：
+
 1. It leads to annoying inconsistencies in your designs.
 2. It slows down your workflow.
-
-没有系统地选择字体大小不是一个好主意，原因有两个：
-
-1. 这会导致你的设计中出现令人恼火的不一致性。
-2. 这种做法还会拖慢你的工作效率。
+>
+1. 它会造成设计上的不一致性，令人烦恼。
+2. 它降低了工作效率。
 
 So how do you define a type system?
 
-那么你如何定义一个字符系统。
+那么，我们应该如何建立一个字符体系呢？
 
-**Choosing a scale / 选择比例尺**
+**Choosing a scale / 确定比例尺**
 
 Just like with spacing and sizing, a linear scale won’t work. Smaller jumps between font sizes are useful at the bottom of the scale, but you don’t want to waste time deciding between 46px and 48px for a large headline.
+
+与确定间距和尺寸一样，线性尺度并不适宜。在尺度的较小端，字体大小的细微差别很有用，但在大标题的 46px 与 48px 之间做选择时，就不需要那么精细。
 
 **Modular scales / 模块化比例尺**
 
 One approach is to calculate your type scale using a ratio, like 4:5 (a “*major third*”), 2:3 (a “*perfect fifth*”), or perhaps the “golden ratio”, 1:1.618. This is often called a “modular scale”.
 
+一种计算字体尺寸的方法是使用一个比例，例如 4:5（「*大三度*」），2:3（「*纯五度*」），或者「黄金比例」1:1.618，这常被称为「模块化比例尺」。
+
 You start with a sensible base value (*16px is common since it’s the default font size for most browsers*), apply your ratio to get the next value, then apply your ratio to that value to get the next value, and so on and so forth:
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/162067AB-B875-4650-8CBB-C11B682FE8FF_2/lhF7VYjQnUJNuKyBWuSg7p0ydwVX05ckXJyZgMDUpTIz/Image.png)
+从 16px 这样的常用基础值（*16px 很常见，因为它是大多数浏览器的默认字体大小*）开始，应用你的比例得到下一个尺寸，然后继续应用比例得到后续的尺寸，如此循环：
+
+![](img/102.png)
 
 The mathematical purity of this approach is alluring, but in practice, it’s not perfect for a couple of reasons.
 
-1. **You end up with fractional values.**
+这种方法在数学上的纯粹性很吸引人，但在实际应用中并不完美，原因有几个。
+
+1. **You end up with fractional values. / 你可能得到小数点后的像素值。**
 
 Using a 16px base and 4:5 ratio, your scale will end up with lots of sizes that don’t land right on the pixel, like 31.25px, 39.063px, 48.828px, etc. Browsers all handle subpixel rounding a little bit differently, so it’s best to avoid fractional sizes if you can avoid it.
 
+以 16px 为基数，按 4:5 比例计算，会得到许多非整数像素值，如 31.25px、39.063px、48.828px 等。不同的浏览器对这些小数值的渲染方式略有差异，因此最好避免使用小数像素值。
+
 If you do want to use this approach, make sure you round the values yourself when defining the scale to avoid off-by-one pixel issues across browsers.
 
-2. **You usually need more sizes.**
+果你想采用这种方法，请在确定尺度时自行将数值四舍五入，以减少不同浏览器间的渲染差异。
+
+2. **You usually need more sizes. / 你可能需要更多的尺寸。**
 
 This approach can work well if you’re defining a type scale for long form content like an article, but for interface design, the jumps you get using a modular scale are often a bit too limiting.
 
+这种方法适用于定义长篇文章的字体比例尺，但在界面设计中，模块化比例尺产生的跳跃可能过于有限。
+
 With a (*rounded*) 3:4 type scale, you get sizes like 12px, 16px, 21px, and 28px. While this might not seem too limiting on the surface, in practice you’re going to wish you had a size between 12px and 16px, and another between 16px and 21px.
+
+例如，使用 3:4 的尺度，你得到的尺寸可能是 12px、16px、21px 和 28px。虽然看起来选择不少，但在实际设计中，你可能会发现需要在 12px 到 16px 之间，以及 16px 到 21px 之间有更多的尺寸选项。
 
 You could use a tighter ratio like 8:9, but at this point you’re just trying to pick a scale that happens to match the sizes you already know you want.
 
-**Hand-crafted scales / 手动比例**
+虽然可以使用更小的比例，如 8:9，来获得更细致的尺寸，但这往往意味着你在尝试挑选一个恰好符合你需求的比例尺。
+
+**Hand-crafted scales / 自定义比例尺**
 
 For interface design, a more practical approach is to simply pick values by hand. You don’t have to worry about subpixel rounding errors this way, and you have total control over which sizes exist instead of outsourcing that job to some mathematical formula.
 
+在用户界面设计中，一种更实用的方法是手工挑选值。这种方法让你无需担心像素的舍入误差，并且可以完全控制可用的尺寸，而不是依赖数学公式来决定。
+
 Here’s an example of a scale that works well for most projects and aligns nicely with the spacing and sizing scale recommended in “*Establishing a spacing and sizing system*”:
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6BD5C1FE-1D81-43A2-9A25-1550B6AA380F_2/kZrV3NmOdVJNPm7x1SRfDbywrySCbzC17yauxCB6MAQz/Image.png)
+例如，以下是一个比例尺示例，它适用于大多数项目，并且与「*建立间距和尺寸体系*」文章中推荐的间距和尺寸比例尺相协调：
+
+![](img/103.png)
 
 It’s constrained just enough to speed up your decision making, but isn’t so limited as to make you feel like you’re missing a useful size.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/61F20646-6975-453E-988A-C65ED70E43A1_2/xvNX2qwGqTxECa3HobudY0RgJKwTHQrHwOz1SxZCGbQz/Image.png)
+这个比例尺的限制恰到好处，既能加快你的决策过程，又不会让你感觉缺少了有用的尺寸。
 
-**Avoid em units / 避免使用 em**
+![](img/104.png)
+
+**Avoid em units / 避免使用 em 单位**
 
 When you’re building a type scale, don’t use em units to define your sizes.
 
+在创建字体尺寸规范时，应避免使用 em 单位来指定字体大小。
+
 Because em units are relative to the current font size, the computed font size of nested elements is often not actually a value in your scale.
+
+em 单位描述的是相对于当前的字体大小，因此计算出的嵌套元素的字体大小可能并不在你设定的比例尺中。
 
 For example, say you’ve defined an em-based type scale like this:
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/01901E01-5D56-45E1-ACA8-D4BD52D2AB5B_2/mGAjneJYAFTcMnfvsrCpop97Z5FQMtef6wMyqF9BOmkz/Image.png)
+例如，如果你设定了一个基于 em 单位的字体尺寸规范：
+
+![](img/105.png)
 
 If you give an element a font size of 1.25em (20px by default), inside of that element 1em is now equal to 20px. That means that if you give one of the nested elements a font size of .875em, the actual computed font size is 17.5px, not a value from your type scale!
 
+假设你将某个元素的字体大小设为 1.25em（默认相当于 20px），那么在这个元素内部，1em 就等于 20px。这就意味着，如果你给其中一个嵌套元素设置 0.875em 的字体大小，实际的计算结果将是 17.5px，这个值并不在你的字体尺寸规范里！
+
 Stick to px or rem units — it’s the only way to guarantee you’re actually sticking to the system.
 
-### Use good fonts / 使用好的字体
+坚持使用像素（px）或根 em（rem）单位 —— 这是确保你真正遵循所设定体系的唯一方式。
+
+### Use good fonts / 使用优质字体
 
 With thousands of different typefaces out there to choose from, separating the good from the bad can be an intimidating task.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1100A860-398F-4343-8DB1-B39664EA8A27_2/fWo2igfYxb33FyyYPP3mwdUpn6QPKIT5xhybaDo4YAUz/Image.png)
+面对众多的字体选择，辨别哪些是好的字体可能是一项艰巨的任务。
+
+![](img/106.png)
 
 Developing an eye for all of the details that make a good typeface can take years. You probably don’t have years, so here are a few tricks you can use to start picking out high quality typefaces right away.
 
-**Play it safe / 稳扎稳打**
+要培养出识别优秀字体所有细节的眼光可能需要很多年。你可能没有那么多时间，所以这里有一些技巧，可以帮助你立即开始挑选高质量的字体。
+
+**Play it safe / 保守策略**
 
 For UI design, your safest bet is a fairly neutral sans-serif — think something like Helvetica.
 
+在用户界面设计中，选择一种相对中性的无衬线字体是最稳妥的做法 —— 例如 Helvetica 字体。
+
 If you really don’t trust your own taste, one great option is to rely on the system font stack:
+
+如果你不太自信于自己的品味选择，一个有效的策略是使用系统默认的字体系列：
 
 `-apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;`
 
 It might not be the most ambitious choice, but at least your users will already be used to seeing it.
 
-**Ignore typefaces with less than five weights / 忽略重量少于 5 种的字体**
+虽然这可能不是最引人注目的选择，但至少用户对这些字体已经非常熟悉。
+
+**Ignore typefaces with less than five weights / 排除字重少于五种的字体**
 
 This isn’t *always* true, but as a general rule, typefaces that come in a lot of different weights tend to be crafted with more care and attention to detail than typefaces with fewer weights.
 
+虽然这并不*总是*准确，但通常提供多种字重的字体在制作上更为精心，对细节的关注也更为周到。
+
 Many font directories (*like Google Fonts*) will let you filter by “number of styles”, which is a combination of the available weights as well as the italic variations of those weights.
+
+很多字体目录平台（*例如 Google Fonts*）允许你根据「样式数量」来过滤，这包括了各种字重及其相应的斜体样式。
 
 A great way to limit the number of options you have to choose from is to crank that up to 10+ (*to account for italics*):
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F2A00978-AE35-4DBE-B5C9-D802B8691202_2/uWQwUkf3ZeH5iQyobsEtA0MjBht2I4AbQhIUYDScIy4z/Image.png)
+一个有效减少选择范围的技巧是将过滤条件设置为 10+（*包含斜体样式*）：
+
+![](img/107.png)
 
 On Google Fonts specifically, that cuts out 85% of the available options, leaving you with less than 50 sans-serifs to choose from.
+
+特别是在 Google Fonts 上，这种方法可以排除 85% 的选项，让你只有不到 50 种无衬线字体需要考虑。
 
 **Optimize for legibility / 优化可读性**
 
 When someone designs a font family, they are usually designing it for a specific purpose. Fonts meant for headlines usually have tighter letter- spacing and shorter lowercase letters (a shorter x-height), while fonts meant for smaller sizes have wider letter-spacing and taller lowercase letters.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A93307A3-8C78-467A-9D06-ADF377B8E3D1_2/DtVMF5kXDyxIxf38PrS2mIfvQ0FxAKKAW9M8e8tvbKwz/Image.png)
+设计字体系列时，设计师通常针对特定用途进行设计。例如，用于标题的字体往往具有更紧密的字母间距和小写字母较短（X 高度较短），而设计用于较小字号的字体则具有更宽的字母间距和小写字母较高。
+
+> 译者注：X 高度（x-height）是字体设计中的一个术语，指的是小写字母（不包括字母 "y"）的平均高度。在字体的度量中，X 高度是一个重要的参考值，因为它对字体的可读性有显著影响。字体的 X 高度越高，小写字母相对于大写字母和数字就显得越大，这通常可以提高文本的可读性，尤其是在较小字号下。
+
+![](img/108.png)
 
 Keep this in mind and avoid using condensed typefaces with short x-heights for your main UI text.
+
+在选择字体时，请考虑这些因素，避免在用户界面的主要文本中使用紧凑且 X 高度较短的字体。
+
+<!-- 翻译到这里，下面是没有翻译的 -->
 
 **Trust the wisdom of the crowd / 相信群众的智慧**
 
@@ -1430,7 +1483,7 @@ If a font is popular, it’s probably a good font. Most font directories will le
 
 This is especially useful when you’re trying to pick out something other than a neutral UI typeface. Picking a nice serif with some personality for example can be tough.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/DD5EAAA7-901C-46C8-8BC4-29BFA18FC0D2_2/JkhXSgCLXOdIv8t4A41OBKcEyk7ygI7csQQwbvAPCNMz/Image.png)
+![](img/109.png)
 
 Leveraging the collective decision-making power of thousands of other people can make it a lot easier.
 
@@ -1438,7 +1491,7 @@ Leveraging the collective decision-making power of thousands of other people can
 
 Inspect some of your favorite sites and see what typefaces they are using.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7EF66E2B-BE83-4EB6-8E44-6D15A068BAC3_2/9b0koedXDjx3ninXYRwIsx6oXOuUgpzELYTMqsEYlTkz/Image.png)
+![](img/110.png)
 
 There are a lot of great design teams out there full of people with really strong opinions about typography, and they’ll often choose great fonts that you might have never found using some of the safer approaches outlined above.
 
@@ -1454,13 +1507,13 @@ When styling paragraphs, it’s easy to make the mistake of fitting the text to 
 
 Usually this means lines that are too long, making text harder to read.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/11110024-01E3-4EE4-8DA8-A2420AB976D8_2/vjjIgFDF2HiNTukkGpqX55Ayx4I93yVaVAo6C7A4F2Uz/Image.png)
+![](img/111.png)
 
 For the best reading experience, make your paragraphs wide enough to fit between 45 and 75 characters per line. The easiest way to do this on the web is using em units, which are relative to the current font size. A width of 20-35em will get you in the right ballpark.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/0CE51F46-9DEB-4D26-93DC-7B785151F6E6_2/ZxZmbK9yp25En5DeUdyq9xcxb0BFAXjOhKIWTAvbZgoz/Image.png)
+![](img/112.png)
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F996FC02-6303-4773-9271-F26515C4F996_2/aDN7kfqQuLI6y0hyWrQItEpXyYcy8xTQyI4o54Fhibsz/Image.png)
+![](img/113.png)
 
 Going a bit wider than 75 characters per line can sometimes work too, but be aware that you’re entering risky territory — stick to the 45-75 range if you want to play it safe.
 
@@ -1468,9 +1521,9 @@ Going a bit wider than 75 characters per line can sometimes work too, but be awa
 
 If you’re mixing paragraph text with images or other large components, you should still limit the paragraph width even if the overall content area needs to be wider to accommodate the other elements.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/50432468-ABE1-4B6D-97AD-4787CD335BC6_2/30qlTS7opX1ZmgjDNpFsqhy6iQIhkSejUJHudggAxzoz/Image.png)
+![](img/114.png)
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/088A546C-B52A-4EDF-BD97-02B03BA8FD9E_2/7xIPqq2uuOcqaQuVLyp8vnqbIQc6U1ref4S6VxUIKzUz/Image.png)
+![](img/115.png)
 
 It might seem counterintuitive at first to use different widths in the same content area, but the result almost always looks more polished.
 
@@ -1482,19 +1535,19 @@ For example, maybe you’re designing a card that has a large title in the top l
 
 When you’re mixing font sizes like this, your instinct might be to vertically center the text for balance:
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C92832BA-9720-414E-910B-221DC4337E74_2/e6YyPqyYR2C3txPcow28HF8tkh5WkxgU2nTi9r9EVxwz/Image.png)
+![](img/116.png)
 
 When there’s a decent amount of space between the different font sizes it often won’t look bad enough to catch your attention, but when the text is close together the awkward alignment becomes more obvious:
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8357E295-F832-49B4-BD73-CE651BBE86EE_2/i0iGFLeFnmsMFKBfRzNRS0H8oOeKj4EZqHMsybGNbRsz/Image.png)
+![](img/117.png)
 
 A better approach is to align mixed font sizes by their baseline, which is the imaginary line that letters rest on:
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/787C95A5-9FE7-4F09-9BA5-EC33B888B930_2/3vfs1KDhB8qDPfEmund4TJ6pgbgevuGbiMOgmzgnvyQz/Image.png)
+![](img/118.png)
 
 When you align mixed font sizes by their baseline, you’re taking advantage of an alignment reference that your eyes already perceive.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D96B40F1-63B0-4E60-91CA-8F55610E5AE6_2/4QBOPWJyjqs3tAkZGrEI0xCtOowH8tDtnHUKoH577JEz/Image.png)
+![](img/119.png)
 
 The result is a simpler, cleaner look than what you get when you center two pieces of text and offset their baselines.
 
@@ -1502,7 +1555,7 @@ The result is a simpler, cleaner look than what you get when you center two piec
 
 You might have heard the advice that a line-height of about 1.5 is a good starting point from a readability perspective.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/4489D93A-9417-45C3-AB2B-110B7B25C8C5_2/EIuyEV7pnEEdTgPb7Qq3VLHVaTp62DRpMxex3zFiHyQz/Image.png)
+![](img/120.png)
 
 While that’s not necessarily untrue, choosing the right line-height for your text is a bit more complicated than just using the same value across the board in all situations.
 
@@ -1512,13 +1565,13 @@ The reason we add space between lines of text is to make it easy for the reader 
 
 When lines of text are spaced too tightly, it’s easy to finish reading a line of text at the right edge of a page then jump your eyes all the way back to the left edge only to be unsure which line is next.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2AAE0C31-60A0-4FCD-A4A6-236808AF816B_2/k5QgYxnhLy2SpmAavTHUxyw92mnOdQgdfj14GzagycAz/Image.png)
+![](img/121.png)
 
 This problem is magnified when lines of text are long. The further your eyes have to jump horizontally to read the next line, the easier it is to lose your place.
 
 That means that your line-height and paragraph width should be proportional — narrow content can use a shorter line-height like 1.5, but wide content might need a line-height as tall as 2.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FB207A28-D409-44A8-BCFC-11A7B62D6CAF_2/y6RzyrxIIgUCtVhzyTytwUBmJ1FGA8aWzeaX7DlINd0z/Image.png)
+![](img/122.png)
 
 **Accounting for font size / 考虑字体大小**
 
@@ -1526,11 +1579,11 @@ Line length isn’t the only factor in choosing the right line-height — font s
 
 When text is small, extra line spacing is important because it makes it a lot easier for your eyes to find the next line when the text wraps.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/DBFBF38B-8B91-446E-BE2E-E10F9BC2DA3E_2/RnJ4Npy0oOolk0Rl1phKxR0Jq50o7PFUyrxpKRC5bdEz/Image.png)
+![](img/123.png)
 
 But as text gets larger, your eyes don’t need as much help. This means that for large headline text you might not need any extra line spacing, and a line- height of 1 is perfectly fine.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1AE49F9B-A472-4570-BC87-AB34D05BE359_2/sNUAmiMUcBWRdzBh56qI2xABfuFYd8QWxnL8ScMOr8Az/Image.png)
+![](img/124.png)
 
 Line-height and font size are inversely proportional — use a taller line-height for small text and a shorter line-height for large text.
 
@@ -1538,19 +1591,19 @@ Line-height and font size are inversely proportional — use a taller line-heigh
 
 When you’re including a link in a block of otherwise non-link text, it’s important to make sure that the link stands out and looks clickable.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A77B78FF-E4B9-44A9-968D-D129FB29B905_2/kybCa9W2N8GxzRMOKdFaf97Rk6vfUrIj1DdxsuI1WeQz/Image.png)
+![](img/125.png)
 
 But when you’re designing an interface where almost everything is a link, using a treatment designed to make links “pop” in paragraph text can be really overbearing.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/44900941-33A0-41EF-BC57-6B850578C617_2/4Z9RGiDx6f0kFG0oJRMcEzwJiBGNaR5gEVIoyphlqbEz/Image.png)
+![](img/126.png)
 
 Instead, emphasize most links in a more subtle way, like by just using a heavier font weight or darker color.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/135F006A-23B4-4E50-8D1C-216F1A7FFEB2_2/yAZe93Rg6KtmZixHRSAhLWTH5ZIXnfrO9W7EVjnlgxEz/Image.png)
+![](img/127.png)
 
 Some links might not even need to be emphasized by default at all. If you’ve got links in your interface that are really ancillary and not part of the main path a user takes through the application, consider adding an underline or changing the color only on hover.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8D96E8EF-DB42-43D6-8A04-1C6292E5C592_2/b2yApCypBCCo8dz0BO39uNUPxH05SDX2RVsDvqfDd6cz/Image.png)
+![](img/128.png)
 
 They’ll still be discoverable to any users who think to try, but won’t compete for attention with more important actions on the page.
 
@@ -1558,7 +1611,7 @@ They’ll still be discoverable to any users who think to try, but won’t compe
 
 In general, text should be aligned to match the direction of the language it’s written in. For English (and most other languages), that means that the vast majority of text should be left-aligned.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F433A7A9-5F95-4C77-8D73-7C0D1FA52B8D_2/ScSrvkZytg18yjnyNShmvHncAuDJzSx6PovXCjLnUtgz/Image.png)
+![](img/129.png)
 
 Other alignment options do have their place though, you just need to use them effectively.
 
@@ -1566,15 +1619,15 @@ Other alignment options do have their place though, you just need to use them ef
 
 Center-alignment can look great for headlines or short, independent blocks of text.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/73485CDA-28B5-4504-B6F1-87C10E5FD5FD_2/VGG5r8gfB1KULxlYeZfrCs0KejFXhljov7OcAExgPCQz/Image.png)
+![](img/130.png)
 
 But if something is longer than two or three lines, it will almost always look better left-aligned.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1CB120F9-2E46-4AEE-B578-7C266B0E6B1D_2/m8KyGzk1LKKMNcxtXFy5egTPXPi14OAyoK2UTgQtwwgz/Image.png)
+![](img/131.png)
 
 If you’ve got a few blocks of text you want to center but one of them is a bit too long, the easiest fix is to rewrite the content and make it shorter:
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7553601E-B29E-4984-80DD-B807804C3E61_2/CmymZmbZv4xIpV2HF2y8Pl8XqBdAjqgiyQcolLRVwlkz/Image.png)
+![](img/132.png)
 
 Not only will it fix the alignment issue, it will make your design feel more consistent, too.
 
@@ -1582,7 +1635,7 @@ Not only will it fix the alignment issue, it will make your design feel more con
 
 If you’re designing a table that includes numbers, right-align them.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/038F38D6-BF8F-4A3E-B84A-84F6522287DD_2/5rAdQ99l6nfOSXmkXBILBBN1iklCnuXycmBe9Fwq2RAz/Image.png)
+![](img/133.png)
 
 When the decimal in a list of numbers is always in the same place, they’re a lot easier to compare at a glance.
 
@@ -1590,11 +1643,11 @@ When the decimal in a list of numbers is always in the same place, they’re a l
 
 Justified text looks great in print and can work well on the web when you’re going for a more formal look, but without special care, it can create a lot of awkward gaps between words:
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/77E77409-9DBD-498C-9F82-10A564944DF9_2/lGZK7R4ImwMNUbixkBeXto4y48NZmp2xtNcytD2GQXIz/Image.png)
+![](img/134.png)
 
 To avoid this, whenever you justify text, you should also enable hyphenation:
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/ABDFCFB7-8044-424F-9BFC-3557C28A63B0_2/jOrbujTSsYjAUDZ2Ev3pMr3mpz9CVBGwGaG0x5HJuuEz/Image.png)
+![](img/135.png)
 
 Justified text works best in situations where you’re trying to mimic a print look, perhaps for an online magazine or newspaper. Even then, left aligned text works great too, so it’s really just a matter of preference.
 
@@ -1602,7 +1655,7 @@ Justified text works best in situations where you’re trying to mimic a print l
 
 When styling text, a lot of effort is put into getting the weight, color, and line- height just right, but it’s easy to forget that letter-spacing can be tweaked, too.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D15E74FC-28BD-4F5F-BCC3-4D747E6B4EED_2/oDJnUfrjnfIZN7AjxbYP1eQQSI3dFbwT6EmjMsS8ZbQz/Image.png)
+![](img/136.png)
 
 As a general rule, you should trust the typeface designer and leave letter- spacing alone. That said, there are a couple of common situations where adjusting it can improve your designs.
 
@@ -1612,11 +1665,11 @@ When someone designs a font family, they design it with a purpose in mind.
 
 A family like Open Sans is designed to be highly legible even at small sizes, so the built-in letter-spacing is a lot wider than a family like Oswald which is designed for headlines.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3D7310C7-4D44-4AF7-8503-178C1A63DD2A_2/xt0Kg2GN2vRy3xRoGpwZyzmyYvcHFdTWYeQirXyM9Wcz/Image.png)
+![](img/137.png)
 
 If you want to use a family with wider letter-spacing for headlines or titles, it can often make sense to decrease the letter-spacing to mimic the condensed look of a purpose-built headline family:
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6CE8469E-B496-48AD-A75A-F235FAB0A350_2/ZN9QQcX5QmknkjcXezxZafNJ36lzoxiwl0Yk1lBpqpUz/Image.png)
+![](img/1389.png)
 
 Avoid trying to make this work the other way around though — headline fonts rarely work well at small sizes even if you increase the letter spacing.
 
@@ -1626,13 +1679,13 @@ The letter-spacing in most font families is optimized for normal “sentence cas
 
 Lowercase letters have a lot of variety visually. Letters like n, v, and e fit entirely within a typeface’s x-height, other letters like y, g, and p have descenders that poke out below the baseline, and letters like b, f, and t have ascenders that extend above.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FC867203-69FB-49AB-8FF6-0F3412E4DBB2_2/tPzP8suFlJB03Uwz1y1opF9ybfH7hM8ShxwGlZQjNRsz/Image.png)
+![](img/139.png)
 
 All-caps text on the other hand isn’t so diverse. Since every letter is the same height, using the default letter-spacing often leads to text that is harder to read because there are fewer distinguishing characteristics between letters.
 
 For that reason, it often makes sense to increase the letter-spacing of all- caps text to improve readability:
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C4178B48-D191-4F40-A0FB-54824DCB6049_2/u7UY26WgzxHxU89mTz0VNu5xOmiIzrz9Qv68Qy1CWs4z/Image.png)
+![](img/140.png)
 
 ## Working with Color / 与色彩合作
 
@@ -1642,29 +1695,29 @@ Hex and RGB are the most common formats for representing color on the web, but t
 
 Using hex or RGB, colors that have a lot in common visually look nothing alike in code.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/761545F1-B493-42B2-807C-A52FF450E3CB_2/x5KqPNPtDg2zQy38WneU1hLKj8mIYeOCxy6Sgn1M9Kwz/Image.png)
+![](img/141.png)
 
 HSL fixes this by representing colors using attributes the human-eye intuitively perceives: hue, saturation, and lightness.
 
 **Hue** is a color’s position on the color wheel — it’s the attribute of a color that lets us identify two colors as “blue” even if they aren’t identical.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B9704D67-4E00-4213-8D4D-1231E71219B5_2/U6a2Jnx6lVI7ibwHE8TV5uw4JrJxfrsCAEimapQrs64z/Image.png)
+![](img/142.png)
 
 Hue is measured in degrees, where 0° is red, 120° is green, and 240° is blue.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2F5792BD-F620-401A-8860-A378FF343956_2/mxENh3NLKAe1xl153BBx0HgM9dXtV1wvk3fCmAeitsMz/Image.png)
+![](img/143.png)
 
 **Saturation** is how colorful or vivid a color looks. 0% saturation is grey (no color), and 100% saturation is vibrant and intense.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/183336EE-FFD3-44C6-8320-4C05F5D2B28A_2/p6d6iGTUECcxYECbISTtuK0aNeDBoEndXDax0ZOl8jgz/Image.png)
+![](img/144.png)
 
 Without saturation, hue is irrelevant — rotating the hue when saturation is 0% doesn’t actually change the color at all.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A8C64666-7AAE-4162-86D0-C2FEBCE1CBEE_2/tAZ2i0YrSChpYhgyxHSPLRFIwcmsttwtuWnGwi751rAz/Image.png)
+![](img/145.png)
 
 **Lightness** is just what it sounds like — it measures how close a color is to black or to white. 0% lightness is pure black, 100% lightness is pure white, and 50% lightness is a pure color at the given hue.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F85826F0-03FC-4AF6-AE16-262D3E1D3723_2/cxxIXS7Qps0z6kHASF2JpHHm2Kpxz7TsXy27IuOe1J8z/Image.png)
+![](img/146.png)
 
 **HSL vs. HSB**
 
@@ -1672,7 +1725,7 @@ Don’t confuse HSL for HSB — *lightness* in HSL is not the same as brightness
 
 In HSB, 0% brightness is always black, but 100% brightness is only white when the saturation is 0%. When saturation is 100%, 100% brightness in HSB is the same as 100% saturation and 50% lightness in HSL.
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/08E56A14-4B0F-45D4-AF41-286B115BD231_2/0lvwdx1wWnMj54xwvR2nYmPqFAbYphNfNEiPbdKctVQz/Image.png)
+![](img/147.png)
 
 HSB is more common than HSL in design software, but browsers only understand HSL, so if you’re designing for the web, HSL should be your weapon of choice.
 
@@ -1680,16 +1733,17 @@ HSB is more common than HSL in design software, but browsers only understand HSL
 
 Ever used one of those color palette generators where you pick a starting color, tweak some options, and are then bestowed the five perfect colors you should use to build your website?
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/00D0B148-CAE3-47CE-BE26-6DA62D797DB4_2/5xQyA2JZxQsbMjbRk42p320kYUZac31aRwJmo3sxuFgz/Image.png)
+![](img/148.png)
 
 This calculated approach to picking the perfect color scheme is extremely seductive, but it’s not very useful unless you want your site to look like this:
 
-![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/24255380-79F6-45B8-98A1-B4FDDBCEF923_2/b5bxpi4U4yK1DOW8hx3h8o2g9uezOGD1hyPKfyrkku4z/Image.png)
+![](img/149.png)
 
 **What you actually need / 你需要什么**
 
 You can’t build anything with five hex codes. To build something real, you need a much more comprehensive set of colors to choose from.
 
+![](img/150.png)
 ![Image.png](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/06D2827F-0851-4C8E-A588-E48EF32A4A35_2/Yyrw7oeureOhyX8rBvCPM95xAd3fGISnPeJ4IhiTJIgz/Image.png)
 
 You can break a good color palette down into three categories.

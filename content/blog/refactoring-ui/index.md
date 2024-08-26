@@ -1449,7 +1449,7 @@ This isn’t *always* true, but as a general rule, typefaces that come in a lot 
 
 Many font directories (*like Google Fonts*) will let you filter by “number of styles”, which is a combination of the available weights as well as the italic variations of those weights.
 
-很多字体目录平台（*例如 Google Fonts*）允许你根据「样式数量」来过滤，这包括了各种字重及其相应的斜体样式。
+很多字体展示平台（*例如 Google Fonts*）允许你根据「样式数量」来过滤，这包括了各种字重及其相应的斜体样式。
 
 A great way to limit the number of options you have to choose from is to crank that up to 10+ (*to account for italics*):
 
@@ -1475,41 +1475,59 @@ Keep this in mind and avoid using condensed typefaces with short x-heights for y
 
 在选择字体时，请考虑这些因素，避免在用户界面的主要文本中使用紧凑且 X 高度较短的字体。
 
-<!-- 翻译到这里，下面是没有翻译的 -->
-
 **Trust the wisdom of the crowd / 相信群众的智慧**
 
 If a font is popular, it’s probably a good font. Most font directories will let you sort by popularity, so this can be a great way to limit your choices.
 
+受欢迎的字体往往是优秀选择。大多数字体展示平台允许你根据流行度进行排序，这可以帮助你快速筛选出潜在的优质字体。
+
 This is especially useful when you’re trying to pick out something other than a neutral UI typeface. Picking a nice serif with some personality for example can be tough.
+
+当你需要挑选具有特定风格的字体，而不仅仅是中性的用户界面字体时，这个方法特别有效。比如，选择一个既有个性又美观的衬线字体可能具有挑战性。
 
 ![](img/109.png)
 
 Leveraging the collective decision-making power of thousands of other people can make it a lot easier.
 
-**Steal from people who care / 从关心你的人哪里偷东西**
+借助成千上万人的共同选择，可以大大简化你的决策过程。
+
+**Steal from people who care / 向优秀的人学习**
 
 Inspect some of your favorite sites and see what typefaces they are using.
+
+浏览一些你喜欢的网站，观察它们使用的字体类型。
 
 ![](img/110.png)
 
 There are a lot of great design teams out there full of people with really strong opinions about typography, and they’ll often choose great fonts that you might have never found using some of the safer approaches outlined above.
 
+世界上有许多卓越的设计团队，团队成员对排版有着坚定的看法，他们往往会挑选出一些你可能通过上述更保守的方法从未发现的优秀字体。
+
 **Developing your intuition / 培养你的直觉**
 
 Once you start paying closer attention to the typography on well-designed sites, it’s not long before you feel pretty comfortable labeling a typeface as awesome or terrible.
 
+当你开始更加细致地观察那些设计优秀的网站的排版时，你很快就会对判断一种字体是否出色或糟糕感到得心应手。
+
 You’re gonna be a type snob soon enough, but the advice outlined above will help get you by in the meantime.
 
-### Keep your line length in check / 保证你的行长度在控制之内
+你很快将成为一个对字体有严格要求的人，但在那之前，上述的建议将为你提供帮助。
+
+### Keep your line length in check / 控制行长度
 
 When styling paragraphs, it’s easy to make the mistake of fitting the text to your layout instead of trying to create the best reading experience.
 
+在设计段落样式时，常见的错误是让文本适应页面布局，而不是优化阅读体验。
+
 Usually this means lines that are too long, making text harder to read.
+
+这通常导致行过长，影响文本的易读性。
 
 ![](img/111.png)
 
 For the best reading experience, make your paragraphs wide enough to fit between 45 and 75 characters per line. The easiest way to do this on the web is using em units, which are relative to the current font size. A width of 20-35em will get you in the right ballpark.
+
+为了最佳的阅读体验，应调整段落宽度，确保每行大约有 45 到 75 个字符。在网页设计中，使用 em 单位（与当前字体大小相对应）是最简单的方法。设置宽度在 20 到 35em 之间，可以确保行宽适宜。
 
 ![](img/112.png)
 
@@ -1517,15 +1535,23 @@ For the best reading experience, make your paragraphs wide enough to fit between
 
 Going a bit wider than 75 characters per line can sometimes work too, but be aware that you’re entering risky territory — stick to the 45-75 range if you want to play it safe.
 
-**Dealing with wider content / 处理更广泛的内容**
+虽然每行超过 75 个字符在某些情况下也可行，但这可能降低阅读舒适度。为了安全起见，建议保持在 45 到 75 个字符的范围内。
+
+<!-- 翻译到这里，下面是没有翻译的 -->
+
+**Dealing with wider content / 应对宽内容的布局**
 
 If you’re mixing paragraph text with images or other large components, you should still limit the paragraph width even if the overall content area needs to be wider to accommodate the other elements.
+
+当你在段落文本与图片或其他大型组件混合布局时，即使为了适应这些元素，整体内容区域需要加宽，你也应当控制段落文本的宽度。
 
 ![](img/114.png)
 
 ![](img/115.png)
 
 It might seem counterintuitive at first to use different widths in the same content area, but the result almost always looks more polished.
+
+虽然一开始在同一内容区域使用不同宽度的布局可能看起来不太自然，但这种设计方法几乎总能带来更加精细的外观。
 
 ### Baseline, not center / 基线，不居中
 

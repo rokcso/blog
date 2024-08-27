@@ -2427,8 +2427,6 @@ Don’t get carried away with the blur radius, a couple of pixels is plenty. The
 
 阴影的模糊半径不宜过大，轻微模糊即可，边缘应保持清晰，以模拟现实世界中物体的阴影效果。
 
-<!-- 翻译到这里 -->
-
 **Inset elements / 创建嵌入效果**
 
 Say you’re designing a “well” component that should feel like it’s recessed into the page.

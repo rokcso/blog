@@ -40,7 +40,7 @@
   <meta itemprop="description" content="中英双语对照翻译，关于《Refactoring UI》的全文翻译。">
   <meta itemprop="datePublished" content="2024-08-25T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-08-25T00:00:00+00:00">
-  <meta itemprop="wordCount" content="16783">
+  <meta itemprop="wordCount" content="17144">
   <meta itemprop="image" content="http://localhost:1313/images/share.png">
   <meta itemprop="keywords" content="Translation,UI">
 <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -524,7 +524,7 @@
 <p>The more systems you have in place, the faster you’ll be able to work and the less you’ll second guess your own decisions.</p>
 <p>随着你建立的体系越来越多，你的工作效率将大幅提升，同时也会减少对自己决策的犹豫和怀疑。</p>
 <p>You’ll want systems for things like:</p>
-<p>你应该为以下方面建立系统：</p>
+<p>你应该为以下方面建立体系：</p>
 <ul>
 <li>Font size</li>
 <li>Font weight</li>
@@ -636,7 +636,7 @@
 <p>A better approach is to hand-pick a new color, based on the background color.</p>
 <p>更优的方法是依据背景色彩，手动选择一种合适的新颜色。</p>
 <p>Choose a color with the same hue, and adjust the saturation and lightness until it looks right to you:</p>
-<p>选择一个与背景色相匹配的色调，并调整其饱和度和亮度，直至达到你满意的视觉效果：</p>
+<p>选择一个与背景色相匹配的色相，并调整其饱和度和亮度，直至达到你满意的视觉效果：</p>
 <p><img src="img/40.png" alt=""></p>
 <p>Hand-picking a color this way makes it easy to reduce the contrast without the text looking faded.</p>
 <p>采用这种手工挑选颜色的方法，可以在不使文字显得褪色的情况下，轻松实现对比度的降低。</p>
@@ -838,7 +838,7 @@
 <p>Just like you don’t want to toil over arbitrary values when sizing an element or fine-tuning the space between elements, you don’t want to build your spacing and sizing scale from arbitrary values either.</p>
 <p>在确定元素大小或微调元素间距时，我们应避免纠结于任意值；同样，在构建间距和尺寸体系时，我们也不应纠结于从任意值开始。</p>
 <p>A simple approach is to start with a sensible base value, then build a scale using factors and multiples of that value.</p>
-<p>一种简单的方法是从一个合理的基础值着手，然后基于这个值的因数和倍数来建立一个比例系统。</p>
+<p>一种简单的方法是从一个合理的基础值着手，然后基于这个值的因数和倍数来建立一个比例体系。</p>
 <p>16px is a great number to start with because it divides nicely, and also happens to be the default font size in every major web browser.</p>
 <p>16px 就是一个很好的起始数字，因为它可以很好地被整除，同时也恰好是所有主流网络浏览器的默认字体大小。</p>
 <p>The values at the small end of the scale should start pretty packed together, and get progressively more spaced apart as you get further up the scale.</p>
@@ -848,7 +848,7 @@
 <p><img src="img/69.png" alt=""></p>
 <p><strong>Using the system / 应用体系</strong></p>
 <p>Once you’ve defined your spacing and sizing system, you’ll find that you’re able to design a hell of a lot faster, especially if you design in the browser (<em>sticking to a system is easier when you’re typing in numbers than when you’re dragging with the mouse.</em>)</p>
-<p>一旦你建立了间距和尺寸规范，你会发现设计速度会大大提升，尤其是在浏览器中进行设计时（<em>使用系统时，输入数值比用鼠标拖拽更为便捷。</em>）。</p>
+<p>一旦你建立了间距和尺寸规范，你会发现设计速度会大大提升，尤其是在浏览器中进行设计时（<em>使用体系规范时，输入数值比用鼠标拖拽更为便捷。</em>）。</p>
 <p>Need to add some space under an element? Grab a value from your scale and try it out. Not quite enough? The next value is probably perfect.</p>
 <p>需要在某个元素下增加空间？从你的尺寸体系中选择一个值进行尝试。如果空间不够？试试下一个更大的值，它很可能就是合适的。</p>
 <p>While the workflow improvements are probably the biggest benefit, you’ll also start to notice a subtle consistency in your designs that wasn’t there before, and things will look just a little bit cleaner.</p>
@@ -1133,7 +1133,6 @@
 <p><img src="img/113.png" alt=""></p>
 <p>Going a bit wider than 75 characters per line can sometimes work too, but be aware that you’re entering risky territory — stick to the 45-75 range if you want to play it safe.</p>
 <p>虽然每行超过 75 个字符在某些情况下也可行，但这可能降低阅读舒适度。为了安全起见，建议保持在 45 到 75 个字符的范围内。</p>
-<!-- raw HTML omitted -->
 <p><strong>Dealing with wider content / 应对宽内容的布局</strong></p>
 <p>If you’re mixing paragraph text with images or other large components, you should still limit the paragraph width even if the overall content area needs to be wider to accommodate the other elements.</p>
 <p>当你在段落文本与图片或其他大型组件混合布局时，即使为了适应这些元素，整体内容区域需要加宽，你也应当控制段落文本的宽度。</p>
@@ -1141,287 +1140,447 @@
 <p><img src="img/115.png" alt=""></p>
 <p>It might seem counterintuitive at first to use different widths in the same content area, but the result almost always looks more polished.</p>
 <p>虽然一开始在同一内容区域使用不同宽度的布局可能看起来不太自然，但这种设计方法几乎总能带来更加精细的外观。</p>
-<h3 id="baseline-not-center--基线不居中">Baseline, not center / 基线，不居中</h3>
+<h3 id="baseline-not-center--使用基线对齐而非居中对齐">Baseline, not center / 使用基线对齐，而非居中对齐</h3>
 <p>There are a lot of situations where it makes sense to use multiple font sizes to create hierarchy on a single line.</p>
+<p>在许多情况下，为了在一行内创建视觉层级，使用不同大小的字体是合理的。</p>
 <p>For example, maybe you’re designing a card that has a large title in the top left and a smaller list of actions in the top right.</p>
+<p>比如，你可能在设计一个卡片，左上角有一个显眼的大标题，右上角是一组较小的操作项列表。</p>
 <p>When you’re mixing font sizes like this, your instinct might be to vertically center the text for balance:</p>
+<p>在混合使用不同字体大小时，人们可能会本能地将文本垂直居中对齐以求平衡：</p>
 <p><img src="img/116.png" alt=""></p>
 <p>When there’s a decent amount of space between the different font sizes it often won’t look bad enough to catch your attention, but when the text is close together the awkward alignment becomes more obvious:</p>
+<p>当不同大小的字体之间空间充足时，这种对齐方式可能看起来还可以接受；但当文本紧密排列时，不自然的对齐方式就会变得明显。</p>
 <p><img src="img/117.png" alt=""></p>
 <p>A better approach is to align mixed font sizes by their baseline, which is the imaginary line that letters rest on:</p>
+<p>一个更好的方法是根据字体的基线进行对齐，即字母所依托的那条假想线：</p>
 <p><img src="img/118.png" alt=""></p>
 <p>When you align mixed font sizes by their baseline, you’re taking advantage of an alignment reference that your eyes already perceive.</p>
+<p>通过基线对齐不同大小的字体，你实际上是在使用一个我们的眼睛已经习惯的参照线进行对齐。</p>
 <p><img src="img/119.png" alt=""></p>
 <p>The result is a simpler, cleaner look than what you get when you center two pieces of text and offset their baselines.</p>
-<h3 id="line-height-is-proportional--行高是成比例的">Line-height is proportional / 行高是成比例的</h3>
+<p>这样做的结果是，与将两段文本居中对齐并使它们的基线错位相比，你将得到一个更简洁、更清晰的视觉效果。</p>
+<h3 id="line-height-is-proportional--行高应成比例调整">Line-height is proportional / 行高应成比例调整</h3>
 <p>You might have heard the advice that a line-height of about 1.5 is a good starting point from a readability perspective.</p>
+<p>常听到的建议是，从可读性角度出发，1.5 倍的行高是一个不错的起始点。</p>
 <p><img src="img/120.png" alt=""></p>
 <p>While that’s not necessarily untrue, choosing the right line-height for your text is a bit more complicated than just using the same value across the board in all situations.</p>
+<p>然而，选择适合文本的行高并非简单地一概而论。需要考虑的因素包括行长度和字体大小。</p>
 <p><strong>Accounting for line length / 考虑行长度</strong></p>
 <p>The reason we add space between lines of text is to make it easy for the reader to find the next line when the text wraps. Have you ever accidentally read the same line of text twice, or accidentally skipped a line? The line- height was probably too short.</p>
+<p>我们在文本行间留白，是为了帮助读者在文本换行时轻松找到下一行。如果你曾重复阅读同一行或不小心漏读一行，很可能是由于行高设置不足。</p>
 <p>When lines of text are spaced too tightly, it’s easy to finish reading a line of text at the right edge of a page then jump your eyes all the way back to the left edge only to be unsure which line is next.</p>
+<p>当文本行间距紧凑时，读者的视线在页面右侧结束阅读后，跳回左侧开始新一行，不容易确定下一行是哪一行。</p>
 <p><img src="img/121.png" alt=""></p>
 <p>This problem is magnified when lines of text are long. The further your eyes have to jump horizontally to read the next line, the easier it is to lose your place.</p>
+<p>尤其是在长文本行中，这个问题会被放大。视线必须移动很远才能开始阅读下一行，就更容易在行间迷失。</p>
 <p>That means that your line-height and paragraph width should be proportional — narrow content can use a shorter line-height like 1.5, but wide content might need a line-height as tall as 2.</p>
+<p>因此，行高应与段落宽度成比例 —— 短文本可以使用 1.5 倍的行高，而长文本可能需要更高，如 2 倍行高。</p>
 <p><img src="img/122.png" alt=""></p>
 <p><strong>Accounting for font size / 考虑字体大小</strong></p>
 <p>Line length isn’t the only factor in choosing the right line-height — font size has a big impact as well.</p>
+<p>选择行高时，不仅要考虑行长，还要考虑字体大小的影响。</p>
 <p>When text is small, extra line spacing is important because it makes it a lot easier for your eyes to find the next line when the text wraps.</p>
+<p>小字体需要更大的行间距，以帮助视线在文本换行时更容易定位。</p>
 <p><img src="img/123.png" alt=""></p>
 <p>But as text gets larger, your eyes don’t need as much help. This means that for large headline text you might not need any extra line spacing, and a line- height of 1 is perfectly fine.</p>
+<p>随着字体增大，视线定位的难度降低，大标题可能不需要额外的行间距，1 倍行高已足够。</p>
 <p><img src="img/124.png" alt=""></p>
 <p>Line-height and font size are inversely proportional — use a taller line-height for small text and a shorter line-height for large text.</p>
-<h3 id="not-every-link-needs-a-color--不是每个链接都需要颜色">Not every link needs a color / 不是每个链接都需要颜色</h3>
+<p>总的来说，行高与字体大小呈反比关系 —— 小字体采用较高行高，大字体则可使用较低行高。</p>
+<h3 id="not-every-link-needs-a-color--并非每个链接都需要颜色">Not every link needs a color / 并非每个链接都需要颜色</h3>
 <p>When you’re including a link in a block of otherwise non-link text, it’s important to make sure that the link stands out and looks clickable.</p>
+<p>在非链接文本块中加入链接时，重要的是要确保链接能够突出并显得可点击。</p>
 <p><img src="img/125.png" alt=""></p>
 <p>But when you’re designing an interface where almost everything is a link, using a treatment designed to make links “pop” in paragraph text can be really overbearing.</p>
+<p>然而，在一个几乎所有元素都是链接的界面设计中，使用使链接在文本段落中「跳出来」的设计可能会让人感到过于强烈。</p>
 <p><img src="img/126.png" alt=""></p>
 <p>Instead, emphasize most links in a more subtle way, like by just using a heavier font weight or darker color.</p>
+<p>取而代之的是，以更微妙的方式强调大多数链接，例如只使用更粗的字体或更深的颜色。</p>
 <p><img src="img/127.png" alt=""></p>
 <p>Some links might not even need to be emphasized by default at all. If you’ve got links in your interface that are really ancillary and not part of the main path a user takes through the application, consider adding an underline or changing the color only on hover.</p>
+<p>有些链接默认情况下可能根本不需要强调。如果你的界面中有辅助性的链接，并且这些链接不是用户使用应用程序的主要路径的一部分，考虑仅在鼠标悬停时才添加下划线或改变颜色。</p>
 <p><img src="img/128.png" alt=""></p>
 <p>They’ll still be discoverable to any users who think to try, but won’t compete for attention with more important actions on the page.</p>
-<h3 id="align-with-readability-in-mind--以可读性为目标对齐">Align with readability in mind / 以可读性为目标对齐</h3>
+<p>这样，这些链接对于有意寻找的用户仍然是可发现的，但不会与页面上更重要的操作争夺注意力。</p>
+<h3 id="align-with-readability-in-mind--以可读性为目标进行对齐">Align with readability in mind / 以可读性为目标进行对齐</h3>
 <p>In general, text should be aligned to match the direction of the language it’s written in. For English (and most other languages), that means that the vast majority of text should be left-aligned.</p>
+<p>一般而言，文本的对齐方式应与其书写语言的方向一致。对于英语及大多数语言，这通常意味着大多数文本都应采取左对齐。</p>
 <p><img src="img/129.png" alt=""></p>
 <p>Other alignment options do have their place though, you just need to use them effectively.</p>
-<p><strong>Don’t center long form text / 不要居中长文本</strong></p>
+<p>尽管如此，其他对齐方式也有其适用的场合，关键在于要有效利用。</p>
+<p><strong>Don’t center long form text / 避免居中对齐长文本</strong></p>
 <p>Center-alignment can look great for headlines or short, independent blocks of text.</p>
+<p>居中对齐适用于标题或短小独立的文本块，看起来效果佳。</p>
 <p><img src="img/130.png" alt=""></p>
 <p>But if something is longer than two or three lines, it will almost always look better left-aligned.</p>
+<p>但如果文本超过两三行，左对齐通常会更美观。</p>
 <p><img src="img/131.png" alt=""></p>
 <p>If you’ve got a few blocks of text you want to center but one of them is a bit too long, the easiest fix is to rewrite the content and make it shorter:</p>
+<p>如果你希望几段文本居中对齐，但某段过长，最简单的解决方法是重写并缩短内容：</p>
 <p><img src="img/132.png" alt=""></p>
 <p>Not only will it fix the alignment issue, it will make your design feel more consistent, too.</p>
+<p>这不仅能解决对齐问题，还能让你的设计更加统一。</p>
 <p><strong>Right-align numbers / 数字右对齐</strong></p>
 <p>If you’re designing a table that includes numbers, right-align them.</p>
+<p>在设计包含数字的表格时，应将数字右对齐。</p>
 <p><img src="img/133.png" alt=""></p>
 <p>When the decimal in a list of numbers is always in the same place, they’re a lot easier to compare at a glance.</p>
-<p><strong>Hyphenate justified text / 分隔符对齐的文本</strong></p>
+<p>当数字列表中的小数点位置固定时，它们将更易于快速比较。</p>
+<p><strong>Hyphenate justified text / 两端对齐文本使用连字符</strong></p>
 <p>Justified text looks great in print and can work well on the web when you’re going for a more formal look, but without special care, it can create a lot of awkward gaps between words:</p>
+<p>两端对齐的文本在印刷品中表现出色，并且在追求更正式外观的网页设计中也能发挥作用，但若不经特殊处理，可能会在单词间产生不自然的空隙：</p>
 <p><img src="img/134.png" alt=""></p>
 <p>To avoid this, whenever you justify text, you should also enable hyphenation:</p>
+<p>要避免这种情况，当文本两端对齐时，应同时启用连字符功能：</p>
 <p><img src="img/135.png" alt=""></p>
 <p>Justified text works best in situations where you’re trying to mimic a print look, perhaps for an online magazine or newspaper. Even then, left aligned text works great too, so it’s really just a matter of preference.</p>
+<p>两端对齐的文本最适合于模仿印刷品外观的场合，如在线杂志或报纸。即便如此，左对齐文本同样表现出色，因此这更多是个人偏好的选择。</p>
 <h3 id="use-letter-spacing-effectively--有效使用字间距">Use letter-spacing effectively / 有效使用字间距</h3>
 <p>When styling text, a lot of effort is put into getting the weight, color, and line- height just right, but it’s easy to forget that letter-spacing can be tweaked, too.</p>
+<p>在设计文本样式时，我们通常会花费很多精力调整字体粗细、颜色和行高，但有时会忽略字间距的调整。</p>
 <p><img src="img/136.png" alt=""></p>
-<p>As a general rule, you should trust the typeface designer and leave letter- spacing alone. That said, there are a couple of common situations where adjusting it can improve your designs.</p>
-<p><strong>Tightening headlines / 紧缩的新闻标题</strong></p>
+<p>As a general rule, you should trust the typeface designer and leave letter-spacing alone. That said, there are a couple of common situations where adjusting it can improve your designs.</p>
+<p>一般而言，我们应该信任字体设计师的设计，不改变字间距。尽管如此，有几种常见情况通过调整字间距可以提升设计效果。</p>
+<p><strong>Tightening headlines / 压缩标题的字间距</strong></p>
 <p>When someone designs a font family, they design it with a purpose in mind.</p>
+<p>设计字体系列时，设计师会考虑特定的使用目的。</p>
 <p>A family like Open Sans is designed to be highly legible even at small sizes, so the built-in letter-spacing is a lot wider than a family like Oswald which is designed for headlines.</p>
+<p>例如，Open Sans 字体设计用于在小尺寸下也能保持高度可读性，因此其字间距相对较宽；而 Oswald 字体则是为标题设计的，其字间距更紧凑。</p>
 <p><img src="img/137.png" alt=""></p>
 <p>If you want to use a family with wider letter-spacing for headlines or titles, it can often make sense to decrease the letter-spacing to mimic the condensed look of a purpose-built headline family:</p>
+<p>如果你想使用字间距较宽的字体系列做标题，通常可以减少字间距，以模拟专为标题设计的紧凑字体的外观：</p>
 <p><img src="img/1389.png" alt=""></p>
 <p>Avoid trying to make this work the other way around though — headline fonts rarely work well at small sizes even if you increase the letter spacing.</p>
+<p>但不要试图反向操作 —— 即使增加字间距，专为标题设计的字体在小尺寸下也很少能表现良好。</p>
 <p><strong>Improving all-caps legibility / 提高全大写易读性</strong></p>
 <p>The letter-spacing in most font families is optimized for normal “sentence case” text — a capital letter followed by mostly lowercase letters.</p>
+<p>大多数字体系列的字间距是为通常的「句子格式」文本优化的 —— 即一个单词首字母大写后跟小写字母。</p>
 <p>Lowercase letters have a lot of variety visually. Letters like n, v, and e fit entirely within a typeface’s x-height, other letters like y, g, and p have descenders that poke out below the baseline, and letters like b, f, and t have ascenders that extend above.</p>
+<p>小写字母在视觉上具有多样性。例如，字母 n、v 和 e 完全适应字体的 X 高度，而像 y、g 和 p 这样的字母有延伸到基线以下的部件，b、f 和 t 等字母则有延伸到基线上面的部件。</p>
 <p><img src="img/139.png" alt=""></p>
 <p>All-caps text on the other hand isn’t so diverse. Since every letter is the same height, using the default letter-spacing often leads to text that is harder to read because there are fewer distinguishing characteristics between letters.</p>
+<p>而全大写字母则缺乏这种多样性，因为所有字母高度一致，使用默认字间距可能会导致文本阅读起来更困难，因为字母之间的区别性减少。</p>
 <p>For that reason, it often makes sense to increase the letter-spacing of all- caps text to improve readability:</p>
+<p>因此，通常增加全大写字母的字间距有助于提高其可读性：</p>
 <p><img src="img/140.png" alt=""></p>
-<h2 id="working-with-color--与色彩合作">Working with Color / 与色彩合作</h2>
-<h3 id="ditch-hex-for-hsl--放弃-hex选择-hsl">Ditch hex for HSL / 放弃 HEX，选择 HSL</h3>
+<h2 id="working-with-color--运用色彩">Working with Color / 运用色彩</h2>
+<h3 id="ditch-hex-for-hsl--放弃-hex选择-hsl">Ditch hex for HSL / 放弃 Hex，选择 HSL</h3>
 <p>Hex and RGB are the most common formats for representing color on the web, but they’re not the most useful.</p>
+<p>十六进制（Hex）和 RGB 是网络中表示颜色的常见格式，但它们并不是最实用的选择。</p>
 <p>Using hex or RGB, colors that have a lot in common visually look nothing alike in code.</p>
+<p>使用十六进制或 RGB 时，视觉上相似的颜色在代码中可能看起来完全不同。</p>
 <p><img src="img/141.png" alt=""></p>
 <p>HSL fixes this by representing colors using attributes the human-eye intuitively perceives: hue, saturation, and lightness.</p>
+<p>HSL 通过人类直观感知的色彩属性来表示颜色：色相、饱和度和亮度。</p>
 <p><strong>Hue</strong> is a color’s position on the color wheel — it’s the attribute of a color that lets us identify two colors as “blue” even if they aren’t identical.</p>
+<p><strong>色相</strong>指的是颜色在色轮上的定位，这种属性使我们能够在两种颜色并非完全一致的情况下，依然将它们归类为「蓝色」。</p>
 <p><img src="img/142.png" alt=""></p>
 <p>Hue is measured in degrees, where 0° is red, 120° is green, and 240° is blue.</p>
+<p>色相用度数表示，0° 代表红色，120° 代表绿色，240° 代表蓝色。</p>
 <p><img src="img/143.png" alt=""></p>
 <p><strong>Saturation</strong> is how colorful or vivid a color looks. 0% saturation is grey (no color), and 100% saturation is vibrant and intense.</p>
+<p><strong>饱和度</strong>描述颜色的鲜艳程度。0% 的饱和度是灰色，没有色彩感，而 100% 的饱和度则非常鲜艳和强烈。</p>
 <p><img src="img/144.png" alt=""></p>
 <p>Without saturation, hue is irrelevant — rotating the hue when saturation is 0% doesn’t actually change the color at all.</p>
+<p>没有饱和度，色相就无从谈起 —— 饱和度为 0% 时，色相的旋转不会改变颜色。</p>
 <p><img src="img/145.png" alt=""></p>
 <p><strong>Lightness</strong> is just what it sounds like — it measures how close a color is to black or to white. 0% lightness is pure black, 100% lightness is pure white, and 50% lightness is a pure color at the given hue.</p>
+<p><strong>亮度</strong>顾名思义，它衡量颜色与黑色或白色的接近程度。0% 亮度是纯黑色，100% 亮度是纯白色，而 50% 亮度则表示在特定色相下的纯色。</p>
 <p><img src="img/146.png" alt=""></p>
-<p><strong>HSL vs. HSB</strong></p>
+<p><strong>HSL vs. HSB / HSL 与 HSB 的区别</strong></p>
 <p>Don’t confuse HSL for HSB — <em>lightness</em> in HSL is not the same as brightness in HSB.</p>
+<p>不要把 HSL 和 HSB 混淆。HSL 中的<em>亮度</em>与 HSB 中的<em>亮度</em>不是同一个概念。</p>
 <p>In HSB, 0% brightness is always black, but 100% brightness is only white when the saturation is 0%. When saturation is 100%, 100% brightness in HSB is the same as 100% saturation and 50% lightness in HSL.</p>
+<p>在 HSB 模式中，0% 亮度总是黑色，而在饱和度为 0% 时，100% 亮度是白色。当饱和度为 100% 时，HSB 中的 100% 亮度等同于 HSL 中的 100% 饱和度和 50% 亮度。</p>
 <p><img src="img/147.png" alt=""></p>
 <p>HSB is more common than HSL in design software, but browsers only understand HSL, so if you’re designing for the web, HSL should be your weapon of choice.</p>
-<h3 id="you-need-more-colors-than-you-think--你需要比你想的更多的颜色">You need more colors than you think / 你需要比你想的更多的颜色</h3>
+<p>虽然 HSB 在设计软件中更常见，但浏览器只接受 HSL，所以如果你在为网页设计，HSL 应该是你的首选。</p>
+<h3 id="you-need-more-colors-than-you-think--你所需的颜色比你认为的要多">You need more colors than you think / 你所需的颜色比你认为的要多</h3>
 <p>Ever used one of those color palette generators where you pick a starting color, tweak some options, and are then bestowed the five perfect colors you should use to build your website?</p>
+<p>你是否尝试过那种颜色调色板生成器，你选定一个基础色，调整几个选项，然后生成器就会为你提供五种完美的颜色，告诉你应该用它们来构建你的网站？</p>
 <p><img src="img/148.png" alt=""></p>
 <p>This calculated approach to picking the perfect color scheme is extremely seductive, but it’s not very useful unless you want your site to look like this:</p>
+<p>这种计算出的颜色方案选择方法非常吸引人，但除非你想让你的网站看起来千篇一律：</p>
 <p><img src="img/149.png" alt=""></p>
-<p><strong>What you actually need / 你需要什么</strong></p>
+<p><strong>What you actually need / 你实际需要的</strong></p>
 <p>You can’t build anything with five hex codes. To build something real, you need a much more comprehensive set of colors to choose from.</p>
+<p>仅有五个十六进制颜色代码是不够的。要构建真实的设计，你需要更全面的颜色选择范围。</p>
 <p><img src="img/150.png" alt=""></p>
 <p>You can break a good color palette down into three categories.</p>
-<p><strong>Greys /</strong></p>
+<p>一个好的颜色调色板可以分为三个主要类别。</p>
+<p><strong>Greys / 灰色系</strong></p>
 <p>Text, backgrounds, panels, form controls — almost everything in an interface is grey.</p>
+<p>文本、背景、面板、表单控件 —— 界面中的几乎所有元素都是灰色的。</p>
 <p><img src="img/151.png" alt=""></p>
 <p>You’ll need more greys than you think, too — three or four shades might sound like plenty but it won’t be long before you wish you had something a little darker than shade #2 but a little lighter than shade #3.</p>
+<p>你可能需要比你想象的更多的灰色调 —— 三到四种可能看起来足够，但很快你就会需要比 #2 色调稍深一点但是比 #3 色调稍浅一点的颜色。</p>
 <p>In practice, you want 8-10 shades to choose from (<em>more on this in “Define your shades up front”</em>). Not so many that you waste time deciding between shade #77 and shade #78, but enough to make sure you don’t have to compromise too much.</p>
+<p>实际上，你应该从一种非常深的灰色开始，逐步过渡到白色，并有 8 到 10 种色调可供选择（更多细节见「预先确定色调」）。这样既不会太多以至于在选择色调时浪费时间，也足以保证你不必做出太多妥协。</p>
 <p><img src="img/152.png" alt=""></p>
 <p>True black tends to look pretty unnatural, so start with a really dark grey and work your way up to white in steady increments.</p>
-<p><strong>Primary color(s) /</strong></p>
+<p>纯黑色看起来往往不自然，所以应该从一种非常深的灰色开始，逐步过渡到白色。</p>
+<p><strong>Primary color(s) / 主要色</strong></p>
 <p>Most sites need one, <em>maybe</em> two colors that are used for primary actions, active navigation elements, etc. These are the colors that determine the overall look of a site — the ones that make you think of Facebook as “blue”.</p>
+<p>大多数网站通常需要一种，或者<em>可能</em>最多两种颜色，用于主要操作、活动的导航元素等。这些颜色决定了网站的整体外观 —— 比如 Facebook 的「蓝色」。</p>
 <p>Just like with greys, you need a variety (5-10) of lighter and darker shades to choose from.</p>
+<p>和灰色一样，你需要 5 到 10 种不同深浅的色调可供选择。</p>
 <p><img src="img/153.png" alt=""></p>
 <p>Ultra-light shades can be useful as a tinted background for things like alerts, while darker shades work great for text.</p>
-<p><strong>Accent colors /</strong></p>
+<p>最浅的色调可以用作提醒等元素的着色背景，而最深的色调适合用于文本。</p>
+<p><strong>Accent colors / 强调色</strong></p>
 <p>On top of primary colors, every site needs a few accent colors for communicating different things to the user.</p>
+<p>除了主颜色外，每个网站还需要一些强调色来向用户传达不同的信息。</p>
 <p>For example, you might want to use an eye-grabbing color like yellow, pink, or teal to highlight a new feature:</p>
+<p>例如，你可能想用黄色、粉色或蓝绿色等醒目的颜色来突出新功能：</p>
 <p><img src="img/154.png" alt=""></p>
 <p>You might also need colors to emphasize different semantic states, like red for confirming a destructive action:</p>
+<p>你可能还需要用颜色来强调不同的语义状态，如用红色来确认破坏性操作：</p>
 <p><img src="img/155.png" alt=""></p>
 <p>&hellip;yellow for a warning message:</p>
+<p>用黄色表示警告信息：</p>
 <p><img src="img/156.png" alt=""></p>
 <p>&hellip;or green to highlight a positive trend:</p>
+<p>或者用绿色突出积极的趋势：</p>
 <p><img src="img/157.png" alt=""></p>
 <p>You’ll want multiple shades for these colors too, even though they should be used pretty sparingly throughout the UI.</p>
+<p>即使对于这些颜色，你也需要有多种深浅变化，尽管它们在 UI 中的使用应该相当节制。</p>
 <p>If you’re building something where you need to use color to distinguish or categorize similar elements (like lines on graphs, events in a calendar, or tags on a project), you might need even more accent colors.</p>
+<p>如果你正在构建需要用颜色来区分或分类相似元素的设计（例如图表中的线条、日历中的事件或项目中的标签），你可能需要更多的强调色。</p>
 <p>All in, it’s not uncommon to need as many as ten different colors with 5-10 shades each for a complex UI.</p>
-<h3 id="define-your-shades-up-front-">Define your shades up front /</h3>
+<p>总的来说，对于一个复杂的用户界面，拥有多达十种不同的颜色，每种颜色有 5 到 10 种不同的深浅变化，这是很常见的。</p>
+<h3 id="define-your-shades-up-front--预先确定色调">Define your shades up front / 预先确定色调</h3>
 <p>When you need to create a lighter or darker variation of a color in your palette, don’t get clever using CSS preprocessor functions like “lighten” or “darken” to create shades on the fly. That’s how you end up with 35 slightly different blues that all look the same.</p>
+<p>在为你的调色板创建颜色的深浅变化时，不要使用 CSS 预处理器的「变亮」或「变暗」等函数来即时生成色调。这样做可能会导致你得到许多几乎无法区分的蓝色调。</p>
 <p>Instead, define a fixed set of shades up front that you can choose from as you work.</p>
+<p>相反，你应该一开始就定义一套固定的色调供工作时选择。</p>
 <p><img src="img/158.png" alt=""></p>
 <p>So how do you put together a palette like this anyways?</p>
-<p><strong>Choose the base color first /</strong></p>
+<p>那么，如何构建这样的调色板呢？</p>
+<p><strong>Choose the base color first / 首先选择基础色调</strong></p>
 <p>Start by picking a base color for the scale you want to create — the color in the middle that your lighter and darker shades are based on.</p>
+<p>首先，为你想要创建的色阶选择一个基础色调 —— 你的浅色和深色都是基于这个中间色调。</p>
 <p>There’s no real scientific way to do this, but for primary and accent colors, a good rule of thumb is to pick a shade that would work well as a button background.</p>
+<p>选择基础色调没有严格的科学方法，但对于主要色和强调色，一个好的经验是选择一个适合作为按钮背景的色调。</p>
 <p><img src="img/159.png" alt=""></p>
 <p>It’s important to note that there are no real rules here like “start at 50% lightness” or anything — every color behaves a bit differently, so you’ll have to rely on your eyes for this one.</p>
-<p><strong>Finding the edges /</strong></p>
+<p>需要注意的是，这里没有固定规则，比如「从 50% 亮度开始」，因为每种颜色的表现都有所不同，所以你需要依靠你的视觉判断。</p>
+<p><strong>Finding the edges / 确定色阶的端点</strong></p>
 <p>Next, pick your darkest shade and your lightest shade. There’s no real science to this either, but it helps to think about where they will be used and choose them using that context.</p>
+<p>接下来，选择最深色和最浅色。这个过程也没有固定规则，但考虑它们将如何使用，并根据这个场景来选择它们。</p>
 <p>The darkest shade of a color is usually reserved for text, while the lightest shade might be used to tint the background of an element.</p>
+<p>通常，颜色的最深色用于文本，而最浅色可能用于元素背景的轻微着色。</p>
 <p>A simple alert component is a good example that combines both of these use cases, so it can be a great place to pick these colors.</p>
+<p>例如，一个简单的警告组件可能同时使用这两种色调，这可以是选择这些颜色的好起点。</p>
 <p><img src="img/160.png" alt=""></p>
 <p>Start with a color that matches the hue of your base color, and adjust the saturation and lightness until you’re satisfied.</p>
-<p><strong>Filling in the gaps /</strong></p>
+<p>从与基础色相相匹配的颜色开始，调整饱和度和亮度直到你满意。</p>
+<p><strong>Filling in the gaps / 填补中间的空隙</strong></p>
 <p>Once you’ve got your base, darkest, and lightest shades, you just need to fill in the gaps in between them.</p>
+<p>确定了基础色、最深色和最浅色之后，你只需要在它们之间填补空隙。</p>
 <p>For most projects, you’ll need at least 5 shades per color, and probably closer to 10 if you don’t want to feel too constrained.</p>
+<p>对于大多数项目，每种颜色至少需要 5 个色调，如果想要更自由一些，可能需要接近 10 个。</p>
 <p>Nine is a great number because it’s easy to divide and makes filling in the gaps a little more straightforward. Let’s call our darkest shade 900, our base shade 500, and our lightest shade 100.</p>
+<p>9 是一个理想的数字，因为它易于分割，使得填补空隙更加直接。假设我们将最深色定义为 900，基础色为 500，最浅色为 100。</p>
 <p><img src="img/161.png" alt=""></p>
 <p>Start by picking shades 700 and 300, the ones right in the middle of the gaps. You want these shades to feel like the perfect compromise between the shades on either side.</p>
+<p>首先选择 700 和 300 这两个中间的色调，这些色调应该是两侧色调的完美折中。</p>
 <p><img src="img/162.png" alt=""></p>
 <p>This creates four more holes in the scale (800, 600, 400, and 200), which you can fill using the same approach.</p>
+<p>这样，你就为色阶上的 800、600、400 和 200 留下了更多的空间，可以用相同的方法填补。</p>
 <p><img src="img/163.png" alt=""></p>
 <p>You should end up with a pretty balanced set of colors that provide just enough options to accommodate your design ideas without feeling limiting.</p>
-<p><strong>What about greys?</strong> /</p>
+<p>最终，你会得到一套平衡的颜色组合，为你的设计提供足够的选择，而不会感觉受限。</p>
+<p><strong>What about greys? / 灰色如何处理？</strong></p>
 <p>With greys the base color isn’t as important, but otherwise the process is the same. Start at the edges and fill in the gaps until you have what you need.</p>
+<p>对于灰色，基础色不是那么关键，但构建过程是相同的。从端点开始，填补空隙，直到你得到所需。</p>
 <p><img src="img/164.png" alt=""></p>
 <p>Pick your darkest grey by choosing a color for the darkest text in your project, and your lightest grey by choosing something that works well for a subtle off-white background.</p>
-<p><strong>It’s not a science /</strong></p>
+<p>选择最深色灰色，可以作为项目中最深色文本的颜色，选择最浅色灰色，可以作为微妙的灰白色背景。</p>
+<p><strong>It’s not a science / 这不是一门精确科学</strong></p>
 <p>As tempting as it is, you can’t rely purely on math to craft the perfect color palette.</p>
+<p>尽管很诱人，但你不能完全依赖数学来创建完美的调色板。</p>
 <p>A systematic approach like the one described above is great to get you started, but don’t be afraid to make little tweaks if you need to.</p>
+<p>像前文描述的体系化方法对于开始构建调色板很有帮助，但如果需要，不要害怕进行微调。</p>
 <p>Once you actually start using your colors in your designs, it’s almost inevitable that you’ll want to tweak the saturation on a shade, or make a couple of shades lighter or darker. Trust your eyes, not the numbers.</p>
+<p>当你开始在设计中实际使用这些颜色时，几乎可以肯定会想要调整某个色调的饱和度，或者让几个色调变得更亮或更暗。相信的你的眼睛，而不是数字。</p>
 <p>Just try to avoid adding new shades too often if you can avoid it. If you’re not diligent about limiting your palette, you might as well have no color system at all.</p>
-<h3 id="dont-let-lightness-kill-your-saturation-">Don’t let lightness kill your saturation /</h3>
+<p>只是尽量避免频繁添加新色调。如果你不严格限制你的调色板，那拥有颜色体系就毫无意义。</p>
+<h3 id="dont-let-lightness-kill-your-saturation--避免亮度影响饱和度">Don’t let lightness kill your saturation / 避免亮度影响饱和度</h3>
 <p>In the HSL color space, as a color gets closer to 0% or 100% lightness, the impact of saturation is weakened — the same saturation value at 50% lightness looks more colorful than it does at 90% lightness.</p>
+<p>在 HSL 色彩模式中，颜色的亮度若接近 0% 或 100% 时，饱和度的效果会减弱 —— 即使饱和度值相同，在 50% 亮度下看起来会比在 90% 亮度下更显彩色。</p>
 <p><img src="img/165.png" alt=""></p>
 <p>That means that if you don’t want the lighter and darker shades of a given color to look washed out, you need to increase the saturation as the lightness gets further away from 50%.</p>
+<p>这表示，如果你不希望某个颜色的深浅变化看起来褪色，就需要随着亮度的增减相应提高饱和度。</p>
 <p><img src="img/166.png" alt=""></p>
 <p>It’s subtle but little details like this add up, especially when a color is being applied to a large section of a UI.</p>
+<p>这种细微差别虽然不易察觉，但累积起来，尤其是在大面积应用颜色的 UI 设计中，会有很大影响。</p>
 <p>But what if your base color is already heavily saturated? How do you increase the saturation if it’s already at 100%?</p>
-<p><strong>Use perceived brightness to your advantage /</strong></p>
+<p>如果你的基础色已经非常饱和，达到 100%，那该怎么办？</p>
+<p><strong>Use perceived brightness to your advantage / 利用感知亮度的优势</strong></p>
 <p>Which of these two colors do you think is lighter?</p>
+<p>你认为这两种颜色中，哪一种更亮？</p>
 <p><img src="img/167.png" alt=""></p>
 <p>The yellow, right? Well it turns out both colors actually have the exact same “lightness” in terms of HSL:</p>
+<p>是黄色，对吧？实际上，这两种颜色在 HSL 色彩模式中的亮度是相同的。</p>
 <p><img src="img/168.png" alt=""></p>
 <p>So why do we see the yellow as lighter? Well it turns out that every hue has an inherent perceived brightness due to how the human eye perceives color.</p>
+<p>那为什么我们会感觉黄色更亮呢？这是因为人眼对不同色相有固有的感知亮度。</p>
 <p>You can calculate the perceived brightness of a color by plugging its RGB components into this formula:</p>
+<p>你可以通过一个公式，将颜色的 RGB 值代入，来计算其感知亮度。</p>
 <p><img src="img/169.png" alt=""></p>
 <p>Taking samples of different hues with 100% saturation and 50% lightness, we can get a good sense of the perceived brightness of different colors around the color wheel:</p>
+<p>选取不同色相 100% 饱和度和 50% 亮度的样本，我们可以了解到色轮上不同颜色的感知亮度。</p>
 <p><img src="img/170.png" alt=""></p>
 <p>As expected, yellow has a higher perceived brightness than blue. But what’s interesting here is that perceived brightness doesn’t simply change linearly from the darkest hue to the lightest hue — instead, there are three separate local minimums (red, green, and blue) and three local maximums (yellow, cyan, and magenta).</p>
-<p><strong>Changing brightness by rotating hue /</strong></p>
+<p>正如预期，黄色的感知亮度高于蓝色。有趣的是，感知亮度并非从最暗色相到最亮色相线性变化，而是有三个局部最小值（红色、绿色和蓝色）和三个局部最大值（黄色、青色和品红色）。</p>
+<p><strong>Changing brightness by rotating hue / 通过调整色相改变亮度</strong></p>
 <p>On the surface, this is certainly an interesting thing to understand about color. But things get really interesting when you realize how you can use this knowledge in your designs.</p>
+<p>这在理论上是一个有趣的发现，但当你意识到可以如何在设计中应用这一知识时，它就变得更有趣了。</p>
 <p>Normally when you want to change how light a color looks, you adjust the <em>lightness</em> component:</p>
+<p>通常，如果你想改变颜色的亮度，你会调整其<em>亮度</em>成分。</p>
 <p><img src="img/171.png" alt=""></p>
 <p>While this does work to lighten or darken a color, you often lose some of the color’s <em>intensity</em> — the color also looks closer to white or to black, not just lighter or darker.</p>
+<p>这种方法虽然有效，但可能会牺牲颜色的<em>强度</em> —— 颜色看起来会更接近白色或黑色，而不仅仅是变亮或变暗。</p>
 <p><img src="img/172.png" alt=""></p>
 <p>Since different hues have a different perceived brightness, another way you can change the brightness of a color is by <em>rotating</em> its hue.</p>
+<p>由于不同色相的感知亮度不同，你也可以通过<em>旋转</em>色相来改变颜色的亮度。</p>
 <p>To make a color lighter, rotate the hue towards the nearest bright hue — 60°, 180°, or 300°.</p>
+<p>要使颜色看起来更亮，将其色相向最近的亮色相（60°、180° 或 300°）调整。</p>
 <p><img src="img/173.png" alt=""></p>
 <p>To make a color darker, rotate the hue towards the nearest dark hue — 0°, 120°, or 240°.</p>
+<p>要使颜色看起来更暗，将其色相向最近的暗色相（0°、120° 或 240°）调整。</p>
 <p><img src="img/174.png" alt=""></p>
 <p>This can be really useful when trying to create a palette for a light color like yellow. By gradually rotating the hue towards more of an orange as you decrease the lightness, the darker shades will feel warm and rich instead of dull and brown:</p>
+<p>这在为像黄色这样的浅色创建调色板时非常有用。通过逐渐将色相调整为更偏向橙色，同时降低亮度，较暗的色相会显得更加温暖和丰富，而不是单调和棕色。</p>
 <p><img src="img/175.png" alt=""></p>
 <p>You can of course combine these approaches too, getting some of the brightness by adjusting the hue and some from adjusting the lightness.</p>
+<p>当然，你也可以结合这两种方法，通过调整色相和亮度来获得所需的亮度。</p>
 <p><img src="img/176.png" alt=""></p>
 <p>While this is a great way to change a color’s brightness without affecting its intensity, it works best in small doses. Don’t rotate the hue more than 20-30° or it will look like a totally different color instead of just lighter or darker.</p>
-<h3 id="greys-dont-have-to-be-grey-">Greys don’t have to be grey /</h3>
+<p>虽然这是一种在不影响颜色强度的情况下改变颜色亮度的有效方法，但应适度使用。避免将色相旋转超过 20~30°，否则颜色可能会看起来完全不同，而不仅仅是简单的变亮或变暗。</p>
+<h3 id="greys-dont-have-to-be-grey--灰色也可以有色彩">Greys don’t have to be grey / 灰色也可以有色彩</h3>
 <p>By definition, true grey has a saturation of 0% — it doesn’t have any actual color in it at all.</p>
+<p>按照定义，纯灰色的饱和度为0%，它不包含任何颜色成分。</p>
 <p><img src="img/177.png" alt=""></p>
 <p>But in practice, a lot of the colors that we <em>think of</em> as grey are actually saturated quite heavily:</p>
+<p>但在实践中，许多我们<em>认为</em>是灰色的颜色实际上具有相当高的饱和度：</p>
 <p><img src="img/178.png" alt=""></p>
 <p>This saturation is what makes some greys feel cool and other greys feel warm.</p>
-<p><strong>Color temperature /</strong></p>
+<p>正是这种饱和度让某些灰色带有凉爽感，而另一些灰色则带有温暖感。</p>
+<p><strong>Color temperature / 色温的概念</strong></p>
 <p>If you’ve ever purchased light bulbs before, you’ve had to make the decision between “warm white” bulbs that give off a yellow-ish light, and “cool white” bulbs that give off a blue-ish light.</p>
+<p>如果你曾经购买过灯泡，你可能需要在发出偏黄光的「暖白光」灯泡和发出偏蓝光的「冷白光」灯泡之间做出选择。</p>
 <p>Saturating greys in a user interface works in a similar same way.</p>
+<p>在用户界面设计中，对灰色进行饱和处理的原理相似。</p>
 <p>If you want your greys to feel cool, saturate them with a bit of blue:</p>
+<p>如果你想让灰色显得更冷，可以添加一些蓝色的饱和：</p>
 <p><img src="img/179.png" alt=""></p>
 <p>To give your greys a warmer feel, saturate them with a bit of yellow or orange:</p>
+<p>要让灰色显得更温暖，可以添加一些黄色或橙色的饱和：</p>
 <p><img src="img/180.png" alt=""></p>
 <p>To maintain a consistent temperature, don’t forget to increase the saturation for the lighter and darker shades. If you don’t, those shades will look a bit washed out compared to the greys that are closer to 50% lightness.</p>
+<p>为了维持一致的色温，记得为较亮或较暗的灰色调也增加饱和度。如果不这样做，与接近 50% 亮度的灰色相比，这些色调可能会显得有些褪色。</p>
 <p>How much you want to saturate your greys is completely up to you — add just a little if you only want to tip the temperature slightly, or crank it up if you want the interface to lean strongly in one direction or the other.</p>
-<h3 id="accessible-doesnt-have-to-mean-ugly-">Accessible doesn’t have to mean ugly /</h3>
+<p>你对灰色的饱和度调整程度完全取决于你自己的偏好 —— 如果你只想轻微调整色温，可以只添加少量饱和；如果你希望界面明显倾向于冷或暖色调，可以适当增加饱和度。</p>
+<h3 id="accessible-doesnt-have-to-mean-ugly--易用性不必以牺牲美观为代价">Accessible doesn’t have to mean ugly / 易用性不必以牺牲美观为代价</h3>
 <p>To make sure your designs are accessible, the Web Content Accessibility Guidelines (WCAG) recommend that normal text (under ~18px) has a contrast ratio of at least 4.5:1, and that larger text has a contrast ratio of at least 3:1.</p>
+<blockquote>
+<p>译者注：<a href="https://www.w3.org/TR/WCAG21/">Web Content Accessibility Guidelines (WCAG) 2.1</a></p>
+</blockquote>
+<p>根据网络内容无障碍指南（WCAG），为确保设计易于访问，建议对小于约 18px 的普通文本保持至少 4.5:1 的对比度，对较大文本保持至少 3:1 的对比度。</p>
 <p><img src="img/181.png" alt=""></p>
 <p>For typical <em>dark-text-on-a-light-background</em> situations, meeting this recommendation is pretty easy, but it gets a lot trickier when you start working with color.</p>
-<p><strong>Flipping the contrast</strong></p>
+<p>在<em>深色文字在浅色背景上</em>的常见情况下，达到这些建议标准相对容易，但在涉及彩色设计时，挑战就会增加。</p>
+<p><strong>Flipping the contrast / 对比度反转</strong></p>
 <p>When using white text on a colored background, you’d be surprised how dark the color often needs to be to meet that 4.5:1 contrast ratio.</p>
+<p>在彩色背景上使用白色文字时，你可能会发现要满足 4.5:1 的对比度标准，背景颜色往往需要非常深。</p>
 <p><img src="img/182.png" alt=""></p>
 <p>This can create hierarchy issues when those elements aren’t supposed to be the focus of the page — dark colored backgrounds will really grab the user’s attention.</p>
+<p>这可能会导致层级上的混淆，尤其是当这些元素并非页面的焦点时 —— 深色背景会特别吸引用户的注意力。</p>
 <p><img src="img/183.png" alt=""></p>
 <p>You can solve this problem by flipping the contrast. Instead of using light text on a dark colored background, use dark colored text on a light colored background:</p>
+<p>解决这个问题的方法是反转对比度。与其在深色背景上使用浅色文字，不如在浅色背景上使用深色文字：</p>
 <p><img src="img/184.png" alt=""></p>
 <p>The color is still there to help support the text, but it’s way less in-your-face and doesn’t interfere as much with other actions on the page.</p>
-<p><strong>Rotating the hue /</strong></p>
+<p>颜色依然有助于支持文字的可读性，但更加低调，不会过多干扰页面上的其他操作。</p>
+<p><strong>Rotating the hue / 旋转色相</strong></p>
 <p>Even harder than white text on a colored background is colored text on a colored background. You’ll run into this situation if you’re ever trying to pick a color for some secondary text inside a dark-colored panel.</p>
+<p>比在彩色背景上使用白色文字更具挑战性的是在彩色背景上使用彩色文字。这种情况可能发生在为深色面板内的次要文本选择颜色时。</p>
 <p>If you start by taking the background color and simply adjusting the lightness and saturation, you’ll find that it’s hard to meet the recommended contrast ratio without getting very close to pure white.</p>
+<p>如果你只是调整背景色的色彩亮度和饱和度，会发现很难在不接近纯白色的情况下达到推荐的对比度。</p>
 <p><img src="img/185.png" alt=""></p>
 <p>You don’t want the primary text and the secondary text to look the same, so what else can you do?</p>
+<p>你不希望次要文本和主要文本看起来没有区别，那还能怎么做呢？</p>
 <p>Well since some colors are brighter than others, one way to increase the contrast without getting closer to white is to <em>rotate the hue</em> towards a brighter color, like cyan, magenta, or yellow.</p>
+<p>既然某些颜色天生比其他颜色更明亮，一种在不趋向白色的情况下提高对比度的方法就<em>旋转色相</em>向更明亮的颜色，比如青色、品红或黄色。</p>
 <p><img src="img/186.png" alt=""></p>
 <p>This can make it a lot easier to make the text accessible while still keeping it colorful.</p>
-<h3 id="dont-rely-on-color-alone-">Don’t rely on color alone /</h3>
+<p>这可以使文本在保持多彩的同时，也更容易阅读。</p>
+<h3 id="dont-rely-on-color-alone--避免完全依赖颜色">Don’t rely on color alone / 避免完全依赖颜色</h3>
 <p>Color can be a fantastic way to enhance information and make it easier to understand, but be careful not to rely on it, or users with color blindness will have a hard time interpreting your UI.</p>
+<p>颜色是提升信息传递清晰度和易理解性的绝佳工具，但应避免完全依赖颜色，以免色盲用户难以理解用户界面。</p>
 <p>Take these metric cards for example. With this design, someone who is red- green colorblind can’t easily tell if a metric has gotten better or worse:</p>
+<p>以一组指标卡片为例。按照当前的设计，红绿色盲用户可能难以快速判断某个指标的表现是提升还是下降：</p>
 <p><img src="img/187.png" alt=""></p>
 <p>An easy fix for this is to also communicate that information in some other way, like by adding icons to indicate if the change is positive or negative.</p>
+<p>解决这个问题的一个简单方法是通过其他方式传达这一信息，例如添加表示变化性质的图标。</p>
 <p><img src="img/188.png" alt=""></p>
 <p>What about something like a graph, where each trend line has a different color?</p>
+<p>在面对图表等元素时，其中每条趋势线采用不同颜色表示，又该如何处理呢？</p>
 <p><img src="img/189.png" alt=""></p>
 <p>In situations like this, try relying on contrast instead of using completely different colors. It’s much easier for someone who’s colorblind to tell the difference between light and dark than it is for them to tell the difference between two distinct colors.</p>
+<p>在这种情况下，应尽量依赖对比度而非完全不同的颜色。色盲用户更容易区分不同亮度的颜色，而不是两种截然不同的颜色。</p>
 <p><img src="img/190.png" alt=""></p>
 <p>Always use color to support something that your design is already saying; never use it as the only means of communication.</p>
-<h2 id="creating-depth-">Creating Depth /</h2>
-<h3 id="emulate-a-light-source-">Emulate a light source /</h3>
+<p>始终将颜色用作支持设计中已有信息的辅助手段，而不要将其作为唯一的信息传递方式。</p>
+<h2 id="creating-depth--创建深度效果">Creating Depth / 创建深度效果</h2>
+<h3 id="emulate-a-light-source--模拟光源">Emulate a light source / 模拟光源</h3>
 <p>Have you ever noticed how some elements in an interface feel like they’re raised off of the page, while others feel like they are inset into the background?</p>
+<p>你可曾留意，界面中的某些元素似乎从页面上突出，而另一些则似乎嵌入背景之中？</p>
 <p><img src="img/191.png" alt=""></p>
 <p>Creating this effect might look complicated at first, but it actually only requires you to understand one fundamental rule.</p>
-<p><strong>Light comes from above /</strong></p>
+<p>虽然这种效果起初看起来复杂，但其实只需掌握一个基本原则即可实现。</p>
+<p><strong>Light comes from above / 光线总是从上方来</strong></p>
 <p>Take a look at the panelling on this door:</p>
+<p>观察这扇门上的嵌板图案：</p>
 <p><img src="img/192.jpg" alt=""></p>
 <p>Even though you’re just looking at a flat image, it’s still pretty obvious that the panels on the door are raised. Why is that?</p>
+<p>尽管你看到的只是一个平面图像，门上的嵌板看起来显然是突出的。这是为什么呢？</p>
 <p>Notice how the top edge of the panel is lighter? That’s because it’s angled towards the sky and receives more light. Similarly, the bottom edge is darker because it’s angled away from the sky, receiving <em>less</em> light.</p>
+<p>注意看嵌板的上边缘更亮，这是因为它朝向天空，接收了更多的光线。相对应的，下边缘较暗，因为它朝向远离天空的方向，接收到的光线<em>较少</em>。</p>
 <p><img src="img/193.png" alt=""></p>
 <p>The only way those edges could possibly be oriented that way is if the panel itself is raised, so that’s how our brains perceive it.</p>
+<p>这种边缘的明暗分布唯一合理的解释就是嵌板本身是突出的，这也是我们大脑的感知方式。</p>
 <p>Now take a look at the panelling on this cabinet:</p>
+<p>再来看这个橱柜上的嵌板：</p>
 <p><img src="img/194.jpg" alt=""></p>
 <p>In this case it’s clear that the panels are <em>inset</em> because there’s a shadow at the top indicating that the lip above is blocking the light, and the bottom edge is lighter, indicating that it’s angled upward.</p>
+<p>这个例子中很明显嵌板是<em>嵌入</em>的，因为顶部有阴影，表明上方的边缘阻挡了光线，而下边缘较亮，表明它向上倾斜。</p>
 <p><img src="img/195.png" alt=""></p>
 <p>To create this same sense of depth in your designs, all you need to do is mimic the way light affects things in the real world.</p>
-<p><strong>Simulating light in a user interface /</strong></p>
+<p>要在你设计中营造类似的深度感，你只需模仿现实世界中光线如何影响物体。</p>
+<p><strong>Simulating light in a user interface / 在用户界面中模拟光线效果</strong></p>
 <p>If you want an element to appear raised or inset, first figure out what profile you want that element to have, then mimic how a light source would interact with that shape.</p>
-<p><strong>Raised elements</strong> /</p>
+<p>如果你想让某个元素看起来是凸起或嵌入的，首先要确定你希望该元素呈现出怎样的轮廓，然后模拟光源与该形状的相互作用。</p>
+<p><strong>Raised elements / 创建凸起效果</strong></p>
 <p>For example, say you had a button and you wanted it to feel raised off of the page, with perfectly flat edges on the top and bottom:</p>
+<p>想象你正在设计一个按钮，你希望它看起来像是从页面上凸起，拥有完全平坦的上下边缘。</p>
 <p><img src="img/196.png" alt=""></p>
 <p>Because the top and bottom edges are both flat, it would be impossible to see both of them at the same time. People generally look slightly downward towards their screens, so for the most natural look, reveal a little bit of the top edge and hide the bottom edge.</p>
+<p>因为顶部和底部边缘都是平的，不可能同时看到它们。且人们倾向于从上向下看屏幕，为了让按钮呈现出最自然的外观，应展示其上边缘的一部分，同时隐藏下边缘。</p>
 <p>Since the top edge is facing upward, make it slightly lighter than the face of the button, usually using a top border or an inset box shadow with a slight vertical offset:</p>
+<p>由于上边缘面向观察者，应使其颜色比按钮表面稍亮。这可以通过添加顶部边框或设置轻微垂直偏移的内嵌阴影来实现：</p>
 <p><img src="img/197.png" alt=""></p>
 <p>Choose the lighter color by hand instead of using a semi-transparent white for best results — simply overlaying white can suck the saturation out of the underlying color.</p>
+<p>选择亮色时，应手动挑选，避免使用半透明白色，因为这可能会降低底层颜色的饱和度。</p>
 <p>Next, you need to account for the fact that a raised element will block some of the light from reaching the area below the element.</p>
+<p>此外，凸起的元素会在其下方形成阴影，阻挡部分光线。</p>
 <p>Do this by adding a small dark box shadow with a slight vertical offset (<em>you only want the shadow to appear below the element</em>):</p>
+<p>这可以通过在元素下方添加轻微垂直偏移的暗色盒阴影来模拟。</p>
 <p><img src="img/198.png" alt=""></p>
-<p>Don’t get carried away with the blur radius, a couple of pixels is plenty. These</p>
-<p>sorts of shadows should have pretty sharp edges — take a look at the shadow cast by the bottom of a wall outlet or window frame for a real-world example.</p>
+<p>Don’t get carried away with the blur radius, a couple of pixels is plenty. These sorts of shadows should have pretty sharp edges — take a look at the shadow cast by the bottom of a wall outlet or window frame for a real-world example.</p>
+<p>阴影的模糊半径不宜过大，轻微模糊即可，边缘应保持清晰，以模拟现实世界中物体的阴影效果。</p>
+<!-- raw HTML omitted -->
 <p><strong>Inset elements</strong> /</p>
 <p>Say you’re designing a “well” component that should feel like it’s recessed into the page.</p>
 <p><img src="img/199.png" alt=""></p>

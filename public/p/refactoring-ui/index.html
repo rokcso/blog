@@ -40,7 +40,7 @@
   <meta itemprop="description" content="中英双语对照翻译，关于《Refactoring UI》的全文翻译。">
   <meta itemprop="datePublished" content="2024-08-25T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-08-25T00:00:00+00:00">
-  <meta itemprop="wordCount" content="17144">
+  <meta itemprop="wordCount" content="17415">
   <meta itemprop="image" content="http://localhost:1313/images/share.png">
   <meta itemprop="keywords" content="Translation,UI">
 <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -308,6 +308,7 @@
 <p>For example, say you’re building a flight booking service. You could start with a feature like “searching for a flight”.</p>
 <p>以构建航班预订服务为例，你可以首先着手开发「搜索航班」的功能。</p>
 <p>Your interface will need:</p>
+<p>你的用户界面应当包含以下元素：</p>
 <ul>
 <li>A field for the departure city</li>
 <li>A field for the destination city</li>
@@ -315,7 +316,8 @@
 <li>A field for the return date</li>
 <li>A button to perform the search</li>
 </ul>
-<p>你的用户界面应当包含以下元素：</p>
+<blockquote>
+</blockquote>
 <ul>
 <li>出发城市的输入框</li>
 <li>目的地城市的输入框</li>
@@ -327,7 +329,7 @@
 <p>就从这里着手。</p>
 <p><img src="img/2.png" alt=""></p>
 <p>Hell, you might not even need that other stuff anyways — it worked for Google.</p>
-<p>事实上，你或许根本无需那些额外的功能 —— 正如谷歌所证明的那样，它已经足够有效了。</p>
+<p>事实上，你或许根本无需那些额外的功能 —— 正如 Google 所证明的那样，它已经足够有效了。</p>
 <p><img src="img/3.png" alt=""></p>
 <h3 id="details-comes-later--细节可以稍后再考虑">Details comes later / 细节可以稍后再考虑。</h3>
 <p>In the earliest stages of designing a new feature, it’s important that you don’t get hung up making low-level decisions about things like typefaces, shadows, icons, etc.</p>
@@ -668,8 +670,8 @@
 <p><strong>You might not need a label at all / 你或许根本不需要标签</strong></p>
 <p>In a lot of situations, you can tell what a piece of data is just by looking at the format.</p>
 <p>在许多情况下，通过查看数据的呈现格式，我们就能辨识出数据的内容。</p>
-<p>For example, <a href="mailto:janedoe@example.com">janedoe@example.com</a> is an email address, (555) 765-4321 is a phone number and $19.99 is a price.</p>
-<p>例如，janedoe@example.com 是一个电子邮件地址，(555) 765-4321 是一个电话号码，而 $19.99 是一个价格。</p>
+<p>For example, <code>janedoe@example.com</code> is an email address, <code>(555) 765-4321</code> is a phone number and <code>$19.99</code> is a price.</p>
+<p>例如，<code>janedoe@example.com</code> 是一个电子邮件地址，<code>(555) 765-4321</code> 是一个电话号码，而 <code>$19.99</code> 是一个价格。</p>
 <p>When the format isn’t enough, the context often is. When you see the phrase “Customer Support” listed below someone’s name in an employee directory, you don’t need a label to make the connection that that is the department the person works in.</p>
 <p>如果数据的格式本身不足以让信息清晰，那么上下文环境往往能够帮助我们理解。比如，在员工名册中，当看到某人名字下面写着「客户支持」时，我们不必依赖额外的标签就能明白这个人隶属于客户服务部门。</p>
 <p><img src="img/45.png" alt=""></p>
@@ -1581,300 +1583,465 @@
 <p>Don’t get carried away with the blur radius, a couple of pixels is plenty. These sorts of shadows should have pretty sharp edges — take a look at the shadow cast by the bottom of a wall outlet or window frame for a real-world example.</p>
 <p>阴影的模糊半径不宜过大，轻微模糊即可，边缘应保持清晰，以模拟现实世界中物体的阴影效果。</p>
 <!-- raw HTML omitted -->
-<p><strong>Inset elements</strong> /</p>
+<p><strong>Inset elements / 创建嵌入效果</strong></p>
 <p>Say you’re designing a “well” component that should feel like it’s recessed into the page.</p>
+<p>如果你正在设计一种应有嵌入感的「井」组件。</p>
+<blockquote>
+<p>译者注：井组件（Well Component）通常指的是一种设计元素，它用来创建一个视觉上的凹陷效果，使得内容看起来像是嵌入到页面中。这种设计可以用于吸引用户的注意力，或者在视觉上区分不同的内容区域。</p>
+</blockquote>
 <p><img src="img/199.png" alt=""></p>
 <p>Looking slightly downward, only the bottom lip would be visible. Since it’s facing towards the sky, give that edge a slightly lighter color using a bottom border or inset shadow with a negative vertical offset:</p>
+<p>当你的视线稍微向下倾斜时，只有井的底部边缘应该可见。由于这个边缘面向天空，你应该使用底部边框或垂直偏移为负的内嵌阴影，使其颜色稍微变亮：</p>
 <p><img src="img/200.png" alt=""></p>
 <p>The area above the well should block some of the light from reaching the very top of the well, so add a small dark inset box shadow with a slight positive vertical offset to make sure it doesn’t poke through at the bottom:</p>
+<p>井的上方会阻挡部分光线，防止它们直接照射到井的最顶部，因此，添加一个轻微正向垂直偏移的小暗色内嵌盒阴影，以确保光线不会在井的底部穿透出来：</p>
 <p><img src="img/201.png" alt=""></p>
 <p>This same treatment works for any element that may need to appear inset, for example text inputs and checkboxes:</p>
+<p>这种设计技巧同样适用于其他需要呈现嵌入效果的元素，比如文本输入框和复选框：</p>
 <p><img src="img/202.png" alt=""></p>
-<p><strong>Don’t get carried away /</strong></p>
+<p><strong>Don’t get carried away / 避免过度设计</strong></p>
 <p>Once you understand how to simulate light in an interface, it can be tempting to tinker away for hours, tweaking and tweaking to see how closely you can mimic the real world.</p>
+<p>理解了如何在界面中模拟光线后，你可能会想要花费大量时间进行微调，以达到接近现实世界的逼真效果。</p>
 <p>While this can be a fun exercise, in practice it can lead to interfaces that are busy and unclear. Borrowing some visual cues from the real world is a great way to add a bit of depth, but there’s no need to try and make things look photo-realistic.</p>
-<h3 id="use-shadows-to-convey-elevation-">Use shadows to convey elevation /</h3>
+<p>虽然这可以作为一个有趣的练习，但在实际应用中，过度的调整可能会导致界面显得过于复杂和不清晰。从现实世界中借鉴一些视觉线索来增加深度是很好的，但无需追求完全的照相写实主义。</p>
+<h3 id="use-shadows-to-convey-elevation--利用阴影表现层级高度">Use shadows to convey elevation / 利用阴影表现层级高度</h3>
 <p>Shadows can be more than just a flashy effect — used thoughtfully, they let you position elements on a virtual z-axis to create a meaningful sense of depth.</p>
+<p>阴影不只是花哨的视觉效果，如果巧妙运用，它们能够在虚拟的 Z 轴上定位元素，创造出深度感。</p>
 <p>Small shadows with a tight blur radius make an element feel only slightly raised off of the background, while larger shadows with a higher blur radius make an element feel much closer to the user:</p>
+<p>小而模糊度低的阴影让元素看起来轻微凸起，而大且模糊度高的阴影则让元素感觉更靠近用户：</p>
 <p><img src="img/203.png" alt=""></p>
 <p>The closer something feels to the user, the more it will attract their focus.</p>
+<p>元素感觉越近，就越能吸引用户的焦点。</p>
 <p>You might use a smaller shadow for something like a button, where you want the user to notice it but don’t want it to dominate the page:</p>
+<p>对于按钮这样的元素，你可能会使用较小的阴影，以便用户注意到它，但又不会让它在页面上过于突出：</p>
 <p><img src="img/204.png" alt=""></p>
 <p>Medium shadows are useful for things like dropdowns; elements that need to sit a bit further above the rest of the UI:</p>
+<p>中等大小的阴影适用于如下拉菜单这样的元素，它们需要在界面中稍微突出一些：</p>
 <p><img src="img/205.png" alt=""></p>
 <p>Large shadows are great for modal dialogs, where you really want to capture the user’s attention:</p>
+<p>对于模态对话框这样的元素，大型阴影非常合适，因为它们能够显著吸引用户的注意力：</p>
 <p><img src="img/206.png" alt=""></p>
-<p><strong>Establishing an elevation system /</strong></p>
+<p><strong>Establishing an elevation system / 建立层级高度体系</strong></p>
 <p>Just like with color, typography, spacing, and sizing, defining a fixed set of shadows will speed up your workflow and help maintain consistency in your designs.</p>
+<p>与颜色、字体、间距和尺寸一样，设定一套固定的阴影选项规范体系可以加快设计流程，并保持设计的一致性。</p>
 <p>You don’t need a ton of different shadows — five options is usually plenty.</p>
+<p>你不需要太多不同的阴影，通常有五种已经足够。</p>
 <p>Start by defining your smallest shadow and your largest shadow, then fill in the middle with shadows that increase in size pretty linearly:</p>
+<p>首先确定你的最小和最大阴影效果，然后以近乎线性递增的方式填充中间的阴影选项：</p>
 <p><img src="img/207.png" alt=""></p>
-<p><strong>Combining shadows with interaction /</strong></p>
+<p><strong>Combining shadows with interaction / 结合阴影与用户交互</strong></p>
 <p>Shadows aren’t only useful for positioning elements on the z-axis statically; they’re a great way to provide visual cues to the user as they interact with elements, too.</p>
+<p>阴影不仅有助于静态地在 Z 轴上定位元素，它们也是在用户与元素交互时提供视觉反馈的有效方式。</p>
 <p>For example, say you had a list of items where the user could click and drag each item to sort them. Adding a shadow to an item when a user clicks it makes it feel like it pops forward above the other items in the list, and makes it clear to the user that they can drag it:</p>
+<p>例如，在一个用户可以点击拖动排序的项目列表中，当用户点击某个项目时添加阴影，会让它看起来在列表中其他项目之上突出，清楚地表明用户可以拖动它：</p>
 <p><img src="img/208.png" alt=""></p>
 <p>Similarly, you can make a button feel like it’s being pressed into the page when a user clicks it by switching to a smaller shadow, or perhaps removing the shadow altogether:</p>
+<p>同样地，你可以通过在用户点击按钮时切换到更小的阴影或完全去除阴影，让按钮产生被按下的感觉：</p>
 <p><img src="img/209.png" alt=""></p>
 <p>Using shadows in a meaningful way like this is a great way to hack the process of choosing what sort of shadow an element should have. Don’t think about the shadow itself, think about where you want the element to sit on the z-axis and assign it a shadow accordingly.</p>
-<h3 id="shadows-can-have-two-parts-">Shadows can have two parts /</h3>
+<p>这样有意义的使用阴影是帮助决定元素应有何种阴影效果的一个好方法。不要只考虑阴影本身，而要考虑你希望元素在 Z 轴上的位置，并据此分配相应的阴影。</p>
+<h3 id="shadows-can-have-two-parts--双重阴影效果">Shadows can have two parts / 双重阴影效果</h3>
 <p>Ever inspected a really nice shadow on a site and noticed they were actually using two shadows?</p>
+<p>你是否曾仔细观察过网站上精致的阴影效果，发现它们实际上运用了两个阴影？</p>
 <p><img src="img/210.png" alt=""></p>
 <p>There’s a method to this madness, and it’s actually pretty simple and makes a lot of sense.</p>
+<p>这种设计并非随意尝试，而是有其特定目的和方法，简单而合理。</p>
 <p>When you see someone combining two shadows, they’re not just experimenting randomly until things look nice, they’re using each shadow to do a specific job.</p>
+<p>当设计师结合使用两个阴影时，他们这么做是出于特定的原因，每个阴影都承担着不同的角色。</p>
 <p>The first shadow is larger and softer, with a considerable vertical offset and large blur radius. It simulates the shadow cast behind an object by a direct light source.</p>
+<p>第一个阴影尺寸较大且边缘柔和，具有较大的垂直偏移和模糊半径，用以模拟物体背后的直射光产生的阴影。</p>
 <p><img src="img/211.png" alt=""></p>
 <p>The second shadow is tighter and darker, with less of a vertical offset and a smaller blur radius. It simulates the shadowed area underneath an object where even ambient light has a hard time reaching.</p>
+<p>第二个阴影更紧凑且颜色更深，垂直偏移较小，模糊度也较低，它模拟的是物体下方由于环境光难以照射到而形成的暗区。</p>
 <p><img src="img/212.png" alt=""></p>
 <p>Using two shadows like this gives you a lot more control than you’d get with a single shadow — you can keep the larger shadow nice and subtle while still making the shadow closer the element’s edges nice and defined.</p>
+<p>通过这种方式使用双重阴影，你可以获得比单一阴影更精细的控制力 —— 你可以让较大的阴影保持细腻和低调，同时让靠近元素边缘的阴影清晰可辨。</p>
 <p><img src="img/213.png" alt=""></p>
-<p><strong>Accounting for elevation /</strong></p>
+<p><strong>Accounting for elevation / 反映高度变化</strong></p>
 <p>As an object gets further away from a surface, the small, dark shadow created by a lack of ambient light slowly disappears (<em>go ahead, try it out with something on your desk</em>).</p>
+<p>当物体距离表面越远时，由于缺少环境光而形成的小而暗的阴影会逐渐消失（<em>你可以用桌子上的任何物品来验证这一点</em>）。</p>
 <p>So if you’re going to use this two-shadow technique in your own projects, make sure you make that shadow more subtle for shadows that represent a higher elevation.</p>
+<p>因此，如果你打算在自己的设计项目中采用双重阴影技术，确保对于表示较高高度的阴影这部分更加微妙。</p>
 <p><img src="img/214.png" alt=""></p>
 <p>It should be quite distinct for your lowest elevation, and almost (<em>or completely</em>) invisible at your highest elevation.</p>
-<h3 id="even-flat-designs-can-have-depth-">Even flat designs can have depth /</h3>
+<p>对于最低的高度，阴影应该非常明显；而在最高的高度，阴影则几乎（<em>或完全</em>）不可察觉。</p>
+<h3 id="even-flat-designs-can-have-depth--扁平设计也能表现深度">Even flat designs can have depth / 扁平设计也能表现深度</h3>
 <p>When most people talk about “flat design”, they mean designing without shadows, gradients, or any other effects that try to mimic how light interacts with things in the real-world.</p>
+<p>通常当人们提到「扁平设计」，他们指的是避免使用阴影、渐变或任何模仿现实世界中光效的设计元素。</p>
 <p><img src="img/215.png" alt=""></p>
 <p>But the most effective flat designs still convey depth, they just do it in a different way.</p>
-<p><strong>Creating depth with color /</strong></p>
+<p>然而，即使是最有效的扁平设计风格，也能通过不同的方式表现出深度感。</p>
+<p><strong>Creating depth with color / 通过颜色创造深度</strong></p>
 <p>In general (especially with shades of the same color), lighter objects feel closer to us and darker objects feel further away.</p>
+<p>一般而言（尤其是对于同一色系的不同色调），较浅的物体看起来更接近我们，而较深的物体则看起来更远。</p>
 <p>Make an element lighter than the background color to make it feel like it’s raised off of the page, or darker than the background color if you want it to feel inset like a well:</p>
+<p>如果你想让某个元素看起来像是从页面上凸起，就让它的颜色比背景色更浅；如果你想让它看起来像是嵌入页面的井一样，就让它的颜色比背景色更深：</p>
 <p><img src="img/216.png" alt=""></p>
 <p>This is just as applicable to non-flat designs, too — color is just another tool in your toolbelt for conveying distance.</p>
-<p><strong>Using solid shadows /</strong></p>
+<p>这种颜色运用技巧同样适用于非扁平设计 —— 它为你的设计工具箱增添了一种表达远近感的新工具。</p>
+<p><strong>Using solid shadows / 使用实心阴影</strong></p>
 <p>Another way to communicate depth in a flat design is to use short, vertically offset shadows with no blur radius at all.</p>
+<p>在扁平设计中传达深度的另一种方法是使用短小、垂直偏移且不带有模糊效果的实心阴影。</p>
 <p><img src="img/217.png" alt=""></p>
 <p>It’s a great way to make a card or button stand off the page a little bit without sacrificing that flat aesthetic.</p>
-<h3 id="overlap-elements-to-create-layers-">Overlap elements to create layers /</h3>
+<p>这种方法非常适合让卡片或按钮在不破坏扁平化外观的前提下，略微突出于页面之上。</p>
+<h3 id="overlap-elements-to-create-layers--元素重叠以营造层次感">Overlap elements to create layers / 元素重叠以营造层次感</h3>
 <p>One of the most effective ways to create depth is to overlap different elements to make it feel like a design has multiple layers.</p>
+<p>营造层次感的一个有效方法是通过元素的重叠，使人感觉设计作品具有多重层次。</p>
 <p>For example, instead of containing a card entirely within another element, offset it so it crosses the transition between two different backgrounds:</p>
+<p>例如，你可以让一个卡片部分地超出另一个元素的边界，而不是完全被包含其中，以此跨越不同背景之间的界限：</p>
 <p><img src="img/218.png" alt=""></p>
 <p>You could also make an element taller than its parent, so it overlaps on both sides:</p>
+<p>你也可以让子元素的高度超过其父元素，使其在两侧产生重叠效果：</p>
 <p><img src="img/219.png" alt=""></p>
 <p>Overlapping elements can add depth to smaller components too, for example the controls on this carousel:</p>
+<p>这种重叠技巧同样可以为较小的组件增添深度，如轮播图上的切换控件。</p>
 <p><img src="img/220.png" alt=""></p>
-<p><strong>Overlapping images /</strong></p>
+<p><strong>Overlapping images / 图像的重叠使用</strong></p>
 <p>This technique can work great with images as well, but without special consideration it’s easy for overlapping images to clash.</p>
+<p>图像重叠的技巧同样有效，但如果不加考虑，不同图像之间容易发生视觉冲突。</p>
 <p><img src="img/221.png" alt=""></p>
 <p>A simple trick for avoiding this is to give the images an “invisible border” — one that matches the background color — so there’s always a bit of a gap between images:</p>
+<p>为了避免这种冲突，可以为图像添加一个与背景颜色相匹配的「隐形边框」，确保图像之间始终保持一定的间隔：</p>
 <p><img src="img/222.png" alt=""></p>
 <p>You’ll still create the appearance of layers but with none of the ugly clashing.</p>
-<h2 id="working-with-images-">Working with Images /</h2>
-<h3 id="use-good-photos-">Use good photos /</h3>
+<p>这样，既能保持层次分明的视觉效果，又能避免图像间不协调的冲突。</p>
+<h2 id="working-with-images--图像处理">Working with Images / 图像处理</h2>
+<h3 id="use-good-photos--使用优质图片">Use good photos / 使用优质图片</h3>
 <p>Bad photos will ruin a design, even if everything else about it looks great.</p>
+<p>质量不佳的照片会破坏设计的整体效果，即使设计的其他部分看起来很出色。</p>
 <p><img src="img/223.png" alt=""></p>
 <p>If your design needs photography and you’re not a talented photographer, you’ve got two options:</p>
+<p>如果你的设计项目需要摄影作品，而你并非专业的摄影师，你可以选择以下两种解决方案：</p>
 <ol>
-<li><strong>Hire a professional photographer.</strong></li>
+<li><strong>Hire a professional photographer. / 聘请专业摄影师。</strong></li>
 </ol>
 <p>If you need very specific photos for your project, entrust a professional. Taking great photos isn’t just about using an expensive camera, it’s about lighting, composition, color — skills that take years to develop.</p>
+<p>如果你需要特定的照片，最好委托给专业摄影师。拍摄出色的照片不仅需要昂贵的摄影设备，更需要对光线、构图和色彩的掌握，这些技巧需要多年经验才能培养。</p>
 <ol start="2">
-<li><strong>Use high quality stock photography.</strong></li>
+<li><strong>Use high quality stock photography. / 使用高质量的图库照片。</strong></li>
 </ol>
 <p>If your needs are more generic, there are tons of great resources out there where you can purchase great stock photos. There are even sites like Unsplash that offer beautiful photography for free.</p>
+<p>如果你需要的照片类型较为常见，你可以在许多在线资源中购买到优秀的图库照片。还有一些网站，比如 Unsplash，提供免费的精美照片。</p>
 <p>Whatever you do, don’t design using placeholder images and expect to be able to take some photos with your smartphone and swap them in later. It never works.</p>
-<h3 id="text-needs-consistent-contrast-">Text needs consistent contrast /</h3>
+<p>重要的是，不要在设计中使用临时占位图，并期望将来能用智能手机拍摄的照片替换它们。这种做法通常不会得到理想的效果。</p>
+<h3 id="text-needs-consistent-contrast--确保文本具有一致的对比度">Text needs consistent contrast / 确保文本具有一致的对比度</h3>
 <p>Ever tried to slap a headline on a big hero image, only to find that no matter what color you tried for the text, it was still hard to read?</p>
+<p>你是否曾在一张大型宣传图上放置标题，却发现无论如何调整文本颜色，阅读起来都很困难？</p>
 <p><img src="img/224.png" alt=""></p>
 <p>That’s because the problem isn’t the text, it’s the image.</p>
-<p><strong>The problem with background images</strong></p>
+<p>问题不在于文本本身，而在于背景图片。</p>
+<p><strong>The problem with background images / 背景图片的问题</strong></p>
 <p>Photos can be very dynamic, with a lot of really light areas, and a lot of really dark areas. White text might look great in the dark areas, but it gets lost in the light areas. Dark text looks great in the light areas, but gets lost in the dark areas.</p>
+<p>照片可能包含许多明暗对比强烈的区域，这会导致白色文本在暗处显眼，在亮处却难以辨认；同样，深色文本在亮处清晰，在暗处则消失。</p>
 <p><img src="img/225.png" alt=""></p>
 <p>To solve this problem, you need to reduce the dynamics in the image to make the contrast between the text and the background more consistent.</p>
-<p><strong>Add an overlay /</strong></p>
+<p>要解决这个问题，你需要降低图片的明暗对比，使文本与背景之间的对比度更加均匀。</p>
+<p><strong>Add an overlay / 添加半透明覆盖层</strong></p>
 <p>One way to increase the overall text contrast is to add a semi-transparent overlay to the background image.</p>
+<p>提高文本对比度的一个方法是在背景图片上增加一个半透明的覆盖层。</p>
 <p><img src="img/226.png" alt=""></p>
 <p>A black overlay will tone down the light areas and help light text stand out, while a white overlay will brighten up the dark areas and help dark text stand out.</p>
-<p><strong>Lower the image contrast /</strong></p>
+<p>使用黑色覆盖层可以降低亮处的亮度，使浅色文本更加突出；而白色覆盖层则能提亮暗处，让深色文本更加明显。</p>
+<p><strong>Lower the image contrast / 调整图片的对比度</strong></p>
 <p>One of the compromises you make when using an overlay is that you’re lightening or darkening the whole image, not just the problem areas.</p>
+<p>使用覆盖层意味着你对整个图片进行了亮度或暗度的调整，而不仅仅是问题区域。</p>
 <p>If you want more control, another solution is to lower the contrast of the image itself:</p>
+<p>如果你需要更精细的控制，另一种方法是直接降低图片本身的对比度：</p>
 <p><img src="img/227.png" alt=""></p>
 <p>Lowering the contrast will change how light or dark the image feels overall, so make sure to adjust the brightness to compensate.</p>
-<p><strong>Colorize the image /</strong></p>
+<p>调整时要注意整体亮度，以保证图片的视觉效果。</p>
+<p><strong>Colorize the image / 给图片着色</strong></p>
 <p>Another way to help text stand out against an image is to colorize the image with a single color.</p>
+<p>另一种使文本在图片背景中更加突出的方法是给图片应用单一颜色。</p>
 <p>Some photo editing software includes this as a first-class feature, but if yours doesn’t, you can create this effect in three steps:</p>
+<p>一些图像编辑软件提供了这一功能，如果你的软件没有，可以通过以下三个步骤实现：</p>
 <ol>
 <li><strong>Lower the image contrast</strong>, to balance things out a bit.</li>
 <li><strong>Desaturate the image</strong>, to remove any existing color.</li>
 <li><strong>Add a solid fill</strong>, using the “multiply” blend mode.</li>
 </ol>
+<blockquote>
+</blockquote>
+<ol>
+<li><strong>降低图片的对比度</strong>，以平衡整体效果。</li>
+<li><strong>去除图片的饱和度</strong>，消除原有颜色。</li>
+<li><strong>添加纯色填充层</strong>，使用「正片叠底」混合模式。</li>
+</ol>
 <p><img src="img/228.png" alt=""></p>
 <p>This can also be a great way to make a background image pair more nicely with your existing brand colors.</p>
-<p><strong>Add a text shadow /</strong></p>
+<p>这也能有效地使背景图片与你的品牌形象色彩更协调。</p>
+<p><strong>Add a text shadow / 给文本添加阴影</strong></p>
 <p>If you want to preserve a bit more of the dynamics in a background image, a text shadow can be a great way to increase contrast only where you need it most.</p>
+<p>如果你希望保留背景图片的一些细节和动态效果，文本阴影可以针对性地增加对比度。</p>
 <p>You want it to look more like a subtle glow than an actual shadow, so use a large blur radius and don’t add any kind of offset.</p>
+<p>阴影应该看起来更像一个柔和的光晕而非传统阴影，因此使用较大的模糊半径，不要设置偏移。</p>
 <p><img src="img/229.png" alt=""></p>
 <p>It’s still a good idea to reduce the overall image contrast, but combining that with a text shadow means you can reduce it a little less.</p>
-<h3 id="everything-has-an-intended-size-">Everything has an intended size /</h3>
+<p>尽管如此，降低图片的整体对比度仍然是一个好方法，结合文本阴影，你可以减少对比度的调整幅度。</p>
+<h3 id="everything-has-an-intended-size--每个元素都有其理想尺寸">Everything has an intended size / 每个元素都有其理想尺寸</h3>
 <p>Everyone knows that scaling bitmap images to larger than their original size is a bad idea — they immediately feel “fuzzy” and lose their definition.</p>
+<p>众所周知，将位图图像放大超过原始尺寸会导致图像立刻变得「模糊」，丧失清晰度。</p>
 <p><img src="img/230.png" alt=""></p>
 <p>But that’s not the only way you can go wrong with scaling, even when you think you’re playing it safe.</p>
-<p><strong>Don’t scale up icons /</strong></p>
+<p>但这并不是缩放图片时可能出错的唯一方式，即便你以为自己在谨慎操作。</p>
+<p><strong>Don’t scale up icons / 避免放大图标</strong></p>
 <p>If you’re designing something that could use some large icons (like maybe the “features” section of a landing page), you might instinctively grab your favorite SVG icon set and bump up the size until they fit your needs.</p>
+<p>如果你在设计某些需要较大图标的元素（例如，着陆页的「功能」部分），你可能会本能地选择你最喜欢的 SVG 图标集，并调整它们的大小以适应你的设计需求。</p>
 <p>They’re vector images after all, so the quality isn’t going to suffer if you increase the size, right?</p>
+<p>毕竟，作为矢量图形，增大尺寸并不会损失图像质量，对吗？</p>
 <p><img src="img/231.png" alt=""></p>
 <p>While it’s true that vector images won’t degrade in quality when you increase their size, icons that were drawn at 16–24px are never going to look very professional when you blow them up to 3x or 4x their intended size. They lack detail, and always feel disproportionately “chunky”.</p>
+<p>虽然矢量图像在尺寸放大时确实不会降低质量，但原本为 16~24px 设计的图标，如果放大到它们预定大小的三倍或四倍，看起来并不专业。它们缺乏细节，总是显得过于「粗糙」。</p>
 <p><img src="img/232.png" alt=""></p>
 <p>If small icons are all you’ve got, try enclosing them inside another shape and giving the shape a background color:</p>
+<p>如果你手头只有小图标，尝试将它们放置在一个有背景颜色的较大形状中：</p>
 <p><img src="img/233.png" alt=""></p>
 <p>This lets you keep the actual icon closer to its intended size, while still filling the larger space.</p>
+<p>这样可以让图标保持在其理想尺寸，同时仍然填满更大的空间。</p>
 <p><img src="img/234.png" alt=""></p>
-<p><strong>Don’t scale down screenshots /</strong></p>
+<p><strong>Don’t scale down screenshots / 避免缩小屏幕截图</strong></p>
 <p>Say you want to include a screenshot of your app on that same features page.</p>
+<p>假设你想要在同一功能页面上展示你的应用屏幕截图。</p>
 <p>If you take a full-size screenshot and shrink it by 70% to make it fit, you’ll end up with an image that’s trying to cram way too much detail into far too little space.</p>
+<p>如果你截取了一个全尺寸屏幕截图，并将其缩小 70% 以适应页面，最终的图像将过于拥挤，细节过多。</p>
 <p><img src="img/235.png" alt=""></p>
 <p>The 16px font in your app becomes a 4px font in your screenshot, and visitors will be squinting with their eyeballs two inches from the screen, struggling to make out what all that text says.</p>
+<p>应用中的 16px 字体在屏幕截图中可能缩小到 4px，导致访客不得不近距离盯着屏幕，努力辨认文字内容。</p>
 <p>If you want to include a detailed screenshot in your design, take the screenshot at a smaller screen size (like maybe your tablet layout) and save a lot of space for it so you don’t have to shrink it as much:</p>
+<p>如果你想在设计中包含详细的屏幕截图，应该在较小的屏幕尺寸（如平板布局）下进行截图，并为其预留足够的空间，以减少缩小的程度：</p>
 <p><img src="img/236.png" alt=""></p>
 <p>Or consider taking just a partial screenshot, so you can display it in less space without needing to scale it down:</p>
+<p>或者考虑仅截取部分屏幕，这样你可以在不缩小的情况下展示它：</p>
 <p><img src="img/237.png" alt=""></p>
 <p>If you really need to fit a whole-app screenshot in a tight space, try drawing a simplified version of the UI with details removed and small text replaced with simple lines:</p>
+<p>如果你需要在有限的空间内展示整个应用的屏幕截图，尝试绘制一个简化版本的 UI，省略细节，并将小文字替换为简单的线条：</p>
 <p><img src="img/238.png" alt=""></p>
 <p>It’ll still communicate the big-picture design without tempting visitors to try and make out all of the details.</p>
-<p><strong>Don’t scale down icons, either /</strong></p>
+<p>这样既能传达设计概念，又不会吸引访客去辨认所有细节。</p>
+<p><strong>Don’t scale down icons, either / 避免缩小图标</strong></p>
 <p>Just as icons drawn to be used at 16px look chunky when you scale them up, icons intended to be used at larger sizes look choppy and fuzzy when you scale them down.</p>
+<p>正如为 16px 设计的图标在放大时显得粗糙一样，为较大尺寸设计的图标在缩小时也会显得破碎和模糊。</p>
 <p>The most extreme example of this are favicons, those little icons you see next to the page title in a browser tab.</p>
+<p>最典型的例子是 favicon（浏览器标签页中的小图标）。</p>
 <p>If you try to shrink a logo drawn at 128px down to favicon size, it all turns to mush as the browser tries its best to render all of that detail in a tiny 16px square:</p>
+<p>如果你试图将 128px 的 logo 缩小到 favicon 的大小，浏览器在尝试在 16px 的正方形中渲染所有细节时，图像会变得模糊不清：</p>
 <p><img src="img/239.png" alt=""></p>
 <p>A better approach is to redraw a super simplified version of the logo at the target size, so you control the compromises instead of leaving it up to the browser:</p>
+<p>更好的方法是在目标尺寸下重新绘制一个极度简化的 logo 版本，这样你就可以控制设计中的妥协，而不是让浏览器自动处理。</p>
 <p><img src="img/240.png" alt=""></p>
-<h3 id="beware-user-uploaded-content-">Beware user-uploaded content /</h3>
+<h3 id="beware-user-uploaded-content--注意用户上传的内容">Beware user-uploaded content / 注意用户上传的内容</h3>
 <p>When you’re depending on user-uploaded images, you don’t have the luxury of fine-tuning contrast, carefully adjusting colors, or cropping the perfect frame.</p>
+<p>在使用用户上传的图片时，你无法像处理自己精心挑选的图片那样，对它们进行细致的对比度调整、颜色校正或构图裁剪。</p>
 <p>While you’ll always be at your users’ mercy to some extent, there are a few things you can do to make sure their content doesn’t completely undermine your design.</p>
-<p><strong>Control the shape and size /</strong></p>
+<p>虽然你的设计在一定程度上不得不依赖用户上传的内容，但你可以通过一些方法来确保这些内容不会彻底破坏你的设计布局。</p>
+<p><strong>Control the shape and size / 控制形状和尺寸</strong></p>
 <p>Displaying user-uploaded images at their intrinsic aspect ratio can really throw off a layout, especially if there are a lot of images on the screen at once.</p>
+<p>用户上传的图片如果按照其原始的宽高比例显示，可能会破坏页面布局的一致性，尤其是当屏幕上出现大量图片时。</p>
 <p><img src="img/241.png" alt=""></p>
 <p>Instead of letting users wreak havoc on your page structure, center their images inside fixed containers, cropping out anything that doesn’t fit.</p>
+<p>为了避免用户图片影响页面结构，应将图片居中放置在固定大小的容器内，并裁剪掉超出容器部分的图片。</p>
 <p><img src="img/242.png" alt=""></p>
 <p>This is really easy to do with CSS these days by making the image a background image, and setting the <code>background-size</code> property to <code>cover</code>.</p>
+<p>使用 CSS 可以轻松实现这一点，将图片设置为背景图片，并使用 <code>background-size: cover;</code> 属性确保图片覆盖整个容器，同时保持宽高比例。</p>
 <p><img src="img/243.png" alt=""></p>
-<p><strong>Prevent background bleed /</strong></p>
+<p><strong>Prevent background bleed / 避免背景色混淆</strong></p>
 <p>When a user provides an image with a background color that’s similar to the background in your UI, the image and the background can bleed together, causing the image to lose its shape.</p>
+<p>如果用户上传的图片背景颜色与你的UI背景颜色相近，图片和背景可能会融为一体，导致图片轮廓模糊不清。</p>
 <p><img src="img/244.png" alt=""></p>
 <p>Instead of trying to solve this with a border, try using a subtle inner box shadow:</p>
+<p>解决这个问题，不要依赖边框，而是尝试添加一个微妙的内阴影给图片：</p>
 <p><img src="img/245.png" alt=""></p>
 <p>Borders will often clash with the colors in the image, while most people will barely even realize the shadow is there.</p>
+<p>直接使用边框可能会与图片中的颜色发生冲突，而阴影效果则更为隐蔽，大多数用户几乎不会注意到它的存在。</p>
 <p>If you don’t like the slight “inset” look you get from using a box shadow, a semi-transparent inner border works great, too.</p>
+<p>如果你不喜欢内阴影带来的轻微「凹陷」效果，也可以尝试使用半透明的内边框，这同样可以很好地区分图片和背景。</p>
 <p><img src="img/246.png" alt=""></p>
-<h2 id="finishing-touches-">Finishing Touches /</h2>
-<h3 id="supercharge-the-defaults-">Supercharge the defaults /</h3>
+<h2 id="finishing-touches--完善设计">Finishing Touches / 完善设计</h2>
+<h3 id="supercharge-the-defaults--强化现有元素">Supercharge the defaults / 强化现有元素</h3>
 <p>You don’t always have to add new elements to a design to add flare — there are a lot of ways to liven up a page by “supercharging” what’s already there.</p>
+<p>你不必总是在设计中引入全新元素来增加吸引力 —— 通过「强化」现有元素，你可以用许多方法让页面焕发活力。</p>
 <p>For example, if your design includes a bulleted list, try replacing the bullets with icons:</p>
+<p>比如，如果你的设计中包含一个带有项目符号的列表，你可以尝试用图标来替换这些项目符号：</p>
 <p><img src="img/247.png" alt=""></p>
 <p>Checkmarks and arrows are great generic choices for a lot of situations, but you can also use something more specific to your content, like a padlock icon for a list of security-related features:</p>
+<p>勾号和箭头在许多情况下是很好的通用图标，但你也可以用更具体地与你内容相关的图标，例如，对于安全特性列表，你可以使用一个挂锁图标：</p>
 <p><img src="img/248.png" alt=""></p>
 <p>Similarly, if you’re working on a testimonial try “promoting” the quotes into visual elements by increasing the size and changing the color:</p>
+<p>同样，如果你在设计一个客户推荐语，试着通过增大字号和改变颜色，将引用的文字「提升」为视觉元素：</p>
 <p><img src="img/249.png" alt=""></p>
 <p>Links are another great candidate for special styling. You can do something as simple as changing the color and font weight, or something as fancy as a thick and colorful custom underline that partially overlaps the text:</p>
+<p>链接是另一个适合进行特别设计的元素。你可以简单地改变颜色和字体粗细，或者做一些更精致的设计，比如添加一个粗大且颜色丰富的自定义下划线，让它部分重叠在文本上：</p>
 <p><img src="img/250.png" alt=""></p>
 <p>If you’re working on a form, using custom checkboxes and radio buttons is an easy way to add some color to the design:</p>
+<p>如果你在设计一个表单，使用自定义的复选框和单选按钮是为设计添加色彩的简单方法：</p>
 <p><img src="img/251.png" alt=""></p>
 <p>Just using one of your brand colors for the selected states instead of the browser defaults is often enough to take something from feeling boring to feeling polished and well-designed.</p>
-<h3 id="add-color-with-accent-borders-">Add color with accent borders /</h3>
+<p>仅使用你的品牌色彩之一来表示选中状态，而不是使用浏览器的默认颜色，通常就足以将一个元素从单调转变为精致且设计精良。</p>
+<h3 id="add-color-with-accent-borders--添加彩色强调边框">Add color with accent borders / 添加彩色强调边框</h3>
 <p>If you’re not a graphic designer, how do you add that dash of visual flair to your UI that other designs get from beautiful photography or colorful illustrations?</p>
+<p>如果你不是专业平面设计师，如何为你的用户界面添加那些通常需要精美摄影或多彩插图才能实现的视觉吸引力呢？</p>
 <p>One simple trick that can make a big difference is to add colorful accent borders to parts of your interface that would otherwise feel a bit bland.</p>
+<p>一个简单却效果显著的方法是在界面中那些可能显得过于平淡的部分添加彩色的强调边框。</p>
 <p>For example, across the top of a card:</p>
+<p>比如，在卡片的顶部添加一条彩色边框：</p>
 <p><img src="img/252.png" alt=""></p>
 <p>&hellip;or to highlight active navigation items:</p>
+<p>或者用它来突出当前激活的导航项：</p>
 <p><img src="img/253.png" alt=""></p>
 <p>&hellip;or along the side of an alert message:</p>
+<p>或者在警告信息的一侧加上边框：</p>
 <p><img src="img/254.png" alt=""></p>
 <p>&hellip;or as a short accent underneath a headline:</p>
+<p>或者在标题下方作为简短的强调色条：</p>
 <p><img src="img/255.png" alt=""></p>
 <p>&hellip;or even across the top of your entire layout:</p>
+<p>甚至可以在整个布局的顶部横贯一条彩色边框：</p>
 <p><img src="img/256.png" alt=""></p>
 <p>It doesn’t take any graphic design talent to add a colored rectangle to your UI, and it can go a long way towards making something feel more “designed.”</p>
-<h3 id="decorate-your-backgrounds-">Decorate your backgrounds /</h3>
+<p>添加一个彩色矩形到你的 UI 中并不需要专业的图形设计技能，但它可以极大地提升设计的整体感觉，让作品看起来更具「设计感」。</p>
+<h3 id="decorate-your-backgrounds--装饰背景">Decorate your backgrounds / 装饰背景</h3>
 <p>Even if you do a great job with hierarchy, spacing, and typography, sometimes a design will still feel a little bit plain.</p>
+<p>即便你在层级划分、间距设置和字体选择上都做得很好，有时你的设计看起来可能仍然有些单调。</p>
 <p>A great way to break up some of the monotony without drastically altering the design is to add some excitement to a few of your backgrounds.</p>
-<p><strong>Change the background color</strong></p>
+<p>一个在不大幅改变现有设计的前提下，增加设计多样性的好方法是对背景进行一些创意调整。</p>
+<p><strong>Change the background color / 改变背景颜色</strong></p>
 <p>One way to add some excitement to a background is to simply change the color.</p>
+<p>为背景增添活力的一个简单方法是改变其颜色。</p>
 <p><img src="img/257.png" alt=""></p>
 <p>This works great for emphasizing an individual panel, as well as for adding some distinction between entire page sections.</p>
+<p>这不仅有助于突出显示单独的面板，还能在页面的不同部分之间创造出明显的区分。</p>
 <p><img src="img/258.png" alt=""></p>
 <p>For a more energetic look, you could even use a slight gradient:</p>
+<p>若要营造更加生动的外观，你甚至可以尝试使用轻微的渐变效果：</p>
 <p><img src="img/259.png" alt=""></p>
 <p>For best results, use two hues that are no more than about 30° apart.</p>
-<p><strong>Use a repeating pattern /</strong></p>
+<p>为了达到最佳视觉效果，建议选择色相之间相隔不超过 30° 的两种颜色。</p>
+<p><strong>Use a repeating pattern / 使用重复性图案</strong></p>
 <p>Another approach is to add a subtle repeatable pattern, like this one from Hero Patterns:</p>
+<p>另一种增加背景趣味性的方法是添加一个微妙的重复性图案，比如来自 Hero Patterns 的这个例子：</p>
 <p><img src="img/260.png" alt=""></p>
 <p>You don’t have to necessarily repeat it across the entire background, either — a pattern designed to repeat along a single edge can look great, too.</p>
+<p>你不必让图案在整个背景上重复 —— 设计一个仅沿着单一边沿重复的图案同样可以看起来很好。</p>
 <p><img src="img/261.png" alt=""></p>
 <p>Keep the contrast between the background and the pattern pretty low to ensure readability.</p>
-<p><strong>Add a simple shape or illustration /</strong></p>
+<p>确保背景与图案之间的对比度保持较低，以保证文字的可读性。</p>
+<p><strong>Add a simple shape or illustration / 添加简单图形或插图</strong></p>
 <p>Instead of decorating an entire background, you can also try including an individual graphic or two in specific positions.</p>
+<p>除了装饰整个背景，你还可以考虑在特定位置放置一些单独的图形或插图。</p>
 <p>Simple geometric shapes work well for this:</p>
+<p>简单的几何形状非常适合这种用途：</p>
 <p><img src="img/262.png" alt=""></p>
 <p>&hellip;as do small chunks of a repeatable pattern:</p>
+<p>同样，使用可重复图案的一小部分也是不错的选择：</p>
 <p><img src="img/263.png" alt=""></p>
 <p>You can even do something more complex, like a simplified world map:</p>
+<p>你甚至可以尝试一些更复杂的设计，比如一个简化版的世界地图：</p>
 <p><img src="img/264.png" alt=""></p>
 <p>Just like with a full background pattern, it’s best to keep the contrast low so nothing interferes with the content.</p>
-<h3 id="dont-overlook-empty-states-">Don’t overlook empty states /</h3>
+<p>与完整的背景图案一样，最好是保持低对比度，以免影响内容的呈现。</p>
+<h3 id="dont-overlook-empty-states--重视初始状态设计">Don’t overlook empty states / 重视初始状态设计</h3>
 <p>Imagine you’re designing a new feature for an app you’re working on.</p>
+<p>设想你正在为一款应用开发一个新功能。</p>
 <p>You’ve spent a ton of time crafting the perfect realistic sample data, picking out usernames and avatars, and putting together a beautiful and electrifying screen.</p>
+<p>你投入了大量时间来制作逼真的样本数据，挑选合适的用户名和头像，并设计了一个既美观又激动人心的界面。</p>
 <p><img src="img/265.png" alt=""></p>
 <p>You code it all up and deploy it to production. But when an excited user clicks the new item in the nav, they see this:</p>
+<p>你完成了编码并将其部署上线。但当用户满怀期待地点击导航栏中的新功能时，他们看到了一片空白：</p>
 <p><img src="img/266.png" alt=""></p>
 <p>If you’re designing something that depends on user-generated content, the empty state should be a priority, not an afterthought.</p>
+<p>如果你正在设计的功能需要用户自己生成内容，那么初始状态的设计应该是一个重点，而不是事后才考虑的问题。</p>
 <p>Try incorporating an image or illustration to grab the user’s attention, and emphasizing the call-to-action to encourage them to take the next step:</p>
+<p>试着加入一些图像或插图来吸引用户的注意，并强调行动号召，以激励他们采取下一步行动：</p>
 <p><img src="img/267.png" alt=""></p>
 <p>If you’re working on something that has a bunch of supporting UI like tabs or filters, consider hiding that stuff entirely. There’s no point in presenting a bunch of actions that don’t do anything until the user has created some content.</p>
+<p>如果你正在设计的功能包含许多辅助性用户界面元素，如标签或过滤器，考虑在用户尚未创建任何内容之前完全隐藏这些元素。在用户开始创建内容之前，展示这些暂时无法执行的操作是没有意义的。</p>
 <p><img src="img/268.png" alt=""></p>
 <p>Empty states are a user’s first interaction with a new product or feature. Use them as an opportunity to be interesting and exciting — don’t settle for plain and boring.</p>
-<h3 id="use-fewer-borders-">Use fewer borders /</h3>
+<p>初始状态往往是用户与新产品或功能的第一次接触。利用这个机会让用户体验变得有趣和激动人心 —— 不要满足于平庸和乏味的设计。</p>
+<h3 id="use-fewer-borders--减少边框的使用">Use fewer borders / 减少边框的使用</h3>
 <p>When you need to create separation between two elements, try to resist immediately reaching for a border.</p>
+<p>在两个元素之间需要分隔时，应避免立即采用边框的方式。</p>
 <p><img src="img/269.png" alt=""></p>
 <p>While borders are a great way to distinguish two elements from one another, they aren’t the only way, and using too many of them can make your design feel busy and cluttered.</p>
-<p><strong>Use a box shadow</strong></p>
+<p>边框虽然能有效区分元素，但过度使用会使得设计显得过于复杂和混乱。</p>
+<p><strong>Use a box shadow / 采用盒阴影</strong></p>
 <p>Box shadows do a great job of outlining an element like a border would, but can be more subtle and accomplish the same goal without being as distracting.</p>
+<p>盒阴影能够像边框一样为元素提供清晰的轮廓，同时更为细腻，不会分散用户的注意力。</p>
 <p><img src="img/270.png" alt=""></p>
 <p>This approach works best when the element you are applying the box shadow to is not the same color as the background.</p>
-<p><strong>Use two different background colors /</strong></p>
+<p>这种方法在元素颜色与背景颜色不一致时效果最佳。</p>
+<p><strong>Use two different background colors / 使用不同的背景颜色</strong></p>
 <p>Giving adjacent elements slightly different background colors is usually all you need to create distinction between them.</p>
+<p>为相邻元素设置略有差异的背景颜色，通常足以区分它们。</p>
 <p><img src="img/271.png" alt=""></p>
 <p>If you’re already using different background colors in addition to a border, try removing the border; you might not need it.</p>
-<p><strong>Add extra spacing /</strong></p>
+<p>如果你已经通过背景颜色和边框来区分元素，可以尝试去掉边框，看看是否仍然能够达到区分的效果。</p>
+<p><strong>Add extra spacing / 增加间距</strong></p>
 <p>What better way to create separation between elements than to simply increase the separation?</p>
+<p>在元素之间增加间距是创建分隔的直接方法。</p>
 <p><img src="img/272.png" alt=""></p>
 <p>Spacing things further apart is a great way to create distinction between groups of elements without introducing any new UI at all.</p>
-<h3 id="think-outside-the-box-">Think outside the box /</h3>
+<p>通过增加元素间的空间，你可以在不增加额外界面元素的情况下，清晰地区分不同的元素组。</p>
+<h3 id="think-outside-the-box--打破常规">Think outside the box / 打破常规</h3>
 <p>Most people have a lot of preconceived notions about how certain components are supposed to look. But just because we’ve been conditioned to believe that there’s only one way to design a particular component, doesn’t mean it’s true.</p>
+<p>大多数人对于某些组件的外观有很多先入为主的想法。但仅仅因为我们习惯于相信只有一种方法来设计特定组件，并不意味着这是真的。</p>
 <p>For example, picture a dropdown menu. You’re probably picturing a white box with a bit of a drop shadow and a list of links stacked inside of it:</p>
+<p>以一个下拉菜单为例。你可能会想到一个带阴影的白色盒子，里面排列着一些链接：</p>
 <p><img src="img/273.png" alt=""></p>
 <p>But who says a dropdown needs to be a boring list of links? It’s just a floating box on the screen, you can do anything you want with it.</p>
+<p>但下拉菜单不必是乏味的链接列表。它是一个屏幕上的浮动框，你可以自由地发挥创意。</p>
 <p>Break it into sections, use multiple columns, add supporting text or colorful icons — do something fun with it!</p>
+<p>你可以将其分割成几个部分，使用多列布局，添加辅助文本或彩色图标，让它变得更有趣！</p>
 <p><img src="img/274.png" alt=""></p>
 <p>And don’t just stop at dropdowns; what about something like a table?</p>
+<p>除了下拉菜单；考虑下表格设计呢？</p>
 <p>When you imagine a table, you probably think of columns that each contain one specific piece of data:</p>
+<p>你可能会想象一个表格，每列都包含特定的数据：</p>
 <p><img src="img/275.png" alt=""></p>
 <p>Tables don’t have to work this way, though — if a column doesn’t need to be sortable, there’s no reason you can’t combine it with a related column and introduce some interesting hierarchy:</p>
+<p>但表格的设计可以更加灵活 —— 如果某列不需要排序功能，你可以将它与相关列合并，创建有趣的层级：</p>
 <p><img src="img/276.png" alt=""></p>
 <p>Table content doesn’t have to be plain text, either. Add images if it makes sense, or introduce some color to enrich the existing data:</p>
+<p>表格内容也可以不局限于纯文本。如果合适，可以添加图像，或使用颜色来丰富数据展示：</p>
 <p><img src="img/277.png" alt=""></p>
 <p>How about radio buttons? There’s nothing more boring than a stack of labels with little circles next to them.</p>
+<p>那么单选按钮呢？一 堆旁边带有小圆圈的标签可能非常单调。</p>
 <p><img src="img/278.png" alt=""></p>
 <p>If a set of radio buttons are an important part of the UI you’re designing, try something like selectable cards instead:</p>
+<p>如果单选按钮在你的 UI 设计中占据重要位置，尝试使用可选卡片等替代方案：</p>
 <p><img src="img/279.png" alt=""></p>
 <p>Don’t let your existing beliefs hold back your designs — constraints are powerful but sometimes a bit of freedom is just what you need to take an interface to the next level.</p>
-<h2 id="leveling-up-">Leveling Up /</h2>
+<p>不要让现有观念限制了你的设计思路 —— 约束可以是有益的，但有时一点点自由就能将界面设计提升到新的高度。</p>
+<h2 id="leveling-up--提升设计技能">Leveling Up / 提升设计技能</h2>
 <p>Hopefully after reading this book you feel much more confident in your ability to make something look awesome, without relying on a designer. But even though we’ve tried our best to cram in every good idea we could possibly think of, there will always be more out there to learn.</p>
+<p>在阅读完这本书后，希望你对自己的设计能力更有信心，能够独立创造出令人赞叹的作品，无需依赖专业设计师。尽管我们已经尽力在书中包含了所有能想到的好建议，但总有更多知识等待你去探索。</p>
 <p>Here are two of the best ways you can continue to hone your skills, and add new tools to your toolbelt.</p>
-<p><strong>Look for decisions you wouldn’t have made /</strong></p>
+<p>以下是两个有效的方法，帮助你持续提升设计技能，并丰富你的设计工具箱。</p>
+<p><strong>Look for decisions you wouldn’t have made / 寻找你未曾想到的决策</strong></p>
 <p>Whenever you stumble across a design you really like, ask yourself:</p>
+<p>每当你发现一个你喜欢的设计时，反问自己：</p>
 <p>“Did the designer do anything here that I never would have thought to do?”</p>
+<p>「设计师在这里做了哪些我从未考虑过的事情？」</p>
 <p>Maybe it’s the way they inverted the background color on a datepicker:</p>
+<p>可能是他们在日期选择器上创新地反转了背景颜色：</p>
 <p><img src="img/280.png" alt=""></p>
 <p>&hellip;or the way they positioned a button within a text input instead of on the outside:</p>
+<p>或者是他们将按钮放置在文本输入框内部而非外部的方式：</p>
 <p><img src="img/281.png" alt=""></p>
 <p>&hellip;or something as simple as using two different font colors for a headline:</p>
+<p>又或者仅仅是为标题使用了两种不同的字体颜色：</p>
 <p><img src="img/282.png" alt=""></p>
 <p>Paying attention to these sorts of unintuitive decisions is a great way to discover new ideas that you can apply to your own designs.</p>
-<p><strong>Rebuild your favorite interfaces</strong> /</p>
+<p>关注这些非传统的决策，有助于你发现新的设计思路，并将其应用于你自己的设计中。</p>
+<p><strong>Rebuild your favorite interfaces / 重建你喜爱的界面</strong></p>
 <p>The absolute best way to notice the little details that make a design look really polished is to recreate that design from scratch, without peeking at the developer tools.</p>
+<p>要真正注意到那些让设计显得精致细腻的细节，最好的方法是不依赖开发者工具，自己从头开始重建那个设计。</p>
 <p>When you’re trying to figure out why your version looks different than the original, you’ll discover tricks like “reduce your line height for headings”, “add letter-spacing to uppercase text”, or “combine multiple shadows” all on your own.</p>
+<p>在你尝试理解你的版本为何与原作存在差异时，你将独立发现一些技巧，比如「减少标题的行高」、「为大写文本添加字间距」或「组合多个阴影」。</p>
 <p><img src="img/283.png" alt=""></p>
 <p>By continually studying the work that inspires you with a careful eye, you’ll be picking up design tricks for years to come.</p>
+<p>通过不断地细致研究那些激发你灵感的设计作品，你将能够持续学习并掌握新的设计技巧。</p>
 <p>— Adam Wathan &amp; Steve Schoger</p>
 <p><a href="/pdfs/Refactoring-UI-v1.0.2.pdf">⬇️ Download PDF</a></p>
 

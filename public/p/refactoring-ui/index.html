@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="https://rokcso.com/images/favicon.png" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
 <title>译&gt; 重构 UI | Rokcso&#39;s blog</title>
 <meta name="title" content="译&gt; 重构 UI" />
 <meta name="description" content="中英双语对照翻译，关于《Refactoring UI》的全文翻译。" />
 <meta name="keywords" content="translation,UI," />
 
 
-<meta property="og:url" content="https://rokcso.com/p/refactoring-ui/">
+<meta property="og:url" content="http://localhost:1313/p/refactoring-ui/">
   <meta property="og:site_name" content="Rokcso&#39;s blog">
   <meta property="og:title" content="译&gt; 重构 UI">
   <meta property="og:description" content="中英双语对照翻译，关于《Refactoring UI》的全文翻译。">
@@ -23,13 +23,13 @@
     <meta property="article:modified_time" content="2024-08-25T00:00:00+00:00">
     <meta property="article:tag" content="Translation">
     <meta property="article:tag" content="UI">
-    <meta property="og:image" content="https://rokcso.com/images/share.png">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
 
 
 
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://rokcso.com/images/share.png">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
   <meta name="twitter:title" content="译&gt; 重构 UI">
   <meta name="twitter:description" content="中英双语对照翻译，关于《Refactoring UI》的全文翻译。">
 
@@ -40,8 +40,8 @@
   <meta itemprop="description" content="中英双语对照翻译，关于《Refactoring UI》的全文翻译。">
   <meta itemprop="datePublished" content="2024-08-25T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-08-25T00:00:00+00:00">
-  <meta itemprop="wordCount" content="16754">
-  <meta itemprop="image" content="https://rokcso.com/images/share.png">
+  <meta itemprop="wordCount" content="16783">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
   <meta itemprop="keywords" content="Translation,UI">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -1087,7 +1087,7 @@
 <p>This isn’t <em>always</em> true, but as a general rule, typefaces that come in a lot of different weights tend to be crafted with more care and attention to detail than typefaces with fewer weights.</p>
 <p>虽然这并不<em>总是</em>准确，但通常提供多种字重的字体在制作上更为精心，对细节的关注也更为周到。</p>
 <p>Many font directories (<em>like Google Fonts</em>) will let you filter by “number of styles”, which is a combination of the available weights as well as the italic variations of those weights.</p>
-<p>很多字体目录平台（<em>例如 Google Fonts</em>）允许你根据「样式数量」来过滤，这包括了各种字重及其相应的斜体样式。</p>
+<p>很多字体展示平台（<em>例如 Google Fonts</em>）允许你根据「样式数量」来过滤，这包括了各种字重及其相应的斜体样式。</p>
 <p>A great way to limit the number of options you have to choose from is to crank that up to 10+ (<em>to account for italics</em>):</p>
 <p>一个有效减少选择范围的技巧是将过滤条件设置为 10+（<em>包含斜体样式</em>）：</p>
 <p><img src="img/107.png" alt=""></p>
@@ -1102,32 +1102,45 @@
 <p><img src="img/108.png" alt=""></p>
 <p>Keep this in mind and avoid using condensed typefaces with short x-heights for your main UI text.</p>
 <p>在选择字体时，请考虑这些因素，避免在用户界面的主要文本中使用紧凑且 X 高度较短的字体。</p>
-<!-- raw HTML omitted -->
 <p><strong>Trust the wisdom of the crowd / 相信群众的智慧</strong></p>
 <p>If a font is popular, it’s probably a good font. Most font directories will let you sort by popularity, so this can be a great way to limit your choices.</p>
+<p>受欢迎的字体往往是优秀选择。大多数字体展示平台允许你根据流行度进行排序，这可以帮助你快速筛选出潜在的优质字体。</p>
 <p>This is especially useful when you’re trying to pick out something other than a neutral UI typeface. Picking a nice serif with some personality for example can be tough.</p>
+<p>当你需要挑选具有特定风格的字体，而不仅仅是中性的用户界面字体时，这个方法特别有效。比如，选择一个既有个性又美观的衬线字体可能具有挑战性。</p>
 <p><img src="img/109.png" alt=""></p>
 <p>Leveraging the collective decision-making power of thousands of other people can make it a lot easier.</p>
-<p><strong>Steal from people who care / 从关心你的人哪里偷东西</strong></p>
+<p>借助成千上万人的共同选择，可以大大简化你的决策过程。</p>
+<p><strong>Steal from people who care / 向优秀的人学习</strong></p>
 <p>Inspect some of your favorite sites and see what typefaces they are using.</p>
+<p>浏览一些你喜欢的网站，观察它们使用的字体类型。</p>
 <p><img src="img/110.png" alt=""></p>
 <p>There are a lot of great design teams out there full of people with really strong opinions about typography, and they’ll often choose great fonts that you might have never found using some of the safer approaches outlined above.</p>
+<p>世界上有许多卓越的设计团队，团队成员对排版有着坚定的看法，他们往往会挑选出一些你可能通过上述更保守的方法从未发现的优秀字体。</p>
 <p><strong>Developing your intuition / 培养你的直觉</strong></p>
 <p>Once you start paying closer attention to the typography on well-designed sites, it’s not long before you feel pretty comfortable labeling a typeface as awesome or terrible.</p>
+<p>当你开始更加细致地观察那些设计优秀的网站的排版时，你很快就会对判断一种字体是否出色或糟糕感到得心应手。</p>
 <p>You’re gonna be a type snob soon enough, but the advice outlined above will help get you by in the meantime.</p>
-<h3 id="keep-your-line-length-in-check--保证你的行长度在控制之内">Keep your line length in check / 保证你的行长度在控制之内</h3>
+<p>你很快将成为一个对字体有严格要求的人，但在那之前，上述的建议将为你提供帮助。</p>
+<h3 id="keep-your-line-length-in-check--控制行长度">Keep your line length in check / 控制行长度</h3>
 <p>When styling paragraphs, it’s easy to make the mistake of fitting the text to your layout instead of trying to create the best reading experience.</p>
+<p>在设计段落样式时，常见的错误是让文本适应页面布局，而不是优化阅读体验。</p>
 <p>Usually this means lines that are too long, making text harder to read.</p>
+<p>这通常导致行过长，影响文本的易读性。</p>
 <p><img src="img/111.png" alt=""></p>
 <p>For the best reading experience, make your paragraphs wide enough to fit between 45 and 75 characters per line. The easiest way to do this on the web is using em units, which are relative to the current font size. A width of 20-35em will get you in the right ballpark.</p>
+<p>为了最佳的阅读体验，应调整段落宽度，确保每行大约有 45 到 75 个字符。在网页设计中，使用 em 单位（与当前字体大小相对应）是最简单的方法。设置宽度在 20 到 35em 之间，可以确保行宽适宜。</p>
 <p><img src="img/112.png" alt=""></p>
 <p><img src="img/113.png" alt=""></p>
 <p>Going a bit wider than 75 characters per line can sometimes work too, but be aware that you’re entering risky territory — stick to the 45-75 range if you want to play it safe.</p>
-<p><strong>Dealing with wider content / 处理更广泛的内容</strong></p>
+<p>虽然每行超过 75 个字符在某些情况下也可行，但这可能降低阅读舒适度。为了安全起见，建议保持在 45 到 75 个字符的范围内。</p>
+<!-- raw HTML omitted -->
+<p><strong>Dealing with wider content / 应对宽内容的布局</strong></p>
 <p>If you’re mixing paragraph text with images or other large components, you should still limit the paragraph width even if the overall content area needs to be wider to accommodate the other elements.</p>
+<p>当你在段落文本与图片或其他大型组件混合布局时，即使为了适应这些元素，整体内容区域需要加宽，你也应当控制段落文本的宽度。</p>
 <p><img src="img/114.png" alt=""></p>
 <p><img src="img/115.png" alt=""></p>
 <p>It might seem counterintuitive at first to use different widths in the same content area, but the result almost always looks more polished.</p>
+<p>虽然一开始在同一内容区域使用不同宽度的布局可能看起来不太自然，但这种设计方法几乎总能带来更加精细的外观。</p>
 <h3 id="baseline-not-center--基线不居中">Baseline, not center / 基线，不居中</h3>
 <p>There are a lot of situations where it makes sense to use multiple font sizes to create hierarchy on a single line.</p>
 <p>For example, maybe you’re designing a card that has a large title in the top left and a smaller list of actions in the top right.</p>
@@ -1236,63 +1249,62 @@
 <p><img src="img/149.png" alt=""></p>
 <p><strong>What you actually need / 你需要什么</strong></p>
 <p>You can’t build anything with five hex codes. To build something real, you need a much more comprehensive set of colors to choose from.</p>
-<p><img src="img/150.png" alt="">
-<img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/06D2827F-0851-4C8E-A588-E48EF32A4A35_2/Yyrw7oeureOhyX8rBvCPM95xAd3fGISnPeJ4IhiTJIgz/Image.png" alt="Image.png"></p>
+<p><img src="img/150.png" alt=""></p>
 <p>You can break a good color palette down into three categories.</p>
 <p><strong>Greys /</strong></p>
 <p>Text, backgrounds, panels, form controls — almost everything in an interface is grey.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7B829C8E-779E-423D-9FD4-E14B1A50BBAC_2/yrjU3acWXLY9SzHlNC8fyKbl0e76KrrTuAmr7kjNEooz/Image.png" alt="Image.png"></p>
+<p><img src="img/151.png" alt=""></p>
 <p>You’ll need more greys than you think, too — three or four shades might sound like plenty but it won’t be long before you wish you had something a little darker than shade #2 but a little lighter than shade #3.</p>
 <p>In practice, you want 8-10 shades to choose from (<em>more on this in “Define your shades up front”</em>). Not so many that you waste time deciding between shade #77 and shade #78, but enough to make sure you don’t have to compromise too much.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F187C2A4-32A8-4DE8-BFB0-2F5CB2347922_2/HTuEKnVsXV6yVimo8yGreW4PIm2dSKOiMikWJ5DWHrsz/Image.png" alt="Image.png"></p>
+<p><img src="img/152.png" alt=""></p>
 <p>True black tends to look pretty unnatural, so start with a really dark grey and work your way up to white in steady increments.</p>
 <p><strong>Primary color(s) /</strong></p>
 <p>Most sites need one, <em>maybe</em> two colors that are used for primary actions, active navigation elements, etc. These are the colors that determine the overall look of a site — the ones that make you think of Facebook as “blue”.</p>
 <p>Just like with greys, you need a variety (5-10) of lighter and darker shades to choose from.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/43A9686C-A863-4E77-8375-BB99DCA0049A_2/u1nxvnjBtwirZ37mDx6NUFZ7CPDfWZv5xfLlUQPibzEz/Image.png" alt="Image.png"></p>
+<p><img src="img/153.png" alt=""></p>
 <p>Ultra-light shades can be useful as a tinted background for things like alerts, while darker shades work great for text.</p>
 <p><strong>Accent colors /</strong></p>
 <p>On top of primary colors, every site needs a few accent colors for communicating different things to the user.</p>
 <p>For example, you might want to use an eye-grabbing color like yellow, pink, or teal to highlight a new feature:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2F383817-7DAA-4483-800A-5C1D93DFE36F_2/x4vFtR2nPiEydRx4yeYUMBLehUglxgIxBdjoZF7WSX0z/Image.png" alt="Image.png"></p>
+<p><img src="img/154.png" alt=""></p>
 <p>You might also need colors to emphasize different semantic states, like red for confirming a destructive action:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7EB1AB6A-87D1-4DF6-AD02-0D83756B65FE_2/w0tNtbJiyKx9VST024Nb1b6JCvF34yLuTXezymKlDYYz/Image.png" alt="Image.png"></p>
+<p><img src="img/155.png" alt=""></p>
 <p>&hellip;yellow for a warning message:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/78652FE8-499A-461D-98AE-CED8962E76D9_2/krQgBNQxur5GlPYAvOvzZl3nKuSd5pFKEuUdpr7Lytkz/Image.png" alt="Image.png"></p>
+<p><img src="img/156.png" alt=""></p>
 <p>&hellip;or green to highlight a positive trend:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A4AF47E4-64B7-4747-82AB-69AE4E5900EC_2/J85beNIWP1SmtjHXauDTVllk5PQjWMNGmsryzwQiWG0z/Image.png" alt="Image.png"></p>
+<p><img src="img/157.png" alt=""></p>
 <p>You’ll want multiple shades for these colors too, even though they should be used pretty sparingly throughout the UI.</p>
 <p>If you’re building something where you need to use color to distinguish or categorize similar elements (like lines on graphs, events in a calendar, or tags on a project), you might need even more accent colors.</p>
 <p>All in, it’s not uncommon to need as many as ten different colors with 5-10 shades each for a complex UI.</p>
 <h3 id="define-your-shades-up-front-">Define your shades up front /</h3>
 <p>When you need to create a lighter or darker variation of a color in your palette, don’t get clever using CSS preprocessor functions like “lighten” or “darken” to create shades on the fly. That’s how you end up with 35 slightly different blues that all look the same.</p>
 <p>Instead, define a fixed set of shades up front that you can choose from as you work.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/30828304-5C05-48EA-8174-73AAD296D176_2/POOb5vBy38X2OUnutT3rH4t1lGxV7q4auBngehYC3pcz/Image.png" alt="Image.png"></p>
+<p><img src="img/158.png" alt=""></p>
 <p>So how do you put together a palette like this anyways?</p>
 <p><strong>Choose the base color first /</strong></p>
 <p>Start by picking a base color for the scale you want to create — the color in the middle that your lighter and darker shades are based on.</p>
 <p>There’s no real scientific way to do this, but for primary and accent colors, a good rule of thumb is to pick a shade that would work well as a button background.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2135DD07-FB40-4489-A3BC-6E8BEC2BCAB7_2/FZXDPR2lvquampnXX79hKfXypnU1oY1uGswa3gVokggz/Image.png" alt="Image.png"></p>
+<p><img src="img/159.png" alt=""></p>
 <p>It’s important to note that there are no real rules here like “start at 50% lightness” or anything — every color behaves a bit differently, so you’ll have to rely on your eyes for this one.</p>
 <p><strong>Finding the edges /</strong></p>
 <p>Next, pick your darkest shade and your lightest shade. There’s no real science to this either, but it helps to think about where they will be used and choose them using that context.</p>
 <p>The darkest shade of a color is usually reserved for text, while the lightest shade might be used to tint the background of an element.</p>
 <p>A simple alert component is a good example that combines both of these use cases, so it can be a great place to pick these colors.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9C57B293-65C9-4E83-A20B-14505886E89B_2/ZysQulveAu0AouZdCn1MQ6HIq7HZeloNpCPs4h8IHbcz/Image.png" alt="Image.png"></p>
+<p><img src="img/160.png" alt=""></p>
 <p>Start with a color that matches the hue of your base color, and adjust the saturation and lightness until you’re satisfied.</p>
 <p><strong>Filling in the gaps /</strong></p>
 <p>Once you’ve got your base, darkest, and lightest shades, you just need to fill in the gaps in between them.</p>
 <p>For most projects, you’ll need at least 5 shades per color, and probably closer to 10 if you don’t want to feel too constrained.</p>
 <p>Nine is a great number because it’s easy to divide and makes filling in the gaps a little more straightforward. Let’s call our darkest shade 900, our base shade 500, and our lightest shade 100.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A4A687F1-15AA-4F29-8B63-B1D90A8AB37B_2/fYgaq7bC2mEejMbhDV7WlhJsTiNWi0pxZH8qE8VI28Az/Image.png" alt="Image.png"></p>
+<p><img src="img/161.png" alt=""></p>
 <p>Start by picking shades 700 and 300, the ones right in the middle of the gaps. You want these shades to feel like the perfect compromise between the shades on either side.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A54DE831-ADF3-4AEC-9400-DAC984B1E1F4_2/iG7cpMsPMc3zeEItXlPquqRo3Da0OMJcK12QS4j90kcz/Image.png" alt="Image.png"></p>
+<p><img src="img/162.png" alt=""></p>
 <p>This creates four more holes in the scale (800, 600, 400, and 200), which you can fill using the same approach.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/E4E37DD8-86EE-4DC8-BFAE-D7196C60179C_2/jmwzvc52hP3ZPB2NQxrS2v3CinLRB2mTyJRr6V1lMG0z/Image.png" alt="Image.png"></p>
+<p><img src="img/163.png" alt=""></p>
 <p>You should end up with a pretty balanced set of colors that provide just enough options to accommodate your design ideas without feeling limiting.</p>
 <p><strong>What about greys?</strong> /</p>
 <p>With greys the base color isn’t as important, but otherwise the process is the same. Start at the edges and fill in the gaps until you have what you need.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D88B60D2-3481-4D52-AD20-8494CFCEE215_2/l4c2ehxNNZOKg8SL8ZRc3Gd3BEYdnGnU2AfxvIXlAWkz/Image.png" alt="Image.png"></p>
+<p><img src="img/164.png" alt=""></p>
 <p>Pick your darkest grey by choosing a color for the darkest text in your project, and your lightest grey by choosing something that works well for a subtle off-white background.</p>
 <p><strong>It’s not a science /</strong></p>
 <p>As tempting as it is, you can’t rely purely on math to craft the perfect color palette.</p>
@@ -1301,197 +1313,197 @@
 <p>Just try to avoid adding new shades too often if you can avoid it. If you’re not diligent about limiting your palette, you might as well have no color system at all.</p>
 <h3 id="dont-let-lightness-kill-your-saturation-">Don’t let lightness kill your saturation /</h3>
 <p>In the HSL color space, as a color gets closer to 0% or 100% lightness, the impact of saturation is weakened — the same saturation value at 50% lightness looks more colorful than it does at 90% lightness.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D4F180B2-58FB-48AF-901C-4E10E23FF742_2/AamiHJiqXVWfVvxCGJxsywTPKoAaWeV8s8UtZPE4yYYz/Image.png" alt="Image.png"></p>
+<p><img src="img/165.png" alt=""></p>
 <p>That means that if you don’t want the lighter and darker shades of a given color to look washed out, you need to increase the saturation as the lightness gets further away from 50%.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2A5388CC-9777-4743-863D-E2331F2D66DC_2/IOVyJT9EBSS0204vymuMZJpMX2Fx9HxTuzF3KvxTfKEz/Image.png" alt="Image.png"></p>
+<p><img src="img/166.png" alt=""></p>
 <p>It’s subtle but little details like this add up, especially when a color is being applied to a large section of a UI.</p>
 <p>But what if your base color is already heavily saturated? How do you increase the saturation if it’s already at 100%?</p>
 <p><strong>Use perceived brightness to your advantage /</strong></p>
 <p>Which of these two colors do you think is lighter?</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/0D1EE1ED-DF41-49CF-9800-9711EACB35E4_2/MSW2Mt4ECNnBHkyAxAB3upOQiydWc6UFWT7Y5If1bHgz/Image.png" alt="Image.png"></p>
+<p><img src="img/167.png" alt=""></p>
 <p>The yellow, right? Well it turns out both colors actually have the exact same “lightness” in terms of HSL:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9C5745EF-3DCF-4F04-9E59-62AF7B9B730E_2/MGOQxnPbEgqYOQBcbBq0uxLxF92isgXSaq5qGSaK9aAz/Image.png" alt="Image.png"></p>
+<p><img src="img/168.png" alt=""></p>
 <p>So why do we see the yellow as lighter? Well it turns out that every hue has an inherent perceived brightness due to how the human eye perceives color.</p>
 <p>You can calculate the perceived brightness of a color by plugging its RGB components into this formula:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C7CBFFCD-266B-4F4C-8CA2-9AADC06EB173_2/diNSz2MK4dk1604CDYyViFlLqiDpNbKHZPOu1Kvj1n8z/Image.png" alt="Image.png"></p>
+<p><img src="img/169.png" alt=""></p>
 <p>Taking samples of different hues with 100% saturation and 50% lightness, we can get a good sense of the perceived brightness of different colors around the color wheel:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/62E68F87-394F-49AB-B83A-F4EA698B68BE_2/TIJyUWW5gxYGhvYMiBJbqVCRRYa702XjiO1mnAgQDJ4z/Image.png" alt="Image.png"></p>
+<p><img src="img/170.png" alt=""></p>
 <p>As expected, yellow has a higher perceived brightness than blue. But what’s interesting here is that perceived brightness doesn’t simply change linearly from the darkest hue to the lightest hue — instead, there are three separate local minimums (red, green, and blue) and three local maximums (yellow, cyan, and magenta).</p>
 <p><strong>Changing brightness by rotating hue /</strong></p>
 <p>On the surface, this is certainly an interesting thing to understand about color. But things get really interesting when you realize how you can use this knowledge in your designs.</p>
 <p>Normally when you want to change how light a color looks, you adjust the <em>lightness</em> component:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1B2BDD34-68AB-4239-96C8-3C9FC8240E25_2/zK7Z2UXW9m5Ydsz4VCyJTigbvnMb7LUjYSHTAYItwMMz/Image.png" alt="Image.png"></p>
+<p><img src="img/171.png" alt=""></p>
 <p>While this does work to lighten or darken a color, you often lose some of the color’s <em>intensity</em> — the color also looks closer to white or to black, not just lighter or darker.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D2516AB2-500E-4222-AC59-EE491D5D8DAF_2/GI5lskJEi8ZxylXyqyJlG7DDeeHER5cm2yr1xf4IrPEz/Image.png" alt="Image.png"></p>
+<p><img src="img/172.png" alt=""></p>
 <p>Since different hues have a different perceived brightness, another way you can change the brightness of a color is by <em>rotating</em> its hue.</p>
 <p>To make a color lighter, rotate the hue towards the nearest bright hue — 60°, 180°, or 300°.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7D6B2BDE-EF9B-4E71-9E1F-A446979C955D_2/Gmt2x6ygXqwi938k7QR925t3yLXxzAwsVbxmeLqxzZ8z/Image.png" alt="Image.png"></p>
+<p><img src="img/173.png" alt=""></p>
 <p>To make a color darker, rotate the hue towards the nearest dark hue — 0°, 120°, or 240°.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/75CE680C-FA4B-4099-8EF1-A5F8B08A0EA3_2/20sCulFD0qv82SDmyGjp8xdqajQnAzV5g6XCZQFhjysz/Image.png" alt="Image.png"></p>
+<p><img src="img/174.png" alt=""></p>
 <p>This can be really useful when trying to create a palette for a light color like yellow. By gradually rotating the hue towards more of an orange as you decrease the lightness, the darker shades will feel warm and rich instead of dull and brown:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/97E694BD-E226-43A5-9316-421FB86C911E_2/D1KgTLQfmhMNiOFrWrOGRPrxGA0zqvZJ3oMIVWJgjx0z/Image.png" alt="Image.png"></p>
+<p><img src="img/175.png" alt=""></p>
 <p>You can of course combine these approaches too, getting some of the brightness by adjusting the hue and some from adjusting the lightness.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/BC5EC96B-99D1-4C01-95BC-4686C2AD9653_2/YkFyStrTnSsauiNdoZobIZJz43MUlIZqhLcRjbAVL3wz/Image.png" alt="Image.png"></p>
+<p><img src="img/176.png" alt=""></p>
 <p>While this is a great way to change a color’s brightness without affecting its intensity, it works best in small doses. Don’t rotate the hue more than 20-30° or it will look like a totally different color instead of just lighter or darker.</p>
 <h3 id="greys-dont-have-to-be-grey-">Greys don’t have to be grey /</h3>
 <p>By definition, true grey has a saturation of 0% — it doesn’t have any actual color in it at all.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/61E8403A-DF75-48B7-BAA5-AE31C2CB57C6_2/owK0ZDcJBFnNDhwqVt8GzS3MJkHTayxI27NWMnvFw8Ez/Image.png" alt="Image.png"></p>
+<p><img src="img/177.png" alt=""></p>
 <p>But in practice, a lot of the colors that we <em>think of</em> as grey are actually saturated quite heavily:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/01BCD746-7ADD-45AF-A71E-3AB1ACDD9FB1_2/ooRgyt34g2zlbLeNMB3eVptpALTSFuBDfqI9YxBUykwz/Image.png" alt="Image.png"></p>
+<p><img src="img/178.png" alt=""></p>
 <p>This saturation is what makes some greys feel cool and other greys feel warm.</p>
 <p><strong>Color temperature /</strong></p>
 <p>If you’ve ever purchased light bulbs before, you’ve had to make the decision between “warm white” bulbs that give off a yellow-ish light, and “cool white” bulbs that give off a blue-ish light.</p>
 <p>Saturating greys in a user interface works in a similar same way.</p>
 <p>If you want your greys to feel cool, saturate them with a bit of blue:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/C8CDB265-A152-4A82-8227-21671A6A550A_2/PJrn4UT20Ch2witxL5sNEjHAOvtdAMTcnYpcEqkx4vsz/Image.png" alt="Image.png"></p>
+<p><img src="img/179.png" alt=""></p>
 <p>To give your greys a warmer feel, saturate them with a bit of yellow or orange:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D2F6BFE4-2AEB-4AE6-997A-2553C98812A5_2/azaSYbxYNyYF3ZafzBF63nBT8mXpWcBMs78GPeygLHYz/Image.png" alt="Image.png"></p>
+<p><img src="img/180.png" alt=""></p>
 <p>To maintain a consistent temperature, don’t forget to increase the saturation for the lighter and darker shades. If you don’t, those shades will look a bit washed out compared to the greys that are closer to 50% lightness.</p>
 <p>How much you want to saturate your greys is completely up to you — add just a little if you only want to tip the temperature slightly, or crank it up if you want the interface to lean strongly in one direction or the other.</p>
 <h3 id="accessible-doesnt-have-to-mean-ugly-">Accessible doesn’t have to mean ugly /</h3>
 <p>To make sure your designs are accessible, the Web Content Accessibility Guidelines (WCAG) recommend that normal text (under ~18px) has a contrast ratio of at least 4.5:1, and that larger text has a contrast ratio of at least 3:1.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D121687F-A0CE-46F3-BE67-6B7D121AA83F_2/u7OjsF6yWVUJZpkWxUb44w3lZ4wfxSljwvxOpD5o6wEz/Image.png" alt="Image.png"></p>
+<p><img src="img/181.png" alt=""></p>
 <p>For typical <em>dark-text-on-a-light-background</em> situations, meeting this recommendation is pretty easy, but it gets a lot trickier when you start working with color.</p>
 <p><strong>Flipping the contrast</strong></p>
 <p>When using white text on a colored background, you’d be surprised how dark the color often needs to be to meet that 4.5:1 contrast ratio.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/47184B84-E870-4582-A333-7AD690E9F75E_2/jbLBfU3UY2INbmx53JfcqeRbgt5GaFcHyv6zoKcjeXAz/Image.png" alt="Image.png"></p>
+<p><img src="img/182.png" alt=""></p>
 <p>This can create hierarchy issues when those elements aren’t supposed to be the focus of the page — dark colored backgrounds will really grab the user’s attention.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/179E3877-C884-453D-ABC6-4AA5D0DA37C4_2/uz7c8LK6iBjgUS70RNWg8hht5lZN6FeiRrRrluiSxJMz/Image.png" alt="Image.png"></p>
+<p><img src="img/183.png" alt=""></p>
 <p>You can solve this problem by flipping the contrast. Instead of using light text on a dark colored background, use dark colored text on a light colored background:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/96AA46DF-BF17-4666-B84C-33A693D86C6E_2/HEFO5rfyd2lx7lQlGrF9PyNWdpnBX48inMWnFfgoPx0z/Image.png" alt="Image.png"></p>
+<p><img src="img/184.png" alt=""></p>
 <p>The color is still there to help support the text, but it’s way less in-your-face and doesn’t interfere as much with other actions on the page.</p>
 <p><strong>Rotating the hue /</strong></p>
 <p>Even harder than white text on a colored background is colored text on a colored background. You’ll run into this situation if you’re ever trying to pick a color for some secondary text inside a dark-colored panel.</p>
 <p>If you start by taking the background color and simply adjusting the lightness and saturation, you’ll find that it’s hard to meet the recommended contrast ratio without getting very close to pure white.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/750AB443-A064-41A2-98D4-841027AF9E92_2/UghxiR8rWEl3yIyFc3xxCvaiqyuE5vim11y8AaaeQSEz/Image.png" alt="Image.png"></p>
+<p><img src="img/185.png" alt=""></p>
 <p>You don’t want the primary text and the secondary text to look the same, so what else can you do?</p>
 <p>Well since some colors are brighter than others, one way to increase the contrast without getting closer to white is to <em>rotate the hue</em> towards a brighter color, like cyan, magenta, or yellow.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FC168915-09BE-4032-BE5B-5C2B20327DDD_2/YOD4mH57QrMptErUP0uMl966SxIycfDfSxkyJutoXfUz/Image.png" alt="Image.png"></p>
+<p><img src="img/186.png" alt=""></p>
 <p>This can make it a lot easier to make the text accessible while still keeping it colorful.</p>
 <h3 id="dont-rely-on-color-alone-">Don’t rely on color alone /</h3>
 <p>Color can be a fantastic way to enhance information and make it easier to understand, but be careful not to rely on it, or users with color blindness will have a hard time interpreting your UI.</p>
 <p>Take these metric cards for example. With this design, someone who is red- green colorblind can’t easily tell if a metric has gotten better or worse:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/CC25105E-8632-4D85-9CB1-E87B99E4D9B0_2/bc5hJRkyI1bPAKTfP6x31Xuyj3MAPXXEvrIik1yx2P0z/Image.png" alt="Image.png"></p>
+<p><img src="img/187.png" alt=""></p>
 <p>An easy fix for this is to also communicate that information in some other way, like by adding icons to indicate if the change is positive or negative.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/44EEEBB2-DF27-4FD6-BEC0-C13F565558A7_2/gcTzHTpUhAXTRYJjWvxwhNYtaNyiM5TlZEM5uh2HEy8z/Image.png" alt="Image.png"></p>
+<p><img src="img/188.png" alt=""></p>
 <p>What about something like a graph, where each trend line has a different color?</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F84A5BF8-0B32-4520-A21F-8B0448AFC9B0_2/MGAqbdaAqHk8OD1eQAabFfgCXnxJtX3xhTDkqMvRM48z/Image.png" alt="Image.png"></p>
+<p><img src="img/189.png" alt=""></p>
 <p>In situations like this, try relying on contrast instead of using completely different colors. It’s much easier for someone who’s colorblind to tell the difference between light and dark than it is for them to tell the difference between two distinct colors.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F02AB032-9315-4045-9CB2-93BBC1ED7076_2/h7gUFEovKUxXXJH2xy4wZ75kMmyq5WSGxHLKzKIvusEz/Image.png" alt="Image.png"></p>
+<p><img src="img/190.png" alt=""></p>
 <p>Always use color to support something that your design is already saying; never use it as the only means of communication.</p>
 <h2 id="creating-depth-">Creating Depth /</h2>
 <h3 id="emulate-a-light-source-">Emulate a light source /</h3>
 <p>Have you ever noticed how some elements in an interface feel like they’re raised off of the page, while others feel like they are inset into the background?</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D7686C0A-9A8A-4456-9143-E31D373B0890_2/Y6zQy1tOzyR0Q3W893E8PW3Y6SA58haFGodLtr8KLYgz/Image.png" alt="Image.png"></p>
+<p><img src="img/191.png" alt=""></p>
 <p>Creating this effect might look complicated at first, but it actually only requires you to understand one fundamental rule.</p>
 <p><strong>Light comes from above /</strong></p>
 <p>Take a look at the panelling on this door:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/AFD51592-818D-4776-9E4C-718B74F40B16_2/p8uLkcVLDrPO8NKIILR4DsyRxJcM1KFIvwfpTmEXKx0z/Image.jpeg" alt="Image.jpeg"></p>
+<p><img src="img/192.jpg" alt=""></p>
 <p>Even though you’re just looking at a flat image, it’s still pretty obvious that the panels on the door are raised. Why is that?</p>
 <p>Notice how the top edge of the panel is lighter? That’s because it’s angled towards the sky and receives more light. Similarly, the bottom edge is darker because it’s angled away from the sky, receiving <em>less</em> light.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A68382EC-EC9D-4539-9E88-4C1830C1E2D0_2/SMQxp4nuPimwuZX2sWfECqvH3yocQsSy5vnVM67NFxsz/Image.png" alt="Image.png"></p>
+<p><img src="img/193.png" alt=""></p>
 <p>The only way those edges could possibly be oriented that way is if the panel itself is raised, so that’s how our brains perceive it.</p>
 <p>Now take a look at the panelling on this cabinet:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F0A9DD6F-45F6-4F84-B9D7-F5F2FBF05782_2/AEh1ze4OPfxAS3EnxoHPxcNLxOcmr0BYptIdsKka1dYz/Image.jpeg" alt="Image.jpeg"></p>
+<p><img src="img/194.jpg" alt=""></p>
 <p>In this case it’s clear that the panels are <em>inset</em> because there’s a shadow at the top indicating that the lip above is blocking the light, and the bottom edge is lighter, indicating that it’s angled upward.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/314BCCDB-5815-40D7-A708-8EC599F5900E_2/1zNHCnBNhA7pc9cdWAP19qR4SJDhnDHC7ramRRpgymIz/Image.png" alt="Image.png"></p>
+<p><img src="img/195.png" alt=""></p>
 <p>To create this same sense of depth in your designs, all you need to do is mimic the way light affects things in the real world.</p>
 <p><strong>Simulating light in a user interface /</strong></p>
 <p>If you want an element to appear raised or inset, first figure out what profile you want that element to have, then mimic how a light source would interact with that shape.</p>
 <p><strong>Raised elements</strong> /</p>
 <p>For example, say you had a button and you wanted it to feel raised off of the page, with perfectly flat edges on the top and bottom:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FBDFB76F-EEC5-4023-8668-FDADB748F0A0_2/rOqsD51Zofl024TH0RWae2F4xkyUgjqhFUhr2GTFmuIz/Image.png" alt="Image.png"></p>
+<p><img src="img/196.png" alt=""></p>
 <p>Because the top and bottom edges are both flat, it would be impossible to see both of them at the same time. People generally look slightly downward towards their screens, so for the most natural look, reveal a little bit of the top edge and hide the bottom edge.</p>
 <p>Since the top edge is facing upward, make it slightly lighter than the face of the button, usually using a top border or an inset box shadow with a slight vertical offset:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2699BF92-4BFB-4E3A-A76A-EB197C6F25F8_2/Tzvt9yjUDGyEAQWz8Xw29wUJyn5GMotAPYB4NEICkAMz/Image.png" alt="Image.png"></p>
+<p><img src="img/197.png" alt=""></p>
 <p>Choose the lighter color by hand instead of using a semi-transparent white for best results — simply overlaying white can suck the saturation out of the underlying color.</p>
 <p>Next, you need to account for the fact that a raised element will block some of the light from reaching the area below the element.</p>
 <p>Do this by adding a small dark box shadow with a slight vertical offset (<em>you only want the shadow to appear below the element</em>):</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3E9F2767-516F-4AEF-B72D-E14C03DFB2B7_2/yGC87yHElArhIxxnsEdAseYwP3SKaxnur35QOUJ6Wegz/Image.png" alt="Image.png"></p>
+<p><img src="img/198.png" alt=""></p>
 <p>Don’t get carried away with the blur radius, a couple of pixels is plenty. These</p>
 <p>sorts of shadows should have pretty sharp edges — take a look at the shadow cast by the bottom of a wall outlet or window frame for a real-world example.</p>
 <p><strong>Inset elements</strong> /</p>
 <p>Say you’re designing a “well” component that should feel like it’s recessed into the page.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6B7AA6D9-1F76-4AFC-A18A-423E4131F9E1_2/MbhcyNyx2yyn1Zo9ADdDWz6ksl1qdW1YhiyjzyafsHoz/Image.png" alt="Image.png"></p>
+<p><img src="img/199.png" alt=""></p>
 <p>Looking slightly downward, only the bottom lip would be visible. Since it’s facing towards the sky, give that edge a slightly lighter color using a bottom border or inset shadow with a negative vertical offset:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1EC06540-D717-48E7-91A7-A73A3764A61C_2/xn7jrs7ayAysxWxMv8MvDGtGPW0bC48r7C0y2ygrk8oz/Image.png" alt="Image.png"></p>
+<p><img src="img/200.png" alt=""></p>
 <p>The area above the well should block some of the light from reaching the very top of the well, so add a small dark inset box shadow with a slight positive vertical offset to make sure it doesn’t poke through at the bottom:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7BFF6051-AD46-4D19-B034-A3A9EC0D4E91_2/EPV7PrGYQZlaqKHtK3fcf17uga4hKOOXl6arcZ1SiLcz/Image.png" alt="Image.png"></p>
+<p><img src="img/201.png" alt=""></p>
 <p>This same treatment works for any element that may need to appear inset, for example text inputs and checkboxes:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/CAD4F435-1A10-4D19-8A42-ACD766396D46_2/b8mqtrOwyMyh8gtMlyySsvyxwb7P1jLFqqK1AX2GyxAz/Image.png" alt="Image.png"></p>
+<p><img src="img/202.png" alt=""></p>
 <p><strong>Don’t get carried away /</strong></p>
 <p>Once you understand how to simulate light in an interface, it can be tempting to tinker away for hours, tweaking and tweaking to see how closely you can mimic the real world.</p>
 <p>While this can be a fun exercise, in practice it can lead to interfaces that are busy and unclear. Borrowing some visual cues from the real world is a great way to add a bit of depth, but there’s no need to try and make things look photo-realistic.</p>
 <h3 id="use-shadows-to-convey-elevation-">Use shadows to convey elevation /</h3>
 <p>Shadows can be more than just a flashy effect — used thoughtfully, they let you position elements on a virtual z-axis to create a meaningful sense of depth.</p>
 <p>Small shadows with a tight blur radius make an element feel only slightly raised off of the background, while larger shadows with a higher blur radius make an element feel much closer to the user:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8A654B9F-B758-4B3C-8946-8D0E6FC8F370_2/twTFSuj8786dwx5gQgRRhF7XPHWjceTczi2syvcvgFsz/Image.png" alt="Image.png"></p>
+<p><img src="img/203.png" alt=""></p>
 <p>The closer something feels to the user, the more it will attract their focus.</p>
 <p>You might use a smaller shadow for something like a button, where you want the user to notice it but don’t want it to dominate the page:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B6E50F55-EF77-4653-A255-741F580837C4_2/f4VEcmY83xSXmkftosdLUEyEi7v3zEdPrPraXUyx4WMz/Image.png" alt="Image.png"></p>
+<p><img src="img/204.png" alt=""></p>
 <p>Medium shadows are useful for things like dropdowns; elements that need to sit a bit further above the rest of the UI:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/62D48C56-9EC0-4F63-9077-3386E8158216_2/R0E7yZjRzvdq3BL6Sg91fevbwK0fMdCaaRPBsZxn4vYz/Image.png" alt="Image.png"></p>
+<p><img src="img/205.png" alt=""></p>
 <p>Large shadows are great for modal dialogs, where you really want to capture the user’s attention:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9047FB70-FC94-4CA4-A375-938FBFA6C87C_2/QvvUJ10MMz0bEzwNzzyJvgpYAqkukKFKmTH34whllFUz/Image.png" alt="Image.png"></p>
+<p><img src="img/206.png" alt=""></p>
 <p><strong>Establishing an elevation system /</strong></p>
 <p>Just like with color, typography, spacing, and sizing, defining a fixed set of shadows will speed up your workflow and help maintain consistency in your designs.</p>
 <p>You don’t need a ton of different shadows — five options is usually plenty.</p>
 <p>Start by defining your smallest shadow and your largest shadow, then fill in the middle with shadows that increase in size pretty linearly:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/97B53938-8555-4F60-99D9-2BA2DA2EEAA1_2/9O2V8fd3XetS30uQ3Ci1ux43LxGni7xP9ZkcyoDyT8Yz/Image.png" alt="Image.png"></p>
+<p><img src="img/207.png" alt=""></p>
 <p><strong>Combining shadows with interaction /</strong></p>
 <p>Shadows aren’t only useful for positioning elements on the z-axis statically; they’re a great way to provide visual cues to the user as they interact with elements, too.</p>
 <p>For example, say you had a list of items where the user could click and drag each item to sort them. Adding a shadow to an item when a user clicks it makes it feel like it pops forward above the other items in the list, and makes it clear to the user that they can drag it:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/75FBE5D0-85F0-4422-9A89-06324E5840F1_2/KrEQSQAWpheBtOo9EjMy5OvyA02HyhLBIYUunCHwvz4z/Image.png" alt="Image.png"></p>
+<p><img src="img/208.png" alt=""></p>
 <p>Similarly, you can make a button feel like it’s being pressed into the page when a user clicks it by switching to a smaller shadow, or perhaps removing the shadow altogether:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/BBA3A96E-697A-4613-89E9-C21B5134F001_2/l3DyzQWoVnwLTAoctVg2pMc5PhFj7souz2H6kWLmN7Iz/Image.png" alt="Image.png"></p>
+<p><img src="img/209.png" alt=""></p>
 <p>Using shadows in a meaningful way like this is a great way to hack the process of choosing what sort of shadow an element should have. Don’t think about the shadow itself, think about where you want the element to sit on the z-axis and assign it a shadow accordingly.</p>
 <h3 id="shadows-can-have-two-parts-">Shadows can have two parts /</h3>
 <p>Ever inspected a really nice shadow on a site and noticed they were actually using two shadows?</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/58E9BAA2-290E-4359-8DD6-12B64F7B15DB_2/Tb3SxzoV8IAywESSyyql5ntgj5T8Zc77w67JlceHHgwz/Image.png" alt="Image.png"></p>
+<p><img src="img/210.png" alt=""></p>
 <p>There’s a method to this madness, and it’s actually pretty simple and makes a lot of sense.</p>
 <p>When you see someone combining two shadows, they’re not just experimenting randomly until things look nice, they’re using each shadow to do a specific job.</p>
 <p>The first shadow is larger and softer, with a considerable vertical offset and large blur radius. It simulates the shadow cast behind an object by a direct light source.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5CB995A2-3F82-476A-823F-191B95DE1F3C_2/gKGaL4pckk7vSSlkX1kMtViXhnT0Kdx2Bhn2xCjioSkz/Image.png" alt="Image.png"></p>
+<p><img src="img/211.png" alt=""></p>
 <p>The second shadow is tighter and darker, with less of a vertical offset and a smaller blur radius. It simulates the shadowed area underneath an object where even ambient light has a hard time reaching.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/66980FD5-4742-4E22-BBAF-FC56528C0EB8_2/1ryjTg2AN9aUWKVT1xftvrsSSSt0UzlFX5JDdNkxLi0z/Image.png" alt="Image.png"></p>
+<p><img src="img/212.png" alt=""></p>
 <p>Using two shadows like this gives you a lot more control than you’d get with a single shadow — you can keep the larger shadow nice and subtle while still making the shadow closer the element’s edges nice and defined.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/CC2A455B-0CB5-485B-A274-DA1645D00531_2/20QEYGNJlY65ZPwOtgXlHUKHDjbOOxwuNdAOLTPDnUYz/Image.png" alt="Image.png"></p>
+<p><img src="img/213.png" alt=""></p>
 <p><strong>Accounting for elevation /</strong></p>
 <p>As an object gets further away from a surface, the small, dark shadow created by a lack of ambient light slowly disappears (<em>go ahead, try it out with something on your desk</em>).</p>
 <p>So if you’re going to use this two-shadow technique in your own projects, make sure you make that shadow more subtle for shadows that represent a higher elevation.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/4D42C3FD-64BD-487F-95D2-6D902D899984_2/mqanRvCkuYIyVK4ANymmQRiHjx3lZ5QTi09Y02XbE3Iz/Image.png" alt="Image.png"></p>
+<p><img src="img/214.png" alt=""></p>
 <p>It should be quite distinct for your lowest elevation, and almost (<em>or completely</em>) invisible at your highest elevation.</p>
 <h3 id="even-flat-designs-can-have-depth-">Even flat designs can have depth /</h3>
 <p>When most people talk about “flat design”, they mean designing without shadows, gradients, or any other effects that try to mimic how light interacts with things in the real-world.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/BC61BF3E-9946-46F5-8BB6-2CE0D9BAE676_2/UPxr0zLdVcvs3mybkIvrWkXZXtUl2GxAq3CpuheJ0BMz/Image.png" alt="Image.png"></p>
+<p><img src="img/215.png" alt=""></p>
 <p>But the most effective flat designs still convey depth, they just do it in a different way.</p>
 <p><strong>Creating depth with color /</strong></p>
 <p>In general (especially with shades of the same color), lighter objects feel closer to us and darker objects feel further away.</p>
 <p>Make an element lighter than the background color to make it feel like it’s raised off of the page, or darker than the background color if you want it to feel inset like a well:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/BA43B297-9644-4AAC-A4F4-6802EBC9B2BE_2/jX4POt0JeYu9ggsbI6cJV4BPyA2Ohijhsxz8m7M9vUwz/Image.png" alt="Image.png"></p>
+<p><img src="img/216.png" alt=""></p>
 <p>This is just as applicable to non-flat designs, too — color is just another tool in your toolbelt for conveying distance.</p>
 <p><strong>Using solid shadows /</strong></p>
 <p>Another way to communicate depth in a flat design is to use short, vertically offset shadows with no blur radius at all.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8DC34BEE-216E-47FB-8CA0-6C97E1A46FF5_2/Ra48I7be8YmLjwu7Y6NmrvTxfV0qxWc6X1MvJ5v5yWsz/Image.png" alt="Image.png"></p>
+<p><img src="img/217.png" alt=""></p>
 <p>It’s a great way to make a card or button stand off the page a little bit without sacrificing that flat aesthetic.</p>
 <h3 id="overlap-elements-to-create-layers-">Overlap elements to create layers /</h3>
 <p>One of the most effective ways to create depth is to overlap different elements to make it feel like a design has multiple layers.</p>
 <p>For example, instead of containing a card entirely within another element, offset it so it crosses the transition between two different backgrounds:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1B066FCC-5B4D-4D50-9997-7186424F2A90_2/why6WXotPx7SMxVgcLJUJblYvVWw0BvxuTuOIpSFumgz/Image.png" alt="Image.png"></p>
+<p><img src="img/218.png" alt=""></p>
 <p>You could also make an element taller than its parent, so it overlaps on both sides:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6BEFC964-BCD1-4E8B-BCA3-3FFC46F4BBF2_2/umSSPfjyhlfhvmCIH2NASl6Z4rRtKPEIuCx8OxcPPq8z/Image.png" alt="Image.png"></p>
+<p><img src="img/219.png" alt=""></p>
 <p>Overlapping elements can add depth to smaller components too, for example the controls on this carousel:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A20BA4E1-337F-40EE-AF12-587AAE223835_2/O01TUgiFGbRxnhXW1c9SxCSXYvHX2tEywyqYEkyEawIz/Image.png" alt="Image.png"></p>
+<p><img src="img/220.png" alt=""></p>
 <p><strong>Overlapping images /</strong></p>
 <p>This technique can work great with images as well, but without special consideration it’s easy for overlapping images to clash.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/94435A67-4503-4A14-A55E-E254DC27249D_2/KIlWbQqs3yweHYOtSm0n7oNFOhI1IRkfcBdxIhQJtZgz/Image.png" alt="Image.png"></p>
+<p><img src="img/221.png" alt=""></p>
 <p>A simple trick for avoiding this is to give the images an “invisible border” — one that matches the background color — so there’s always a bit of a gap between images:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6EBB5C25-529C-45A9-9A3F-5E4F49915342_2/WBHvbSauYDyDxlMyBzZEzN4oL7iaW3yaeaLXcaJdbOEz/Image.png" alt="Image.png"></p>
+<p><img src="img/222.png" alt=""></p>
 <p>You’ll still create the appearance of layers but with none of the ugly clashing.</p>
 <h2 id="working-with-images-">Working with Images /</h2>
 <h3 id="use-good-photos-">Use good photos /</h3>
 <p>Bad photos will ruin a design, even if everything else about it looks great.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B27F43EB-C84C-4805-AF67-640DA80E19D4_2/PAVTTYA8Z1LRzqUvsmmgyzcWsMRj3G2NaDIXFGwItmoz/Image.png" alt="Image.png"></p>
+<p><img src="img/223.png" alt=""></p>
 <p>If your design needs photography and you’re not a talented photographer, you’ve got two options:</p>
 <ol>
 <li><strong>Hire a professional photographer.</strong></li>
@@ -1504,20 +1516,20 @@
 <p>Whatever you do, don’t design using placeholder images and expect to be able to take some photos with your smartphone and swap them in later. It never works.</p>
 <h3 id="text-needs-consistent-contrast-">Text needs consistent contrast /</h3>
 <p>Ever tried to slap a headline on a big hero image, only to find that no matter what color you tried for the text, it was still hard to read?</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/A7994229-890E-41FF-AB44-F13FABF0E40B_2/hDmlaiPRAQlOyVdzpmAUsMDDnwcUeaJPETBDNsg94pcz/Image.png" alt="Image.png"></p>
+<p><img src="img/224.png" alt=""></p>
 <p>That’s because the problem isn’t the text, it’s the image.</p>
 <p><strong>The problem with background images</strong></p>
 <p>Photos can be very dynamic, with a lot of really light areas, and a lot of really dark areas. White text might look great in the dark areas, but it gets lost in the light areas. Dark text looks great in the light areas, but gets lost in the dark areas.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F6625A80-9924-4F79-8A67-ED44FC527D14_2/VsfjBdLukQ2CTPMWxSJHuEAlrddk9kymdOAdf0IIjSYz/Image.png" alt="Image.png"></p>
+<p><img src="img/225.png" alt=""></p>
 <p>To solve this problem, you need to reduce the dynamics in the image to make the contrast between the text and the background more consistent.</p>
 <p><strong>Add an overlay /</strong></p>
 <p>One way to increase the overall text contrast is to add a semi-transparent overlay to the background image.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/EE8B802F-0320-40F0-A500-C912B87A10B8_2/ZWJhSQAWAN7PultNHhjXzCS7xkxCg1Zr5EkkL6sR6NYz/Image.png" alt="Image.png"></p>
+<p><img src="img/226.png" alt=""></p>
 <p>A black overlay will tone down the light areas and help light text stand out, while a white overlay will brighten up the dark areas and help dark text stand out.</p>
 <p><strong>Lower the image contrast /</strong></p>
 <p>One of the compromises you make when using an overlay is that you’re lightening or darkening the whole image, not just the problem areas.</p>
 <p>If you want more control, another solution is to lower the contrast of the image itself:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/468508E5-A306-4301-8914-CA4FD34F6B77_2/IsgyIac3yeQoA9daeTP5u5Cupkjxy0ctwO7cywoGuxgz/Image.png" alt="Image.png"></p>
+<p><img src="img/227.png" alt=""></p>
 <p>Lowering the contrast will change how light or dark the image feels overall, so make sure to adjust the brightness to compensate.</p>
 <p><strong>Colorize the image /</strong></p>
 <p>Another way to help text stand out against an image is to colorize the image with a single color.</p>
@@ -1527,164 +1539,164 @@
 <li><strong>Desaturate the image</strong>, to remove any existing color.</li>
 <li><strong>Add a solid fill</strong>, using the “multiply” blend mode.</li>
 </ol>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D43FDA4E-8509-4CA7-B758-29D75500751D_2/n67tC8Rr4WKNqzKM4Tnyv1uqoWnGkPBTn5UppDM9wNsz/Image.png" alt="Image.png"></p>
+<p><img src="img/228.png" alt=""></p>
 <p>This can also be a great way to make a background image pair more nicely with your existing brand colors.</p>
 <p><strong>Add a text shadow /</strong></p>
 <p>If you want to preserve a bit more of the dynamics in a background image, a text shadow can be a great way to increase contrast only where you need it most.</p>
 <p>You want it to look more like a subtle glow than an actual shadow, so use a large blur radius and don’t add any kind of offset.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/7E498BF0-98F3-48AA-8837-ADD6BB37A5D1_2/Vw1c75pd2dEofCYdJkxkWEwjHkVatAcYQkJOfZy73tgz/Image.png" alt="Image.png"></p>
+<p><img src="img/229.png" alt=""></p>
 <p>It’s still a good idea to reduce the overall image contrast, but combining that with a text shadow means you can reduce it a little less.</p>
 <h3 id="everything-has-an-intended-size-">Everything has an intended size /</h3>
 <p>Everyone knows that scaling bitmap images to larger than their original size is a bad idea — they immediately feel “fuzzy” and lose their definition.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/943D322D-F42A-4034-8335-8642CD75FC24_2/pDTZCakZSig7m4G5wnztnz337a3IMZcuMaYqos3AbyYz/Image.png" alt="Image.png"></p>
+<p><img src="img/230.png" alt=""></p>
 <p>But that’s not the only way you can go wrong with scaling, even when you think you’re playing it safe.</p>
 <p><strong>Don’t scale up icons /</strong></p>
 <p>If you’re designing something that could use some large icons (like maybe the “features” section of a landing page), you might instinctively grab your favorite SVG icon set and bump up the size until they fit your needs.</p>
 <p>They’re vector images after all, so the quality isn’t going to suffer if you increase the size, right?</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/009F790E-9F04-469C-8E14-DEDA37823376_2/OGo9yn3McDx5UgyjmJd07gVog9ATKd0GNrrTgqrUzRkz/Image.png" alt="Image.png"></p>
+<p><img src="img/231.png" alt=""></p>
 <p>While it’s true that vector images won’t degrade in quality when you increase their size, icons that were drawn at 16–24px are never going to look very professional when you blow them up to 3x or 4x their intended size. They lack detail, and always feel disproportionately “chunky”.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/00FB1C27-F84B-4ED8-9C72-A309B5282B1A_2/QyB4kuXTQevCIRtFs7zyC5nKkBw0xveHDvy4IVKz3uYz/Image.png" alt="Image.png"></p>
+<p><img src="img/232.png" alt=""></p>
 <p>If small icons are all you’ve got, try enclosing them inside another shape and giving the shape a background color:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/AC836053-4A89-4CF2-BAA2-840A91120B06_2/TtlwZ12avYQmRoRH5vfwtMVqGFmjN0TBAjVQSihLWQQz/Image.png" alt="Image.png"></p>
+<p><img src="img/233.png" alt=""></p>
 <p>This lets you keep the actual icon closer to its intended size, while still filling the larger space.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B5B8F846-A6E8-4927-A5AE-A4A15AF55538_2/5beyxoT0E7Pl1dKeZXMTnAax8icOvvb7t0UfvsQVC6gz/Image.png" alt="Image.png"></p>
+<p><img src="img/234.png" alt=""></p>
 <p><strong>Don’t scale down screenshots /</strong></p>
 <p>Say you want to include a screenshot of your app on that same features page.</p>
 <p>If you take a full-size screenshot and shrink it by 70% to make it fit, you’ll end up with an image that’s trying to cram way too much detail into far too little space.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/06A17E45-FC0C-48C4-898A-83663033190A_2/EbjdROZT0OKMTAv9K047qpAgIp1gyxxBkUmcRLliEg4z/Image.png" alt="Image.png"></p>
+<p><img src="img/235.png" alt=""></p>
 <p>The 16px font in your app becomes a 4px font in your screenshot, and visitors will be squinting with their eyeballs two inches from the screen, struggling to make out what all that text says.</p>
 <p>If you want to include a detailed screenshot in your design, take the screenshot at a smaller screen size (like maybe your tablet layout) and save a lot of space for it so you don’t have to shrink it as much:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/23C8D52F-4895-486F-8370-F747A5D204FA_2/NOjyZRqjstVac3EKW5MwMCkKxHyySvRveJa26MK3uboz/Image.png" alt="Image.png"></p>
+<p><img src="img/236.png" alt=""></p>
 <p>Or consider taking just a partial screenshot, so you can display it in less space without needing to scale it down:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/CA02DF5F-F91C-4CC5-859C-F7BF2AF4E377_2/TUK398WrxukqTiro0nd0KPEB75rgcJel8pYQoJuYYx4z/Image.png" alt="Image.png"></p>
+<p><img src="img/237.png" alt=""></p>
 <p>If you really need to fit a whole-app screenshot in a tight space, try drawing a simplified version of the UI with details removed and small text replaced with simple lines:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/DAF64072-B03C-4077-B327-1559B6793EB1_2/tOqpmGp50oPeirSBeIX2eTO1VQHUy7Un6sdjpSlftuAz/Image.png" alt="Image.png"></p>
+<p><img src="img/238.png" alt=""></p>
 <p>It’ll still communicate the big-picture design without tempting visitors to try and make out all of the details.</p>
 <p><strong>Don’t scale down icons, either /</strong></p>
 <p>Just as icons drawn to be used at 16px look chunky when you scale them up, icons intended to be used at larger sizes look choppy and fuzzy when you scale them down.</p>
 <p>The most extreme example of this are favicons, those little icons you see next to the page title in a browser tab.</p>
 <p>If you try to shrink a logo drawn at 128px down to favicon size, it all turns to mush as the browser tries its best to render all of that detail in a tiny 16px square:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/0DE5E13F-9DFC-495B-AEB7-A6E9718A914C_2/aMEZYiEd4NIHpySzrNUu8Uz7S4K2162tLaxW0xQRF4Yz/Image.png" alt="Image.png"></p>
+<p><img src="img/239.png" alt=""></p>
 <p>A better approach is to redraw a super simplified version of the logo at the target size, so you control the compromises instead of leaving it up to the browser:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/99DF38A9-B9A6-4E26-9DA6-03C958E9AE0F_2/hcdbX6sHcoolQIGe9WRc2Xyj0ZPy8ZG51TYPjRoTnSIz/Image.png" alt="Image.png"></p>
+<p><img src="img/240.png" alt=""></p>
 <h3 id="beware-user-uploaded-content-">Beware user-uploaded content /</h3>
 <p>When you’re depending on user-uploaded images, you don’t have the luxury of fine-tuning contrast, carefully adjusting colors, or cropping the perfect frame.</p>
 <p>While you’ll always be at your users’ mercy to some extent, there are a few things you can do to make sure their content doesn’t completely undermine your design.</p>
 <p><strong>Control the shape and size /</strong></p>
 <p>Displaying user-uploaded images at their intrinsic aspect ratio can really throw off a layout, especially if there are a lot of images on the screen at once.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/ECA5D23A-41D8-452C-AA8F-E02423DC8C56_2/KtHsnkHNaOox6IY8ey7pTEfYwQuDz4QsgBzv8jaxgyMz/Image.png" alt="Image.png"></p>
+<p><img src="img/241.png" alt=""></p>
 <p>Instead of letting users wreak havoc on your page structure, center their images inside fixed containers, cropping out anything that doesn’t fit.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/DD30E0AA-84C2-4DEB-956D-863CBA5C5C13_2/qvdT3xgyDINyFKmsUW1hjrkwOyr0qycsFt8CTZSUOtgz/Image.png" alt="Image.png"></p>
+<p><img src="img/242.png" alt=""></p>
 <p>This is really easy to do with CSS these days by making the image a background image, and setting the <code>background-size</code> property to <code>cover</code>.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/81BFAFCA-3874-4FCC-8783-DFCD80F6E1F4_2/PsGfZtu8J632OSmAdwJRCCLVPW3skUQyHQyrRflFyrQz/Image.png" alt="Image.png"></p>
+<p><img src="img/243.png" alt=""></p>
 <p><strong>Prevent background bleed /</strong></p>
 <p>When a user provides an image with a background color that’s similar to the background in your UI, the image and the background can bleed together, causing the image to lose its shape.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/AA341142-9A93-4A47-83F5-316B446D7763_2/br9Eff1hsnzLdCIr2ZyDxbwtoQ0PV7O4JgvoeZXYxMoz/Image.png" alt="Image.png"></p>
+<p><img src="img/244.png" alt=""></p>
 <p>Instead of trying to solve this with a border, try using a subtle inner box shadow:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8650B2B4-AC90-4DA4-9948-4EE2C803F104_2/9IVz6Wp6gIUtLmT2jXP6hGhfUI17XUZ3PyGUyxtL9B8z/Image.png" alt="Image.png"></p>
+<p><img src="img/245.png" alt=""></p>
 <p>Borders will often clash with the colors in the image, while most people will barely even realize the shadow is there.</p>
 <p>If you don’t like the slight “inset” look you get from using a box shadow, a semi-transparent inner border works great, too.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/45FD2B1E-490E-49D7-94E4-72CBA30CA2B5_2/Ix5x8ht0kqRR6vDtcZI4HiZ3VVN1BmEKLMuTeYqnj00z/Image.png" alt="Image.png"></p>
+<p><img src="img/246.png" alt=""></p>
 <h2 id="finishing-touches-">Finishing Touches /</h2>
 <h3 id="supercharge-the-defaults-">Supercharge the defaults /</h3>
 <p>You don’t always have to add new elements to a design to add flare — there are a lot of ways to liven up a page by “supercharging” what’s already there.</p>
 <p>For example, if your design includes a bulleted list, try replacing the bullets with icons:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/93937A53-2CAF-46C6-BB5E-E5CD8D454C02_2/g0Xq5HfoQIo3EfnD7U0vilLYrNMHH7cdI5mJbfoxrVYz/Image.png" alt="Image.png"></p>
+<p><img src="img/247.png" alt=""></p>
 <p>Checkmarks and arrows are great generic choices for a lot of situations, but you can also use something more specific to your content, like a padlock icon for a list of security-related features:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5A1D71FA-593B-43BC-B446-A22EF961776B_2/slctvaF1SzB0ChqyyhoYk8jmY5H8BIYV6FixRCL2clsz/Image.png" alt="Image.png"></p>
+<p><img src="img/248.png" alt=""></p>
 <p>Similarly, if you’re working on a testimonial try “promoting” the quotes into visual elements by increasing the size and changing the color:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1AE84EBB-0B90-44E0-B5DF-EECCC81E7118_2/qXX78ae2X8MU3wQVxm2wXzEXYrtyRyVi9oVTZaSD9rwz/Image.png" alt="Image.png"></p>
+<p><img src="img/249.png" alt=""></p>
 <p>Links are another great candidate for special styling. You can do something as simple as changing the color and font weight, or something as fancy as a thick and colorful custom underline that partially overlaps the text:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8582E138-A76E-49A6-AB78-BBC099E95E2C_2/HNA94k16DOfbMxSeqPHerak0wvP6iUrXILHxt1LYoCkz/Image.png" alt="Image.png"></p>
+<p><img src="img/250.png" alt=""></p>
 <p>If you’re working on a form, using custom checkboxes and radio buttons is an easy way to add some color to the design:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/93725E07-E961-4B22-AA82-C0C1BD70B172_2/BrREhkjKngpCaTNAquh5fhls22LiGPxJxaNsci8Wbh0z/Image.png" alt="Image.png"></p>
+<p><img src="img/251.png" alt=""></p>
 <p>Just using one of your brand colors for the selected states instead of the browser defaults is often enough to take something from feeling boring to feeling polished and well-designed.</p>
 <h3 id="add-color-with-accent-borders-">Add color with accent borders /</h3>
 <p>If you’re not a graphic designer, how do you add that dash of visual flair to your UI that other designs get from beautiful photography or colorful illustrations?</p>
 <p>One simple trick that can make a big difference is to add colorful accent borders to parts of your interface that would otherwise feel a bit bland.</p>
 <p>For example, across the top of a card:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/D819482E-6D6B-45E0-8F56-8470822992B7_2/rtkAGOQzhY06msWyRdgOEKpZfQ4rtEMA3HyMmFK8OEMz/Image.png" alt="Image.png"></p>
+<p><img src="img/252.png" alt=""></p>
 <p>&hellip;or to highlight active navigation items:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/E832D5CB-DDE3-4F5F-B680-CE4879999DC8_2/wpNIxldNZCv31MReOrkvcB2PXjN4gyyyoThaxqpMyvcz/Image.png" alt="Image.png"></p>
+<p><img src="img/253.png" alt=""></p>
 <p>&hellip;or along the side of an alert message:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/0487089D-15DB-4BB3-9052-E1A1DF0A39DE_2/KiAxGGgfrgUk1avGj9UqGK4Ei4BQb6IluEy8rNRYM4Az/Image.png" alt="Image.png"></p>
+<p><img src="img/254.png" alt=""></p>
 <p>&hellip;or as a short accent underneath a headline:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/91F150E3-4542-46EB-ADB4-C3E87C291DAE_2/MY8v9h3qDI6SSqbZSJYGJtSv9y9FlxLxQGxHU6QHxSwz/Image.png" alt="Image.png"></p>
+<p><img src="img/255.png" alt=""></p>
 <p>&hellip;or even across the top of your entire layout:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/823E3E2A-A83A-412F-94E8-A2152A3FA492_2/GNvmJswChqc27xtwtHlwCcl1cwnfkst0thsi8y5xCzAz/Image.png" alt="Image.png"></p>
+<p><img src="img/256.png" alt=""></p>
 <p>It doesn’t take any graphic design talent to add a colored rectangle to your UI, and it can go a long way towards making something feel more “designed.”</p>
 <h3 id="decorate-your-backgrounds-">Decorate your backgrounds /</h3>
 <p>Even if you do a great job with hierarchy, spacing, and typography, sometimes a design will still feel a little bit plain.</p>
 <p>A great way to break up some of the monotony without drastically altering the design is to add some excitement to a few of your backgrounds.</p>
 <p><strong>Change the background color</strong></p>
 <p>One way to add some excitement to a background is to simply change the color.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/6A5D1970-1C81-434E-AC0C-8D01175A2DA4_2/JGoXNAyyjDyoiNmEZEkLgXWX4sMpceh92V295bW2tvkz/Image.png" alt="Image.png"></p>
+<p><img src="img/257.png" alt=""></p>
 <p>This works great for emphasizing an individual panel, as well as for adding some distinction between entire page sections.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/14533C27-9BF4-4CED-BF17-0B83FA840C99_2/qdUHmcPyX7nieFCKxRGMjphVPmqgRqfPSoYiOs8PyVwz/Image.png" alt="Image.png"></p>
+<p><img src="img/258.png" alt=""></p>
 <p>For a more energetic look, you could even use a slight gradient:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/3DE34815-F34A-4A0F-B077-533ECFED1618_2/pkUYmjzeBQCZnyWL9dERa2wuKdInG2fhAEG7VG3Gd1Ez/Image.png" alt="Image.png"></p>
+<p><img src="img/259.png" alt=""></p>
 <p>For best results, use two hues that are no more than about 30° apart.</p>
 <p><strong>Use a repeating pattern /</strong></p>
 <p>Another approach is to add a subtle repeatable pattern, like this one from Hero Patterns:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/27F43A46-1DDF-4288-99F1-5C5218BF8615_2/pX1TpY9FCCyeoWrP8t34t4KVIXQ5x5yAPBLX2DGq0oQz/Image.png" alt="Image.png"></p>
+<p><img src="img/260.png" alt=""></p>
 <p>You don’t have to necessarily repeat it across the entire background, either — a pattern designed to repeat along a single edge can look great, too.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/9F2F5D29-A2BD-4C7A-A0C0-97D4F248FF5F_2/ElFCJOT06kEncNS2V7QfeEns0gA5XZuFprSTsZAr2BQz/Image.png" alt="Image.png"></p>
+<p><img src="img/261.png" alt=""></p>
 <p>Keep the contrast between the background and the pattern pretty low to ensure readability.</p>
 <p><strong>Add a simple shape or illustration /</strong></p>
 <p>Instead of decorating an entire background, you can also try including an individual graphic or two in specific positions.</p>
 <p>Simple geometric shapes work well for this:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/0BC0A6E9-58FF-447D-9194-E9B197A5C579_2/x439dPLCnyktdCdFeUbQ75uUcyvXXn0FyMaebsazy3Yz/Image.png" alt="Image.png"></p>
+<p><img src="img/262.png" alt=""></p>
 <p>&hellip;as do small chunks of a repeatable pattern:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/CA6F82F6-2973-44B3-BE60-F834D5E8739B_2/9dnkRauQegzN9JA6ONeCfAAkHBx4WlH0RL71oghOG7Mz/Image.png" alt="Image.png"></p>
+<p><img src="img/263.png" alt=""></p>
 <p>You can even do something more complex, like a simplified world map:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/24932671-8A6A-4E21-B249-71B3D8AA2D2C_2/BIMSw906NBs0paGHjgxdxdZW1peAnosRwjQXbreAqSIz/Image.png" alt="Image.png"></p>
+<p><img src="img/264.png" alt=""></p>
 <p>Just like with a full background pattern, it’s best to keep the contrast low so nothing interferes with the content.</p>
 <h3 id="dont-overlook-empty-states-">Don’t overlook empty states /</h3>
 <p>Imagine you’re designing a new feature for an app you’re working on.</p>
 <p>You’ve spent a ton of time crafting the perfect realistic sample data, picking out usernames and avatars, and putting together a beautiful and electrifying screen.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/76E5708E-26FE-4081-8E80-19BDB0B8AD43_2/O46tFJmyeupCNHjS7W1F1NJ0RjlQgP2itUtPbiFkGhEz/Image.png" alt="Image.png"></p>
+<p><img src="img/265.png" alt=""></p>
 <p>You code it all up and deploy it to production. But when an excited user clicks the new item in the nav, they see this:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/FF984A2E-09C3-4DF3-8CC0-D03FB719EB1D_2/NA0nphmMskP1TYzLeuKty4WJ4WPg978G30SrKP8fG4Ez/Image.png" alt="Image.png"></p>
+<p><img src="img/266.png" alt=""></p>
 <p>If you’re designing something that depends on user-generated content, the empty state should be a priority, not an afterthought.</p>
 <p>Try incorporating an image or illustration to grab the user’s attention, and emphasizing the call-to-action to encourage them to take the next step:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/90AEAAE8-0D68-4833-91FA-B26C5287F851_2/sL1Sb4QhyVcxPID4p1wxLIctBg4kuWbOrFUR4OrUJ80z/Image.png" alt="Image.png"></p>
+<p><img src="img/267.png" alt=""></p>
 <p>If you’re working on something that has a bunch of supporting UI like tabs or filters, consider hiding that stuff entirely. There’s no point in presenting a bunch of actions that don’t do anything until the user has created some content.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/443B4400-C39F-4BFF-9410-78A9FA01DFDE_2/wxP0itd9rHubrDq8Lxv5co0p82pUSjGsA0vWi81WcPcz/Image.png" alt="Image.png"></p>
+<p><img src="img/268.png" alt=""></p>
 <p>Empty states are a user’s first interaction with a new product or feature. Use them as an opportunity to be interesting and exciting — don’t settle for plain and boring.</p>
 <h3 id="use-fewer-borders-">Use fewer borders /</h3>
 <p>When you need to create separation between two elements, try to resist immediately reaching for a border.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/803F635F-4020-42A7-863B-30FE81146772_2/uIiEVBpyLJMb2JK2cFuCtLZqxN3RrFecartHyXOHkrQz/Image.png" alt="Image.png"></p>
+<p><img src="img/269.png" alt=""></p>
 <p>While borders are a great way to distinguish two elements from one another, they aren’t the only way, and using too many of them can make your design feel busy and cluttered.</p>
 <p><strong>Use a box shadow</strong></p>
 <p>Box shadows do a great job of outlining an element like a border would, but can be more subtle and accomplish the same goal without being as distracting.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/46FF00D7-8AC9-4701-8A49-4FCBBC3AC25E_2/SYoYUT8ztf2dayzyAbXybSeazVFSb4Hn9yx3q4wj7mUz/Image.png" alt="Image.png"></p>
+<p><img src="img/270.png" alt=""></p>
 <p>This approach works best when the element you are applying the box shadow to is not the same color as the background.</p>
 <p><strong>Use two different background colors /</strong></p>
 <p>Giving adjacent elements slightly different background colors is usually all you need to create distinction between them.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/F117ABC1-C808-43E5-AE22-B58D594947F3_2/fZfpxH9Zcg9JgnyggygLznU1ScAXN9Jdx9ARpsPkYpUz/Image.png" alt="Image.png"></p>
+<p><img src="img/271.png" alt=""></p>
 <p>If you’re already using different background colors in addition to a border, try removing the border; you might not need it.</p>
 <p><strong>Add extra spacing /</strong></p>
 <p>What better way to create separation between elements than to simply increase the separation?</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/90BD8FCC-2B9A-4F5E-AAC2-5A3D1D81993B_2/lxr4dGpIJgpdpi78xNMyiuhnthHz0WkUZJrw14CUua0z/Image.png" alt="Image.png"></p>
+<p><img src="img/272.png" alt=""></p>
 <p>Spacing things further apart is a great way to create distinction between groups of elements without introducing any new UI at all.</p>
 <h3 id="think-outside-the-box-">Think outside the box /</h3>
 <p>Most people have a lot of preconceived notions about how certain components are supposed to look. But just because we’ve been conditioned to believe that there’s only one way to design a particular component, doesn’t mean it’s true.</p>
 <p>For example, picture a dropdown menu. You’re probably picturing a white box with a bit of a drop shadow and a list of links stacked inside of it:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/337D7335-9565-4F05-82DC-A9432ADB9366_2/QhSz9GrvH3B9MuoCJ1LxKiXb4C6b1zfZ4FzLO1w54Voz/Image.png" alt="Image.png"></p>
+<p><img src="img/273.png" alt=""></p>
 <p>But who says a dropdown needs to be a boring list of links? It’s just a floating box on the screen, you can do anything you want with it.</p>
 <p>Break it into sections, use multiple columns, add supporting text or colorful icons — do something fun with it!</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/59F6C806-5B4F-4E39-890C-1A1D8E1D1163_2/MctyhZUuSyPKny3L2VLtjTuHSNLuoKH5eCtZEzO4R4sz/Image.png" alt="Image.png"></p>
+<p><img src="img/274.png" alt=""></p>
 <p>And don’t just stop at dropdowns; what about something like a table?</p>
 <p>When you imagine a table, you probably think of columns that each contain one specific piece of data:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/5483874E-CD32-41E5-98A1-B26410772BE3_2/NEH4paCpjk98yk27PPpXxzb1EvwFowcHuBLVyA69Qeoz/Image.png" alt="Image.png"></p>
+<p><img src="img/275.png" alt=""></p>
 <p>Tables don’t have to work this way, though — if a column doesn’t need to be sortable, there’s no reason you can’t combine it with a related column and introduce some interesting hierarchy:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/76806F85-673A-47FB-B02E-A33FBD9DA067_2/k9myxD3aBLIFzUsUAHn5iYKEWZ7LcivSKu4Xv0LP2Hoz/Image.png" alt="Image.png"></p>
+<p><img src="img/276.png" alt=""></p>
 <p>Table content doesn’t have to be plain text, either. Add images if it makes sense, or introduce some color to enrich the existing data:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/8EDF8E07-ED6B-4572-A9E5-59D4D17CECF5_2/C1lehvuNCTCfSP17MovYtsWF6y6WoiDbY97F12uz5pEz/Image.png" alt="Image.png"></p>
+<p><img src="img/277.png" alt=""></p>
 <p>How about radio buttons? There’s nothing more boring than a stack of labels with little circles next to them.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B42EFE15-12CB-44BE-9B3A-352041730A00_2/1H3K1RJcS4VTzvbGA4u7Z00txBZ3PTcO2lQpNYeoOpwz/Image.png" alt="Image.png"></p>
+<p><img src="img/278.png" alt=""></p>
 <p>If a set of radio buttons are an important part of the UI you’re designing, try something like selectable cards instead:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/2CE5F566-2EAB-43BF-91A1-7BAB0F755A00_2/eBIuQsxWPq72b9Qkcc1CAcKmvDnsn4mLn4FxKN2AW4kz/Image.png" alt="Image.png"></p>
+<p><img src="img/279.png" alt=""></p>
 <p>Don’t let your existing beliefs hold back your designs — constraints are powerful but sometimes a bit of freedom is just what you need to take an interface to the next level.</p>
 <h2 id="leveling-up-">Leveling Up /</h2>
 <p>Hopefully after reading this book you feel much more confident in your ability to make something look awesome, without relying on a designer. But even though we’ve tried our best to cram in every good idea we could possibly think of, there will always be more out there to learn.</p>
@@ -1693,16 +1705,16 @@
 <p>Whenever you stumble across a design you really like, ask yourself:</p>
 <p>“Did the designer do anything here that I never would have thought to do?”</p>
 <p>Maybe it’s the way they inverted the background color on a datepicker:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/79B9BD8E-9D0C-458A-A4F7-3B295DABB785_2/HZajFrn5mQAcUMG19dvr7f2S82XjaqoW9GpPvtdrSJsz/Image.png" alt="Image.png"></p>
+<p><img src="img/280.png" alt=""></p>
 <p>&hellip;or the way they positioned a button within a text input instead of on the outside:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/B9E79320-DBBC-4C83-B977-E24318018A17_2/KekZedQtsajwMFwXeC6zv3KEKegBPiIOJvgp93o51hAz/Image.png" alt="Image.png"></p>
+<p><img src="img/281.png" alt=""></p>
 <p>&hellip;or something as simple as using two different font colors for a headline:</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/626C7A0C-CEE8-4780-9526-ACCD933CADD7_2/HX3TpqQ7EjTBCnD8DsSScTFLmVdA98vtc8SmShRvn0sz/Image.png" alt="Image.png"></p>
+<p><img src="img/282.png" alt=""></p>
 <p>Paying attention to these sorts of unintuitive decisions is a great way to discover new ideas that you can apply to your own designs.</p>
 <p><strong>Rebuild your favorite interfaces</strong> /</p>
 <p>The absolute best way to notice the little details that make a design look really polished is to recreate that design from scratch, without peeking at the developer tools.</p>
 <p>When you’re trying to figure out why your version looks different than the original, you’ll discover tricks like “reduce your line height for headings”, “add letter-spacing to uppercase text”, or “combine multiple shadows” all on your own.</p>
-<p><img src="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/62747C08-2073-445E-9AD5-31E5395F7CDD/1B1580C2-D5E7-4C91-A650-BD33D64E1B12_2/hMKMWqv2ByiK3f8aBVxY4fJ97NyM8G6TAut7nt9AKNoz/Image.png" alt="Image.png"></p>
+<p><img src="img/283.png" alt=""></p>
 <p>By continually studying the work that inspires you with a careful eye, you’ll be picking up design tricks for years to come.</p>
 <p>— Adam Wathan &amp; Steve Schoger</p>
 <p><a href="/pdfs/Refactoring-UI-v1.0.2.pdf">⬇️ Download PDF</a></p>
@@ -1710,9 +1722,9 @@
 </content>
 <p>
   
-  <a href="https://rokcso.com/t/translation/">#Translation</a>
+  <a href="http://localhost:1313/t/translation/">#Translation</a>
   
-  <a href="https://rokcso.com/t/ui/">#UI</a>
+  <a href="http://localhost:1313/t/ui/">#UI</a>
   
 </p>
 

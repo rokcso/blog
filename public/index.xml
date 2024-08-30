@@ -126,14 +126,14 @@
       <link>http://localhost:1313/now/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/now/</guid>
-      <description>What I&amp;rsquo;m doing right now This is a snapshot of my current endeavors and focal points. Inspired by nownownow.com.&#xA;Last updated on 2024-08-08, Hangzhou, China.&#xA;Life The heat in Hangzhou is relentless these days, with temperatures soaring close to 40°C daily. Despite the sweltering conditions, I persist in commuting to work on my motorcycle every day. It&amp;rsquo;s actually quite pleasant, the wind passing through me.&#xA;Sui Sui (My cat), has unfortunately been afflicted with ringworm once again, this time still on his face, a recurring issue that surfaces every two to three months.</description>
+      <description>What I&amp;rsquo;m doing right now This is a snapshot of my current endeavors and focal points. Inspired by nownownow.com.&#xA;Last updated on 2024-08-30, Hangzhou, China.&#xA;Life The temperature in Hangzhou has dropped a bit compared to half a month ago, and it&amp;rsquo;s no longer as unbearable as it was.&#xA;Sui Sui (my cat) has also recovered from illness.&#xA;My girlfriend and I are planning to go to the seaside to watch the sunrise this weekend.</description>
     </item>
     <item>
       <title>Projects</title>
       <link>http://localhost:1313/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/</guid>
-      <description>Projects Ongoing projects A network disk search tool navigation station, the first manual test standard A website to share the useful things I found A Weixin Official Accounts to share the useful things I found (#空字节) Archived projects Online URL Encode/Decode Tool Create Feishu/Lark online document quickly (A Raycast extension) Dead projects Find all available Z-Library websites in one place (Only survived for 8 days) </description>
+      <description>Projects Ongoing projects A network disk search tool navigation station, the first manual test standard Xiaobaotong column recommendations and preferential services A website to share the useful things I found A Weixin Official Accounts to share the useful things I found (#空字节) Archived projects Online URL Encode/Decode Tool (Open source) Create Feishu/Lark online document quickly (A Raycast extension) Dead projects Find all available Z-Library websites in one place (Only survived for 8 days) </description>
     </item>
   </channel>
 </rss>

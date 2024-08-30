@@ -7,30 +7,18 @@ menu = "main"
 
 This is a snapshot of my current endeavors and focal points. Inspired by [nownownow.com](https://nownownow.com/about).
 
-> Last updated on 2024-08-08, Hangzhou, China.
+> Last updated on 2024-08-30, Hangzhou, China.
 
 ## Life
 
-The heat in Hangzhou is relentless these days, with temperatures soaring close to 40°C daily. Despite the sweltering conditions, I persist in commuting to work on my motorcycle every day. It's actually quite pleasant, the wind passing through me.
+The temperature in Hangzhou has dropped a bit compared to half a month ago, and it's no longer as unbearable as it was.
 
-Sui Sui (My cat), has unfortunately been afflicted with ringworm once again, this time still on his face, a recurring issue that surfaces every two to three months. I've promptly administered medication to him and am hopeful for his swift recovery.
+Sui Sui (my cat) has also recovered from illness.
+
+My girlfriend and I are planning to go to the seaside to watch the sunrise this weekend. Hangzhou is about 100km from the nearest seaside, so we have to set out early in the morning, of course, not by motorcycle!
 
 ## Projects
 
-All the going projects in [Projects](/projects) are projects that I am promoting and maintaining, and I will continue to invest in them.
+I spent two days launching a new website, [Skillix.cc](https://skillix.cc/). Currently, this website will provide navigation and recommendation services for the columns of [Xiaobaotong](https://xiaobot.net/) (a knowledge payment platform). If users pay through our website, I will receive a rebate, and I will also give a rebate to the users, so that they can purchase the columns at a lower cost.
 
-At the same time, I am constantly coming up with new ideas, and maybe suddenly at some point, I will start.
-
-### pansou.vip
-
-In July, for reasons unknown, [pansou.vip](https://www.pansou.vip/) disappeared from Bing's search results, resulting in a significant drop in daily active users to approximately 400. Despite my repeated attempts to reach out to Bing's technical support, I've yet to receive a response. Consequently, it has become increasingly important for me to actively seek out recommendations from external sources and users.
-
-Next, I will continue to complete the testing of all included websites on pansou.vip, This is a cumbersome matter.
-
-Currently, pansou.vip generates negligible commercial revenue, with only a few cents in daily ad revenue (my stringent ad display policy results in minimal ad exposure for most users). I don't have any more ideas about this yet.
-
-### Oh My Nav
-
-[Oh My Nav](https://ohmynav.com/) is a website I recently started to share all practical software, websites, etc. It's a return to my roots in content creation, and I'm eager to re-engage with this endeavor, especially considering the anticipation of my subscriber base, which numbers over 4000.
-
-However, I am still in the process of finalizing the website's content format. For now, my primary goal is to regularly update the "Daily Sharing" section, offering one or two concise and informative snippets each week.
+Next, I plan to study RPA (Robotic Process Automation) because my current several navigation websites have too much data that needs manual maintenance, which is becoming an increasingly heavy burden for me.

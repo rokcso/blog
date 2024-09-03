@@ -23,5 +23,6 @@ I write [some texts](/blog), about life, technology, and curiosity, among other 
 
 ## Pin
 
+- [译> 创始人模式](/p/founder-mode)
 - [我的 macOS 初始化配置方案 & 软件分享](/p/macos-setup)
 - [译> Duolingo 是如何重新点燃用户增长的](/p/duolingo-user-growth/)

@@ -54,3 +54,7 @@ ignoreErrors = ["error-disable-taxonomy"]
 [markup]
   [markup.highlight]
     style = "catppuccin-latte"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = true
+      unsafe = false

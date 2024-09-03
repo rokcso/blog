@@ -2,67 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Skill on Rokcso&#39;s blog</title>
-    <link>https://rokcso.com/t/skill/</link>
+    <link>http://localhost:1313/t/skill/</link>
     <description>Recent content in Skill on Rokcso&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2024, Rokcso.</copyright>
     <lastBuildDate>Tue, 13 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://rokcso.com/t/skill/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/t/skill/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>我的海外手机号方案 - giffgaff</title>
-      <link>https://rokcso.com/p/giffgaff/</link>
+      <link>http://localhost:1313/p/giffgaff/</link>
       <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://rokcso.com/p/giffgaff/</guid>
+      <guid>http://localhost:1313/p/giffgaff/</guid>
       <description>长期以来，我都是通过接码平台注册 Claude，但是这个方式现在越来越行不通了，并且对于注册得越来越多的海外平台，有一个稳定的海外手机号对我来说变得非常重要。&#xA;我选择的方案是注册 giffgaff 英国卡（实体卡），免月租（但是激活需要充值 10 英镑话费），接收短信免费，每半年发送一次短信保号（成本 0.3 英镑/条短信）。&#xA;由于我的需求就是「接码」，稳定的「接码」，所以使用这个方案对我来说性价比最高。&#xA;申请 官网途径 通过官网申请 SIM 卡是完全免费的，SIM 卡到手之后激活号卡才需要充值 10 英镑话费。&#xA;访问 giffgaff 官网，点击「Order your free SIM」。&#xA;❌ 如果点击后跳转的 URL 是 https://www.giffgaff.com/free-sim-cards，那么后续订购填写邮寄地址时将只能选择英国的地址。&#xA;✅ 如果要将 SIM 卡邮寄国内（非英国），则需要通过 https://www.giffgaff.com/freesim-international 订购，如果访问该 URL 后报错，则是代理问题。&#xA;可邮寄国内（非英国）的订购页面如下：&#xA;这里忽略页面上方选择国家，继续下划页面到「Choose your plan」，这里点击「No thanks, I just want a free SIM」。&#xA;然后会弹出「Your details」页面，如图提示填写即可。&#xA;填写完成后点击「Order you free SIM」，页面提示「Your SIM has been ordered」，即表示订购成功。&#xA;接下来就是等待邮寄，是通过平邮到国内，能不能顺利收到纯看一路上的快递员了。&#xA;开箱 等收到快递后再写。&#xA;参考 https://www.maizimi.com/oversea/oversea-tel-giffgaff/ https://fast.v2ex.com/t/971919 https://telegra.ph/Giffgaff-SIM-Card-in-China-Channel-10-29 </description>
     </item>
     <item>
       <title>修复 macOS 终端主机名显示 192</title>
-      <link>https://rokcso.com/p/macos-hostname-192/</link>
+      <link>http://localhost:1313/p/macos-hostname-192/</link>
       <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://rokcso.com/p/macos-hostname-192/</guid>
+      <guid>http://localhost:1313/p/macos-hostname-192/</guid>
       <description>通常 macOS 终端（Terminal）App 中显示的主机名（HostName）应该是当前设备设定的用户名。&#xA;但是有时打开终端时会发现主机名变成了 192，这主要是由于当前使用的 DNS 服务因为某些原因变成了默认的 192.168.1.1 或 192.168.0.1，我通常在启动了代理服务之后会出现。&#xA;解决方案一&#xA;设备：Mac mini M2&#xA;macOS: Sonama 14.6&#xA;这种情况首先可以尝试修改 DNS 设置，打开「系统偏好设置 -&amp;gt; 网络（或 Wi-Fi） -&amp;gt; 详细信息 -&amp;gt; DNS」。&#xA;如果这里的 DNS 服务器为上面提到的默认 IP 地址，那么直接删除，然后添加新的 DNS 服务器 IP 地址：8.8.8.8 即可。&#xA;⚠️ 注意：修改 DNS 配置后记得「应用」。&#xA;解决方案二&#xA;首先确认本机是否存在已配置的 HostName，打开终端执行以下命令：&#xA;scutil --get HostName 如果本机没有配置 HostName，那么执行该命令不会获得任何输出，如果存在 HostName 则会直接返回 HostName 字符串。&#xA;当本机没有配置 HostName 是，终端的主机名会使用来自 DNS 或者 DHCP 服务器，所以我们也可以通过主动配置一个 HostName 解决这个问题，在终端执行以下命令：&#xA;sudo scutil --set HostName &amp;#34;yourHostName&amp;#34; ⚠️ 注意：使用你想要设置的 HostName 替换上面命令中的 yourHostName 。</description>
     </item>
     <item>
       <title>我的 Rime 输入法配置方案</title>
-      <link>https://rokcso.com/p/rime-setup/</link>
+      <link>http://localhost:1313/p/rime-setup/</link>
       <pubDate>Fri, 19 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>https://rokcso.com/p/rime-setup/</guid>
+      <guid>http://localhost:1313/p/rime-setup/</guid>
       <description>Rime 是一个开源的输入法引擎，它支持多种输入方案，比如拼音、双拼、五笔等等，并且可以自定义输入方案。&#xA;使用 Rime 非常简单（也可以非常复杂），最简单的方式就是从 Rime 官网下载对应平台的客户端，Rime 客户端通常会内置一些默认的输入方案，当 Rime 默认的输入方案不满足我们的需求时就可以开始自定义配置啦！&#xA;我大概 5 年前就开始使用 Rime，在 Windows 平台使用 Rime 提供的官方客户端「小狼毫」，仅仅配置了 小鹤双拼 输入方案和一些简单的皮肤样式、输入习惯等等。&#xA;词库、同步等等比较高级的配置都不曾涉及，每个使用 Rime 的用户都会有自己习惯的配置，为了保证每次换机等需要重新配置 Rime 时能更方便，个人维护一套自己的 Rime 配置非常有必要。&#xA;下面是我的安装、配置 Rime 的完整记录（macOS 平台）。&#xA;安装 Squirrel Rime 在 macOS 平台的客户端名为「鼠须管（Squirrel）」，我通常使用 Homebrew 安装，在 macOS 终端执行如下命令：&#xA;brew install --cask squirrel 随后打开 macOS 系统偏好设置，进入键盘设置，添加输入法选择简体中文下的鼠须管即可。&#xA;自定义配置 我现在的 Rime 配置使用的是 雾凇拼音 维护的一套配置，输入方案依然是小鹤双拼。&#xA;我通过 Rime 官方的配置管理工具 Plum 来快速安装雾凇拼音的配置。&#xA;安装雾凇拼音配置 首先将 Plum 从 GitHub clone 到本地任意文件目录下：&#xA;git clone --depth=1 https://github.com/rime/plum 然后进入本地的 Plum 文件目录下，执行命令以安装雾凇拼音配置到本地 Rime 配置。</description>
     </item>
     <item>
       <title>我的 macOS 初始化配置方案 &amp; 软件分享</title>
-      <link>https://rokcso.com/p/macos-setup/</link>
+      <link>http://localhost:1313/p/macos-setup/</link>
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://rokcso.com/p/macos-setup/</guid>
+      <guid>http://localhost:1313/p/macos-setup/</guid>
       <description>系统偏好设置 触控板 开启「轻点来点按」 系统偏好设置 → 触控板 → 光标与点按 → 轻点来点按 开启「使用触控板进行拖移」 系统偏好设置 → 辅助功能 → 指针控制 → 触控板选项 → 使用触控板进行拖移 关闭「轻扫切换页面」 系统偏好设置 → 触控板 → 更多手势 → 轻扫切换页面 软件安装 &amp;amp; 配置 ClashX Pro 安装包在阿里云盘&#xA;Homebrew Link: https://brew.sh/&#xA;搜索 Homebrew 支持的包：https://formulae.brew.sh/&#xA;Raycast Link: https://www.raycast.com/&#xA;Install:&#xA;brew install --cask raycast Raycast 扩展程序：&#xA;Brew Color Picker Feishu Document Creator QR Code Generator Random Data Generator 坚果云 Link: https://www.jianguoyun.com/&#xA;Install:&#xA;brew install --cask nutstore KeePassXC Link: https://keepassxc.</description>
     </item>
     <item>
       <title>macOS 彻底阻止 FigmaAgent.app 被添加到登录项</title>
-      <link>https://rokcso.com/p/figmaagent-auto-login/</link>
+      <link>http://localhost:1313/p/figmaagent-auto-login/</link>
       <pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://rokcso.com/p/figmaagent-auto-login/</guid>
+      <guid>http://localhost:1313/p/figmaagent-auto-login/</guid>
       <description>我的 macOS 版本：Sonoma 14.5&#xA;在使用 Figma macOS 客户端时，总有一个 FigmaAgent.app 被自动添加到登录项，即使在「系统设置 - 通用 - 登录项」中手动删除该项目，再次打开 Figma 依然会自动添加，这很烦人。😡&#xA;解决方案 打开「活动监视器」，找到 FigmaAgent，选中后点击「停止（退出）」后选择「强制退出」。 访问「系统设置 - 通用 - 登录项」，删除 FigmaAgent.app。 打开「访达」，进入 ~/Library/Application Support/Figma 文件夹，删除 FigmaAgent.app。 打开「访达」，进入 /Applications/Figma.app/Contents/Library 文件夹，删除 FigmaAgent.app。 完成！✅</description>
     </item>
     <item>
       <title>macOS 删除系统自带的 ABC 输入法</title>
-      <link>https://rokcso.com/p/macos-remove-abc/</link>
+      <link>http://localhost:1313/p/macos-remove-abc/</link>
       <pubDate>Tue, 21 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://rokcso.com/p/macos-remove-abc/</guid>
+      <guid>http://localhost:1313/p/macos-remove-abc/</guid>
       <description>以下操作均在 macOS Sonoma 14.3 上进行，不确定其他 macOS 系统是否适用。 但看网上文章即使是其他 macOS 系统大多也都成功了。&#xA;原理：要删除 macOS 自带的 ABC 输入法，本质上就是要删除对应的配置。&#xA;macOS 的配置文件基本都是以 .plist 为后缀的文件，而输入法相关的配置都存储在 com.apple.HIToolbox.plist 这个系统配置文件中，该配置文件主要负责存储与用户界面相关的配置，比如：输入设备、键盘布局、鼠标设置、触控板手势等等。&#xA;💡 提示：打开/修改 .plist 文件需要使用 Xcode 或者 PlistEdit Pro 软件。&#xA;⚠️ 注意：通常不建议普通用户随意修改系统 .plist 文件，这可能会影响系统的稳定性和安全性。&#xA;关闭/开启 SIP 在修改系统配置文件之前，需要先关闭系统完整性保护（SIP），SIP 的主要目的是保护系统文件和目录，防止它们被未经授权的修改，这种保护措施甚至对 Root 用户也有效。&#xA;⚠️ 注意：SIP 默认开启，如需关闭 SIP 以修改一些系统配置文件，也非常建议完成修改之后重启 SIP。&#xA;如何确定是否已经关闭/开启 SIP？&#xA;打开终端，输入 csrutil status 命令，回车执行该命令，终端将显示一条消息来提示 SIP 状态，比如：System Integrity Protection status: enabled 。&#xA;关闭/开启 SIP 的详细步骤：&#xA;重启 Mac，重启过程中持续按住 Command + R ，进入恢复模式 进入恢复模式后，打开终端（路径：顶部菜单栏 - 实用工具 - 终端） 输入 csrutil disable 命令，回车执行该命令 完成步骤 3 后，如果一切正常，终端将显示一条消息来提示 SIP 已经禁用，并提示重启 Mac，根据提示操作即可。</description>
     </item>
     <item>
       <title>NuPhy Air75 V2 使用指南</title>
-      <link>https://rokcso.com/p/nuphy-air75-v2-use-guide/</link>
+      <link>http://localhost:1313/p/nuphy-air75-v2-use-guide/</link>
       <pubDate>Sun, 19 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://rokcso.com/p/nuphy-air75-v2-use-guide/</guid>
+      <guid>http://localhost:1313/p/nuphy-air75-v2-use-guide/</guid>
       <description>使用手册 ⬇️ PDF：NuPhy Air75 V2 Quick Guide&#xA;常见问题 😅 设备连接/切换 关于无限连接切换设备、蓝牙匹配、2.4G 连接等操作，使用 FN 键加**::数字键::** 1~4，而不是 FN 键加 F1～F4。&#xA;键盘自动休眠模式 开启键盘自动休眠模式后，若键盘连续 6 分钟没有任何操作，将进入休眠模式（键盘背光关闭）。&#xA;注：自动休眠时间默认 6 分钟，暂时不清楚如何自定义这个自动休眠时间。&#xA;使用快捷键 FN + ] 开关键盘自动休眠模式，按下 FN + ] 后，如果键盘右上角 RGB 灯条闪烁 3 次红灯，意味着关闭自动休眠模式，如果闪烁 3 次绿灯，意味着开启自动休眠模式。&#xA;更新固件 Link: https://nuphy.com/pages/qmk-firmwares&#xA;准备工作 安装 QMK Toolbox 前往 GitHub QMK Toolbox 仓库 下载对应操作系统的软件。&#xA;macOS 可以使用 Homebrew 进行安装：&#xA;brew install qmk-toolbox ⚠️ 注意：QMK Toolbox 似乎还没有专门为 M 芯片（ARM 架构）的 Mac 提供适配。&#xA;我的 M1 Mac 使用 Homebrew 安装的 QMK Toolbox 在后续 Flash 固件时会提示 The operation couldn’t be completed.</description>
     </item>
     <item>
       <title>利用 URL Scheme 快速打开 Craft Daily Note</title>
-      <link>https://rokcso.com/p/craft-url-scheme/</link>
+      <link>http://localhost:1313/p/craft-url-scheme/</link>
       <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://rokcso.com/p/craft-url-scheme/</guid>
+      <guid>http://localhost:1313/p/craft-url-scheme/</guid>
       <description>在 Craft Help Center 可以查看 Craft 支持的所有 URL Scheme 方案。本文只分享其中「Access to Daily Notes」相关的内容。&#xA;Access to Daily Notes&#xA;Yesterday - craftdocs://openByQuery?query=yesterday&amp;amp;spaceId= Today - craftdocs://openByQuery?query=today&amp;amp;spaceId= Tomorrow - craftdocs://openByQuery?query=tomorrow&amp;amp;spaceId= 以上是 Craft 提供的支持快速打开 Craft Daily Note 的 URL Scheme，3 个 URL Scheme 的区别仅仅在于打开的 Daily Note 是昨天、今天还是明天。&#xA;配置 URL Scheme 参数 所有 URL Scheme 都需要提供一个 spaceId 参数，这个参数可以在 Craft 中任意一篇文档的 Deeplink 中获得。关于 Craft Deeplink 的介绍可以在 Craft Help Center 查看。&#xA;获取 Deeplink 路径/方法：&#xA;打卡任意一篇文档 点击「Share」 点击「Export as」 点击「Advanced」 点击「Copy Deeplink」 将复制到的 Deeplink 粘贴到某个文本编辑器，可以看到如下内容，其中 spaceId= 后面的内容就是我们需要的 spaceId 参数。</description>
     </item>
   </channel>

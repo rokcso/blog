@@ -39,7 +39,7 @@
   <meta itemprop="description" content="使用 NuPhy Air75 V2 的一些常用技巧、提示。">
   <meta itemprop="datePublished" content="2024-05-19T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-05-19T00:00:00+00:00">
-  <meta itemprop="wordCount" content="173">
+  <meta itemprop="wordCount" content="233">
   <meta itemprop="image" content="http://localhost:1313/images/share.png">
   <meta itemprop="keywords" content="Skill">
 <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -276,9 +276,7 @@
 
 <content>
   <h2 id="使用手册">使用手册</h2>
-<p>在线版本：<a href="https://cdn.shopify.com/s/files/1/0268/7297/1373/files/NuPhy_Air75_V2_Quick_Guide.pdf?v=1696498123">NuPhy Air75 V2 Quick Guide</a></p>
-<p>PDF 文件：</p>
-<p><a href="https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/BFC1BDA6-E7C9-4C83-9F50-404CCF177E6F/0E45A28A-42AE-4A5B-86BE-8C8E4B901979_2/lSkGpxqEst7cyCttPjsyWbTpZza6FwWKTySMxrGO0Msz/NuPhy_Air75_V2_Quick_Guide.pdf">NuPhy_Air75_V2_Quick_Guide.pdf</a></p>
+<p>⬇️ PDF：<a href="https://cdn.shopify.com/s/files/1/0268/7297/1373/files/NuPhy_Air75_V2_Quick_Guide.pdf?v=1696498123">NuPhy Air75 V2 Quick Guide</a></p>
 <h2 id="常见问题-">常见问题 😅</h2>
 <h3 id="设备连接切换">设备连接/切换</h3>
 <p>关于无限连接切换设备、蓝牙匹配、2.4G 连接等操作，使用 FN 键加**::数字键::** 1~4，而不是 FN 键加 F1～F4。</p>
@@ -287,7 +285,10 @@
 <p>注：自动休眠时间默认 6 分钟，暂时不清楚如何自定义这个自动休眠时间。</p>
 <p>使用快捷键 <code>FN + ]</code> 开关键盘自动休眠模式，按下 <code>FN + ]</code> 后，如果键盘右上角 RGB 灯条闪烁 3 次红灯，意味着关闭自动休眠模式，如果闪烁 3 次绿灯，意味着开启自动休眠模式。</p>
 <h2 id="更新固件">更新固件</h2>
-<h3 id="准备">准备</h3>
+<blockquote>
+<p>Link: <a href="https://nuphy.com/pages/qmk-firmwares">https://nuphy.com/pages/qmk-firmwares</a></p>
+</blockquote>
+<h3 id="准备工作">准备工作</h3>
 <ol>
 <li>安装 QMK Toolbox</li>
 </ol>
@@ -302,7 +303,7 @@
 <li>下载固件</li>
 </ol>
 <p>前往 <a href="https://nuphy.com/pages/qmk-firmwares">Nuphy 固件发布页面</a> 下载对应键盘型号的固件。注：固件文件后缀为 <code>.bin</code> 。</p>
-<h3 id="更新">更新</h3>
+<h3 id="开始更新">开始更新</h3>
 <ol>
 <li>打开 QMK Toolbox</li>
 </ol>
@@ -325,10 +326,47 @@
 <p>当 QMK Toolbox 显示如图中最后一行黄色文本（Flash complete）即意味着固件更新完成。</p>
 <p><img src="image-4.png" alt="alt text"></p>
 <p><img src="image-5.png" alt="alt text"></p>
-<h2 id="使用-via-配置键盘">使用 VIA 配置键盘</h2>
+<h2 id="配置键盘">配置键盘</h2>
 <blockquote>
 <p>Link: <a href="https://nuphy.com/pages/via-usage-guide-for-nuphy-keyboards">https://nuphy.com/pages/via-usage-guide-for-nuphy-keyboards</a></p>
 </blockquote>
+<p>NuPhy Air75 V2 需要使用 <a href="https://github.com/the-via">VIA</a> 来配置键盘键位以及录制宏等操作，NuPhy 官方说他们已经向 VIA 提交代码以使 VIA 可以直接自动检测到 NuPhy 键盘的基础配置。但是现在（2024.09.03）还不行，得等。</p>
+<h3 id="准备工作-1">准备工作</h3>
+<ol>
+<li>下载官方配置文件</li>
+</ol>
+<p>在 <a href="https://nuphy.com/pages/json-files-for-nuphy-keyboards">NuPhy 官方配置文件发布页面</a> 下载对应键盘的配置文件（<code>.json</code> 文件）。</p>
+<ol start="2">
+<li>将官方配置文件导入 VIA</li>
+</ol>
+<p>使用浏览器（官方推荐使用 Chrominum 内核的浏览器）访问 <a href="https://usevia.app/">usevia.app</a>。</p>
+<p>点击页面顶部「Settings」图标，在设置页面开启「Show Design tab」选项；开启之后页面顶部会出现「Design」页面的图标。</p>
+<p><img src="image-9.png" alt="alt text"></p>
+<p>前往「Design」页面，将步骤 1 下载的 NuPhy 官方配置文件上传。</p>
+<p><img src="image-10.png" alt="alt text"></p>
+<blockquote>
+<p>上传前 👆</p>
+</blockquote>
+<p><img src="image-11.png" alt="alt text"></p>
+<blockquote>
+<p>上传后 👆</p>
+</blockquote>
+<ol start="3">
+<li>连接键盘至电脑</li>
+</ol>
+<p>将键盘调为有线模式（Wired）并使用 USB 线缆连接键盘和电脑。</p>
+<p>然后前往「Configure」页面，点击「Authorize device」按钮；这时浏览器会弹出对话框提示如下，在弹窗的设备列表中选中目标设备，点击「链接」。</p>
+<p><img src="image-6.png" alt="alt text"></p>
+<p>此时页面会显示键盘详细配置信息，就可以开始自定义键位以及录制宏等操作了。</p>
+<p><img src="image-8.png" alt="alt text"></p>
+<h3 id="自定义配置">自定义配置</h3>
+<p>在配置页面上半方选中任意按键（按键高亮闪烁即为选中），然后点击配置页面下半方的按键值即可将选中按键的键值映射为目标键值。</p>
+<p>至此键盘键位配置就已经更新了，不需要手动保存，后续即使断开键盘与电脑的有线连接，键位也是更新后的配置。</p>
+<p>如果想将自己的配置分享给别人或者使用别人分享的配置，可以点击配置页面下半方左侧边栏中的「Save + Load」，选择将自己当前的配置另存为配置文件或者导入别人分享的配置文件。</p>
+<p><strong>我改了什么配置？</strong></p>
+<p>NuPhy Air75 V2 提供了一个「截图」按键，默认情况下点击该按键会调用系统原生截图工具进行截图，而我日常使用的截图工具是 <a href="https://www.snipaste.com/">Snipaste</a>，其快捷键为 <code>F1</code>。</p>
+<p>所以我将键值 <code>F1</code> 映射到了键盘「截图」按键。</p>
+<p>关于自定义配置的更多高级操作不在此展开，我也不会。</p>
 
 </content>
 <p>

@@ -9,11 +9,7 @@ draft: false
 
 ## 使用手册
 
-在线版本：[NuPhy Air75 V2 Quick Guide](https://cdn.shopify.com/s/files/1/0268/7297/1373/files/NuPhy_Air75_V2_Quick_Guide.pdf?v=1696498123)
-
-PDF 文件：
-
-[NuPhy_Air75_V2_Quick_Guide.pdf](https://res.craft.do/user/full/e9983e66-9ce7-993a-ad36-dd817783b2b8/doc/BFC1BDA6-E7C9-4C83-9F50-404CCF177E6F/0E45A28A-42AE-4A5B-86BE-8C8E4B901979_2/lSkGpxqEst7cyCttPjsyWbTpZza6FwWKTySMxrGO0Msz/NuPhy_Air75_V2_Quick_Guide.pdf)
+⬇️ PDF：[NuPhy Air75 V2 Quick Guide](https://cdn.shopify.com/s/files/1/0268/7297/1373/files/NuPhy_Air75_V2_Quick_Guide.pdf?v=1696498123)
 
 ## 常见问题 😅
 
@@ -31,7 +27,9 @@ PDF 文件：
 
 ## 更新固件
 
-### 准备
+> Link: [https://nuphy.com/pages/qmk-firmwares](https://nuphy.com/pages/qmk-firmwares)
+
+### 准备工作
 
 1. 安装 QMK Toolbox
 
@@ -55,7 +53,7 @@ brew install qmk-toolbox
 
 前往 [Nuphy 固件发布页面](https://nuphy.com/pages/qmk-firmwares) 下载对应键盘型号的固件。注：固件文件后缀为 `.bin` 。
 
-### 更新
+### 开始更新
 
 1. 打开 QMK Toolbox
 
@@ -85,7 +83,58 @@ brew install qmk-toolbox
 
 ![alt text](image-5.png)
 
-## 使用 VIA 配置键盘
+## 配置键盘
 
 > Link: [https://nuphy.com/pages/via-usage-guide-for-nuphy-keyboards](https://nuphy.com/pages/via-usage-guide-for-nuphy-keyboards)
 
+NuPhy Air75 V2 需要使用 [VIA](https://github.com/the-via) 来配置键盘键位以及录制宏等操作，NuPhy 官方说他们已经向 VIA 提交代码以使 VIA 可以直接自动检测到 NuPhy 键盘的基础配置。但是现在（2024.09.03）还不行，得等。
+
+### 准备工作
+
+1. 下载官方配置文件
+
+在 [NuPhy 官方配置文件发布页面](https://nuphy.com/pages/json-files-for-nuphy-keyboards) 下载对应键盘的配置文件（`.json` 文件）。
+
+2. 将官方配置文件导入 VIA
+
+使用浏览器（官方推荐使用 Chrominum 内核的浏览器）访问 [usevia.app](https://usevia.app/)。
+
+点击页面顶部「Settings」图标，在设置页面开启「Show Design tab」选项；开启之后页面顶部会出现「Design」页面的图标。
+
+![alt text](image-9.png)
+
+前往「Design」页面，将步骤 1 下载的 NuPhy 官方配置文件上传。
+
+![alt text](image-10.png)
+> 上传前 👆
+
+![alt text](image-11.png)
+> 上传后 👆
+
+3. 连接键盘至电脑
+
+将键盘调为有线模式（Wired）并使用 USB 线缆连接键盘和电脑。
+
+然后前往「Configure」页面，点击「Authorize device」按钮；这时浏览器会弹出对话框提示如下，在弹窗的设备列表中选中目标设备，点击「链接」。
+
+![alt text](image-6.png)
+
+此时页面会显示键盘详细配置信息，就可以开始自定义键位以及录制宏等操作了。
+
+![alt text](image-8.png)
+
+### 自定义配置
+
+在配置页面上半方选中任意按键（按键高亮闪烁即为选中），然后点击配置页面下半方的按键值即可将选中按键的键值映射为目标键值。
+
+至此键盘键位配置就已经更新了，不需要手动保存，后续即使断开键盘与电脑的有线连接，键位也是更新后的配置。
+
+如果想将自己的配置分享给别人或者使用别人分享的配置，可以点击配置页面下半方左侧边栏中的「Save + Load」，选择将自己当前的配置另存为配置文件或者导入别人分享的配置文件。
+
+**我改了什么配置？**
+
+NuPhy Air75 V2 提供了一个「截图」按键，默认情况下点击该按键会调用系统原生截图工具进行截图，而我日常使用的截图工具是 [Snipaste](https://www.snipaste.com/)，其快捷键为 `F1`。
+
+所以我将键值 `F1` 映射到了键盘「截图」按键。
+
+关于自定义配置的更多高级操作不在此展开，我也不会。

@@ -114,6 +114,13 @@
     margin-right: auto;
   }
 
+  img[src*="#minipic"] {
+    max-width: 50%;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
   code {
     padding: 2px 5px;
     background-color: #f2f2f2;
@@ -236,6 +243,15 @@
 
     .helptext {
       color: #aaa;
+    }
+  }
+
+  @media (max-width: 500px) {
+    img[src*="#minipic"] {
+      max-width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 </style>

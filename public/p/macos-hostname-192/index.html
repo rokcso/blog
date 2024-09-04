@@ -139,7 +139,7 @@
     font-size: 14px;
     overflow-x: auto;
   }
-  
+
   div.highlight pre {
     background-color: initial;
     color: initial;
@@ -264,9 +264,9 @@
 
 </nav>
 </header>
-  <main>
-
+  <main>  
 <h1>修复 macOS 终端主机名显示 192</h1>
+
 <p>
   <i>
     <time datetime='2024-08-07' pubdate>
@@ -275,8 +275,7 @@
   </i>
 </p>
 
-<content>
-  <p>通常 macOS 终端（Terminal）App 中显示的主机名（HostName）应该是当前设备设定的用户名。</p>
+<content> <p>通常 macOS 终端（Terminal）App 中显示的主机名（HostName）应该是当前设备设定的用户名。</p>
 <p>但是有时打开终端时会发现主机名变成了 192，这主要是由于当前使用的 DNS 服务因为某些原因变成了默认的 <code>192.168.1.1</code> 或 <code>192.168.0.1</code>，我通常在启动了代理服务之后会出现。</p>
 <p><strong>解决方案一</strong></p>
 <blockquote>
@@ -293,8 +292,7 @@
 <p>当本机没有配置 HostName 是，终端的主机名会使用来自 DNS 或者 DHCP 服务器，所以我们也可以通过主动配置一个 HostName 解决这个问题，在终端执行以下命令：</p>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo scutil --set HostName <span style="color:#40a02b">&#34;yourHostName&#34;</span>
 </span></span></code></pre></div><p>⚠️ 注意：使用你想要设置的 HostName 替换上面命令中的 <code>yourHostName</code> 。</p>
-
-</content>
+ </content>
 <p>
   
   <a href="http://localhost:1313/t/macos/">#MacOS</a>

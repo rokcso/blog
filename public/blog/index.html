@@ -9,7 +9,7 @@
 <title>Blog | Rokcso&#39;s blog</title>
 <meta name="title" content="Blog" />
 <meta name="description" content="Rokcso&#39;s blog. Record life, write, create." />
-<meta name="keywords" content="dev,list,macos,note,pm,seo,skill,translation,ui," />
+<meta name="keywords" content="dev,macos,note,pm,seo,skill,translation,ui," />
 
 
 <meta property="og:url" content="http://localhost:1313/blog/">
@@ -33,7 +33,6 @@
 
   <meta itemprop="name" content="Blog">
   <meta itemprop="description" content="Rokcso&#39;s blog. Record life, write, create.">
-  <meta itemprop="datePublished" content="2024-09-03T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-09-03T00:00:00+00:00">
   <meta itemprop="image" content="http://localhost:1313/images/share.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -115,6 +114,13 @@
     margin-right: auto;
   }
 
+  img[src*="#minipic"] {
+    max-width: 50%;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
   code {
     padding: 2px 5px;
     background-color: #f2f2f2;
@@ -133,7 +139,7 @@
     font-size: 14px;
     overflow-x: auto;
   }
-  
+
   div.highlight pre {
     background-color: initial;
     color: initial;
@@ -239,6 +245,15 @@
       color: #aaa;
     }
   }
+
+  @media (max-width: 500px) {
+    img[src*="#minipic"] {
+      max-width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 </style>
 
 </head>
@@ -305,20 +320,6 @@
         </i>
       </span>
       <a href="http://localhost:1313/p/evernote-history/">译&gt; 领先于时代，落后于潮流：Evernote 为何未能发挥其潜力</a>
-    </li>
-    
-    
-    
-    
-    <li>
-      <span>
-        <i>
-          <time datetime='2024-08-09' pubdate>
-            09 Aug, 2024
-          </time>
-        </i>
-      </span>
-      <a href="http://localhost:1313/p/cooking-list/">我的厨房用具、用法清单</a>
     </li>
     
     
@@ -490,14 +491,15 @@
     </li>
     
     
+    
+    
+    
   </ul>
   
     <small>
       <div>
         
         <a href="http://localhost:1313/t/dev/">#Dev</a>&nbsp;
-        
-        <a href="http://localhost:1313/t/list/">#List</a>&nbsp;
         
         <a href="http://localhost:1313/t/macos/">#MacOS</a>&nbsp;
         

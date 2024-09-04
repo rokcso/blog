@@ -120,6 +120,13 @@
     margin-right: auto;
   }
 
+  img[src*="#minipic"] {
+    max-width: 50%;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
   code {
     padding: 2px 5px;
     background-color: #f2f2f2;
@@ -138,7 +145,7 @@
     font-size: 14px;
     overflow-x: auto;
   }
-  
+
   div.highlight pre {
     background-color: initial;
     color: initial;
@@ -244,6 +251,15 @@
       color: #aaa;
     }
   }
+
+  @media (max-width: 500px) {
+    img[src*="#minipic"] {
+      max-width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 </style>
 
 </head>
@@ -263,9 +279,9 @@
 
 </nav>
 </header>
-  <main>
-
+  <main>  
 <h1>译&gt; 创始人模式</h1>
+
 <p>
   <i>
     <time datetime='2024-09-03' pubdate>
@@ -274,8 +290,7 @@
   </i>
 </p>
 
-<content>
-  <blockquote>
+<content> <blockquote>
 <p>本文由 AI 翻译，人工修正。</p>
 <p>原文链接：<a href="https://paulgraham.com/foundermode.html">https://paulgraham.com/foundermode.html</a></p>
 </blockquote>
@@ -314,8 +329,7 @@
 <p>[2] 如果举办此类静思会的做法变得非常普及，以至于那些充满政治色彩的成熟公司也开始采纳，我们或许可以通过参与这些活动的员工在组织结构中的平均层级来衡量公司的僵化程度。</p>
 <p>[3] I also have another less optimistic prediction: as soon as the concept of founder mode becomes established, people will start misusing it. Founders who are unable to delegate even things they should will use founder mode as the excuse. Or managers who aren&rsquo;t founders will decide they should try to act like founders. That may even work, to some extent, but the results will be messy when it doesn&rsquo;t; the modular approach does at least limit the damage a bad CEO can do.</p>
 <p>[3] 我还有一个不那么乐观的预测：一旦创始人模式的概念被广泛接受，人们可能会开始滥用这一概念。一些本应做好指派任务却未能做到的创始人可能会以创始人模式为由来为自己辩护。或者，并非创始人的管理人可能会开始模仿创始人的行为。这种做法在某种程度上可能有效，但如果不奏效，结果可能会很混乱；至少模块化的方法能够减轻一个不称职的 CEO 可能造成的损害。</p>
-
-</content>
+ </content>
 <p>
   
   <a href="http://localhost:1313/t/translation/">#Translation</a>

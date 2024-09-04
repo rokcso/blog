@@ -58,3 +58,4 @@ ignoreErrors = ["error-disable-taxonomy"]
     [markup.goldmark.renderer]
       hardWraps = true
       unsafe = false
+

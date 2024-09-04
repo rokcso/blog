@@ -4,7 +4,7 @@ description: "我常用的厨房用具、用法，关于我烹饪中会用到的
 slug: "cooking-list"
 tags: ["list"]
 date: "2024-08-09"
-draft: false
+draft: true
 ---
 
 这个清单里的所有东西都是我实际使用过挺长时间的，比较推荐，但可能不是你的最优解，仅供参考。

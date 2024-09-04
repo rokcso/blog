@@ -138,7 +138,7 @@
     font-size: 14px;
     overflow-x: auto;
   }
-  
+
   div.highlight pre {
     background-color: initial;
     color: initial;
@@ -263,9 +263,9 @@
 
 </nav>
 </header>
-  <main>
-
+  <main>  
 <h1>使用 JavaScript 配置 Umami Track Event</h1>
+
 <p>
   <i>
     <time datetime='2023-08-09' pubdate>
@@ -274,8 +274,7 @@
   </i>
 </p>
 
-<content>
-  <p>当前（2023-08-09）我的 umami 部署版本为 Version 1.40.0，官方已经发布版本为 Version 2.4.1。</p>
+<content> <p>当前（2023-08-09）我的 umami 部署版本为 Version 1.40.0，官方已经发布版本为 Version 2.4.1。</p>
 <p>Umami Version 1.40 及以上版本支持 Tarck Event，即事件跟踪，简单的说就是可以跟踪用户在网页上面的事件操作，比如点击按钮。</p>
 <p>在 <a href="https://umami.is/docs/track-events">官方文档</a> 中提供了两种简单配置方案，根据当前（2023-08-09）文档显示可以通过给按钮添加数据属性或者使用 JavaScript 监听按钮的点击事件然后执行 <code>umami.track()</code> 方法上报事件数据。</p>
 <p><strong>调试方法：</strong></p>
@@ -291,8 +290,7 @@
 </span></span></code></pre></div><p>比如：</p>
 <div class="highlight"><pre tabindex="0" style="color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#8839ef">button</span> <span style="color:#1e66f5">id</span><span style="color:#04a5e5;font-weight:bold">=</span><span style="color:#40a02b">&#34;btn-copy&#34;</span> <span style="color:#1e66f5">class</span><span style="color:#04a5e5;font-weight:bold">=</span><span style="color:#40a02b">&#34;umami--click--clickCopyBtn&#34;</span>&gt;Copy&lt;/<span style="color:#8839ef">button</span>&gt;
 </span></span></code></pre></div><p>注：该方法（添加 Class）未经校验。</p>
-
-</content>
+ </content>
 <p>
   
   <a href="http://localhost:1313/t/note/">#Note</a>

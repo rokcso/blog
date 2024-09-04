@@ -129,6 +129,13 @@ My girlfriend and I are planning to go to the seaside to watch the sunrise this 
     margin-right: auto;
   }
 
+  img[src*="#minipic"] {
+    max-width: 50%;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
   code {
     padding: 2px 5px;
     background-color: #f2f2f2;
@@ -147,7 +154,7 @@ My girlfriend and I are planning to go to the seaside to watch the sunrise this 
     font-size: 14px;
     overflow-x: auto;
   }
-  
+
   div.highlight pre {
     background-color: initial;
     color: initial;
@@ -253,6 +260,15 @@ My girlfriend and I are planning to go to the seaside to watch the sunrise this 
       color: #aaa;
     }
   }
+
+  @media (max-width: 500px) {
+    img[src*="#minipic"] {
+      max-width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 </style>
 
 </head>
@@ -272,10 +288,8 @@ My girlfriend and I are planning to go to the seaside to watch the sunrise this 
 
 </nav>
 </header>
-  <main>
-
-<content>
-  <h1 id="what-im-doing-right-now">What I&rsquo;m doing right now</h1>
+  <main> 
+<content> <h1 id="what-im-doing-right-now">What I&rsquo;m doing right now</h1>
 <p>This is a snapshot of my current endeavors and focal points. Inspired by <a href="https://nownownow.com/about">nownownow.com</a>.</p>
 <blockquote>
 <p>Last updated on 2024-08-30, Hangzhou, China.</p>
@@ -287,8 +301,7 @@ My girlfriend and I are planning to go to the seaside to watch the sunrise this 
 <h2 id="projects">Projects</h2>
 <p>I spent two days launching a new website, <a href="https://skillix.cc/">Skillix.cc</a>. Currently, this website will provide navigation and recommendation services for the columns of <a href="https://xiaobot.net/">Xiaobaotong</a> (a knowledge payment platform). If users pay through our website, I will receive a rebate, and I will also give a rebate to the users, so that they can purchase the columns at a lower cost.</p>
 <p>Next, I plan to study RPA (Robotic Process Automation) because my current several navigation websites have too much data that needs manual maintenance, which is becoming an increasingly heavy burden for me.</p>
-
-</content>
+ </content>
 <p>
   
 </p>

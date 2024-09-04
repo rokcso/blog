@@ -32,12 +32,6 @@
     <loc>http://localhost:1313/p/evernote-history/</loc>
     <lastmod>2024-08-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/t/list/</loc>
-    <lastmod>2024-08-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/p/cooking-list/</loc>
-    <lastmod>2024-08-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/t/dev/</loc>
     <lastmod>2024-08-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -85,6 +79,8 @@
   </url><url>
     <loc>http://localhost:1313/p/semantic-version/</loc>
     <lastmod>2023-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/p/suisui/</loc>
   </url><url>
     <loc>http://localhost:1313/now/</loc>
   </url><url>

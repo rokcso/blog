@@ -138,7 +138,7 @@
     font-size: 14px;
     overflow-x: auto;
   }
-  
+
   div.highlight pre {
     background-color: initial;
     color: initial;
@@ -263,9 +263,9 @@
 
 </nav>
 </header>
-  <main>
-
+  <main>  
 <h1>我的 Rime 输入法配置方案</h1>
+
 <p>
   <i>
     <time datetime='2024-07-19' pubdate>
@@ -274,8 +274,7 @@
   </i>
 </p>
 
-<content>
-  <p><a href="https://rime.im/">Rime</a> 是一个开源的输入法引擎，它支持多种输入方案，比如拼音、双拼、五笔等等，并且可以自定义输入方案。</p>
+<content> <p><a href="https://rime.im/">Rime</a> 是一个开源的输入法引擎，它支持多种输入方案，比如拼音、双拼、五笔等等，并且可以自定义输入方案。</p>
 <p>使用 Rime 非常简单（也可以非常复杂），最简单的方式就是从 Rime 官网下载对应平台的客户端，Rime 客户端通常会内置一些默认的输入方案，当 Rime 默认的输入方案不满足我们的需求时就可以开始自定义配置啦！</p>
 <p>我大概 5 年前就开始使用 Rime，在 Windows 平台使用 Rime 提供的官方客户端「小狼毫」，仅仅配置了 <a href="https://flypy.com/">小鹤双拼</a> 输入方案和一些简单的皮肤样式、输入习惯等等。</p>
 <p>词库、同步等等比较高级的配置都不曾涉及，每个使用 Rime 的用户都会有自己习惯的配置，为了保证每次换机等需要重新配置 Rime 时能更方便，个人维护一套自己的 Rime 配置非常有必要。</p>
@@ -321,8 +320,7 @@ bash rime-install iDvel/rime-ice:others/recipes/full
 <p>比如我在坚果云上创建了一个 <code>rokConfig/Rime</code> 这个目录，并且将其同步到我所有设备的本地，当我在设备 A、B 的 Rime 同步配置中将 <code>sync_dir</code> 设置为设备 A、B 本地的 <code>rokConfig/Rime</code> 时，假设设备 A 触发 Rime 同步，Rime 会更新同步文件到设备 A 本地的 <code>rokConfig/Rime</code> 文件目录下，然后坚果云的云同步会将本次更新的内容同步到设备 B 的本地。</p>
 <p>这便实现了 Rime 多设备同步，其他第三方文件同步工具基本同理。</p>
 <p>⚠️ 注意：上述案例中，设备 A 触发了 Rime 同步，设备 A 更新的同步文件通过坚果云同步到了设备 B 的本地，此时设备 B 需要再触发一次 Rime 同步才能启用设备 A 同步过来的最新用户词典和配置。这个操作可以理解为设备 B 本地的配置发生了变化，需要重新部署一下才能生效。</p>
-
-</content>
+ </content>
 <p>
   
   <a href="http://localhost:1313/t/skill/">#Skill</a>

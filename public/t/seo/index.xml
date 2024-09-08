@@ -2,19 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SEO on Rokcso&#39;s blog</title>
-    <link>http://localhost:1313/t/seo/</link>
+    <link>https://rokcso.com/t/seo/</link>
     <description>Recent content in SEO on Rokcso&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2024, Rokcso.</copyright>
     <lastBuildDate>Mon, 27 May 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/t/seo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rokcso.com/t/seo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>dofollow &amp; nofollow</title>
-      <link>http://localhost:1313/p/dofollow-and-nofollow/</link>
+      <link>https://rokcso.com/p/dofollow-and-nofollow/</link>
       <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/p/dofollow-and-nofollow/</guid>
-      <description>什么是 dofollow 和 nofollow 链接？ dofollow 和 nofollow 是两个 HTML 属性，用于指示搜索引擎爬虫如何处理网页上面 link 的链接。&#xA;dofollow 意味着搜索引擎会跟随这个链接，并且当前页面会传递一定的权重给被链接的页面，即增加被链接页面在搜索引擎中的权重，增加权重的多少根据当前页面在搜索引擎中的权重不同而不同。&#xA;也就是说如果网站 A 使用 dofollow 链接了网站 B 的链接，网站 B 在搜索引擎中的权重会得到提升，提升的多少由网站 A 在搜索引擎中的权重决定，即网站 A 在搜索引擎中权重越大，网站 B 得到的权重提升也越大。&#xA;nofollow 是由 Google 引入的属性，目的是帮助网站管理员减少网站的垃圾链接，当页面中的一个链接被标记为 nofollow 时，搜索引擎爬虫将不会跟随这个链接去发现新的内容、建立新的索引，同时也也不会从当前页面传递任何权重到被链接页面。搜索引擎的爬虫甚至不会进一步爬取 nofollow 链接。&#xA;一般网站的广告链接、用户评论内容中的链接会使用 nofollow 属性来标记。&#xA;HTML 中 标签默认的属性是 dofollow，如果要标记为 nofollow 可以如下编写：&#xA;&amp;lt;a href=&amp;#34;https://rokcso.com&amp;#34; rel=&amp;#34;nofollow&amp;#34;&amp;gt;Rokcso&amp;#39;s Landing Page&amp;lt;/a&amp;gt; 如何正确应用 dofollow 和 nofollow 链接？ 上面提到的权重本质上就是 PageRank（也被称为 PR 值），是搜索引擎排名的重要指标之一。PR 值只能通过 dofollow 链接传递，不能通过 nofollow 链接传递。&#xA;并且 PR 值的分配是根据页面上搜索链接来平均分配的，不论这个链接是否允许 follow，比如当前页面的 PR 值为 10，页面中有 10 个链接（5 个 dofollow 和 5 个 nofollow），那么每个 dofollow 链接将分别获得 1 PR 值传递，而不是 2；该页面的 10 PR 值被平均分给了该页面中的所有 10 个链接，只是其中标记为 nofollow 的链接不会获得对应的 PR 值传递。</description>
+      <guid>https://rokcso.com/p/dofollow-and-nofollow/</guid>
+      
+      <description>&lt;h2 id=&#34;什么是-dofollow-和-nofollow-链接&#34;&gt;什么是 dofollow 和 nofollow 链接？&lt;/h2&gt;&#xA;&lt;p&gt;dofollow 和 nofollow 是两个 HTML 属性，用于指示搜索引擎爬虫如何处理网页上面 link 的链接。&lt;/p&gt;&#xA;&lt;p&gt;dofollow 意味着搜索引擎会跟随这个链接，并且当前页面会传递一定的权重给被链接的页面，即增加被链接页面在搜索引擎中的权重，增加权重的多少根据当前页面在搜索引擎中的权重不同而不同。&lt;/p&gt;&#xA;&lt;p&gt;也就是说如果网站 A 使用 dofollow 链接了网站 B 的链接，网站 B 在搜索引擎中的权重会得到提升，提升的多少由网站 A 在搜索引擎中的权重决定，即网站 A 在搜索引擎中权重越大，网站 B 得到的权重提升也越大。&lt;/p&gt;&#xA;&lt;p&gt;nofollow 是由 Google 引入的属性，目的是帮助网站管理员减少网站的垃圾链接，当页面中的一个链接被标记为 nofollow 时，搜索引擎爬虫将不会跟随这个链接去发现新的内容、建立新的索引，同时也也不会从当前页面传递任何权重到被链接页面。&lt;strong&gt;搜索引擎的爬虫甚至不会进一步爬取 nofollow 链接。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;一般网站的广告链接、用户评论内容中的链接会使用 nofollow 属性来标记。&lt;/p&gt;&#xA;&lt;p&gt;HTML 中 &lt;!-- raw HTML omitted --&gt; 标签默认的属性是 dofollow，如果要标记为 nofollow 可以如下编写：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#8839ef&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#1e66f5&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#40a02b&#34;&gt;&amp;#34;https://rokcso.com&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#1e66f5&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#40a02b&#34;&gt;&amp;#34;nofollow&amp;#34;&lt;/span&gt;&amp;gt;Rokcso&amp;#39;s Landing Page&amp;lt;/&lt;span style=&#34;color:#8839ef&#34;&gt;a&lt;/span&gt;&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;如何正确应用-dofollow-和-nofollow-链接&#34;&gt;如何正确应用 dofollow 和 nofollow 链接？&lt;/h2&gt;&#xA;&lt;p&gt;上面提到的权重本质上就是 &lt;a href=&#34;craftdocs://open?blockId=CD09006B-0CCF-4E35-BF90-34650282AA0C&amp;amp;spaceId=e9983e66-9ce7-993a-ad36-dd817783b2b8&#34;&gt;PageRank&lt;/a&gt;（也被称为 PR 值），是搜索引擎排名的重要指标之一。PR 值只能通过 dofollow 链接传递，不能通过 nofollow 链接传递。&lt;/p&gt;&#xA;&lt;p&gt;并且 PR 值的分配是根据页面上搜索链接来平均分配的，不论这个链接是否允许 follow，比如当前页面的 PR 值为 10，页面中有 10 个链接（5 个 dofollow 和 5 个 nofollow），那么每个 dofollow 链接将分别获得 1 PR 值传递，而不是 2；该页面的 10 PR 值被平均分给了该页面中的所有 10 个链接，只是其中标记为 nofollow 的链接不会获得对应的 PR 值传递。&lt;/p&gt;&#xA;&lt;p&gt;由于搜索引擎爬虫不会爬取 nofollow 链接，所有我们可以将不希望搜索引擎爬取或者没有必要让搜索引擎爬取的页面（比如注册、登陆等等）的链接标记为 nofollow，以帮助搜索引擎爬虫更有效的抓取到更值得被索引的页面。&lt;/p&gt;&#xA;&lt;p&gt;通过付费买卖 dofollow 链接（可以买卖链接，但必须是 nofollow 链接）来传递 PR 值的行为是被搜索引擎明令禁止的，搜索引擎更希望网站通过其优质的内容来获得被链接，这有助于提升搜索引擎整体的内容质量。&lt;/p&gt;&#xA;&lt;p&gt;没人清楚搜索引擎如何识别网站是否付费买卖链接，但是至少 Google 提供了对应的 &lt;a href=&#34;https://www.google.com/webmasters/tools/paidlinks&#34;&gt;付费链接举报工具&lt;/a&gt;，被举报后 Google 将进行检查，一旦查实必定得到惩罚。&lt;/p&gt;&#xA;&lt;p&gt;通常情况下我们都认为 nofollow 链接不会影响搜索引擎排名，但是有的说法表示 nofollow 链接可能也会影响被链接网页在搜索引擎中的排名，这无从得知，搜索引擎的算法时不可能完全公开的。但是同一个页面中的 dofollow 链接会比 nofollow 链接向被链接网页传递更多的权重这基本是可以确定的。&lt;/p&gt;&#xA;&lt;p&gt;不必追求自己网站获得的所有外链都是 dofollow 链接，一定比例的 nofollow 链接是正常的（甚至比 100% 是 dofollow 更为异常）。&lt;/p&gt;&#xA;&lt;p&gt;并且 nofollow 链接也不是一无是处的，毕竟只要是链接都能增加被曝光的机会，即任何链接都有可能带来流量，而流量则可以提供产生 dofollow 链接的机会。&lt;/p&gt;&#xA;&lt;p&gt;建设外链最核心的三步转化：1）你的网站被看见、2）你的网站被喜欢、3）你的网站被分享。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;参考：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://ahrefs.com/blog/zh/nofollow-links/&#34;&gt;https://ahrefs.com/blog/zh/nofollow-links/&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;</description>
+      <follow_challenge>
+    <feedId>55587008227934208</feedId>
+    <userId>41373547352712192</userId>
+</follow_challenge>
     </item>
   </channel>
 </rss>

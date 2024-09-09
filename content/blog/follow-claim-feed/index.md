@@ -88,6 +88,10 @@ feedId:00000000000000000+userId:00000000000000000
 
 最后重新部署 Hugo，检查 `public` 文件夹下的 `index.xml` 可以发现 feedId 和 userId 已经正确的出现在最终生成的 RSS 代码中了。
 
+成功 Claim 的 Feed 在 Follow 中将被标上旗帜：
+
+![](image-4.png)
+
 ---
 
 注意：如果你使用 Hugo 官方提供的 RSS Template 代码，请务必注意其对于 Hugo 版本的最低要求。

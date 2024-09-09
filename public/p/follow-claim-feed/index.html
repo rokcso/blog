@@ -39,7 +39,7 @@
   <meta itemprop="description" content="如何在 Follow 中 Claim 自己的博客以通过别人的打赏赚取 $POWER，以 Hugo 框架部署的静态博客为例。">
   <meta itemprop="datePublished" content="2024-09-09T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-09-09T00:00:00+00:00">
-  <meta itemprop="wordCount" content="261">
+  <meta itemprop="wordCount" content="268">
   <meta itemprop="image" content="http://localhost:1313/images/share.png">
   <meta itemprop="keywords" content="Skill">
 <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -332,6 +332,8 @@
 </span></span></code></pre></div><p>其实也可以添加在 <code>&lt;description&gt;</code> 标签中，相当于给每篇文章都添加了 feedId 和 userId，而添加到 <code>&lt;channel&gt;</code> 则相当于对整个站点进行添加。</p>
 <p>注意：如果使用的 Hugo 主题已经提供了 <code>rss.xml</code> 就直接修改主题的 <code>rss.xml</code>，以免发生冲突。</p>
 <p>最后重新部署 Hugo，检查 <code>public</code> 文件夹下的 <code>index.xml</code> 可以发现 feedId 和 userId 已经正确的出现在最终生成的 RSS 代码中了。</p>
+<p>成功 Claim 的 Feed 在 Follow 中将被标上旗帜：</p>
+<p><img src="image-4.png" alt=""></p>
 <hr>
 <p>注意：如果你使用 Hugo 官方提供的 RSS Template 代码，请务必注意其对于 Hugo 版本的最低要求。</p>
 <p>我在使用了 Hugo 官方提供的 RSS Template 代码后重新部署博客，在本地测试正常，部署到 Cloudflare Pages 就报错提示 <code>transform.XMLEscape</code> 方法异常，检查了 <a href="https://gohugo.io/functions/">Hugo Functions 说明文档</a> 后发现 <code>transform.XMLEscape</code> 方法在 <code>v0.121.0</code> 版本进行了更新。</p>

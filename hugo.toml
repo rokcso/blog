@@ -20,6 +20,8 @@ ignoreErrors = ["error-disable-taxonomy"]
   tags = "/t/:slug"
 
 
+
+
 [params]
   # The "description" of your website. This is used in the meta data of your generated html.
   description = "Rokcso's blog. Record life, write, create."

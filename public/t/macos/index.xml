@@ -1,0 +1,55 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MacOS on Rokcso&#39;s blog</title>
+    <link>https://rokcso.com/t/macos/</link>
+    <description>Recent content in MacOS on Rokcso&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2024, Rokcso.</copyright>
+    <lastBuildDate>Wed, 07 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://rokcso.com/t/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>修复 macOS 终端主机名显示 192</title>
+      <link>https://rokcso.com/p/macos-hostname-192/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://rokcso.com/p/macos-hostname-192/</guid>
+      <description>通常 macOS 终端（Terminal）App 中显示的主机名（HostName）应该是当前设备设定的用户名。&#xA;但是有时打开终端时会发现主机名变成了 192，这主要是由于当前使用的 DNS 服务因为某些原因变成了默认的 192.168.1.1 或 192.168.0.1，我通常在启动了代理服务之后会出现。&#xA;解决方案一&#xA;设备：Mac mini M2&#xA;macOS: Sonama 14.6&#xA;这种情况首先可以尝试修改 DNS 设置，打开「系统偏好设置 -&amp;gt; 网络（或 Wi-Fi） -&amp;gt; 详细信息 -&amp;gt; DNS」。&#xA;如果这里的 DNS 服务器为上面提到的默认 IP 地址，那么直接删除，然后添加新的 DNS 服务器 IP 地址：8.8.8.8 即可。&#xA;⚠️ 注意：修改 DNS 配置后记得「应用」。&#xA;解决方案二&#xA;首先确认本机是否存在已配置的 HostName，打开终端执行以下命令：&#xA;scutil --get HostName 如果本机没有配置 HostName，那么执行该命令不会获得任何输出，如果存在 HostName 则会直接返回 HostName 字符串。&#xA;当本机没有配置 HostName 是，终端的主机名会使用来自 DNS 或者 DHCP 服务器，所以我们也可以通过主动配置一个 HostName 解决这个问题，在终端执行以下命令：&#xA;sudo scutil --set HostName &amp;#34;yourHostName&amp;#34; ⚠️ 注意：使用你想要设置的 HostName 替换上面命令中的 yourHostName 。</description>
+    </item>
+    <item>
+      <title>我的 macOS 初始化配置方案 &amp; 软件分享</title>
+      <link>https://rokcso.com/p/macos-setup/</link>
+      <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://rokcso.com/p/macos-setup/</guid>
+      <description>系统偏好设置 触控板 开启「轻点来点按」 系统偏好设置 → 触控板 → 光标与点按 → 轻点来点按 开启「使用触控板进行拖移」 系统偏好设置 → 辅助功能 → 指针控制 → 触控板选项 → 使用触控板进行拖移 关闭「轻扫切换页面」 系统偏好设置 → 触控板 → 更多手势 → 轻扫切换页面 软件安装 &amp;amp; 配置 ClashX Pro 安装包在阿里云盘&#xA;Homebrew Link: https://brew.sh/&#xA;搜索 Homebrew 支持的包：https://formulae.brew.sh/&#xA;Raycast Link: https://www.raycast.com/&#xA;Install:&#xA;brew install --cask raycast Raycast 扩展程序：&#xA;Brew Color Picker Feishu Document Creator QR Code Generator Random Data Generator 坚果云 Link: https://www.jianguoyun.com/&#xA;Install:&#xA;brew install --cask nutstore KeePassXC Link: https://keepassxc.</description>
+    </item>
+    <item>
+      <title>macOS 彻底阻止 FigmaAgent.app 被添加到登录项</title>
+      <link>https://rokcso.com/p/figmaagent-auto-login/</link>
+      <pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://rokcso.com/p/figmaagent-auto-login/</guid>
+      <description>我的 macOS 版本：Sonoma 14.5&#xA;在使用 Figma macOS 客户端时，总有一个 FigmaAgent.app 被自动添加到登录项，即使在「系统设置 - 通用 - 登录项」中手动删除该项目，再次打开 Figma 依然会自动添加，这很烦人。😡&#xA;解决方案 打开「活动监视器」，找到 FigmaAgent，选中后点击「停止（退出）」后选择「强制退出」。 访问「系统设置 - 通用 - 登录项」，删除 FigmaAgent.app。 打开「访达」，进入 ~/Library/Application Support/Figma 文件夹，删除 FigmaAgent.app。 打开「访达」，进入 /Applications/Figma.app/Contents/Library 文件夹，删除 FigmaAgent.app。 完成！✅</description>
+    </item>
+    <item>
+      <title>macOS 删除系统自带的 ABC 输入法</title>
+      <link>https://rokcso.com/p/macos-remove-abc/</link>
+      <pubDate>Tue, 21 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://rokcso.com/p/macos-remove-abc/</guid>
+      <description>以下操作均在 macOS Sonoma 14.3 上进行，不确定其他 macOS 系统是否适用。&#xA;但看网上文章即使是其他 macOS 系统大多也都成功了。&#xA;原理：要删除 macOS 自带的 ABC 输入法，本质上就是要删除对应的配置。&#xA;macOS 的配置文件基本都是以 .plist 为后缀的文件，而输入法相关的配置都存储在 com.apple.HIToolbox.plist 这个系统配置文件中，该配置文件主要负责存储与用户界面相关的配置，比如：输入设备、键盘布局、鼠标设置、触控板手势等等。&#xA;💡 提示：打开/修改 .plist 文件需要使用 Xcode 或者 PlistEdit Pro 软件。&#xA;⚠️ 注意：通常不建议普通用户随意修改系统 .plist 文件，这可能会影响系统的稳定性和安全性。&#xA;关闭/开启 SIP 在修改系统配置文件之前，需要先关闭系统完整性保护（SIP），SIP 的主要目的是保护系统文件和目录，防止它们被未经授权的修改，这种保护措施甚至对 Root 用户也有效。&#xA;⚠️ 注意：SIP 默认开启，如需关闭 SIP 以修改一些系统配置文件，也非常建议完成修改之后重启 SIP。&#xA;如何确定是否已经关闭/开启 SIP？&#xA;打开终端，输入 csrutil status 命令，回车执行该命令，终端将显示一条消息来提示 SIP 状态，比如：System Integrity Protection status: enabled 。&#xA;关闭/开启 SIP 的详细步骤：&#xA;重启 Mac，重启过程中持续按住 Command + R ，进入恢复模式 进入恢复模式后，打开终端（路径：顶部菜单栏 - 实用工具 - 终端） 输入 csrutil disable 命令，回车执行该命令 完成步骤 3 后，如果一切正常，终端将显示一条消息来提示 SIP 已经禁用，并提示重启 Mac，根据提示操作即可。</description>
+    </item>
+  </channel>
+</rss>

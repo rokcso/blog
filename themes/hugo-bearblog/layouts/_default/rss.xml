@@ -1,18 +1,28 @@
 {{- /* Deprecate site.Author.email in favor of site.Params.author.email */}}
+<!-- 初始化 Author Email 变量 -->
 {{- $authorEmail := "" }}
+<!-- 检查站点 Params.author 对象 -->
 {{- with site.Params.author }}
+<!-- 如果存在 -->
   {{- if reflect.IsMap . }}
+  <!-- 检查是否存在 email 属性 -->
     {{- with .email }}
+    <!-- 如果存在，将 email 值赋值给变量 -->
       {{- $authorEmail = . }}
     {{- end }}
   {{- end }}
+  <!-- 如果不存在 -->
 {{- else }}
+<!-- 则检查是否存在 Author.email -->
   {{- with site.Author.email }}
+  <!-- 如果存在，赋值 -->
     {{- $authorEmail = . }}
+    <!-- 警告提示 -->
     {{- warnf "The author key in site configuration is deprecated. Use params.author.email instead." }}
   {{- end }}
 {{- end }}
 
+<!-- 同上的流程处理 Author Name -->
 {{- /* Deprecate site.Author.name in favor of site.Params.author.name */}}
 {{- $authorName := "" }}
 {{- with site.Params.author }}
@@ -30,18 +40,28 @@
   {{- end }}
 {{- end }}
 
+<!-- 初始化一个变量用来存储上下文 -->
 {{- $pctx := . }}
+<!-- 如果当前页面是首页，则上下文为整个站点 -->
 {{- if .IsHome }}{{ $pctx = .Site }}{{ end }}
+<!-- 初始化一个空的页面切片 -->
 {{- $pages := slice }}
+<!-- 如果当前页面是首页或者分类页面 -->
 {{- if or $.IsHome $.IsSection }}
+<!-- 获取 RegularPages 赋值给页面变量 -->
 {{- $pages = $pctx.RegularPages }}
 {{- else }}
+<!-- 否则就获取所有页面 -->
 {{- $pages = $pctx.Pages }}
 {{- end }}
+<!-- 获取站点配置中关于 RSS 生成条数的限制 -->
 {{- $limit := .Site.Config.Services.RSS.Limit }}
+<!-- 如果限制大于等于 1，则应用限制 -->
 {{- if ge $limit 1 }}
+<!-- 获取前 限制数 个页面 -->
 {{- $pages = $pages | first $limit }}
 {{- end }}
+<!-- 打印 XML 声明，这里打印的内容会出现在最终生成的 RSS XML 文件中 -->
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -64,7 +84,7 @@
       <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{- with $authorEmail }}<author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ .Summary | safeHTML }}</description>
+      <description>{{ .Summary | transform.XMLEscape | safeHTML }}</description>
     </item>
     {{- end }}
   </channel>

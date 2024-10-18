@@ -3,10 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-09-22T00:00:00+00:00</lastmod>
+    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2024-09-22T00:00:00+00:00</lastmod>
+    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/t/note/</loc>
+    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/t/skill/</loc>
+    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/p/buy-glasses-online/</loc>
+    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/t/cooking/</loc>
     <lastmod>2024-09-22T00:00:00+00:00</lastmod>
@@ -21,9 +30,6 @@
     <lastmod>2024-09-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/p/follow-claim-feed/</loc>
-    <lastmod>2024-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/t/skill/</loc>
     <lastmod>2024-09-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/p/founder-mode/</loc>
@@ -44,13 +50,16 @@
     <loc>http://localhost:1313/p/evernote-history/</loc>
     <lastmod>2024-08-12T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/t/list/</loc>
+    <lastmod>2024-08-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/p/cooking-list/</loc>
+    <lastmod>2024-08-09T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/t/dev/</loc>
     <lastmod>2024-08-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/p/how-to-favicon/</loc>
-    <lastmod>2024-08-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/t/note/</loc>
     <lastmod>2024-08-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/p/duolingo-user-growth/</loc>

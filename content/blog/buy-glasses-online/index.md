@@ -3,7 +3,6 @@ title: "如何在线配到好眼镜 👓，我的理论与实践"
 description: ""
 slug: "buy-glasses-online"
 tags: [
-    "skill",
     "note"
 ]
 date: "2024-10-18"

@@ -43,7 +43,9 @@ Foolow 创造了一种全新的（我不确定，但我之前没见过）内容�
 
 Follow 提供了 3 种 Feed Claim 验证方案，三种方案异曲同工，都是将 feedId 和 userId 添加到 Feed 的 RSS 代码中。选择其中一种即可。
 
-**Content**
+要拿到 feedId 和 userId 只需要先在 Follow 订阅你想 Claim 的 RSS Feed，然后右键点击该 Feed 后选择 Claim 即可。
+
+**方案一：Content**
 
 通过发布一篇带有 feedId 和 userId 的文章，内容可以使用 Follow 提供的：
 
@@ -51,9 +53,15 @@ Follow 提供了 3 种 Feed Claim 验证方案，三种方案异曲同工，都�
 This message is used to verify that this feed (feedId:00000000000000000) belongs to me (userId:00000000000000000). Join me in enjoying RSS on the next generation information browser https://follow.is.
 ```
 
+比如我直接在 X 和即刻中分别发布了一条带有对应 feedId 和 userId 的帖子，就完成了对我 X 和即刻的 Claim 验证。
+
+![](image-3.png)
+
+![](image-5.png)
+
 注意要保证这篇文章能够被渲染到最终生成的 RSS 文件中（可以通过检查最终生成的 RSS 文件内容来确定），所以最好不要将这篇文章隐藏。
 
-**Description**
+**方案二：Description**
 
 直接把 feedId 和 userId 加入到 RSS 代码的 `<description>` 标签中，RSS 代码中的 `<description>` 标签包含的内容一般是 Feed 正文内容，所以本质上还是在发布的内容中添加 feedId 和 userId（类似 Content 方案）。
 
@@ -67,7 +75,7 @@ feedId:00000000000000000+userId:00000000000000000
 
 所以建议采取第 3 种方式，直接修改 RSS 生成器，保证每次博客内容更新生成的 RSS 文件中都带有 feedId 和 userId。
 
-**RSS Tag**
+**方案三：RSS Tag**
 
 我的博客使用 [Hugo](https://gohugo.io/) 框架搭建，所以本文以此为例。
 
@@ -92,8 +100,6 @@ feedId:00000000000000000+userId:00000000000000000
 
 ![](image-4.png)
 
----
-
 注意：如果你使用 Hugo 官方提供的 RSS Template 代码，请务必注意其对于 Hugo 版本的最低要求。
 
 我在使用了 Hugo 官方提供的 RSS Template 代码后重新部署博客，在本地测试正常，部署到 Cloudflare Pages 就报错提示 `transform.XMLEscape` 方法异常，检查了 [Hugo Functions 说明文档](https://gohugo.io/functions/) 后发现 `transform.XMLEscape` 方法在 `v0.121.0` 版本进行了更新。
@@ -101,3 +107,16 @@ feedId:00000000000000000+userId:00000000000000000
 而我部署在 Cloudflare Pages 上使用的 Hugo 版本为 `v0.118.0`，在 Cloudflare Pages 项目设置中添加一个 `HUGO_VERSION` 的环境变量即可解决。
 
 ![](image-2.png)
+
+## Follow 邀请码
+
+这里会不定期放出新的邀请码，如果你还没有邀请码，可以时不时回来看看；如果你已经使用上 Follow 了，欢迎[在 Follow 订阅我的博客](https://app.follow.is/list/60574567261826048)并对其进行 Tip，从而让我获得更多 $Power 然后更快生成更多邀请码。😊
+
+| **Code** | **生成时间** | **使用状态** |
+| - | -  | - |
+| tkW0gLlrQT | 21 Oct, 2024 | ✅ |
+| HdJ17EqyLy | 30 Sep, 2024 | ❌ |
+| 98gmNhxZGz | 26 Sep, 2024 | ❌ |
+| oxt4yJZXcJ | 26 Sep, 2024 | ❌ |
+| Rf1IQXvt0r | 18 Sep, 2024 | ❌ |
+| dVnq8wr3wq | 13 Sep, 2024 | ❌ |

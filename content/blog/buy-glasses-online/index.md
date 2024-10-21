@@ -1,6 +1,6 @@
 ---
 title: "如何在线配到好眼镜，我的理论与实践"
-description: ""
+description: "本文是我自己在选择在线配眼镜时所做的一些功课的总结，也包含我的实践选择。"
 slug: "buy-glasses-online"
 tags: [
     "note"

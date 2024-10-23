@@ -25,6 +25,9 @@ In addition, I also have a cat 🐈 named [Sui Sui](/p/suisui).
 
 ## Pin
 
+- [如何在线配到好眼镜，我的理论与实践](/p/buy-glasses-online/)
+- [Follow 中如何 Claim 自己的博客](/p/follow-claim-feed/) 🎁
 - [译> 创始人模式](/p/founder-mode)
-- [我的 macOS 初始化配置方案 & 软件分享](/p/macos-setup)
 - [译> Duolingo 是如何重新点燃用户增长的](/p/duolingo-user-growth/)
+- [我的 Rime 输入法配置方案](/p/rime-setup/)
+- [NuPhy Air75 V2 Use Guide](/p/nuphy-air75-v2-use-guide-en/)

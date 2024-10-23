@@ -7,6 +7,8 @@ date: "2024-05-19"
 draft: false
 ---
 
+🔄 [English](/p/nuphy-air75-v2-use-guide-en/)
+
 ## 使用手册
 
 ⬇️ PDF：[NuPhy Air75 V2 Quick Guide](https://cdn.shopify.com/s/files/1/0268/7297/1373/files/NuPhy_Air75_V2_Quick_Guide.pdf?v=1696498123)
@@ -35,7 +37,7 @@ draft: false
 
 ## 更新固件
 
-> Link: [https://nuphy.com/pages/qmk-firmwares](https://nuphy.com/pages/qmk-firmwares)
+> 参考：[https://nuphy.com/pages/qmk-firmwares](https://nuphy.com/pages/qmk-firmwares)
 
 ### 准备工作
 
@@ -93,7 +95,7 @@ brew install qmk-toolbox
 
 ## 配置键盘
 
-> Link: [https://nuphy.com/pages/via-usage-guide-for-nuphy-keyboards](https://nuphy.com/pages/via-usage-guide-for-nuphy-keyboards)
+> 参考：[https://nuphy.com/pages/via-usage-guide-for-nuphy-keyboards](https://nuphy.com/pages/via-usage-guide-for-nuphy-keyboards)
 
 NuPhy Air75 V2 需要使用 [VIA](https://github.com/the-via) 来配置键盘键位以及录制宏等操作，NuPhy 官方说他们已经向 VIA 提交代码以使 VIA 可以直接自动检测到 NuPhy 键盘的基础配置。但是现在（2024.09.03）还不行，得等。
 

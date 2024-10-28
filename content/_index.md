@@ -25,6 +25,7 @@ In addition, I also have a cat 🐈 named [Sui Sui](/p/suisui).
 
 ## Pin
 
+- [译> 能写与不能写](/p/writes-and-write-nots/)
 - [如何在线配到好眼镜，我的理论与实践](/p/buy-glasses-online/)
 - [Follow 中如何 Claim 自己的博客](/p/follow-claim-feed/)
 - [译> 创始人模式](/p/founder-mode)

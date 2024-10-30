@@ -1,11 +1,13 @@
 +++
-title = "dofollow & nofollow"
+title = "如何使用 dofollow 和 nofollow 链接"
 description = "介绍什么是 dofollow 和 nofollow，以及如何正确的使用。"
 slug = "dofollow-and-nofollow"
 tags = ["SEO", "note"]
 date = "2024-05-27"
 draft = false
 +++
+
+🔄 [English](/p/dofollow-and-nofollow-en/)
 
 ## 什么是 dofollow 和 nofollow 链接？
 

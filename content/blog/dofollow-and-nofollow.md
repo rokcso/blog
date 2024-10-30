@@ -27,7 +27,7 @@ HTML 中 <a> 标签默认的属性是 dofollow，如果要标记为 nofollow 可
 
 ## 如何正确应用 dofollow 和 nofollow 链接？
 
-上面提到的权重本质上就是 [PageRank](craftdocs://open?blockId=CD09006B-0CCF-4E35-BF90-34650282AA0C&spaceId=e9983e66-9ce7-993a-ad36-dd817783b2b8)（也被称为 PR 值），是搜索引擎排名的重要指标之一。PR 值只能通过 dofollow 链接传递，不能通过 nofollow 链接传递。
+上面提到的权重本质上就是 PageRank（也被称为 PR 值），是搜索引擎排名的重要指标之一。PR 值只能通过 dofollow 链接传递，不能通过 nofollow 链接传递。
 
 并且 PR 值的分配是根据页面上搜索链接来平均分配的，不论这个链接是否允许 follow，比如当前页面的 PR 值为 10，页面中有 10 个链接（5 个 dofollow 和 5 个 nofollow），那么每个 dofollow 链接将分别获得 1 PR 值传递，而不是 2；该页面的 10 PR 值被平均分给了该页面中的所有 10 个链接，只是其中标记为 nofollow 的链接不会获得对应的 PR 值传递。
 
@@ -45,7 +45,6 @@ HTML 中 <a> 标签默认的属性是 dofollow，如果要标记为 nofollow 可
 
 建设外链最核心的三步转化：1）你的网站被看见、2）你的网站被喜欢、3）你的网站被分享。
 
----
+## 参考
 
-参考：
 - [https://ahrefs.com/blog/zh/nofollow-links/](https://ahrefs.com/blog/zh/nofollow-links/)

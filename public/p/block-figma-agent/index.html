@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
-<title>Rokcso&#39;s blog</title>
-<meta name="title" content="Rokcso&#39;s blog" />
-<meta name="description" content="" />
-<meta name="keywords" content="" />
+<link rel="shortcut icon" href="https://rokcso.com/images/favicon.png" />
+<title>macOS 彻底阻止 FigmaAgent.app 被添加到登录项 | Rokcso&#39;s blog</title>
+<meta name="title" content="macOS 彻底阻止 FigmaAgent.app 被添加到登录项" />
+<meta name="description" content="如何让 macOS 下的 FigmaAgent.app 不再频繁自动添加到登录项中。" />
+<meta name="keywords" content="skill,macOS," />
 
 
-<meta property="og:url" content="http://localhost:1313/p/">
+<meta property="og:url" content="https://rokcso.com/p/block-figma-agent/">
   <meta property="og:site_name" content="Rokcso&#39;s blog">
-  <meta property="og:title" content="Rokcso&#39;s blog">
-  <meta property="og:description" content="Rokcso&#39;s blog. Record life, write, create.">
+  <meta property="og:title" content="macOS 彻底阻止 FigmaAgent.app 被添加到登录项">
+  <meta property="og:description" content="如何让 macOS 下的 FigmaAgent.app 不再频繁自动添加到登录项中。">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
-    <meta property="og:image" content="http://localhost:1313/images/share.png">
+    <meta property="article:published_time" content="2024-06-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-06-03T00:00:00+00:00">
+    <meta property="article:tag" content="Skill">
+    <meta property="article:tag" content="MacOS">
+    <meta property="og:image" content="https://rokcso.com/images/share.png">
 
 
 
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
-  <meta name="twitter:title" content="Rokcso&#39;s blog">
-  <meta name="twitter:description" content="Rokcso&#39;s blog. Record life, write, create.">
+  <meta name="twitter:image" content="https://rokcso.com/images/share.png">
+  <meta name="twitter:title" content="macOS 彻底阻止 FigmaAgent.app 被添加到登录项">
+  <meta name="twitter:description" content="如何让 macOS 下的 FigmaAgent.app 不再频繁自动添加到登录项中。">
 
 
 
 
-  <meta itemprop="name" content="Rokcso&#39;s blog">
-  <meta itemprop="description" content="Rokcso&#39;s blog. Record life, write, create.">
-  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="name" content="macOS 彻底阻止 FigmaAgent.app 被添加到登录项">
+  <meta itemprop="description" content="如何让 macOS 下的 FigmaAgent.app 不再频繁自动添加到登录项中。">
+  <meta itemprop="datePublished" content="2024-06-03T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-06-03T00:00:00+00:00">
+  <meta itemprop="wordCount" content="35">
+  <meta itemprop="image" content="https://rokcso.com/images/share.png">
+  <meta itemprop="keywords" content="Skill,MacOS">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -273,10 +281,41 @@
 </nav>
 </header>
   <main>  
-<h1></h1>
+<h1>macOS 彻底阻止 FigmaAgent.app 被添加到登录项</h1>
 
-<content>  </content>
 <p>
+  <i>
+    <time datetime='2024-06-03' pubdate>
+      03 Jun, 2024
+    </time>
+  </i>
+</p>
+
+<content> <blockquote>
+<p>我的 macOS 版本：Sonoma 14.5</p>
+</blockquote>
+<p>在使用 Figma macOS 客户端时，总有一个 FigmaAgent.app 被自动添加到登录项，即使在「系统设置 - 通用 - 登录项」中手动删除该项目，再次打开 Figma 依然会自动添加，这很烦人。😡</p>
+<p><img src="image.png" alt="alt text"></p>
+<h2 id="解决方案">解决方案</h2>
+<ol>
+<li>打开「活动监视器」，找到 FigmaAgent，选中后点击「停止（退出）」后选择「强制退出」。</li>
+</ol>
+<p><img src="image-1.png" alt="alt text"></p>
+<ol start="2">
+<li>访问「系统设置 - 通用 - 登录项」，删除 FigmaAgent.app。</li>
+<li>打开「访达」，进入 <code>~/Library/Application Support/Figma</code> 文件夹，删除 FigmaAgent.app。</li>
+</ol>
+<p><img src="image-2.png" alt="alt text"></p>
+<ol start="4">
+<li>打开「访达」，进入 <code>/Applications/Figma.app/Contents/Library</code> 文件夹，删除 FigmaAgent.app。</li>
+</ol>
+<p>完成！✅</p>
+ </content>
+<p>
+  
+  <a href="https://rokcso.com/t/skill/">#Skill</a>
+  
+  <a href="https://rokcso.com/t/macos/">#MacOS</a>
   
 </p>
 

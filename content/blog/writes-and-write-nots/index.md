@@ -3,7 +3,7 @@ title: "译> 写作与不写作"
 description: "文章预测未来几十年内，由于AI技术的发展，人们将不再需要自己写作，导致社会将分为能写和不能写两类人，这将影响人们的思考能力。"
 slug: "writes-and-write-nots"
 tags: [
-    "skill"
+    "translation"
 ]
 date: "2024-10-28"
 draft: false

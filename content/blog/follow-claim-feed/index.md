@@ -10,6 +10,8 @@ draft: false
 hidden: false
 ---
 
+🔄 [English](/p/follow-claim-feed-en/)
+
 [Follow](https://github.com/RSSNext/Follow) 是一个 RSS 阅读器，除了提供绝大多数 RSS 阅读器都具备的功能之外，Follow 还做了一件非常划时代的事情。
 
 ## $POWER
@@ -35,7 +37,7 @@ Follow 用户可以通过 Power 对订阅的 RSS Feed 进行打赏，而 RSS Fee
 
 ![](image-1.png)
 
-Foolow 创造了一种全新的（我不确定，但我之前没见过）内容消费和创作者收益模式。如果你是一名内容创作者，你可以通过在 Follow Claim 自己的 Feed 以领取别人给你打赏的 Power。
+Follow 创造了一种全新的（我不确定，但我之前没见过）内容消费和创作者收益模式。如果你是一名内容创作者，你可以通过在 Follow Claim 自己的 Feed 以领取别人给你打赏的 Power。
 
 如果你没有 Claim 你的 Feed，该 Feed 所收到的所有 Power 打赏都将被安全地保存在区块链合同中，直到 Feed 被 Claim。
 

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>教程&gt; 如何在 Cloudflare 部署 Sink 短链接服务 | Rokcso&#39;s blog</title>
+<meta name="title" content="教程&gt; 如何在 Cloudflare 部署 Sink 短链接服务" />
+<meta name="description" content="比较详细的记录了如何在 Cloudflare 自部署 Sink 短链接服务的教程。" />
+<meta name="keywords" content="skill," />
+
+
+<meta property="og:url" content="http://localhost:1313/p/deploy-sink/">
+  <meta property="og:site_name" content="Rokcso&#39;s blog">
+  <meta property="og:title" content="教程&gt; 如何在 Cloudflare 部署 Sink 短链接服务">
+  <meta property="og:description" content="比较详细的记录了如何在 Cloudflare 自部署 Sink 短链接服务的教程。">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-11-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-11-19T00:00:00+00:00">
+    <meta property="article:tag" content="Skill">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="教程&gt; 如何在 Cloudflare 部署 Sink 短链接服务">
+  <meta name="twitter:description" content="比较详细的记录了如何在 Cloudflare 自部署 Sink 短链接服务的教程。">
+
+
+
+
+  <meta itemprop="name" content="教程&gt; 如何在 Cloudflare 部署 Sink 短链接服务">
+  <meta itemprop="description" content="比较详细的记录了如何在 Cloudflare 自部署 Sink 短链接服务的教程。">
+  <meta itemprop="datePublished" content="2024-11-19T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-11-19T00:00:00+00:00">
+  <meta itemprop="wordCount" content="243">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Skill">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  img[src*="#minipic"] {
+    max-width: 50%;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+  }
+
+  i {
+    font-style: normal;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+    border-radius: 4px;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 4px solid #999;
+    color: #222;
+    margin: 0;
+    padding-left: 10px;
+    font-style: italic;
+  }
+
+  blockquote p {
+    margin: 0;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+    margin-top: 50px;
+    font-size: small;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+  ul li p {
+    margin: 0;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+  @media (max-width: 500px) {
+    img[src*="#minipic"] {
+      max-width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h1>Rokcso&#39;s blog</h1>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/now/">Now</a>
+
+<a href="/projects/">Projects</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>  
+<h1>教程&gt; 如何在 Cloudflare 部署 Sink 短链接服务</h1>
+
+<p>
+  <i>
+    <time datetime='2024-11-19' pubdate>
+      19 Nov, 2024
+    </time>
+  </i>
+</p>
+
+<content> <blockquote>
+<p>注意：本文存在时效性，文章所述内容不一定符合最新情况。</p>
+</blockquote>
+<p>半年前注册 rokcso.com 这个域名的时候就一起注册了 rok.ink 这个域名用来作为个人短链接服务域名。最开始我也尝试过自己开发一套短链接服务，实现了最基本的超链接重定向功能，但是稳定性、响应速度都不够好，链接管理麻烦，还缺乏基本的访问统计。</p>
+<p>后来发现了 <a href="https://x.com/ccbikai">@ccbikai</a> 开源的 <a href="https://github.com/ccbikai/Sink">Sink</a>，一个完全基于 Cloudflare 的带访问统计的短链接服务，对我来说非常完美！于是开始部署，Sink 的 README 文档中关于如何部署写得比较简洁，但是有提供一个详细的 <a href="https://www.youtube.com/watch?v=MkU23U2VE9E">视频演示</a>，下文是我的部署全过程。</p>
+<h2 id="部署过程">部署过程</h2>
+<p>首先将 <a href="https://github.com/ccbikai/Sink">Sink 官方仓库</a> Fork 到自己的 GitHub 中，然后登录 Cloudflare 前往 Workers &amp; Pages -&gt; Overview，点击 Create -&gt; Pages -&gt; Connect to Git，选择刚刚 Fork 的 Sink 仓库（需要在 Cloudflare 上添加 GitHub 账户授权），随后点击 Begin setup 开始进行一些基础的项目配置（参考本文 <a href="/p/deploy-sink#%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE">项目基础配置</a> 章节），配置完成后点击 Save and deploy 等待项目部署。</p>
+<p>项目部署完成后 Cloudflare 会给这个项目分配一个域名（非常建议给该项目设置一个自定义域名，参考 <a href="https://developers.cloudflare.com/pages/configuration/custom-domains/">Custom domains</a> 进行），访问该域名就是我们部署的 Sink 首页，点击 Dashboard 进入登录页面，在 Site Token 处输入刚刚配置的 <code>NUXT_SITE_TOKEN</code> 的值即可登录 Sink 后台。但是现在我们部署的 Sink 还不能正常工作，还有一些配置没有完成。</p>
+<p>接下来前往 Cloudflare 中的 Workers &amp; Pages -&gt; KV，点击 Create a namespace，自定义一个 Namespace Name 后点击 Add 即可。然后前往 Workers &amp; Pages -&gt; Overview 进入刚刚部署的 Sink 项目，选择 Settings -&gt; Bindings -&gt; Add -&gt; KV namespace，输入 Variable name 为 <code>KV</code>，选择刚刚创建的 KV namespace，点击 Save。</p>
+<p>继续选择该项目的 Settings -&gt; Bindings -&gt; Add -&gt; Workers AI，输入 Variable name 为 <code>AI</code>，点击 Save。</p>
+<p>然后在 Workers &amp; Pages -&gt; Overview 页面右侧的 Account details 中找到 Analytics Engine，点击 Set up -&gt; Enable Analytics Engine。回到该项目的 Settings -&gt; Bindings -&gt; Add -&gt; Analytics engine，输入 Variable name 为 <code>ANALYTICS</code>，输入 Dataset 为 <code>sink</code>，点击 Save。</p>
+<p>最后回到该项目的 Deployments 页面，选择最新的一个部署记录点击 View details，页面右上角点击 Manage deployment -&gt; Retry deployment，等待项目重新部署完成。</p>
+<p>至此，Sink 就自部署完成 🎉，访问 Cloudflare 为该项目分配的域名或者我们为该项目设置的自定义域名，即可开始使用。</p>
+<h3 id="项目基础配置">项目基础配置</h3>
+<p>项目基本信息（名称、分支）默认即可，Build Settings 中的 Framework preset 选择 Nuxt.js。然后开始配置环境变量，一共有 3 个环境变量：</p>
+<p><img src="sink-02.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>环境变量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NUXT_SITE_TOKEN</code></td>
+<td>该值可完全自定义，不少于 8 个字符即可，是作为登录部署好的 Sink 后台的密码。</td>
+</tr>
+<tr>
+<td><code>NUXT_CF_ACCOUNT_ID</code></td>
+<td>Cloudflare 的 Account ID，参考 <a href="https://developers.cloudflare.com/fundamentals/setup/find-account-and-zone-ids/">Find zone and account IDs</a> 获取。</td>
+</tr>
+<tr>
+<td><code>NUXT_CF_API_TOKEN</code></td>
+<td>Cloudflare 的 API Token，参考 <a href="https://developers.cloudflare.com/fundamentals/api/get-started/create-token/">Create API token</a> 获取。</td>
+</tr>
+</tbody>
+</table>
+<p>获取 API Token 官方的指南比较全面、复杂，简单的步骤就是：前往 Cloudflare 中的 My Profile -&gt; API Tokens，点击 Create Token，选择页面底部的 Create Custom Token，然后开始配置 API 权限。Token name 自定义，其他默认，只需要保证 Permissions 项选择 <code>Account - Account Analytics - Read</code> 即可。</p>
+<p><img src="sink-01.png" alt=""></p>
+ </content>
+<p>
+  
+  <a href="http://localhost:1313/t/skill/">#Skill</a>
+  
+</p>
+
+  </main>
+  <footer>Subscribe via <a href="/index.xml">RSS</a> or just
+  <a href="mailto:rokcsox@gmail.com">say hello</a>.
+<br />
+Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo Bear</a>.</footer>
+
+    
+</body>
+
+</html>

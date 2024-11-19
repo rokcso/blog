@@ -31,3 +31,5 @@ In addition, I also have a cat 🐈 named [Sui Sui](/p/suisui).
 - [Follow 中如何 Claim 自己的博客](/p/follow-claim-feed/)
 - [我的 Rime 输入法配置方案](/p/rime-setup/)
 - [NuPhy Air75 V2 Use Guide](/p/nuphy-air75-v2-use-guide-en/)
+
+🤝 All images are compressed using [Zipic](https://rok.ink/zipic).

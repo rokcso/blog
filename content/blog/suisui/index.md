@@ -3,6 +3,7 @@ title: "🐈 Sui Sui"
 description: "关于我的猫咪岁岁的记录。"
 slug: "suisui"
 tags: [
+    "suisui"
 ]
 date: ""
 draft: false

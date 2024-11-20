@@ -32,4 +32,4 @@ In addition, I also have a cat 🐈 named [Sui Sui](/p/suisui).
 - [我的 Rime 输入法配置方案](/p/rime-setup/)
 - [NuPhy Air75 V2 Use Guide](/p/nuphy-air75-v2-use-guide-en/)
 
-🤝 All images are compressed using [Zipic](https://rok.ink/zipic).
+All images are compressed using 🤝 [Zipic](https://rok.ink/zipic).

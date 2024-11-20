@@ -19,9 +19,6 @@ ignoreErrors = ["error-disable-taxonomy"]
   blog = "/p/:slug/"
   tags = "/t/:slug"
 
-
-
-
 [params]
   # The "description" of your website. This is used in the meta data of your generated html.
   description = "Rokcso's blog. Record life, write, create."
@@ -52,7 +49,6 @@ ignoreErrors = ["error-disable-taxonomy"]
   # 8601](https://en.wikipedia.org/wiki/ISO_8601) format:
   # dateFormat = "2006-01-02"
 
-
 [markup]
   [markup.highlight]
     style = "catppuccin-latte"
@@ -60,4 +56,5 @@ ignoreErrors = ["error-disable-taxonomy"]
     [markup.goldmark.renderer]
       hardWraps = true
       unsafe = false
+
 

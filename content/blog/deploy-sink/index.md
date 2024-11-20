@@ -45,3 +45,16 @@ hidden: false
 获取 API Token 官方的指南比较全面、复杂，简单的步骤就是：前往 Cloudflare 中的 My Profile -> API Tokens，点击 Create Token，选择页面底部的 Create Custom Token，然后开始配置 API 权限。Token name 自定义，其他默认，只需要保证 Permissions 项选择 `Account - Account Analytics - Read` 即可。
 
 ![](sink-01.png)
+
+## 自定义 Sink 首页
+
+部署的 Sink 首页默认为 Sink 官方介绍页，可以通过配置环境变量 `NUXT_HOME_URL` 将 Sink 首页指定为任意网址。
+
+前往 Cloudflare 上该项目的 Settings -> Variables and Secrets -> Add，选择 Type 为 `Text`，输入 Variable name 为 `NUXT_HOME_URL`，输入 Value 为想要设定的 Sink 首页的 URL。比如我将 Value 设定为我的博客 URL，当访问我部署的 Sink 首页（`rok.ink`）时就会被重定向到我的博客。
+
+![](sink-03.png)
+
+注意：
+
+1. 新增/修改环境变量之后需要在 Cloudflare 重新执行一次部署才会生效。
+2. 更换 Sink 首页后，要访问 Sink 后台就直接在 Sink 首页 URL 后拼接一个 `/dashboard` 访问即可。

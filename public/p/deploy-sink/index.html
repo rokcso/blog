@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="https://rokcso.com/images/favicon.png" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
 <title>教程&gt; 如何在 Cloudflare 部署 Sink 短链接服务 | Rokcso&#39;s blog</title>
 <meta name="title" content="教程&gt; 如何在 Cloudflare 部署 Sink 短链接服务" />
 <meta name="description" content="比较详细的记录了如何在 Cloudflare 自部署 Sink 短链接服务的教程。" />
 <meta name="keywords" content="skill," />
 
 
-<meta property="og:url" content="https://rokcso.com/p/deploy-sink/">
+<meta property="og:url" content="http://localhost:1313/p/deploy-sink/">
   <meta property="og:site_name" content="Rokcso&#39;s blog">
   <meta property="og:title" content="教程&gt; 如何在 Cloudflare 部署 Sink 短链接服务">
   <meta property="og:description" content="比较详细的记录了如何在 Cloudflare 自部署 Sink 短链接服务的教程。">
@@ -22,13 +22,13 @@
     <meta property="article:published_time" content="2024-11-19T00:00:00+00:00">
     <meta property="article:modified_time" content="2024-11-19T00:00:00+00:00">
     <meta property="article:tag" content="Skill">
-    <meta property="og:image" content="https://rokcso.com/images/share.png">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
 
 
 
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://rokcso.com/images/share.png">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
   <meta name="twitter:title" content="教程&gt; 如何在 Cloudflare 部署 Sink 短链接服务">
   <meta name="twitter:description" content="比较详细的记录了如何在 Cloudflare 自部署 Sink 短链接服务的教程。">
 
@@ -39,8 +39,8 @@
   <meta itemprop="description" content="比较详细的记录了如何在 Cloudflare 自部署 Sink 短链接服务的教程。">
   <meta itemprop="datePublished" content="2024-11-19T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-11-19T00:00:00+00:00">
-  <meta itemprop="wordCount" content="243">
-  <meta itemprop="image" content="https://rokcso.com/images/share.png">
+  <meta itemprop="wordCount" content="297">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
   <meta itemprop="keywords" content="Skill">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -110,7 +110,20 @@
   }
 
   table {
-    width: 100%;
+    width: 100%;  
+    border-collapse: collapse;  
+    border: 1px solid #444;  
+     
+  }
+
+  th,
+  td {
+    border: 1px solid #444;  
+    padding: 4px;  
+  }
+
+  th {
+    background-color: #f2f2f2;  
   }
 
   img {
@@ -328,10 +341,19 @@
 </table>
 <p>获取 API Token 官方的指南比较全面、复杂，简单的步骤就是：前往 Cloudflare 中的 My Profile -&gt; API Tokens，点击 Create Token，选择页面底部的 Create Custom Token，然后开始配置 API 权限。Token name 自定义，其他默认，只需要保证 Permissions 项选择 <code>Account - Account Analytics - Read</code> 即可。</p>
 <p><img src="sink-01.png" alt=""></p>
+<h2 id="自定义-sink-首页">自定义 Sink 首页</h2>
+<p>部署的 Sink 首页默认为 Sink 官方介绍页，可以通过配置环境变量 <code>NUXT_HOME_URL</code> 将 Sink 首页指定为任意网址。</p>
+<p>前往 Cloudflare 上该项目的 Settings -&gt; Variables and Secrets -&gt; Add，选择 Type 为 <code>Text</code>，输入 Variable name 为 <code>NUXT_HOME_URL</code>，输入 Value 为想要设定的 Sink 首页的 URL。比如我将 Value 设定为我的博客 URL，当访问我部署的 Sink 首页（<code>rok.ink</code>）时就会被重定向到我的博客。</p>
+<p><img src="sink-03.png" alt=""></p>
+<p>注意：</p>
+<ol>
+<li>新增/修改环境变量之后需要在 Cloudflare 重新执行一次部署才会生效。</li>
+<li>更换 Sink 首页后，要访问 Sink 后台就直接在 Sink 首页 URL 后拼接一个 <code>/dashboard</code> 访问即可。</li>
+</ol>
  </content>
 <p>
   
-  <a href="https://rokcso.com/t/skill/">#Skill</a>
+  <a href="http://localhost:1313/t/skill/">#Skill</a>
   
 </p>
 

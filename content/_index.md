@@ -17,13 +17,13 @@ I write [some texts](/blog), about life, technology, and curiosity, among other 
 
 In addition, I also have a cat 🐈 named [Sui Sui](/p/suisui).
 
-## Some links
+## 🌲 Explore
 
 - [X/Twitter](https://x.com/rokcso/)
 - [GitHub](https://github.com/rokcso/)
 - [Jike](https://okjk.co/RqK5zW)
 
-## Pin
+## 💘 Pin
 
 - [个人向的中文文案排版指北](/p/chinese-copywriting-guidelines/)
 - [译> 写作与不写作](/p/writes-and-write-nots/)
@@ -32,4 +32,4 @@ In addition, I also have a cat 🐈 named [Sui Sui](/p/suisui).
 - [我的 Rime 输入法配置方案](/p/rime-setup/)
 - [NuPhy Air75 V2 Use Guide](/p/nuphy-air75-v2-use-guide-en/)
 
-All images are compressed using 🤝 [Zipic](https://rok.ink/zipic).
+All images are compressed using [Zipic](https://rok.ink/zipic). More 🧰 [tools](/p/tools-en/) help me create.

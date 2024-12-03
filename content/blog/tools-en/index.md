@@ -1,15 +1,15 @@
 ---
 title: "Black Friday Recommended Software"
 description: ""
-slug: "coupon-list-en"
+slug: "tools-en"
 tags: [
 ]
-date: "2024-11-21"
+date: ""
 draft: false
 hidden: true
 ---
 
-🔄 [简体中文](/p/coupon-list/)
+🔄 [简体中文](/p/tools/)
 
 ## [Raycast](https://rok.ink/raycast)
 

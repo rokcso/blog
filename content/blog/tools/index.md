@@ -1,15 +1,15 @@
 ---
 title: "黑色星期五优质软件推荐"
 description: ""
-slug: "coupon-list"
+slug: "tools"
 tags: [
 ]
-date: "2024-11-21"
+date: ""
 draft: false
 hidden: true
 ---
 
-🔄 [English](/p/coupon-list-en/)
+🔄 [English](/p/tools-en/)
 
 ## [Raycast](https://rok.ink/raycast)
 

@@ -1,5 +1,5 @@
 ---
-title: "教程> 如何在 Cloudflare 部署 Sink 短链接服务"
+title: "如何在 Cloudflare 部署 Sink 短链接服务"
 description: "比较详细的记录了如何在 Cloudflare 自部署 Sink 短链接服务的教程。"
 slug: "deploy-sink"
 tags: ["skill"]

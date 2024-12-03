@@ -7,9 +7,7 @@ title = ""
 
 # Hi! 👋 This is Rokcso.
 
-🔥 [The software I love, and their discounts.](/p/coupon-list-en) 🔥
-
-### I'm a maker of things, rider of [motorcycle](https://www.honda.co.jp/CROSSCUB/), and like [cooking](/t/cooking/).
+**I'm a maker of things, rider of [motorcycle](https://www.honda.co.jp/CROSSCUB/), and like [cooking](/t/cooking/).**
 
 Live in [Hangzhou](https://zh.wikipedia.org/wiki/%E6%9D%AD%E5%B7%9E%E5%B8%82), an ancient, beautiful and comfortable city in China.
 

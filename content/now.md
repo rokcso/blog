@@ -7,20 +7,17 @@ menu = "main"
 
 This is a snapshot of my current endeavors and focal points. Inspired by [nownownow.com](https://nownownow.com/about).
 
-> Last updated on 2024-10-18, Hangzhou, China.
+> Last updated on 2024-12-11, Hangzhou, China.
 
 ## Life
 
-Hangzhou has already entered autumn, and as you walk through the streets and alleys, you can constantly smell the fragrance of osmanthus flowers. Autumn is a very comfortable season, just as the saying goes, "the autumn sky is crisp and clear."
+Hangzhou has officially entered the winter climate, with temperatures below 10°C. According to past experience, Hangzhou's winter is usually overcast and rainy on weekdays, while weekends are sunny, of course, this may just be describing my mood.
 
-Unfortunately, due to the National Day holiday adjustment, I haven't had a normal weekend off for almost a month, so I haven't been able to find time to enjoy this season's motorcycle riding. This should be the last comfortable period for riding this year.
-
-This weekend, I'm planning to give [Sui Sui](/p/suisui) his last bath of the year. I usually only bathe him twice a year, once in spring and once in autumn.
+Last night, I made a small house for [Sui Sui](/p/suisui) using discarded express delivery boxes, inside of which is his exclusive little bed and a winter-fleece bedding set. He loves it very much and now goes to sleep in it every night.
 
 ## Projects
 
-My [pansou.vip](https://www.pansou.vip/?utm_source=rokcso.com/) project has started to generate income this month, but not from Google AdSense or paid inclusions, rather from product affiliate marketing.
+pansou.vip is undergoing a 3.0 upgrade and will become a brand new brand: [Pan Hunt](https://panhunt.com/?utm_source=rokcso.com). There are two reasons for this:
 
-The products distributed are mainly aimed at helping users earn side income. This once again confirms the saying, "It's better to sell shovels than to dig for gold."
-
-I plan to start disclosing some of my side income data to a certain extent from next month.
+1. The technical architecture of pansouvip needs to be upgraded again, as the previous versions are becoming increasingly difficult to maintain. This time, I worked with Cursor and Windsurf to complete many technical optimizations quickly.
+2. I realized that the `.vip` domain name is SEO unfriendly, possibly due to too many black industries using this domain suffix.

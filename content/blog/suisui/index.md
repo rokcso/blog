@@ -16,4 +16,8 @@ He is already two years old, very healthy, but occasionally suffers from a sligh
 
 He is quite a big guy, weighing a whopping 5.2 kg!
 
-![](image.jpg#minipic)
+![](suisui-and-his-favorite-plant.jpeg#minipic)
+
+I made a small house for Sui Sui using discarded express delivery boxes, inside of which is his exclusive little bed and a winter-fleece bedding set. He loves it very much and now goes to sleep in it every night.
+
+![](suisui-bedroom.jpeg#minipic)

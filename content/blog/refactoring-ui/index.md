@@ -11,7 +11,7 @@ draft: false
 hidden: true
 ---
 
-> 本文由 AI 翻译，人工修正。
+> 本文由 AI 翻译，[rokcso](https://rokcso.com/) 修正。
 >
 > 原文链接：[https://www.refactoringui.com/](https://www.refactoringui.com/)
 

@@ -10,7 +10,7 @@ date: "2024-08-12"
 draft: false
 ---
 
-> 本文由 AI 翻译，人工修正。
+> 本文由 AI 翻译，[rokcso](https://rokcso.com/) 修正。
 >
 > 原文链接：[https://nira.com/evernote-history](https://nira.com/evernote-history/)
 

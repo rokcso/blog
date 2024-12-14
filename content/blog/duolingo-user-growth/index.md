@@ -10,7 +10,7 @@ date: "2024-08-08"
 draft: false
 ---
 
-> 本文由 AI 翻译，人工修正。
+> 本文由 AI 翻译，[rokcso](https://rokcso.com/) 修正。
 >
 > 原文链接：[https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth](https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth)
 

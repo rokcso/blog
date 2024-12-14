@@ -9,7 +9,7 @@ date: "2024-09-03"
 draft: false
 ---
 
-> 本文由 AI 翻译，人工修正。
+> 本文由 AI 翻译，[rokcso](https://rokcso.com/) 修正。
 >
 > 原文链接：[https://paulgraham.com/foundermode.html](https://paulgraham.com/foundermode.html)
 

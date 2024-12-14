@@ -10,7 +10,7 @@ draft: false
 hidden: false
 ---
 
-> 本文由人工翻译，AI 修正。
+> 本文由 [rokcso](https://rokcso.com/) 翻译，AI 修正。
 >
 > 原文链接：[https://paulgraham.com/writes.html](https://paulgraham.com/writes.html)
 

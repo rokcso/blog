@@ -115,7 +115,7 @@ And the Hugo version I use deployed on Cloudflare Pages is `v0.118.0`, adding an
 
 24 Oct, 2024: Follow has opened public beta, and you can register and use it without an invitation code.
 
-~~Here, new invitation codes will be released irregularly. If you don't have an invitation code, you can come back to check occasionally; if you have already started using Follow, welcome to [subscribe to my blog on Follow](https://app.follow.is/list/60574567261826048) and tip it, so that I can get more $Power and generate more invitation codes faster. 😊~~
+~~Here, new invitation codes will be released irregularly. If you don't have an invitation code, you can come back to check occasionally; if you have already started using Follow, welcome to [subscribe to my blog on Follow](https://rokcso.com/index.xml) and tip it, so that I can get more $Power and generate more invitation codes faster. 😊~~
 
 | **Code** | **Generation Time** | **Status** |
 | - | -  | - |

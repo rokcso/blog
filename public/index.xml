@@ -14,7 +14,7 @@
     </follow_challenge>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Understanding the search engine&#39;s Crawl Budget</title>
+      <title>Understanding the Search Engine&#39;s Crawl Budget</title>
       <link>http://localhost:1313/p/crawl-budget-en/</link>
       <pubDate>Tue, 17 Dec 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/p/crawl-budget-en/</guid>

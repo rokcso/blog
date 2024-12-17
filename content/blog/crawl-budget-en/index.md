@@ -1,5 +1,5 @@
 ---
-title: "Understanding the search engine's Crawl Budget"
+title: "Understanding the Search Engine's Crawl Budget"
 description: "Learn how to effectively manage your website's crawl budget to improve search engine visibility. Explore strategies to enhance your website's indexing rate, ensuring that important pages are prioritized by search engines."
 slug: "crawl-budget-en"
 tags: ["SEO", "note"]

@@ -1,30 +1,30 @@
-# Base URL used when generating links to your pages
-# Set to the URL for your site
+# 生成页面链接时使用的基本 URL
+# 设置为你网站的 URL
 baseURL = "https://rokcso.com/"
 theme = "hugo-bearblog"
 
-# Basic metadata configuration for your blog.
+# 你的博客的基本元数据配置
 title = "Rokcso's blog"
 author = "Rokcso"
 copyright = "Copyright © 2024, Rokcso."
 languageCode = "en-US"
 
-# Generate a nice robots.txt for SEO
+# 为 SEO 生成一个优秀的 robots.txt
 enableRobotsTXT = true
 
 # Generate "Bearblog"-like URLs !only!, see https://bearblog.dev/.
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 [permalinks]
-  blog = "/p/:slug/"
+  blog = "/p/:slug"
   tags = "/t/:slug"
 
 [params]
-  # The "description" of your website. This is used in the meta data of your generated html.
+  # 你的网站描述，这用于你生成的 HTML 的元数据中
   description = "Rokcso's blog. Record life, write, create."
 
-  # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
-  # Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.
+  # 你的 favicon 文件的路径，这应该是一个至少为 32px x 32px 的正方形 png 文件
+  # 提示：最好将 favicon.ico 文件放入你的 static 文件夹中
   favicon = "images/favicon.png"
 
   # These "images" are used for the structured data templates. This will show up, when
@@ -38,8 +38,8 @@ ignoreErrors = ["error-disable-taxonomy"]
   # See https://ogp.me/ and https://gohugo.io/templates/internal#open-graph.
   title = "Rokcso's blog"
 
-  # This theme will, by default, inject a made-with-line at the bottom of the page.
-  # You can turn it off, but we would really appreciate if you don’t :-).
+  # 默认情况下，此主题将在页面底部注入一条 made-with-line
+  # 你可以关闭它，但如果你不这样做，我们将非常感激 :-)
   # hideMadeWithLine = true
 
   # By default, this theme displays dates with a format like "02 Jan, 2006", but

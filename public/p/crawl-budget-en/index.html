@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Understanding the search engine&#39;s Crawl Budget | Rokcso&#39;s blog</title>
+<meta name="title" content="Understanding the search engine&#39;s Crawl Budget" />
+<meta name="description" content="Learn how to effectively manage your website&#39;s crawl budget to improve search engine visibility. Explore strategies to enhance your website&#39;s indexing rate, ensuring that important pages are prioritized by search engines." />
+<meta name="keywords" content="SEO,note," />
+
+
+<meta property="og:url" content="http://localhost:1313/p/crawl-budget-en/">
+  <meta property="og:site_name" content="Rokcso&#39;s blog">
+  <meta property="og:title" content="Understanding the search engine&#39;s Crawl Budget">
+  <meta property="og:description" content="Learn how to effectively manage your website&#39;s crawl budget to improve search engine visibility. Explore strategies to enhance your website&#39;s indexing rate, ensuring that important pages are prioritized by search engines.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-12-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-17T00:00:00+00:00">
+    <meta property="article:tag" content="SEO">
+    <meta property="article:tag" content="Note">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Understanding the search engine&#39;s Crawl Budget">
+  <meta name="twitter:description" content="Learn how to effectively manage your website&#39;s crawl budget to improve search engine visibility. Explore strategies to enhance your website&#39;s indexing rate, ensuring that important pages are prioritized by search engines.">
+
+
+
+
+  <meta itemprop="name" content="Understanding the search engine&#39;s Crawl Budget">
+  <meta itemprop="description" content="Learn how to effectively manage your website&#39;s crawl budget to improve search engine visibility. Explore strategies to enhance your website&#39;s indexing rate, ensuring that important pages are prioritized by search engines.">
+  <meta itemprop="datePublished" content="2024-12-17T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-12-17T00:00:00+00:00">
+  <meta itemprop="wordCount" content="812">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="SEO,Note">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;  
+    border-collapse: collapse;  
+    border: 1px solid #999;  
+    border-radius: 4px;
+     
+  }
+
+  th,
+  td {
+    border: 1px solid #999;  
+    padding: 4px;  
+  }
+
+  th {
+    background-color: #f2f2f2;  
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #999;
+    border-radius: 4px;
+  }
+
+  img[src*="#minipic"] {
+    max-width: 50%;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+    border: 1px solid #999;
+    border-radius: 4px;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+  }
+
+  i {
+    font-style: normal;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+    border-radius: 4px;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 2px solid #999;
+    color: #999;
+    margin: 0;
+    padding-left: 10px;
+    font-style: normal;
+  }
+
+  blockquote p {
+    margin: 0;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+    margin-top: 50px;
+    font-size: small;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+  ul li p {
+    margin: 0;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+  @media (max-width: 500px) {
+    img[src*="#minipic"] {
+      max-width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid #999;
+      border-radius: 4px;
+    }
+  }
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h1>Rokcso&#39;s blog</h1>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/now/">Now</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>  
+<h1>Understanding the search engine&#39;s Crawl Budget</h1>
+
+<p>
+  <i>
+    <time datetime='2024-12-17' pubdate>
+      17 Dec, 2024
+    </time>
+  </i>
+</p>
+
+<content> <p>🔄 <a href="/p/crawl-budget/">简体中文</a></p>
+<h2 id="what-is-crawl-budget">What is Crawl Budget</h2>
+<p>Crawl budget refers to the number of pages a search engine crawls on a website within a certain time period. These pages can include user-visible webpages, as well as files behind the scenes such as CSS, HTML, and more.</p>
+<p>The crawling resources and capabilities of a search engine are not unlimited (or rather, they come at a cost), and there are millions of websites that need to be crawled every day on the internet. Therefore, search engines have established a mechanism to set different crawling budgets for each website in order to reasonably control the allocation of crawling resources.</p>
+<p>When our website has new pages or page content is updated, if search engines can discover these changes more quickly and index these pages earlier, we can benefit faster. However, in general, large websites (such as websites with tens of thousands of pages) need to pay more attention to crawl budget.</p>
+<h2 id="main-factors-affecting-the-crawl-budget">Main factors affecting the Crawl Budget</h2>
+<p>The crawl budget is mainly influenced by crawl limits and crawl demand.</p>
+<p><strong>Crawl limit</strong></p>
+<p>The safe crawling frequency that a website can withstand, an excessively high crawling frequency may cause damage to the website&rsquo;s service. Search engines aggressively avoid overloading website services due to their crawling. Search engines mainly determine the safe crawling frequency based on certain website performance metrics.</p>
+<p>If your website frequently experiences timeouts, slow responses, and frequent errors, it will reduce the security frequency. The security frequency is determined at the server host level, so websites deployed on shared hosting will also share the security frequency of the host.</p>
+<p><strong>Crawl demand</strong></p>
+<p>It is the value of the content (URL) on a website as judged by search engines, mainly based on its popularity and update frequency. For example, having more external inbound links, internal inbound links, or frequent updates to the page content, etc.</p>
+<p>It is worth noting that search engine crawlers should not be forced to recrawl a page when there has not been a meaningful update to the content. Search engine crawlers can determine whether the content update is significant. The best practice is to focus on optimizing the page content to make it more comprehensive, important, and useful, thereby naturally recalling the crawler to recrawl.</p>
+<h2 id="check-how-much-crawl-budget-my-website-has">Check how much Crawl Budget my website has</h2>
+<p>In Google Search Console, select a verified website, go to &ldquo;Settings&rdquo; - &ldquo;Crawling&rdquo; - &ldquo;Crawl Stats&rdquo; to view the website&rsquo;s crawling status by search engine bots.</p>
+<p>The figure below shows the crawl status of my blog for the past 90 days on 2024-12-17:</p>
+<p><img src="../crawl-budget/crawl-budget.png" alt=""></p>
+<p>In addition, using the website&rsquo;s server logs is also a way to analyze the visits of search engine crawlers to the site.</p>
+<h2 id="how-to-optimize-crawl-budget">How to optimize Crawl Budget</h2>
+<p>Optimizing a website&rsquo;s crawl budget mainly involves avoiding the waste of the crawl budget, which means preventing search engine crawlers from crawling pages that are unlikely to be indexed after being crawled. For example:</p>
+<ul>
+<li>The same page, but its URL contains different parameters</li>
+<li>Duplicate or highly similar pages</li>
+<li>Low-quality content</li>
+<li>Slow loading, timeout, abnormal pages</li>
+<li>A very long chained redirect page</li>
+<li>Other pages that cannot be indexed (status codes 3xx, 4xx, 5xx, or explicitly marked as do not index)</li>
+</ul>
+<p>These pages (URLs) appear as different URLs to search engine crawlers, so they may attempt to crawl them, but after crawling, they find that the pages are no different and will not index them again, resulting in a wasted crawl.</p>
+<p>For these pages that we do not want search engine crawlers to crawl, we can specify them in the robots.txt or set them in Google Search Console.</p>
+<p>Additionally, search engines heavily rely on sitemaps to discover pages, so do not include non-indexable pages in the sitemap. You can go to &ldquo;Indexing&rdquo; - &ldquo;Pages&rdquo; in Google Search Console, and then filter by the sitemap in the upper left corner to view the indexing status of pages contained in the sitemap.</p>
+<p><img src="../crawl-budget/crawl-budget-1.png" alt=""></p>
+<p>Optimizing internal website links is extremely important. The principle remains to help search engine crawlers discover valuable content. Therefore, do not pursue a highly distinct hierarchy of internal links. Instead, make the internal links more complex. This complexity only refers to the ability of internal pages to link to each other, but the overall hierarchical structure of the pages should remain flat.</p>
+<p>Pages that have been crawled more recently typically have better rankings in search results. Therefore, if a page is highly popular, you can add more internal links pointing to this page to help it maintain its crawl freshness.</p>
+<p>The crawl budget is roughly proportional to the PageRank, so optimizing the crawl budget can also increase the crawl budget by increasing the page weight.</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://ahrefs.com/blog/crawl-budget/">When Should You Worry About Crawl Budget?</a></li>
+<li><a href="https://www.conductor.com/academy/crawl-budget/">Crawl budget for SEO: the ultimate reference guide</a></li>
+<li><a href="https://www.semrush.com/blog/crawl-budget/">Crawl Budget: What Is It and Why Is It Important for SEO?</a></li>
+<li><a href="https://backlinko.com/hub/seo/crawl-budget">What is Crawl Budget? And Why Does It Matter for SEO?</a></li>
+</ul>
+ </content>
+<p>
+  
+  <a href="http://localhost:1313/t/seo/">#SEO</a>
+  
+  <a href="http://localhost:1313/t/note/">#Note</a>
+  
+</p>
+
+  </main>
+  <footer>Subscribe via <a href="/index.xml">RSS</a> or just
+  <a href="mailto:rokcsox@gmail.com">say hello</a>.
+<br />
+Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo Bear</a>.</footer>
+
+    
+</body>
+
+</html>

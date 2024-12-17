@@ -53,6 +53,6 @@ draft: false
 
 ## 参考
 
-- https://www.maizimi.com/oversea/oversea-tel-giffgaff/
-- https://fast.v2ex.com/t/971919
-- https://telegra.ph/Giffgaff-SIM-Card-in-China-Channel-10-29
+- [手把手教你购买、激活、充值、保号最低保号成本境外电话卡全教程](https://www.maizimi.com/oversea/oversea-tel-giffgaff/)
+- [giffgaff 避坑指南](https://fast.v2ex.com/t/971919)
+- [giffgaff 中国玩家指南](https://telegra.ph/Giffgaff-SIM-Card-in-China-Channel-10-29)

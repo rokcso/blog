@@ -49,4 +49,4 @@ The three core steps to building external links are: 1. Your website is seen, 2.
 
 ## Reference
 
-- [https://ahrefs.com/blog/zh/nofollow-links/](https://ahrefs.com/blog/zh/nofollow-links/)
+- [What Is a Nofollow Link? Everything You Need to Know](https://ahrefs.com/blog/nofollow-links/)

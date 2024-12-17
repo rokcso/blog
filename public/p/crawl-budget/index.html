@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>理解搜索引擎的抓取预算 | Rokcso&#39;s blog</title>
+<meta name="title" content="理解搜索引擎的抓取预算" />
+<meta name="description" content="了解如何有效管理你网站的抓取预算，以提高搜索引擎的可见性。探索增强你网站被索引率的策略，确保重要页面被搜索引擎优先考虑。" />
+<meta name="keywords" content="SEO,note," />
+
+
+<meta property="og:url" content="http://localhost:1313/p/crawl-budget/">
+  <meta property="og:site_name" content="Rokcso&#39;s blog">
+  <meta property="og:title" content="理解搜索引擎的抓取预算">
+  <meta property="og:description" content="了解如何有效管理你网站的抓取预算，以提高搜索引擎的可见性。探索增强你网站被索引率的策略，确保重要页面被搜索引擎优先考虑。">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-12-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-17T00:00:00+00:00">
+    <meta property="article:tag" content="SEO">
+    <meta property="article:tag" content="Note">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="理解搜索引擎的抓取预算">
+  <meta name="twitter:description" content="了解如何有效管理你网站的抓取预算，以提高搜索引擎的可见性。探索增强你网站被索引率的策略，确保重要页面被搜索引擎优先考虑。">
+
+
+
+
+  <meta itemprop="name" content="理解搜索引擎的抓取预算">
+  <meta itemprop="description" content="了解如何有效管理你网站的抓取预算，以提高搜索引擎的可见性。探索增强你网站被索引率的策略，确保重要页面被搜索引擎优先考虑。">
+  <meta itemprop="datePublished" content="2024-12-17T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-12-17T00:00:00+00:00">
+  <meta itemprop="wordCount" content="92">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="SEO,Note">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;  
+    border-collapse: collapse;  
+    border: 1px solid #999;  
+    border-radius: 4px;
+     
+  }
+
+  th,
+  td {
+    border: 1px solid #999;  
+    padding: 4px;  
+  }
+
+  th {
+    background-color: #f2f2f2;  
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #999;
+    border-radius: 4px;
+  }
+
+  img[src*="#minipic"] {
+    max-width: 50%;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+    border: 1px solid #999;
+    border-radius: 4px;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+  }
+
+  i {
+    font-style: normal;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+    border-radius: 4px;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 2px solid #999;
+    color: #999;
+    margin: 0;
+    padding-left: 10px;
+    font-style: normal;
+  }
+
+  blockquote p {
+    margin: 0;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+    margin-top: 50px;
+    font-size: small;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+  ul li p {
+    margin: 0;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+  @media (max-width: 500px) {
+    img[src*="#minipic"] {
+      max-width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid #999;
+      border-radius: 4px;
+    }
+  }
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h1>Rokcso&#39;s blog</h1>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/now/">Now</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>  
+<h1>理解搜索引擎的抓取预算</h1>
+
+<p>
+  <i>
+    <time datetime='2024-12-17' pubdate>
+      17 Dec, 2024
+    </time>
+  </i>
+</p>
+
+<content> <p>🔄 <a href="/p/crawl-budget-en/">English</a></p>
+<h2 id="什么是抓取预算">什么是抓取预算</h2>
+<p>抓取预算（Crawl budget）是指搜索引擎在一定时间范围内对网站进行抓取的页面数量。这个页面可以是用户可见的网页，也可以是网页背后的比如 CSS、HTML 等等文件。</p>
+<p>搜索引擎的抓取资源、能力不是无限的（或者说是有成本的），而互联网上每天待抓取的网站数以百万计，所以搜索引擎制定了一个机制来为每个网站设定不同的抓取预算，以合理的控制抓取资源的分配。</p>
+<p>当我们的网站有新页面或者页面内容有更新时，如果搜索引擎能够更快的发现这些变化，更早索引这些页面，我们就能更快获益。但是一般来说，大型网站（比如有上万个页面的网站）更需要关注抓取预算。</p>
+<h2 id="抓取预算的主要影响因素">抓取预算的主要影响因素</h2>
+<p>抓取预算主要受到抓取限制和抓取需求的影响。</p>
+<p><strong>抓取限制</strong></p>
+<p>是网站所能承受的安全抓取频率，过高的抓取频率可能会对网站服务造成损害。搜索引擎会非常激进的避免因为它的抓取导致网站服务过载，搜索引擎主要通过一些网站性能指标来判断安全的抓取频率是多少。</p>
+<p>如果你的网站请求经常超时、响应慢、频繁的返回错误等都会降低安全频率，而安全频率是基于服务器主机层面进行判断的，所以部署在共享主机上的网站之间也将共享主机的安全频率。</p>
+<p><strong>抓取需求</strong></p>
+<p>是搜索引擎判断的网站中的内容（URL）被抓取的价值，这主要基于其受欢迎程度和更新频率。比如拥有更多外部入站链接、内部入站链接，或者页面内容经常更新等等。</p>
+<p>值得注意的是，不要在页面内容没有发生具有实际重大意义的更新时强制要求搜索引擎爬虫前来重新抓取，搜索引擎爬虫能判断出来这个页面内容的更新是否有意义，最好的做法是专注于优化页面内容，让网页内容变得更丰富、更重要、更有用，自然的召回爬虫来重新抓取。</p>
+<h2 id="查看我的网站的抓取预算是多少">查看我的网站的抓取预算是多少</h2>
+<p>在 Google Search Console 中选择一个已经验证所有权的网站，前往「设置」-「抓取」-「抓取统计信息」可以查看该网站被搜索引擎爬虫抓取的情况。</p>
+<p>下图是我的博客在 2024-12-17 过去 90 天的被抓取情况：</p>
+<p><img src="./crawl-budget.png" alt=""></p>
+<p>另外，通过网站的服务器日志也是一种分析搜索引擎爬虫光临网站情况的方式。</p>
+<h2 id="如何优化抓取预算">如何优化抓取预算</h2>
+<p>优化网站的抓取预算主要是在避免抓取预算的浪费，就是要避免搜索引擎爬虫抓取那些它抓取之后大概率也不会索引的页面，比如：</p>
+<ul>
+<li>同一个页面，但是其 URL 带有不同的参数</li>
+<li>重复或者高度相似的页面</li>
+<li>低质量的内容</li>
+<li>加载慢、超时、异常的页面</li>
+<li>很长的链式重定向页面</li>
+<li>其他无法被索引的页面（状态码 3xx、4xx、5xx 或明确标识不要索引）</li>
+</ul>
+<p>这些页面（URL）在搜索引擎爬虫看来都是不同的 URL，所以它可能会尝试抓取，但是抓取之后发现页面并无不同，就不会重复索引，而这一次抓取就被浪费了。</p>
+<p>对于这些我们不希望搜索引擎爬虫抓取的页面，我们可以在 robots.txt 写明，或者在 Google Search Console 中设置。</p>
+<p>另外，搜索引擎非常依赖网站地图来发现页面，所以不要在网站地图中包含不可被索引的页面。可以在 Google Search Console 中前往「编制索引」-「网页」然后左上角筛选站点地图过滤器，就可以看到网站地图中所包含的页面的索引情况。</p>
+<p><img src="./crawl-budget-1.png" alt=""></p>
+<p>优化网站内部链接非常重要，原则依然是帮助搜索引擎爬虫发现有价值的内容，所以不要追求网站内部链接层次非常分明，而是要让内部链接复杂起来。这个复杂仅仅指内部页面之间可以相互链接，但是整体页面的层次结构要保持扁平。</p>
+<p>最近被抓取过的页面在搜索结果中通常拥有更好的排名，所以如果某个页面的受欢迎程度很高，就可以增加更多内部链接链接到这个页面，让这个页面能保持抓取的新鲜度。</p>
+<p>抓取预算大致与页面权重（PageRank）成正比，所以优化抓取预算还可以通过增加页面权重来增加抓取预算。</p>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://ahrefs.com/blog/zh/crawl-budget/">什么是抓取预算，SEO 需要在意吗？</a></li>
+<li><a href="https://www.conductor.com/academy/crawl-budget/">Crawl budget for SEO: the ultimate reference guide</a></li>
+<li><a href="https://www.semrush.com/blog/crawl-budget/">Crawl Budget: What Is It and Why Is It Important for SEO?</a></li>
+<li><a href="https://backlinko.com/hub/seo/crawl-budget">What is Crawl Budget? And Why Does It Matter for SEO?</a></li>
+</ul>
+ </content>
+<p>
+  
+  <a href="http://localhost:1313/t/seo/">#SEO</a>
+  
+  <a href="http://localhost:1313/t/note/">#Note</a>
+  
+</p>
+
+  </main>
+  <footer>Subscribe via <a href="/index.xml">RSS</a> or just
+  <a href="mailto:rokcsox@gmail.com">say hello</a>.
+<br />
+Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo Bear</a>.</footer>
+
+    
+</body>
+
+</html>

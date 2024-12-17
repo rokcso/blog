@@ -49,4 +49,4 @@ HTML 中 <a> 标签默认的属性是 dofollow，如果要标记为 nofollow 可
 
 ## 参考
 
-- [https://ahrefs.com/blog/zh/nofollow-links/](https://ahrefs.com/blog/zh/nofollow-links/)
+- [什么是 Nofollow 链接？你需要知道的一切](https://ahrefs.com/blog/zh/nofollow-links/)

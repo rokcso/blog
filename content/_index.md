@@ -17,19 +17,25 @@ I write [some texts](/blog), about life, technology, and curiosity, among other 
 
 In addition, I also have a cat 🐈 named [Sui Sui](/p/suisui).
 
+## ✨ New
+
+- [Understanding the Search Engine's Crawl Budget](/p/crawl-budget-en/)
+- [理解搜索引擎的抓取预算](/p/crawl-budget/)
+- [译> 比「Ctrl+F」更智能：直接链接到网页内容](/p/directly-link-to-web-content/)
+
+## 💘 Pin
+
+- [如何在 Cloudflare 部署 Sink 短链接服务](/p/deploy-sink/)
+- [个人向的中文文案排版指北](/p/chinese-copywriting-guidelines/)
+- [如何在线配到好眼镜，我的理论与实践](/p/buy-glasses-online/)
+- [Follow 中如何 Claim 自己的博客](/p/follow-claim-feed/)
+- [我的 Rime 输入法配置方案](/p/rime-setup/)
+- [NuPhy Air75 V2 使用指南](/p/nuphy-air75-v2-use-guide/)
+
 ## 🌲 Explore
 
 - [X/Twitter](https://x.com/rokcso/)
 - [GitHub](https://github.com/rokcso/)
 - [Jike](https://okjk.co/RqK5zW)
-
-## 💘 Pin
-
-- [个人向的中文文案排版指北](/p/chinese-copywriting-guidelines/)
-- [译> 写作与不写作](/p/writes-and-write-nots/)
-- [如何在线配到好眼镜，我的理论与实践](/p/buy-glasses-online/)
-- [How to claim your blog on Follow](/p/follow-claim-feed-en/)
-- [我的 Rime 输入法配置方案](/p/rime-setup/)
-- [NuPhy Air75 V2 Use Guide](/p/nuphy-air75-v2-use-guide-en/)
 
 All images are compressed using [Zipic](https://rok.ink/zipic). More 🧰 [tools](/p/tools-en/) help me create.

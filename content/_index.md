@@ -19,6 +19,7 @@ In addition, I also have a cat 🐈 named [Sui Sui](/p/suisui).
 
 ## ✨ New
 
+- [在 brew install 时不要 Auto update](/p/brew-install-without-auto-update/)
 - [Understanding the Search Engine's Crawl Budget](/p/crawl-budget-en/)
 - [理解搜索引擎的抓取预算](/p/crawl-budget/)
 - [译> 比「Ctrl+F」更智能：直接链接到网页内容](/p/directly-link-to-web-content/)

@@ -7,12 +7,19 @@
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2024, Rokcso.</copyright>
-    <lastBuildDate>Tue, 17 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2024 00:00:00 +0000</lastBuildDate>
     <follow_challenge>
         <feedId>55587008227934208</feedId>
         <userId>41373547352712192</userId>
     </follow_challenge>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在 brew install 时不要 Auto update</title>
+      <link>http://localhost:1313/p/brew-install-without-auto-update/</link>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/p/brew-install-without-auto-update/</guid>
+      <description>&lt;p&gt;今天需要使用 Homebrew 安装一个 App，但是当我执行 &lt;code&gt;brew install {app_name}&lt;/code&gt; 后，没想到终端里最先打印出来的是「Auto-updating Homebrew&amp;hellip;」，随后 Homebrew 发现我有 38 个过时的 formulae，并开始了一系列 Fetching 和 Downloading 的 Auto-updating，大约 30 多分钟后，我原本要安装的 App 才被成功安装。&lt;/p&gt;&#xA;&lt;p&gt;这就是 Homebrew 的默认逻辑，在每次执行 &lt;code&gt;brew install&lt;/code&gt; 时，先更新 Homebrew 本体，再检查所有已安装的 App，并自动更新已过时的 App，再清理不再需要的旧版本和缓存文件，最后才是安装原本要安装的 App。&lt;/p&gt;&#xA;&lt;p&gt;我知道 Homebrew 是出于好意，但是有的时候，这个逻辑真的很耽误事。&lt;/p&gt;&#xA;&lt;h2 id=&#34;如何解决&#34;&gt;如何解决&lt;/h2&gt;&#xA;&lt;p&gt;在 Homebrew 安装命令之前添加环境变量：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#dc8a78&#34;&gt;HOMEBREW_NO_AUTO_UPDATE&lt;/span&gt;&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;1&lt;/span&gt; brew install &lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;{&lt;/span&gt;app_name&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;将环境变量 &lt;code&gt;HOMEBREW_NO_AUTO_UPDATE&lt;/code&gt; 设置为 &lt;code&gt;1&lt;/code&gt; 即表示禁用自动更新。也可以直接将该环境变量在 &lt;code&gt;~/.bashrc&lt;/code&gt; 或 &lt;code&gt;~/.zshrc&lt;/code&gt; 配置文件中 &lt;code&gt;export&lt;/code&gt;：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#04a5e5&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#dc8a78&#34;&gt;HOMEBREW_NO_AUTO_UPDATE&lt;/span&gt;&lt;span style=&#34;color:#04a5e5;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#fe640b&#34;&gt;1&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>Understanding the Search Engine&#39;s Crawl Budget</title>
       <link>http://localhost:1313/p/crawl-budget-en/</link>
